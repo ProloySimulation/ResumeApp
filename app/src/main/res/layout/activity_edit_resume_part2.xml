@@ -1,0 +1,1754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:overScrollMode="ifContentScrolls"
+    tools:context=".InputActivities.BuildResumePart2">
+
+    <ScrollView
+        android:id="@+id/scrollView3"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:paddingBottom="64dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Update Education"
+                    android:textColor="@color/colorPrimary1"
+                    android:textSize="18sp"
+                    android:textStyle="bold"/>
+
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_content_objective"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Career Objectives"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="16dp"
+                    android:text="Enter Career Objectives"
+                    android:textColor="@color/headingBlack" />
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart2_CareerObjective_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/inputfinal"
+                    android:gravity="start"
+                    android:text="To obtain a position with opportunities to utilize my experiences, skill, talent,
+creativity, sincerity for the better achievement of the organization."
+                    android:inputType="textMultiLine"
+                    android:padding="8dp"
+                    android:textSize="14sp" />
+
+
+
+                <!--Educational Qualification 1 -->
+                <LinearLayout
+                    android:id="@+id/linearLayout_EducationalQualification_1_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_school_black_24dp"
+                        android:padding="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Educational Qualification 1"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualification Name"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_QualificationName_1_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Qualification Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <Spinner
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/spinner_BuildResumePart2_QualificationName_1_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Institution"
+                        android:textColor="@color/headingBlack" />
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart2_InstituteName_1_ER2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Institute Name"
+                        android:padding="9dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Board"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_BoardName_1_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Board Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <Spinner
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/spinner_BuildResumePart2_BoardName_1_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Group Or Subject"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_GroupSubjectName_1_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Group/Subject Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <Spinner
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_1_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Passing Year"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_PassingYear_1_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Passing Year"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <Spinner
+                                android:layout_alignParentRight="true"
+                                android:id="@+id/spinner_BuildResumePart3_PassingYear_1_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Result: Grade/Division"
+                        android:textColor="@color/headingBlack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_Result_1_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:text="Result:"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_GradeDivision_1_ER2"
+                                android:layout_width="90dp"
+                                android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Grade_1_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Grade:"/>
+
+                            <EditText
+                                android:id="@+id/editText_BuildResumePart2_Grade_1_ER2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="bottom"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Division_1_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Division:"/>
+
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_Division_1_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_AddField_EducationalQualification_1_ER2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Add Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+                </LinearLayout>
+
+                <!--Educational Qualification 2 -->
+                <LinearLayout
+                    android:id="@+id/linearLayout_EducationalQualification_2_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_school_black_24dp"
+                        android:padding="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Educational Qualification 2"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualification Name"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_QualificationName_2_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Qualification Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_QualificationName_2_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Institution"
+                        android:textColor="@color/headingBlack" />
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart2_InstituteName_2_ER2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Institute Name"
+                        android:padding="9dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Board"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_BoardName_2_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Board Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_BoardName_2_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Group Or Subject"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_GroupSubjectName_2_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Group/Subject Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_2_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Passing Year"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_PassingYear_2_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Passing Year"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_PassingYear_2_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Result: Grade/Division"
+                        android:textColor="@color/headingBlack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_Result_2_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:text="Result:"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:id="@+id/spinner_BuildResumePart3_GradeDivision_2_ER2"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Grade_2_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Grade:"/>
+
+                            <EditText
+                                android:id="@+id/editText_BuildResumePart2_Grade_2_ER2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="bottom"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Division_2_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Division:"/>
+
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_Division_2_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_DeleteField_EducationalQualification_2_ER2"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/btn_shap_delete"
+                        android:drawableLeft="@drawable/ic_delete_field"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Delete Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"/>
+
+                    <Button
+                        android:id="@+id/button_AddField_EducationalQualification_2_ER2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Add Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                </LinearLayout>
+
+                <!--Educational Qualification 3 -->
+                <LinearLayout
+                    android:id="@+id/linearLayout_EducationalQualification_3_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_school_black_24dp"
+                        android:padding="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Educational Qualification 3"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualification Name"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_QualificationName_3_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Qualification Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_QualificationName_3_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Institution"
+                        android:textColor="@color/headingBlack" />
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart2_InstituteName_3_ER2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Institute Name"
+                        android:padding="9dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Board"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_BoardName_3_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Board Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_BoardName_3_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Group Or Subject"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_GroupSubjectName_3_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Group/Subject Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_3_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Passing Year"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_PassingYear_3_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Passing Year"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_PassingYear_3_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Result: Grade/Division"
+                        android:textColor="@color/headingBlack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_Result_3_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:text="Result:"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:id="@+id/spinner_BuildResumePart3_GradeDivision_3_ER2"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Grade_3_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Grade:"/>
+
+                            <EditText
+                                android:id="@+id/editText_BuildResumePart2_Grade_3_ER2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="bottom"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Division_3_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Division:"/>
+
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_Division_3_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_DeleteField_EducationalQualification_3_ER2"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/btn_shap_delete"
+                        android:drawableLeft="@drawable/ic_delete_field"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Delete Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"/>
+
+                    <Button
+                        android:id="@+id/button_AddField_EducationalQualification_3_ER2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Add Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                </LinearLayout>
+
+                <!--Educational Qualification 4 -->
+                <LinearLayout
+                    android:id="@+id/linearLayout_EducationalQualification_4_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_school_black_24dp"
+                        android:padding="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Educational Qualification 4"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualification Name"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_QualificationName_4_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Qualification Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_QualificationName_4_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Institution"
+                        android:textColor="@color/headingBlack" />
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart2_InstituteName_4_ER2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Institute Name"
+                        android:padding="9dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Board"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_BoardName_4_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Board Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_BoardName_4_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Group Or Subject"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_GroupSubjectName_4_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Group/Subject Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_4_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Passing Year"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_PassingYear_4_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Passing Year"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_PassingYear_4_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Result: Grade/Division"
+                        android:textColor="@color/headingBlack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_Result_4_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:text="Result:"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:id="@+id/spinner_BuildResumePart3_GradeDivision_4_ER2"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Grade_4_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Grade:"/>
+
+                            <EditText
+                                android:id="@+id/editText_BuildResumePart2_Grade_4_ER2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="bottom"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Division_4_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Division:"/>
+
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_Division_4_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_DeleteField_EducationalQualification_4_ER2"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/btn_shap_delete"
+                        android:drawableLeft="@drawable/ic_delete_field"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Delete Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"/>
+
+                    <Button
+                        android:id="@+id/button_AddField_EducationalQualification_4_ER2"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Add Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                </LinearLayout>
+
+                <!--Educational Qualification 5 -->
+                <LinearLayout
+                    android:id="@+id/linearLayout_EducationalQualification_5_ER2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_school_black_24dp"
+                        android:padding="20dp"
+                        android:layout_marginTop="20dp"
+                        android:text="Educational Qualification 5"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Qualification Name"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_QualificationName_5_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Qualification Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_QualificationName_5_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Institution"
+                        android:textColor="@color/headingBlack" />
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart2_InstituteName_5_ER2"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Institute Name"
+                        android:padding="9dp"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Board"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_BoardName_5_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Board Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart2_BoardName_5_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Group Or Subject"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_GroupSubjectName_5_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Group/Subject Name"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_5_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Passing Year"
+                        android:textColor="@color/headingBlack" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_PassingYear_5_ER2"
+                            android:layout_width="200dp"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="left"
+                            android:text="Passing Year"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:layout_alignParentRight="true"
+                                    android:id="@+id/spinner_BuildResumePart3_PassingYear_5_ER2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="24dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Result: Grade/Division"
+                        android:textColor="@color/headingBlack"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:orientation="horizontal"
+                        android:padding="1dp">
+
+                        <TextView
+                            android:id="@+id/textView_BuildResumePart2_Result_5_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="8dp"
+                            android:text="Result:"
+                            android:textColor="@color/grey"
+                            android:textSize="14sp" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:orientation="horizontal">
+                            <RelativeLayout
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content">
+                                <Spinner
+                                    android:id="@+id/spinner_BuildResumePart3_GradeDivision_5_ER2"
+                                    android:layout_width="90dp"
+                                    android:layout_height="wrap_content"/>
+                            </RelativeLayout>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Grade_5_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Grade:"/>
+
+                            <EditText
+                                android:id="@+id/editText_BuildResumePart2_Grade_5_ER2"
+                                android:layout_width="50dp"
+                                android:layout_height="50dp"
+                                android:layout_gravity="bottom"
+                                android:maxLength="4"
+                                android:singleLine="true"
+                                android:imeOptions="actionDone"/>
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:id="@+id/linearLayout_EducationalQualification_2_Division_5_ER2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:orientation="horizontal"
+                            android:layout_gravity="center"
+                            android:visibility="gone">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="Division:"/>
+
+                            <Spinner
+                                android:id="@+id/spinner_BuildResumePart3_Division_5_ER2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"/>
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/button_DeleteField_EducationalQualification_5_ER2"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/btn_shap_delete"
+                        android:drawableLeft="@drawable/ic_delete_field"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Delete Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"/>
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/button_EditResumePart2_Update"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/outline_btn_blue"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Update"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary1" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_BuildResumePart2_Show"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="SHOW" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="270dp"
+    android:background="#008AD3"
+    android:paddingTop="16dp"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:layout_marginBottom="-40dp">
+
+    <ImageView
+        android:id="@+id/nav_header_ImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:src="@drawable/cv_master_launcher_logo"/>
+
+    <TextView
+        android:id="@+id/nav_header_Name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_toRightOf="@id/nav_header_ImageView"
+        android:layout_marginLeft="10dp"
+        android:text="CV Master"
+        android:textColor="#ffff"
+        android:textSize="14sp"/>
+
+    <RelativeLayout
+        android:id="@+id/rl_profile"
+        android:layout_below="@id/nav_header_ImageView"
+        android:layout_width="230dp"
+        android:layout_height="90dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="30dp"
+        android:background="@drawable/profile_background">
+
+
+        <ImageView
+            android:id="@+id/profile_image"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="16dp"
+            android:src="@drawable/profile_image"/>
+
+
+        <TextView
+            android:id="@+id/profile_number_heading"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_centerVertical="true"
+            android:text="Your Mobile Number"
+            android:textColor="#ffff"
+            android:textSize="14sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/profile_phone_number"
+            android:layout_below="@id/profile_number_heading"
+            android:layout_toRightOf="@id/profile_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:text="Number"
+            android:textSize="10dp"
+            android:textColor="#ffff"
+            android:layout_centerHorizontal="true"/>
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

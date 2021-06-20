@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".showallpdf.PdfActivity">
+
+    <TextView
+        android:id="@+id/top"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Show PDF"
+        android:textColor="@color/colorPrimary1"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <com.github.barteksc.pdfviewer.PDFView
+        android:layout_above="@+id/btn_Send_Email"
+        android:id="@+id/pdfView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top"
+        android:layout_margin="10dp"
+        android:layout_marginTop="16dp" />
+    <Button
+        android:id="@+id/btn_Send_Email"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="center"
+        android:layout_margin="10dp"
+        android:background="@drawable/btn_skip"
+        android:foreground="?android:attr/selectableItemBackground"
+        android:text="Send Mail"
+        android:textAllCaps="false"
+        android:textColor="@color/colorPrimary1"
+        android:textStyle="bold" />
+
+</RelativeLayout>

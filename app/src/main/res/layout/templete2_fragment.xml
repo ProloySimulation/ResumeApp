@@ -1,0 +1,984 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".fragment_template.Templete2Fragment">
+
+
+  <ViewFlipper
+      android:id="@+id/viewFlipper"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent">
+
+  <LinearLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:padding="8dp"
+      android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_main"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp">
+
+      <!--Left Column-->
+      <LinearLayout
+          android:id="@+id/ll_left"
+          android:layout_width="120dp"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+        <!--Image-->
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="8dp">
+
+          <ImageView
+              android:id="@+id/image2"
+              android:layout_width="70dp"
+              android:layout_height="80dp"
+              android:background="@color/colorWhite"
+              android:src="@drawable/upload_photo"/>
+        </RelativeLayout>
+
+        <!--Email Container-->
+        <RelativeLayout
+            android:id="@+id/rl_email"
+            android:layout_below="@id/image"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <ImageView
+              android:id="@+id/img_email"
+              android:layout_width="15dp"
+              android:layout_height="15dp"
+              android:src="@drawable/ic_baseline_email_24"/>
+
+          <TextView
+              android:id="@+id/tv_email2"
+              android:layout_below="@id/img_email"
+              android:layout_width="100dp"
+              android:layout_height="wrap_content"
+              android:text="rubabrahman@gmail.com"
+              android:textSize="7sp"
+              android:textColor="@color/colorBlack"/>
+        </RelativeLayout>
+
+        <!--Mobile Number Container-->
+        <RelativeLayout
+            android:id="@+id/rl_phone_number"
+            android:layout_below="@+id/rl_email"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <ImageView
+              android:id="@+id/img_number"
+              android:layout_width="15dp"
+              android:layout_height="15dp"
+              android:src="@drawable/ic_phone_iphone_black24dp"/>
+
+          <TextView
+              android:id="@+id/tv_number"
+              android:layout_below="@id/img_number"
+              android:layout_width="100dp"
+              android:layout_height="wrap_content"
+              android:text="01687788622"
+              android:textSize="7sp"
+              android:textColor="@color/colorBlack"/>
+
+        </RelativeLayout>
+
+        <!--Address Container-->
+        <RelativeLayout
+            android:id="@+id/rl_address"
+            android:layout_below="@+id/rl_phone_number"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <ImageView
+              android:id="@+id/img_address"
+              android:layout_width="15dp"
+              android:layout_height="15dp"
+              android:src="@drawable/ic_location_on_black_24dp"/>
+
+          <TextView
+              android:id="@+id/tv_address"
+              android:layout_below="@id/img_address"
+              android:layout_width="100dp"
+              android:layout_height="wrap_content"
+              android:text="Dhaka, Bangladesh"
+              android:textSize="7sp"
+              android:textColor="@color/colorBlack"/>
+
+        </RelativeLayout>
+
+        <!--Skills Heading-->
+        <RelativeLayout
+            android:id="@+id/rl_skills"
+            android:layout_below="@+id/rl_address"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+
+          <TextView
+              android:id="@+id/tv_skills_heading"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Skills"
+              android:textSize="14sp"
+              android:textStyle="bold"
+              android:textColor="@color/colorPrimary1"/>
+
+        </RelativeLayout>
+
+        <!--Skills Heading Divider-->
+        <LinearLayout
+            android:layout_below="@id/rl_skills"
+            android:layout_width="100dp"
+            android:layout_marginTop="-5dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="-4dp"
+            android:background="@drawable/divider_drawble_body"/>
+
+        <!--Skills Container-->
+        <RelativeLayout
+            android:id="@+id/rl_skills_container"
+            android:layout_below="@+id/rl_skills"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <TextView
+              android:id="@+id/tv_skills_msword"
+              android:layout_width="100dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Microsoft Word"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+
+
+        </RelativeLayout>
+
+        <!--Language Heading-->
+        <RelativeLayout
+            android:id="@+id/rl_language"
+            android:layout_below="@id/rl_skills_container"
+            android:layout_marginTop="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <TextView
+              android:layout_width="80dp"
+              android:layout_height="wrap_content"
+              android:text="Language"
+              android:textColor="@color/colorPrimary1"
+              android:textStyle="bold"
+              android:textSize="14sp"/>
+        </RelativeLayout>
+
+        <!--Language Heading Divider-->
+        <LinearLayout
+            android:layout_below="@id/rl_language"
+            android:layout_width="100dp"
+            android:layout_marginTop="-5dp"
+            android:layout_marginLeft="-4dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/divider_drawble_body"/>
+
+        <!--Language Container-->
+        <RelativeLayout
+            android:id="@+id/rl_language_container"
+            android:layout_below="@id/rl_language"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+          <TextView
+              android:id="@+id/tv_language_bangla"
+              android:layout_width="100dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Bangla"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_language_bangla_pr"
+              android:layout_below="@id/tv_language_bangla"
+              android:layout_width="100dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Good"
+              android:textStyle="italic"
+              android:textSize="7sp"
+              android:textColor="@color/colorPrimary1"/>
+
+          <TextView
+              android:id="@+id/tv_language_english"
+              android:layout_below="@id/tv_language_bangla_pr"
+              android:layout_width="100dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="English"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_language_english_pr"
+              android:layout_below="@id/tv_language_english"
+              android:layout_width="100dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Good"
+              android:textStyle="italic"
+              android:textSize="7sp"
+              android:textColor="@color/colorPrimary1"/>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_Head_References_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+          <TextView
+              android:layout_width="80dp"
+              android:layout_height="wrap_content"
+              android:layout_marginLeft="8dp"
+              android:text="Reference"
+              android:textColor="@color/colorPrimary1"
+              android:textStyle="bold"
+              android:textSize="14sp"/>
+
+          <!--Reference Heading Divider-->
+          <LinearLayout
+              android:layout_width="100dp"
+              android:layout_marginTop="-5dp"
+              android:layout_marginLeft="-4dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/divider_drawble_body"/>
+        </LinearLayout>
+
+        <!--Reference1-->
+        <LinearLayout
+            android:id="@+id/linearLayout_Reference2_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+          <TextView
+              android:id="@+id/tv_ref1_name"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Name"
+              android:textSize="8sp"
+              android:textColor="@color/colorPrimary1"/>
+
+          <TextView
+              android:id="@+id/tv_ref1_designation"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Designation"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref1_company"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Company Name"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref1_email"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Email"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref1_contactnumber"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Contact Number"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+
+        <!--Reference2-->
+        <LinearLayout
+            android:id="@+id/linearLayout_Reference2_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+          <TextView
+              android:id="@+id/tv_ref2_name"
+              android:layout_width="80dp"
+              android:layout_marginTop="8dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Name"
+              android:textSize="8sp"
+              android:textColor="@color/colorPrimary1"/>
+
+          <TextView
+              android:id="@+id/tv_ref2_designation"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Designation"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref2_company"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Company Name"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref2_email"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Email"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+
+          <TextView
+              android:id="@+id/tv_ref2_contactnumber"
+              android:layout_width="80dp"
+              android:layout_marginLeft="8dp"
+              android:layout_height="wrap_content"
+              android:text="Contact Number"
+              android:textSize="8sp"
+              android:textColor="@color/colorBlack"/>
+        </LinearLayout>
+
+      </LinearLayout>
+
+
+      <!--Right Column-->
+      <LinearLayout
+          android:id="@+id/ll_right"
+          android:layout_width="match_parent"
+          android:orientation="vertical"
+          android:layout_height="wrap_content">
+
+        <!--Heading & Career Objectives-->
+        <RelativeLayout
+            android:id="@+id/carrer_obj"
+            android:padding="8dp"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:background="@color/colorPrimary1">
+
+          <TextView
+              android:id="@+id/tv_heading_name"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Rubab Rahman"
+              android:textColor="@color/colorWhite"
+              android:textSize="18dp"/>
+
+          <TextView
+              android:id="@+id/tv_CareerObjective_Container"
+              android:layout_below="@id/tv_heading_name"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:textSize="10dp"
+              android:textColor="@color/colorWhite"
+              android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+              />
+
+        </RelativeLayout>
+
+        <!--Educational Qualification-->
+        <LinearLayout
+            android:id="@+id/ll_educational_qualification"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:orientation="vertical"
+            android:visibility="visible">
+          <!--Educational Qualification Heading-->
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv_edu_heading"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Educational Qualification"
+                android:textSize="14sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_below="@id/tv_edu_heading"
+                android:layout_width="match_parent"
+                android:layout_marginTop="-5dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@drawable/divider_drawble_body"/>
+
+          </LinearLayout>
+
+          <!--Educational Qualification 1-->
+          <LinearLayout
+              android:id="@+id/linearlayout_EducationalQualification_1"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_educationQualification_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Secondary School Certificate"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_instituteName_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Mohammadpur Govt. Boys High School"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_passingYear_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Passing Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_Result_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Result"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_boardName_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Board"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--Educational Qualification 2-->
+          <LinearLayout
+              android:id="@+id/linearlayout_EducationalQualification_2"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_educationQualification_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Secondary School Certificate"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_instituteName_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Mohammadpur Govt. Boys High School"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_passingYear_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Passing Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_Result_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Result"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_boardName_2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Board"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--Educational Qualification 3-->
+          <LinearLayout
+              android:id="@+id/linearlayout_EducationalQualification_3"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_educationQualification_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Secondary School Certificate"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_instituteName_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Mohammadpur Govt. Boys High School"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_passingYear_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Passing Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_Result_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Result"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_boardName_3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Board"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--Educational Qualification 4-->
+          <LinearLayout
+              android:id="@+id/linearlayout_EducationalQualification_4"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_educationQualification_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Secondary School Certificate"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_instituteName_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Mohammadpur Govt. Boys High School"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_passingYear_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Passing Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_Result_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Result"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_boardName_4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Board"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--Educational Qualification 5-->
+          <LinearLayout
+              android:id="@+id/linearlayout_EducationalQualification_5"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_educationQualification_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginLeft="8dp"
+                android:text="Secondary School Certificate"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_instituteName_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Mohammadpur Govt. Boys High School"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_passingYear_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Passing Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_Result_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Result"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_boardName_5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Board"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+        </LinearLayout>
+
+        <!--Professional Experience-->
+        <LinearLayout
+            android:id="@+id/linearLayout_ProfessionalExp_Head"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+          <TextView
+              android:id="@+id/tv_pr_exp"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="8dp"
+              android:layout_marginLeft="8dp"
+              android:text="Professional Experience"
+              android:textSize="14sp"
+              android:textColor="@color/colorPrimary1"
+              android:textStyle="bold"/>
+
+          <LinearLayout
+              android:layout_width="match_parent"
+              android:layout_marginTop="-5dp"
+              android:layout_height="wrap_content"
+              android:layout_gravity="center"
+              android:background="@drawable/divider_drawble_body"/>
+
+          <!--exp1-->
+          <LinearLayout
+              android:id="@+id/ll_prexp1"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_pr_exp1_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Position 1"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp1_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Company Name"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp1_company_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Address"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp1_service_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Service Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--exp2-->
+          <LinearLayout
+              android:id="@+id/ll_prexp2"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="8dp"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_pr_exp2_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Position 2"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp2_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Company Name"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp2_company_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Address"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp2_service_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Service Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+          <!--exp3-->
+          <LinearLayout
+              android:id="@+id/ll_prexp3"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:layout_marginTop="8dp"
+              android:orientation="vertical"
+              android:visibility="gone">
+
+            <TextView
+                android:id="@+id/tv_pr_exp3_position"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Position 3"
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary1"
+                android:textStyle="bold"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp3_company"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Company Name"
+                android:textSize="10sp"
+                android:textColor="@color/colorBlack"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp3_company_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Address"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+
+            <TextView
+                android:id="@+id/tv_pr_exp3_service_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:text="Service Year"
+                android:textStyle="italic"
+                android:textSize="8sp"
+                android:textColor="@color/colorPrimary1"/>
+          </LinearLayout>
+
+
+        </LinearLayout>
+
+
+      </LinearLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp">
+
+      <Button
+          android:id="@+id/back2"
+          android:padding="0dp"
+          android:layout_width="150dp"
+          android:layout_height="40dp"
+          android:layout_margin="10dp"
+          android:layout_gravity="center"
+          android:text="Change Template"
+          android:textSize="14sp"
+          android:textColor="@color/colorPrimary1"
+          android:background="@drawable/outline_btn_blue"
+          android:foreground="?android:attr/selectableItemBackground"
+          android:textAllCaps="false"/>
+
+      <Button
+          android:id="@+id/completePayment2"
+          android:padding="0dp"
+          android:layout_width="150dp"
+          android:layout_height="40dp"
+          android:layout_margin="10dp"
+          android:background="@drawable/btn_shape"
+          android:foreground="?android:attr/selectableItemBackground"
+          android:layout_gravity="center"
+          android:layout_marginLeft="16dp"
+          android:text="Complete Payment"
+          android:textSize="14sp"
+          android:textColor="#FFFFFF"
+          android:textAllCaps="false"/>
+
+
+
+    </LinearLayout>
+  </LinearLayout>
+
+  </ViewFlipper>
+</FrameLayout>

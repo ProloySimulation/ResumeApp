@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputActivities.BuildResumePart6">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingBottom="64dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/linearLayout_EducationalQualification_6_AddReference"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button_BuildResumePart6_AddWorkExperiece"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Add Work Experience"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="8dp">
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:text="Work Experience"
+                    android:textStyle="bold"
+                    android:textColor="@color/colorPrimary1"
+                    android:textSize="18sp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Work Experience 1"
+                    android:textStyle="bold"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_work_exp"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"/>
+
+                <!--Work Experience 1-->
+                <LinearLayout
+                    android:id="@+id/linearlayout_BuildResumePart6_WorkExperience_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="visible">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Designation"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_Designation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Designation"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience_Description_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="20dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Work Detail"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_Duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organisation Name"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_OrganizationName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Organaisation Name"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organization Address"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_OrganizationAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Address"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <Button
+                        android:id="@+id/button_BuildResumePart6_AddField_1"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Add Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                    <Button
+                        android:id="@+id/button_BuildResumePart6_DeleteField_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Delete Field"/>
+
+                </LinearLayout>
+
+                <!--Work Experience 2-->
+                <LinearLayout
+                    android:id="@+id/linearlayout_BuildResumePart6_WorkExperience_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="20dp"
+                        android:layout_marginTop="16dp"
+                        android:text="Work Experience 2"
+                        android:textStyle="bold"
+                        android:background="@color/clr_bck"
+                        android:drawableRight="@drawable/ic_work_exp"
+                        android:textColor="@color/headingBlack"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Designation"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_Designation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Designation"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience_Description_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:padding="20dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Work Detail"
+                        android:textSize="14sp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Duration"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_Duration"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organisation Name"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_OrganizationName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Organaisation Name"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organization Address"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_OrganizationAddress"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Address"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <Button
+                        android:id="@+id/button_BuildResumePart6_DeleteField_2"
+                        android:layout_width="160dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="16dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/btn_shap_delete"
+                        android:drawableLeft="@drawable/ic_delete_field"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Delete Field"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/red"/>
+
+                </LinearLayout>
+
+
+                <Button
+                    android:id="@+id/button_BuildResumePart6_Skip"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/btn_skip"
+                    android:drawableLeft="@drawable/ic_skip_next"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="30dp"
+                    android:paddingRight="50dp"
+                    android:text="Skip"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary1"/>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="@drawable/divider_drawble_body"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_gravity="center"
+                    android:text="Please Go To The Next Step"
+                    android:textSize="10sp"
+                    android:textColor="@color/grey"/>
+
+
+                <Button
+                    android:id="@+id/button_BuildResumePart6_Next"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="16dp"
+                    android:layout_marginRight="16dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/btn_shape"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:text="Next"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFF"
+                    android:layout_gravity="center"/>
+
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

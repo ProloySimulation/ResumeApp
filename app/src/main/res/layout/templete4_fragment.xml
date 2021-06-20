@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragment_template.Templete4Fragment"
+    android:padding="8dp">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_main"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/ll_left"
+                    android:layout_width="140dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:background="@color/colorBlack">
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="70dp"
+                        android:layout_height="80dp"
+                        android:layout_gravity="center"
+                        app:cardCornerRadius="8dp"
+                        android:elevation="10dp"
+                        android:layout_marginTop="8dp">
+
+                        <ImageView
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:id="@+id/imvProfileTemplate4"
+                            android:scaleType="centerCrop"/>
+
+                    </androidx.cardview.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/tv_person_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textAllCaps="true"
+                        android:lineSpacingMultiplier="0.5"
+                        android:text="JOHN Robbins"
+                        android:textSize="22sp"
+                        android:textAlignment="center"
+                        android:fontFamily="@font/balootammudobold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/job_title_main"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ANDROID DEVELOPER"
+                        android:textAllCaps="true"
+                        android:layout_gravity="center"
+                        android:textAlignment="center"
+                        android:textSize="12sp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/contact_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:text="Contact"
+                        android:layout_marginTop="8dp"
+                        android:textAllCaps="true"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/balootammudsemibold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/contact_address"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_baseline_location_on"
+                        android:drawablePadding="8dp"
+                        android:text="Address asdfasfdasdfasdfdsafdsfasfdasfdasdfasdfasdfa wfsdffsfdsfdffsdsdsdf"
+                        android:lineSpacingMultiplier="0.5"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/contact_phone"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:drawablePadding="8dp"
+                        android:text="01676419470"
+                        android:lineSpacingMultiplier="0.5"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"
+                        android:drawableStart="@drawable/ic_baseline_phone_12"/>
+
+                    <TextView
+                        android:id="@+id/contact_email"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:drawablePadding="8dp"
+                        android:text="something@something.com"
+                        android:lineSpacingMultiplier="0.5"
+                        android:textSize="10sp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"
+                        android:drawableStart="@drawable/ic_baseline_mail_outline_12"/>
+
+
+                    <TextView
+                        android:id="@+id/contact_fb"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:drawablePadding="8dp"
+                        android:text="johnrobbins/121232"
+                        android:lineSpacingMultiplier="0.5"
+                        android:textSize="8dp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"
+                        android:drawableStart="@drawable/ic_facebookwhite"/>
+
+                    <TextView
+                        android:id="@+id/contact_linkedin"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:layout_marginRight="16dp"
+                        android:drawablePadding="8dp"
+                        android:text="John Robbins"
+                        android:lineSpacingMultiplier="0.5"
+                        android:textSize="8dp"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textColor="@color/white"
+                        android:drawableStart="@drawable/ic_linkedin"/>
+
+                    <TextView
+                        android:id="@+id/tv_skills_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="22dp"
+                        android:text="skills"
+                        android:layout_marginTop="8dp"
+                        android:textAllCaps="true"
+                        android:textSize="15sp"
+                        android:layout_marginLeft="16dp"
+                        android:fontFamily="@font/balootammudsemibold"
+                        android:textColor="@color/white"/>
+
+                    <TextView
+                        android:id="@+id/tv_skills_msword_template4"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="16dp"
+                        android:text="Microsoft Word"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:textSize="10sp"
+                        android:textColor="@color/white"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/linearLayout_Head_References_4"
+                        android:layout_marginLeft="16dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/tv_Reference_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="22dp"
+                            android:text="References"
+                            android:layout_marginTop="8dp"
+                            android:textAllCaps="true"
+                            android:textSize="15sp"
+                            android:fontFamily="@font/balootammudsemibold"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_ref1_name_template4"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Name"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_ref1_designation_template4"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Designation"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_ref1_company_template4"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Company Name"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_ref1_email_template4"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"/>
+
+                        <TextView
+                            android:id="@+id/tv_ref1_contactnumber_template4"
+                            android:layout_width="120dp"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Number"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:textSize="10sp"
+                            android:textColor="@color/white"/>
+
+                    </LinearLayout>
+
+                    <!--Reference1-->
+
+                </LinearLayout>
+                <!--View Line Grey-->
+                <View android:layout_height="match_parent"
+                    android:layout_width="10dp"
+                    android:background="@color/colorGrey"/>
+                <LinearLayout
+                    android:id="@+id/ll_right"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tv_profile_heading"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:textColor="@color/colorBlack"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:text="Profile"
+                        android:textAllCaps="true"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/tv_profile_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/balootammudoregular"
+                        android:lineSpacingMultiplier="0.5"
+                        android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                        android:textColor="@color/colorBlack"
+                        android:textSize="10dp" />
+
+                    <!-- divider-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="-5dp"
+                        android:background="@drawable/divider_drawble_body" />
+
+                    <!-- Work Exp 1 with main heading-->
+                    <LinearLayout
+                        android:id="@+id/ll_work_exp1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:id="@+id/work_exp_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:text="Work Experience"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/rl_WorkExp_template4">
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp1_cname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Company Name"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp1_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_toRightOf="@id/tv_wrk_exp1_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Duration"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp1_job_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp1_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Job Title"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp1_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp1_cname"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/tv_wrk_exp1_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Location"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp1_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_wrk_exp1_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:lineSpacingMultiplier="0.5"
+                                android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- Work Exp 2-->
+                    <LinearLayout
+                        android:id="@+id/ll_work_exp2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp2_cname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Company Name"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp2_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_toRightOf="@id/tv_wrk_exp2_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Duration"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp2_job_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp2_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Job Title"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp2_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp2_cname"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/tv_wrk_exp2_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Location"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp2_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_wrk_exp2_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:lineSpacingMultiplier="0.5"
+                                android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- Work Exp 3-->
+                    <LinearLayout
+                        android:id="@+id/ll_work_exp3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp3_cname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Company Name"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp3_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_toRightOf="@id/tv_wrk_exp3_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Duration"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp3_job_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp3_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Job Title"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp3_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp3_cname"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/tv_wrk_exp3_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Location"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp3_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_wrk_exp3_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:lineSpacingMultiplier="0.5"
+                                android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- Work Exp 4-->
+                    <LinearLayout
+                        android:id="@+id/ll_work_exp4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:orientation="vertical"
+                        android:visibility="gone">
+
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp4_cname"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Company Name"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp4_duration"
+                                android:layout_width="wrap_content"
+                                android:layout_height="12dp"
+                                android:layout_alignParentRight="true"
+                                android:layout_toRightOf="@id/tv_wrk_exp4_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Duration"
+                                android:textAlignment="textEnd"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp4_job_title"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp4_cname"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Job Title"
+                                android:textAllCaps="true"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="9sp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp4_location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="13dp"
+                                android:layout_below="@id/tv_wrk_exp4_cname"
+                                android:layout_marginLeft="8dp"
+                                android:layout_toRightOf="@id/tv_wrk_exp4_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:text="Location"
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8dp" />
+
+                            <TextView
+                                android:id="@+id/tv_wrk_exp4_description"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@id/tv_wrk_exp4_job_title"
+                                android:fontFamily="@font/balootammudoregular"
+                                android:lineSpacingMultiplier="0.5"
+                                android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                                android:textColor="@color/colorBlack"
+                                android:textSize="8sp" />
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+                    <!-- divider-->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="6dp"
+                        android:background="@drawable/divider_drawble_body" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Education"
+                            android:textSize="14sp"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:fontFamily="@font/balootammudoregular"/>
+
+                        <!-- Education University-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:id="@+id/llEducation1_template4"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_edu_versity_year"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="2007-2008"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="8sp"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_versity_year"
+                                    android:id="@+id/tv_edu_versity_name"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Motijheel Model High School college"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_versity_name"
+                                    android:id="@+id/tv_edu_versity_course"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Computer"
+                                    android:hyphenationFrequency="none"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <!-- Education College-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="visible"
+                            android:id="@+id/ll_educational_qualification2_template4"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+
+                                <TextView
+                                    android:id="@+id/tv_edu_college_year"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="2007-2008"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="8sp"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_college_year"
+                                    android:id="@+id/tv_edu_college_name"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dhaka City College"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_college_name"
+                                    android:id="@+id/tv_edu_college_course"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Electorincs  Communication Engineering"
+                                    android:hyphenationFrequency="none"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                        <!-- Education School-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:visibility="gone"
+                            android:id="@+id/ll_educational_qualification3_template4"
+                            android:orientation="vertical">
+
+                            <RelativeLayout
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content">
+                                <TextView
+                                    android:id="@+id/tv_edu_school_year"
+                                    android:layout_width="40dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="2007-2008"
+                                    android:textColor="@color/colorBlack"
+                                    android:textSize="8sp"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_school_year"
+                                    android:id="@+id/tv_edu_school_name"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="100dp"
+                                    android:layout_height="wrap_content"
+                                    android:text="Dhaka Residential public school and College"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+
+                                <TextView
+                                    android:layout_toRightOf="@id/tv_edu_school_name"
+                                    android:id="@+id/tv_edu_school_course"
+                                    android:layout_marginLeft="8dp"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:text="Course Details"
+                                    android:hyphenationFrequency="none"
+                                    android:lineSpacingMultiplier="0.5"
+                                    android:fontFamily="@font/balootammudoregular"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorBlack"/>
+                            </RelativeLayout>
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <Button
+                    android:id="@+id/back_template4"
+                    android:padding="0dp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:layout_gravity="center"
+                    android:text="Change Template"
+                    android:textSize="14sp"
+                    android:textColor="@color/colorPrimary1"
+                    android:background="@drawable/outline_btn_blue"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:textAllCaps="false"/>
+
+                <Button
+                    android:id="@+id/completePaymentTemplate4"
+                    android:padding="0dp"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:layout_margin="10dp"
+                    android:background="@drawable/btn_shape"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="16dp"
+                    android:text="Complete Payment"
+                    android:textSize="14sp"
+                    android:textColor="#FFFFFF"
+                    android:textAllCaps="false"/>
+
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+</LinearLayout>

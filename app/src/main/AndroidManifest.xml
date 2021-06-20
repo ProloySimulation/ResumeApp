@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.cvmaster.xosstech">
+
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/cv_master_launcher_logo"
+        android:label="@string/app_name"
+        android:requestLegacyExternalStorage="true"
+        android:roundIcon="@mipmap/cv_master_launcher_logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        android:usesCleartextTraffic="true">
+        <activity android:name=".GeneratePdf.PdfActivityTemplate4"></activity>
+        <activity android:name=".GeneratePdf.PdfActivityTemplate3" />
+        <activity android:name=".GeneratePdf.PdfActivityTemplate2" />
+        <activity android:name=".GeneratePdf.PdfActivityTemplate1" />
+        <activity android:name=".activity.FragmentShowActivity" />
+        <activity android:name=".templete.Template4_pdf" />
+        <activity android:name=".templete.Template3_pdf" />
+        <activity android:name=".templete.Template2_pdf" />
+        <activity android:name=".ChargingActivity" />
+        <activity android:name=".edit.EditResumePart2" />
+        <activity android:name=".edit.EditResumePart5" />
+        <activity android:name=".edit.EditResumePart6" />
+        <activity android:name=".edit.EditResumePart4" />
+        <activity android:name=".edit.EditResumePart3" />
+        <activity android:name=".edit.EditResumePart1" />
+        <activity android:name=".SendMail" />
+        <activity android:name=".BuildResumePDF_Part2" />
+        <activity android:name=".showallpdf.ShowMyPDF" />
+        <activity android:name=".UserSignInPart2" />
+        <activity android:name=".UserSignInPart1" />
+        <activity android:name=".InputActivities.BuildResumePart7" />
+        <activity android:name=".InputActivities.BuildResumePart6" />
+        <activity android:name=".templete.Template1_pdf" />
+        <activity android:name=".BuildResumePDF_Part1" />
+        <activity android:name=".InputActivities.BuildResumePart5" />
+        <activity android:name=".InputActivities.BuildResumePart4" />
+        <activity android:name=".InputActivities.BuildResumePart3" />
+        <activity android:name=".InputActivities.BuildResumePart2" />
+        <activity android:name=".InputActivities.BuildResumePart1" />
+        <activity android:name=".showallpdf.PdfActivity" />
+        <activity android:name=".SplashScreen">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".UserProfileActivity" />
+
+        <service android:name=".Notification.MyFirebaseInstanceIdService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name=".Notification.MyFirebaseMessagingService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+
+        <provider
+            android:name="androidx.core.content.FileProvider"
+            android:authorities="com.cvmaster.provider"
+            android:exported="false"
+            android:grantUriPermissions="true">
+
+            <!-- ressource file to create -->
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/file_paths" />
+        </provider>
+    </application>
+
+</manifest>

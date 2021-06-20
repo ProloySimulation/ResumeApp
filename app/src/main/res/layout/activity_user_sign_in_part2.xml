@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorPrimary1"
+    tools:context=".UserSignInPart2">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="32dp"
+                    android:gravity="center"
+                    android:text="Verify Code"
+                    android:fontFamily="@font/segoepr"
+                    android:textColor="@color/white"
+                    android:textSize="30sp"/>
+
+                <LinearLayout
+                    android:layout_width="200dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:background="@drawable/divider_drawble"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="16dp"
+                    android:gravity="center"
+                    android:layout_marginTop="16dp"
+                    android:text="Please Enter The Verification Code Sent To Your Mobile Number"
+                    android:textSize="14sp"
+                    android:textColor="@color/border" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center"
+                android:layout_marginTop="32dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp">
+
+                <EditText
+                    android:id="@+id/otpCode_EditText_UserRegistrationPart2"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginEnd="8dp"
+                    style="@style/EditText.Login"
+                    android:theme="@style/EditText.Login"
+                    android:textColor="#FFFFFF"
+                    android:hint="Enter 6 Digit Number"
+                    android:inputType="number"
+                    android:maxLength="6"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:imeOptions="actionNext"
+                    android:focusable="true"/>
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/verifyOTP_Button_UserRegistrationPart2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="center"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="8dp"
+                android:background="@drawable/btn_send_otp_shape"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Verify"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/colorPrimary1"/>
+
+            <LinearLayout
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/divider_drawble"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Didn't Get Code"
+                android:textStyle="bold"
+                android:layout_gravity="center"
+                android:textColor="@color/border"
+                android:textSize="14sp"
+                android:layout_marginTop="8dp"/>
+
+            <Button
+                android:id="@+id/resendCode_Button_UserRegistrationPart2"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:text="Resend Code"
+                android:background="@drawable/inputfinal"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:layout_gravity="center"/>
+
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

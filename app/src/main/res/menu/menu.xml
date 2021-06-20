@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_Saved_Items"
+            android:title="Saved Items"
+            android:icon="@drawable/ic_browse_saved_items"/>
+        <item
+            android:id="@+id/menu_Log_Out"
+            android:title="Log Out"
+            android:icon="@drawable/ic_log_out"/>
+    </group>
+
+</menu>

@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AndroidLayouts">
+    <shared>
+      <config>
+        <device id="pixel_xl" />
+        <device id="pixel_3" />
+      </config>
+    </shared>
+  </component>
+  <component name="AndroidLogFilters">
+    <option name="TOOL_WINDOW_LOG_LEVEL" value="error" />
+    <option name="TOOL_WINDOW_CONFIGURED_FILTER" value="No Filters" />
+    <option name="TOOL_WINDOW_REGEXP_FILTER" value="false" />
+  </component>
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="1st Push ( Template 4 )" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Proloy\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/app">
+          <activation />
+        </task>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ResumeApp" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ResumeApp" type="f1a62948:ProjectNode" />
+                <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="resourceFile" />
+        <option value="layoutResourceFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="GenerateSignedApkSettings">
+    <option name="EXPORT_PRIVATE_KEY" value="false" />
+    <option name="KEY_STORE_PATH" value="F:\Company\Projects\Projects\CV Master App\CvMasterKeyStore\demokey.jks" />
+    <option name="KEY_ALIAS" value="demokey" />
+    <option name="REMEMBER_PASSWORDS" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1afSTx4aUj3P3zDtvEKMPn0a9De" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ApkExportedModule" value="ResumeApp.app" />
+    <property name="BundleExportedModule" value="ResumeApp.app" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X" />
+    <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-31T16:26:17.695Z" />
+    <property name="ExportApk.ApkPath" value="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app" />
+    <property name="ExportApk.BuildVariants" value="release" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="android-custom-viewC:/Users/Proloy/.gradle/caches/modules-2/files-2.1/com.github.barteksc/android-pdf-viewer/2.8.2/3a6875f9abac8b069fc55194cc8aa5b3a1fcaa7c/android-pdf-viewer-2.8.2-sources.jar!/com/github/barteksc/pdfviewer/PDFView.java_SELECTED" value="PDFView" />
+    <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-29/android/widget/ViewAnimator.java_SELECTED" value="ViewAnimator" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="dart.analysis.tool.window.visible" value="false" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="multi-representation-previewC:/Users/User/AppData/Local/Android/Sdk/sources/android-29/android/widget/ViewAnimator.java_selected" value="Custom views" />
+    <property name="project.structure.last.edited" value="SDK Location" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="show.migrate.to.gradle.popup" value="false" />
+  </component>
+  <component name="RecentsManager">
+    <key name="android.template.-1561557263">
+      <recent name="com.cvmaster.xosstech.activity" />
+    </key>
+    <key name="android.template.-411397726">
+      <recent name="com.cvmaster.xosstech.fragment_template" />
+    </key>
+    <key name="android.template.-561440485">
+      <recent name="com.cvmaster.xosstech.activity" />
+    </key>
+    <key name="android.template.packageName">
+      <recent name="com.cvmaster.xosstech" />
+      <recent name="com.example.resumeapp" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.cvmaster.xosstech" />
+      <recent name="com.example.resumeapp" />
+    </key>
+    <key name="android.template.-854286610">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
+      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\font" />
+      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\java\com\cvmaster\xosstech\push_noti_serviceclass" />
+      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
+      <recent name="C:\Users\Drovo\AndroidStudioProjects\CV-MASTER\app\src\main\res\drawable" />
+    </key>
+    <key name="android.template.2013917060">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="android.template.-104350678">
+      <recent name="com.cvmaster.xosstech.templete_pdf" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Android App.app">
+    <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
+      <option name="TEST_OBJECT" value="class" />
+      <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="ResumeApp.app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="ALL_USERS" value="false" />
+      <option name="ALWAYS_INSTALL_WITH_PM" value="false" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+        <option name="STARTUP_NATIVE_MEMORY_PROFILING_ENABLED" value="false" />
+        <option name="NATIVE_MEMORY_SAMPLE_RATE_BYTES" value="2048" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <option name="SEARCH_ACTIVITY_IN_GLOBAL_SCOPE" value="false" />
+      <option name="SKIP_ACTIVITY_VALIDATION" value="false" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CV-MASTER [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CV-MASTER:app [androidDependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="androidDependencies" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CV-MASTER:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="signingReport" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="CV-MASTER:app [sourceSets]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$/app" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="sourceSets" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.CV-MASTER [signingReport]" />
+        <item itemvalue="Gradle.CV-MASTER:app [sourceSets]" />
+        <item itemvalue="Gradle.CV-MASTER:app [androidDependencies]" />
+        <item itemvalue="Gradle.CV-MASTER:app [signingReport]" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="" />
+      <created>1587125166730</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587125166730</updated>
+    </task>
+    <task id="LOCAL-00001" summary="Update Resume Part Added">
+      <created>1587451043322</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1587451043322</updated>
+    </task>
+    <task id="LOCAL-00002" summary="show resume before payment added">
+      <created>1588009497185</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1588009497185</updated>
+    </task>
+    <task id="LOCAL-00003" summary="passport size photo restriction added">
+      <created>1588420734384</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1588420734384</updated>
+    </task>
+    <task id="LOCAL-00004" summary="show template1 in xml part complete">
+      <created>1588514094106</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1588514094106</updated>
+    </task>
+    <task id="LOCAL-00005" summary="toggle problem solved and some little changes created">
+      <created>1589122384792</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1589122384792</updated>
+    </task>
+    <task id="LOCAL-00006" summary="user profile back button problem solved">
+      <created>1589143124176</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1589143124176</updated>
+    </task>
+    <task id="LOCAL-00007" summary="some changes occured">
+      <created>1589957772886</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1589957772886</updated>
+    </task>
+    <task id="LOCAL-00008" summary="double back press exit from userprofile activity updated">
+      <created>1590058222001</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1590058222001</updated>
+    </task>
+    <task id="LOCAL-00009" summary="show all education information listview in BuildResumePart7 fixed">
+      <created>1590072052373</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1590072052373</updated>
+    </task>
+    <task id="LOCAL-00010" summary="show all references information listview in BuildResumePart7 fixed">
+      <created>1590073675102</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1590073675102</updated>
+    </task>
+    <task id="LOCAL-00011" summary="show all work experiences information listview in BuildResumePart7 fixed">
+      <created>1590074432034</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1590074432034</updated>
+    </task>
+    <task id="LOCAL-00012" summary="some textviews changed">
+      <created>1590303056365</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1590303056365</updated>
+    </task>
+    <task id="LOCAL-00013" summary="photo size restriction added">
+      <created>1590595206441</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1590595206441</updated>
+    </task>
+    <task id="LOCAL-00014" summary="all set up">
+      <created>1590822510158</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1590822510158</updated>
+    </task>
+    <task id="LOCAL-00015" summary="latest 2 resume templates work completed">
+      <created>1612854536808</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1612854536808</updated>
+    </task>
+    <task id="LOCAL-00016" summary="divide templete use fragment from BuildResumePart1">
+      <created>1618640892902</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1618640892902</updated>
+    </task>
+    <task id="LOCAL-00017" summary="complete templete4 100% done">
+      <created>1619444391516</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1619444391516</updated>
+    </task>
+    <task id="LOCAL-00018" summary="icon add in pdf templete 2">
+      <created>1620295389757</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1620295389757</updated>
+    </task>
+    <task id="LOCAL-00019" summary="font add in pdf templete all">
+      <created>1620456497882</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1620456497883</updated>
+    </task>
+    <task id="LOCAL-00020" summary="v6">
+      <created>1621180434943</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1621180434943</updated>
+    </task>
+    <task id="LOCAL-00021" summary="v6">
+      <created>1621180509046</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1621180509046</updated>
+    </task>
+    <task id="LOCAL-00022" summary="pushNotification added">
+      <created>1622874187280</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1622874187280</updated>
+    </task>
+    <task id="LOCAL-00023" summary="1st Push ( Template 4 )">
+      <created>1623066737984</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1623066737985</updated>
+    </task>
+    <task id="LOCAL-00024" summary="1st Push ( Template 4 )">
+      <created>1623140866945</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1623140866945</updated>
+    </task>
+    <task id="LOCAL-00025" summary="1st Push ( Template 4 )">
+      <created>1623147952340</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1623147952340</updated>
+    </task>
+    <task id="LOCAL-00026" summary="1st Push ( Template 4 )">
+      <created>1624202836245</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1624202836245</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
+    <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Update Resume Part Added" />
+    <MESSAGE value="show resume before payment added" />
+    <MESSAGE value="passport size photo restriction added" />
+    <MESSAGE value="show templte1 in xml part complete" />
+    <MESSAGE value="show template1 in xml part complete" />
+    <MESSAGE value="toggle problem solved and some little changes created" />
+    <MESSAGE value="user profile back button problem solved" />
+    <MESSAGE value="some changes occured" />
+    <MESSAGE value="double back press exit from userprofile activity updated" />
+    <MESSAGE value="show all education information listview in BuildResumePart7 fixed" />
+    <MESSAGE value="show all references information listview in BuildResumePart7 fixed" />
+    <MESSAGE value="show all work experiences information listview in BuildResumePart7 fixed" />
+    <MESSAGE value="some textviews changed" />
+    <MESSAGE value="photo size restriction added" />
+    <MESSAGE value="all set up" />
+    <MESSAGE value="latest 2 resume templates work completed" />
+    <MESSAGE value="divide templete use fragment from BuildResumePart1" />
+    <MESSAGE value="complete templete4 100% done" />
+    <MESSAGE value="icon add in pdf templete 2" />
+    <MESSAGE value="font add in pdf templete all" />
+    <MESSAGE value="v6" />
+    <MESSAGE value="pushNotification added" />
+    <MESSAGE value="1st Push ( Template 4 )" />
+    <option name="LAST_COMMIT_MESSAGE" value="1st Push ( Template 4 )" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="317" y="176" key="#PSD" timestamp="1623061087209">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="317" y="176" key="#PSD/0.0.1600.860@0.0.1600.860" timestamp="1623061087209" />
+    <state x="597" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1623647649796">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="573" y="118" key="#com.intellij.ide.util.MemberChooser/0.0.1536.824@0.0.1536.824" timestamp="1618639019511" />
+    <state x="597" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1623647649796" />
+    <state x="573" y="292" width="480" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1623735931500">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="550" y="280" width="435" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1617960462391" />
+    <state x="573" y="292" width="480" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1623735931500" />
+    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623219621128">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709424213" />
+    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1623219621128" />
+    <state x="131" y="85" width="1407" height="666" key="AVDManager" timestamp="1623147076958">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1619949703857" />
+    <state x="131" y="85" width="1407" height="666" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1623147076958" />
+    <state x="380" y="184" key="AndroidCreateResourceFileDialog" timestamp="1623662002706">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="380" y="184" key="AndroidCreateResourceFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1623662002706" />
+    <state x="338" y="0" key="CommitChangelistDialog2" timestamp="1622874184451">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="338" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1622874184451" />
+    <state x="571" y="174" key="FileChooserDialogImpl" timestamp="1624203977743">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620716929776" />
+    <state x="571" y="174" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1624203977743" />
+    <state x="669" y="323" key="Github.ShareDialog" timestamp="1624204292860">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="642" y="309" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1618640451430" />
+    <state x="669" y="323" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1624204292860" />
+    <state width="1489" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1489" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1489" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1489" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state x="395" y="39" key="SettingsEditor" timestamp="1624205430859">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="395" y="39" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1624205430859" />
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1624202867888">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="360" y="144" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1622874197242" />
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1624202867888" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1623912622993">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="583" y="189" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709455191" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1623912622993" />
+    <state x="382" y="113" key="new project wizard" timestamp="1623777036668">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="382" y="113" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1623777036668" />
+    <state x="456" y="195" key="run.anything.popup" timestamp="1623063804764">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1623063804764" />
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1623914776017">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
+    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1623914776017" />
+  </component>
+</project>

@@ -10,6 +10,7 @@ public class ResumeProfilePart1 {
     public static String present_address;
     private static String facebook_id;
     private static String linkedin_id;
+    private static String jobTitle;
 
     public static Uri uri;
 
@@ -49,6 +50,10 @@ public class ResumeProfilePart1 {
         ResumeProfilePart1.present_address = present_address;
     }
 
+    public static void setJobTitle(String jobTitle) {
+        ResumeProfilePart1.jobTitle = jobTitle;
+    }
+
     public static String getImagePath() {
         return imagePath;
     }
@@ -75,5 +80,9 @@ public class ResumeProfilePart1 {
 
     public static String getlinkedin_id() {
         return linkedin_id;
+    }
+
+    public static String getJobTitle() {
+        return jobTitle;
     }
 }

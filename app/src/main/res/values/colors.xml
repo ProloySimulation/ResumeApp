@@ -11,6 +11,8 @@
     <color name="transparent_white">#30000000</color>
     <color name="grey">	#808080</color>
     <color name="border">#D5D5D5</color>
+    <color name="blue">#3895D3</color>
+    <color name="orange">#ff8b00</color>
     <color name="clr_bck">#F1EEEE</color>
     <color name="secondary_button">#E2E9ED</color>
     <color name="template_bck">#F3F3F3</color>

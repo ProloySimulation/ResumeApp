@@ -655,6 +655,7 @@
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
+
                             </RelativeLayout>
 
                         </LinearLayout>

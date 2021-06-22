@@ -182,6 +182,28 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:text="Current Job Title"
+                    android:textColor="@color/headingBlack"
+                    android:layout_marginLeft="30dp"/>
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart1_Position"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/inputfinal"
+                    android:hint="Current Position"
+                    android:textSize="14sp"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="16dp"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:text="Facebook"
                     android:textColor="@color/headingBlack"
                     android:layout_marginLeft="30dp"/>

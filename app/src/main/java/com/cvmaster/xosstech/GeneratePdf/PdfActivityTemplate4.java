@@ -61,6 +61,7 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
     private TextView email2;
     private TextView location2;
     private TextView contact2;
+    private TextView tvJobTitle;
 
     private TextView skills2;
 
@@ -159,6 +160,7 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
         imageView2 = findViewById(R.id.imvProfileTemplate4);
         imageView2.setImageURI(Uri.fromFile(file));
 
+        tvJobTitle = findViewById(R.id.job_title_main);
         tvFacebook = findViewById(R.id.contact_fb);
         tvLinkedin = findViewById(R.id.contact_linkedin);
 
@@ -175,6 +177,7 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
         contact2.setText(ResumeProfilePart1.getContact_number());
         tvFacebook.setText(ResumeProfilePart1.getfacebook_id());
         tvLinkedin.setText(ResumeProfilePart1.getlinkedin_id());
+        tvJobTitle.setText(ResumeProfilePart1.getJobTitle());
 
         skills2 = findViewById(R.id.tv_skills_msword_template4);
 

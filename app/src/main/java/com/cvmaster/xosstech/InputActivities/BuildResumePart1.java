@@ -44,6 +44,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
     private EditText editText_PresentAddress;
     private EditText etFacebookId;
     private EditText etLinkedinId;
+    private EditText etCurrentJobTitle;
     private Button button_Next;
 
     private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE = 101;
@@ -71,6 +72,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
         editText_ContactNumber= (EditText) findViewById(R.id.editText_BuildResumePart1_ContactNumber);
         editText_Email = (EditText) findViewById(R.id.editText_BuildResumePart1_Email);
         editText_PresentAddress = (EditText) findViewById(R.id.editText_BuildResumePart1_PresentAddress);
+        etCurrentJobTitle = findViewById(R.id.editText_BuildResumePart1_Position);
 
         button_Next = (Button) findViewById(R.id.button_BuildResumePart1_Next);
         button_Next.setOnClickListener(this);
@@ -93,6 +95,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
         String present_address = null;
         String facebook_id = null;
         String linkedin_id = null;
+        String jobTitle = null;
 
         imagePath = currentPhotoPath;
         name = editText_Name.getText().toString().trim();
@@ -101,6 +104,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
         present_address = editText_PresentAddress.getText().toString().trim();
         facebook_id = etFacebookId.getText().toString().trim();
         linkedin_id = etLinkedinId.getText().toString().trim();
+        jobTitle = etCurrentJobTitle.getText().toString().trim();
 
         if (imagePath.isEmpty()){
             Toast.makeText(this,"Please Select Image From Your Gallery",Toast.LENGTH_LONG).show();
@@ -131,7 +135,14 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        SaveData(imagePath,name,contact_number,email,present_address,facebook_id,linkedin_id);
+        if(jobTitle.isEmpty())
+        {
+            etCurrentJobTitle.setError("ENTER PRESENT ADDRESS!");
+            etCurrentJobTitle.requestFocus();
+            return;
+        }
+
+        SaveData(imagePath,name,contact_number,email,present_address,facebook_id,linkedin_id,jobTitle);
 
 
         GoToNextIntent();
@@ -142,7 +153,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
 
 
     private void SaveData(String imagePath,String name,String contact_number,String email,String present_address,
-                          String facebookId,String linkediId){
+                          String facebookId,String linkediId,String jobTitle){
         ResumeProfilePart1.setImagePath(imagePath);
         ResumeProfilePart1.setName(name);
         ResumeProfilePart1.setEmail(email);
@@ -150,6 +161,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
         ResumeProfilePart1.setPresent_address(present_address);
         ResumeProfilePart1.setFacebook(facebookId);
         ResumeProfilePart1.setLinkedin(linkediId);
+        ResumeProfilePart1.setJobTitle(jobTitle);
     }
 
     private void GoToNextIntent(){

@@ -108,7 +108,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
                         <TextView
                             android:id="@+id/work_exp_heading"
@@ -201,7 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
 
                         <RelativeLayout
@@ -274,7 +274,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
 
                         <RelativeLayout
@@ -347,7 +347,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
                         android:orientation="vertical"
-                        android:visibility="visible">
+                        android:visibility="gone">
 
 
                         <RelativeLayout
@@ -392,7 +392,7 @@
                                 android:layout_height="13dp"
                                 android:layout_below="@id/tv_wrk_exp4_cname5"
                                 android:layout_marginLeft="8dp"
-                                android:layout_toRightOf="@id/tv_wrk_exp4_job_title"
+                                android:layout_toRightOf="@id/tv_wrk_exp4_job_title5"
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Location"
                                 android:textColor="@color/colorBlack"
@@ -437,16 +437,16 @@
                             android:background="@color/orange"/>
 
                         <TextView
-                            android:id="@+id/tv_skills_msword"
+                            android:id="@+id/tv_skills_msword_template5"
                             android:layout_below="@id/skills_heading"
                             android:layout_width="100dp"
-                            android:layout_height="12dp"
+                            android:layout_height="wrap_content"
                             android:text="Microsoft Word"
                             android:fontFamily="@font/balootammudoregular"
                             android:textSize="8sp"
                             android:textColor="@color/colorBlack"/>
 
-                        <TextView
+                       <!-- <TextView
                             android:id="@+id/tv_skills_msexcel"
                             android:layout_below="@id/tv_skills_msword"
                             android:layout_width="100dp"
@@ -494,7 +494,7 @@
                             android:text="Hardware"
                             android:fontFamily="@font/balootammudoregular"
                             android:textSize="8sp"
-                            android:textColor="@color/colorBlack"/>
+                            android:textColor="@color/colorBlack"/>-->
                     </RelativeLayout>
 
                     <!--Language-->
@@ -697,7 +697,7 @@
 
                                 <View
                                     android:id="@+id/view_edu_head"
-                                    android:layout_width="80dp"
+                                    android:layout_width="50dp"
                                     android:layout_height="6dp"
                                     android:layout_marginTop="6dp"
                                     android:layout_marginRight="20dp"
@@ -778,7 +778,8 @@
                                 android:id="@+id/linearlayout_EducationalQualification_2_template5"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
 
                                 <TextView
                                     android:id="@+id/tv_educationQualification_2_template5"
@@ -835,7 +836,8 @@
                                 android:id="@+id/linearlayout_EducationalQualification_3_template5"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
 
                                 <TextView
                                     android:id="@+id/tv_educationQualification_3_template5"
@@ -892,7 +894,8 @@
                                 android:id="@+id/linearlayout_EducationalQualification_4_template5"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
 
                                 <TextView
                                     android:id="@+id/tv_educationQualification_4_template5"
@@ -949,7 +952,8 @@
                                 android:id="@+id/linearlayout_EducationalQualification_5_template5"
                                 android:orientation="vertical"
                                 android:layout_width="match_parent"
-                                android:layout_height="wrap_content">
+                                android:layout_height="wrap_content"
+                                android:visibility="gone">
 
                                 <TextView
                                     android:id="@+id/tv_educationQualification_5_template5"
@@ -1000,12 +1004,8 @@
                                     android:textSize="8sp"
                                     android:textColor="@color/colorBlack"/>
                             </LinearLayout>
-
-
-
                         </LinearLayout>
                     </RelativeLayout>
-
 
                     <!--References-->
                     <RelativeLayout
@@ -1013,6 +1013,7 @@
                         android:layout_below="@id/rl_education"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:visibility="gone"
                         android:layout_marginTop="8dp">
 
                         <RelativeLayout
@@ -1023,7 +1024,7 @@
 
                             <View
                                 android:id="@+id/view_references_head"
-                                android:layout_width="80dp"
+                                android:layout_width="50dp"
                                 android:layout_height="6dp"
                                 android:layout_marginTop="6dp"
                                 android:layout_marginRight="20dp"

@@ -182,7 +182,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         imageView2 = (ImageView) view.findViewById(R.id.img_person);
         imageView2.setImageURI(Uri.fromFile(file));
 
-        tvFacebook = view.findViewById(R.id.contact_fb);
+//        tvFacebook = view.findViewById(R.id.contact_fb);
         tvLinkedin = view.findViewById(R.id.tv_contact_linkedin5);
 
         name2 = (TextView) view.findViewById(R.id.tv_name_heading5);
@@ -196,10 +196,10 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         email2.setText(ResumeProfilePart1.getEmail());
         location2.setText(ResumeProfilePart1.getPresent_address());
         contact2.setText(ResumeProfilePart1.getContact_number());
-        tvFacebook.setText(ResumeProfilePart1.getfacebook_id());
+//        tvFacebook.setText(ResumeProfilePart1.getfacebook_id());
         tvLinkedin.setText(ResumeProfilePart1.getlinkedin_id());
 
-        skills2 = (TextView) view.findViewById(R.id.tv_skills_msword_template4);
+        skills2 = (TextView) view.findViewById(R.id.tv_skills_msword_template5);
 
         String _skills2 = "";
 
@@ -214,8 +214,8 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         bangla_skill2 = (TextView) view.findViewById(R.id.tv_language_bangla_pr5);
         english_skill2 = (TextView) view.findViewById(R.id.tv_language_english_pr5);
 
- /*       bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
-        english_skill2.setText(ResumeProfilePart3.english_skill_level);*/
+        bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
+        english_skill2.setText(ResumeProfilePart3.english_skill_level);
 
         linearLayout_Head2 = (RelativeLayout) view.findViewById(R.id.rl_references);
 
@@ -363,8 +363,8 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_educationQualification_1.setText(model.getQualification_name());
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
-            tv_Result_5.setText(model.getResult());
-            tv_boardName_5.setText(model.getBoard_name());
+            tv_Result_1.setText(model.getResult());
+            tv_boardName_1.setText(model.getBoard_name());
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 1) {
@@ -425,7 +425,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         }
 
         if (v == getButton_CompletePayment2){
-            ResumeTemplate.templateName = "template4";
+            ResumeTemplate.templateName = "template5";
             verifyTheProcess();
 
             /*

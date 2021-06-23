@@ -26,28 +26,39 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="1st Push ( Template 4 )">
-      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/heading.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/locate.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/phone.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template5.xml" afterDir="false" />
+    <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="Template5(Fragment Add)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate5.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/template5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/jarAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/javaCompile/taskHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate4.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ResumeProfilePart1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ResumeProfilePart1.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part1.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/BuildResumePDF_Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/BuildResumePDF_Part1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserProfileActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserProfileActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/activity/FragmentShowActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/activity/FragmentShowActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete4Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete4Fragment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_pdf__part1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_pdf__part1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template5.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Proloy\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@bc16c43f]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -163,6 +174,9 @@
     </key>
     <key name="android.template.-1728949341">
       <recent name="com.cvmaster.xosstech.templete" />
+    </key>
+    <key name="android.template.-941777169">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
     </key>
     <key name="android.template.-104350678">
       <recent name="com.cvmaster.xosstech.templete_pdf" />
@@ -513,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624202836245</updated>
     </task>
-    <option name="localTasksCounter" value="27" />
+    <task id="LOCAL-00027" summary="Template5(Fragment Add)">
+      <created>1624362224207</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1624362224207</updated>
+    </task>
+    <option name="localTasksCounter" value="28" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -552,7 +573,8 @@
     <MESSAGE value="v6" />
     <MESSAGE value="pushNotification added" />
     <MESSAGE value="1st Push ( Template 4 )" />
-    <option name="LAST_COMMIT_MESSAGE" value="1st Push ( Template 4 )" />
+    <MESSAGE value="Template5(Fragment Add)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Template5(Fragment Add)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="317" y="176" key="#PSD" timestamp="1623061087209">
@@ -597,24 +619,40 @@
     </state>
     <state x="642" y="309" key="Github.ShareDialog/0.0.1536.824@0.0.1536.824" timestamp="1618640451430" />
     <state x="669" y="323" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1624204292860" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.bottom" timestamp="1624443654680">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
     <state width="1489" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1624443654680" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.center" timestamp="1624443654680">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
     <state width="1489" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1624443654680" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.left" timestamp="1624443654679">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
     <state width="1489" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1624443654679" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.right" timestamp="1624443654680">
+      <screen x="0" y="0" width="1600" height="860" />
+    </state>
     <state width="1489" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
+    <state width="1557" height="-9" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1624443654680" />
     <state x="395" y="39" key="SettingsEditor" timestamp="1624205430859">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="395" y="39" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1624205430859" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1624202867888">
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1624362236157">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="360" y="144" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1622874197242" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1624202867888" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1624356766371">
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1624362236157" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1624430001170">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="189" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709455191" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1624356766371" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1624430001170" />
     <state x="382" y="113" key="new project wizard" timestamp="1623777036668">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

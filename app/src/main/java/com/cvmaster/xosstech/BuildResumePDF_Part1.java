@@ -36,14 +36,11 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
     private Button button_Data;
     private static final int STOREGE_CODE = 1000;
 
-
-
-
-
     private CardView button_Template1;
     private CardView button_Template2;
     private CardView button_Template3;
     private CardView button_Template4;
+    private CardView button_Template5;
 
     //Templete 1
   /*
@@ -613,6 +610,9 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
         button_Template4 = (CardView) findViewById(R.id.button_Template4);
         button_Template4.setOnClickListener(this);
 
+        button_Template5 = findViewById(R.id.button_Template5);
+        button_Template5.setOnClickListener(this);
+
         button_Data = (Button) findViewById(R.id.button_BuildResumePDF_Part5_Data);
         button_Data.setOnClickListener(this);
 
@@ -1128,6 +1128,15 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
         }
         if (view == button_Template4){
             startActivity(new Intent(this, FragmentShowActivity.class).putExtra("t",4));
+
+           /* viewFlipper.setInAnimation(this,R.anim.slide_in_right);
+            viewFlipper.setOutAnimation(this,R.anim.slide_out_left);
+            viewFlipper.setDisplayedChild(4);*/
+        }
+
+        if(view == button_Template5)
+        {
+            startActivity(new Intent(this, FragmentShowActivity.class).putExtra("t",5));
 
            /* viewFlipper.setInAnimation(this,R.anim.slide_in_right);
             viewFlipper.setOutAnimation(this,R.anim.slide_out_left);

@@ -16,6 +16,7 @@ import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate1;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate2;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate3;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate4;
+import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate5;
 import com.cvmaster.xosstech.model.ResumeTemplate;
 import com.cvmaster.xosstech.network.ApiClient;
 import com.cvmaster.xosstech.network.ApiInterface;
@@ -66,6 +67,7 @@ public class ChargingActivity extends AppCompatActivity {
         button_Done = (Button) findViewById(R.id.button_Done);
 
         button_Done.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View view) {
               /* String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
@@ -237,9 +239,7 @@ public class ChargingActivity extends AppCompatActivity {
                         dialog.cancel();
                         finish();
                         if (ResumeTemplate.templateName == "template1"){
-
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate1.class));
-
                         } else if(ResumeTemplate.templateName == "template2"){
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate2.class));
                         } else if (ResumeTemplate.templateName == "template3"){
@@ -247,6 +247,9 @@ public class ChargingActivity extends AppCompatActivity {
                         }
                         else if (ResumeTemplate.templateName == "template4"){
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate4.class));
+                        }
+                        else if (ResumeTemplate.templateName == "template5"){
+                            startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate5.class));
                         }
                     }
                 });

@@ -17,7 +17,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".GeneratePdf.PdfActivityTemplate4"></activity>
+        <activity android:name=".GeneratePdf.PdfActivityTemplate5"></activity>
+        <activity android:name=".GeneratePdf.PdfActivityTemplate4" />
         <activity android:name=".GeneratePdf.PdfActivityTemplate3" />
         <activity android:name=".GeneratePdf.PdfActivityTemplate2" />
         <activity android:name=".GeneratePdf.PdfActivityTemplate1" />

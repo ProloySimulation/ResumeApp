@@ -7,6 +7,7 @@ import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -46,7 +47,7 @@ public class ChargingActivity extends AppCompatActivity {
         CHARGE = (float) 10.0;
 
         if (ResumeTemplate.templateName == "template1"){
-            CHARGE = (float) 10.0;
+            CHARGE = (float) 1.0;
             textView_chargeStatus.setText("You Will Be Charged BDT 10(+VAT) To Complete Your Resume");
         } else if (ResumeTemplate.templateName == "template2"){
             CHARGE = (float) 20.0;
@@ -70,11 +71,11 @@ public class ChargingActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-              /* String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-                check_sub(msisdn);*/
+               String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+                check_sub(msisdn);
 
                 //for test
-                intent_to_next();
+               /* intent_to_next();*/
             }
         });
         
@@ -152,7 +153,7 @@ public class ChargingActivity extends AppCompatActivity {
         Call<ModelResponses> call = service.subscription(msisdn);
         call.enqueue(new Callback<ModelResponses>() {
             @Override
-            public void onResponse(Call<ModelResponses> call, Response<ModelResponses> response) {
+            public void onResponse(Call<ModelResponses> call, final Response<ModelResponses> response) {
                 if (response.isSuccessful()) {
                     progressDialog.dismiss();
                     ModelResponses responses = response.body();
@@ -164,6 +165,9 @@ public class ChargingActivity extends AppCompatActivity {
                                 "OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
+                                        ModelResponses responses = response.body();
+                                        Toast.makeText(ChargingActivity.this, responses.getResponse().toString(), Toast.LENGTH_SHORT).show();
+                                        Log.d("response", responses.getResponse().toString());
                                         dialog.cancel();
                                     }
                                 });
@@ -171,7 +175,7 @@ public class ChargingActivity extends AppCompatActivity {
                         AlertDialog alert11 = builder1.create();
                         alert11.show();
                     }else{
-
+                        Toast.makeText(ChargingActivity.this, "Error", Toast.LENGTH_SHORT).show();
                     }
                 } else {
                     progressDialog.dismiss();

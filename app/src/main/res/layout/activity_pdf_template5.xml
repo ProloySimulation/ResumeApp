@@ -12,7 +12,9 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:id="@+id/llPdfTemplate5">
 
             <RelativeLayout
                 android:id="@+id/rl_heading_top"
@@ -86,7 +88,7 @@
                         android:layout_marginTop="14dp"
                         android:layout_marginLeft="20dp"
                         android:layout_toEndOf="@id/tv_profile_heading"
-                        android:background="@color/colorBlack"/>
+                        android:background="@color/blue"/>
 
 
                     <TextView
@@ -603,6 +605,7 @@
                             android:layout_toRightOf="@id/img_location"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:layout_marginTop="2dp"
                             android:layout_marginLeft="8dp"
                             android:text="H77 R9 Block C Niketon Housing Society Dhaka"
                             android:fontFamily="@font/balootammudoregular"
@@ -636,7 +639,7 @@
                             android:layout_below="@id/tv_contact_phone5"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:background="@drawable/email"/>
+                            android:background="@drawable/email_template5"/>
 
                         <TextView
                             android:id="@+id/tv_contact_email5"
@@ -657,7 +660,7 @@
                             android:layout_below="@id/tv_contact_email5"
                             android:layout_width="20dp"
                             android:layout_height="20dp"
-                            android:background="@drawable/ic_linkedin"/>
+                            android:background="@drawable/linkedin"/>
 
                         <TextView
                             android:id="@+id/tv_contact_linkedin5"

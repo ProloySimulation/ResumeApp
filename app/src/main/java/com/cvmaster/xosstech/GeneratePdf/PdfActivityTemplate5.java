@@ -49,7 +49,7 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
 
     private String pdfFileName="";
     private Bitmap bitmap;
-    private LinearLayout llPdf;
+    private RelativeLayout llPdf;
 
     private ViewFlipper viewFlipper;
     private Button btnPrint;
@@ -164,12 +164,14 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
 
         viewFlipper = findViewById(R.id.viewFlipper);
 
+        llPdf = findViewById(R.id.llPdfTemplate5);
+
         btnPrint = findViewById(R.id.btnTemplate5);
         btnPrint.setOnClickListener(this);
 
         btnSendEmail = findViewById(R.id.button_SendMail_pdfShowTemplate5);
         btnSendEmail.setOnClickListener(this);
-
+        btnSendEmail.setVisibility(View.GONE);
 
         imageView2 = findViewById(R.id.img_person);
         imageView2.setImageURI(Uri.fromFile(file));

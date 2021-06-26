@@ -151,6 +151,7 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
 
     private TextView tvFacebook;
     private TextView tvLinkedin;
+    private TextView tvJobtitle ;
 
     private Templete4ViewModel mViewModel;
 
@@ -184,6 +185,7 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
         email2 = findViewById(R.id.tv_contact_email5);
         location2 = findViewById(R.id.tv_contact_address5);
         contact2 = findViewById(R.id.tv_contact_phone5);
+        tvJobtitle = findViewById(R.id.tv_job_title_template5);
 
         name2.setText(ResumeProfilePart1.getName());
         career_objective2.setText(ResumeProfilePart2.career_objective);
@@ -192,6 +194,7 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
         contact2.setText(ResumeProfilePart1.getContact_number());
 //        tvFacebook.setText(ResumeProfilePart1.getfacebook_id());
         tvLinkedin.setText(ResumeProfilePart1.getlinkedin_id());
+        tvJobtitle.setText(ResumeProfilePart1.getJobTitle());
 
         skills2 = findViewById(R.id.tv_skills_msword_template5);
 

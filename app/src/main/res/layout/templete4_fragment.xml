@@ -59,7 +59,7 @@
                         android:textColor="@color/white"/>
 
                     <TextView
-                        android:id="@+id/job_title_main"
+                        android:id="@+id/job_title_main_template4"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="ANDROID DEVELOPER"

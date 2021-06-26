@@ -54,6 +54,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
     private TextView email2;
     private TextView location2;
     private TextView contact2;
+    private TextView tvJobTitle;
 
     private TextView skills2;
 
@@ -190,6 +191,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         email2 = (TextView) view.findViewById(R.id.tv_contact_email5);
         location2 = (TextView) view.findViewById(R.id.tv_contact_address5);
         contact2 = (TextView) view.findViewById(R.id.tv_contact_phone5);
+        tvJobTitle = view.findViewById(R.id.tv_job_title);
 
         name2.setText(ResumeProfilePart1.getName());
         career_objective2.setText(ResumeProfilePart2.career_objective);
@@ -198,6 +200,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
         contact2.setText(ResumeProfilePart1.getContact_number());
 //        tvFacebook.setText(ResumeProfilePart1.getfacebook_id());
         tvLinkedin.setText(ResumeProfilePart1.getlinkedin_id());
+        tvJobTitle.setText(ResumeProfilePart1.getJobTitle());
 
         skills2 = (TextView) view.findViewById(R.id.tv_skills_msword_template5);
 

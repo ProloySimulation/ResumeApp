@@ -1,5 +1,6 @@
 package com.cvmaster.xosstech;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -25,6 +26,13 @@ import com.cvmaster.xosstech.network.model.ModelResponses;
 import com.cvmaster.xosstech.templete.Template2_pdf;
 import com.cvmaster.xosstech.templete.Template3_pdf;
 import com.cvmaster.xosstech.templete.Template4_pdf;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -35,19 +43,23 @@ public class ChargingActivity extends AppCompatActivity {
     private Button button_Done;
     private float CHARGE;
     private TextView textView_chargeStatus;
+    private DatabaseReference reference ;
+    private String downloadCount;
+    private int count;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_charging_activity);
         textView_chargeStatus = (TextView) findViewById(R.id.chargeStatus);
+        reference = FirebaseDatabase.getInstance().getReference().child("count");
 
         //Toast.makeText(this,ResumeTemplate.templateName,Toast.LENGTH_LONG).show();
 
         CHARGE = (float) 10.0;
 
         if (ResumeTemplate.templateName == "template1"){
-            CHARGE = (float) 1.0;
+            CHARGE = (float) 10.0;
             textView_chargeStatus.setText("You Will Be Charged BDT 10(+VAT) To Complete Your Resume");
         } else if (ResumeTemplate.templateName == "template2"){
             CHARGE = (float) 20.0;
@@ -59,6 +71,10 @@ public class ChargingActivity extends AppCompatActivity {
         else if (ResumeTemplate.templateName == "template4"){
             CHARGE = (float) 10.0;
             textView_chargeStatus.setText("You Will Be Charged BDT 10(+VAT) To Complete Your Resume");
+        }
+        else if (ResumeTemplate.templateName == "template5"){
+            CHARGE = (float) 20.0;
+            textView_chargeStatus.setText("You Will Be Charged BDT 20(+VAT) To Complete Your Resume");
         }
 
         //CHARGE = (float) 1.0;
@@ -75,7 +91,7 @@ public class ChargingActivity extends AppCompatActivity {
                 check_sub(msisdn);
 
                 //for test
-               /* intent_to_next();*/
+//                intent_to_next();
             }
         });
         
@@ -96,6 +112,8 @@ public class ChargingActivity extends AppCompatActivity {
                 if (response.isSuccessful()) {
                    progressDialog.dismiss();
                     ModelResponses responses = response.body();
+//                    Toast.makeText(ChargingActivity.this, responses.getResponse().toString(), Toast.LENGTH_SHORT).show();
+//                    Log.d("yo",responses.getResponse().toString());
                     if (responses.getResponse().equals("UNREGISTERED") || responses.getResponse().equals("null") ) {
                         UnRegisteredDialog(msisdn);
                     }else{
@@ -165,9 +183,9 @@ public class ChargingActivity extends AppCompatActivity {
                                 "OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        ModelResponses responses = response.body();
+                                        /*ModelResponses responses = response.body();
                                         Toast.makeText(ChargingActivity.this, responses.getResponse().toString(), Toast.LENGTH_SHORT).show();
-                                        Log.d("response", responses.getResponse().toString());
+                                        Log.d("response", responses.getResponse().toString());*/
                                         dialog.cancel();
                                     }
                                 });
@@ -243,17 +261,32 @@ public class ChargingActivity extends AppCompatActivity {
                         dialog.cancel();
                         finish();
                         if (ResumeTemplate.templateName == "template1"){
+
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate1.class));
+                            cheack("template1");
+
                         } else if(ResumeTemplate.templateName == "template2"){
+
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate2.class));
+                            cheack("template2");
+
                         } else if (ResumeTemplate.templateName == "template3"){
-                            startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate3.class));
+
+                            startActivity(new Intent(ChargingActivity.this, Template3_pdf.class));
+                            cheack("template3");
+
                         }
                         else if (ResumeTemplate.templateName == "template4"){
+
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate4.class));
+                            cheack("template4");
+
                         }
                         else if (ResumeTemplate.templateName == "template5"){
+
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate5.class));
+                            cheack("template5");
+
                         }
                     }
                 });
@@ -292,4 +325,25 @@ public class ChargingActivity extends AppCompatActivity {
         Intent intent = new Intent(this, UserProfileActivity.class);
         startActivity(intent);
     }
+
+    private void cheack(final String templateName) {
+
+        reference.child(templateName).addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+
+                downloadCount = dataSnapshot.child("count").getValue().toString();
+                count = Integer.parseInt(downloadCount);
+                count++ ;
+                reference.child(templateName).child("count").setValue(count);
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getApplicationContext(), "Opsss.... Something is wrong", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+
 }

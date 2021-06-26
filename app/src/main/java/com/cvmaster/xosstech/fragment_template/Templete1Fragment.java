@@ -215,8 +215,8 @@ public class Templete1Fragment extends Fragment implements View.OnClickListener{
         textView_tv_email.setText(ResumeProfilePart1.getEmail());
         textView_tv_Address.setText(ResumeProfilePart1.getPresent_address());
 
-    /*    File file = new File(ResumeProfilePart1.getImagePath());
-        imageView_image.setImageURI(Uri.fromFile(file));*/
+        File file = new File(ResumeProfilePart1.getImagePath());
+        imageView_image.setImageURI(Uri.fromFile(file));
 
         //Part 2
         textView_tv_Career_Objective_Container = (TextView) view.findViewById(R.id.tv_Career_Objective_Container);

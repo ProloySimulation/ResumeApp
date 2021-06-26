@@ -69,6 +69,7 @@ public class Templete4Fragment extends Fragment implements View.OnClickListener{
     private TextView tv_ref1_company;
     private TextView tv_ref1_email;
     private TextView tv_ref1_contactnumber;
+    private TextView tvJobTitle;
 
     private LinearLayout linearLayout_layout2;
     private TextView tv_ref2_name;
@@ -177,6 +178,7 @@ public class Templete4Fragment extends Fragment implements View.OnClickListener{
         email2 = (TextView) view.findViewById(R.id.contact_email);
         location2 = (TextView) view.findViewById(R.id.contact_phone);
         contact2 = (TextView) view.findViewById(R.id.contact_address);
+        tvJobTitle = view.findViewById(R.id.job_title_main_template4);
 
         name2.setText(ResumeProfilePart1.getName());
         career_objective2.setText(ResumeProfilePart2.career_objective);
@@ -203,6 +205,7 @@ public class Templete4Fragment extends Fragment implements View.OnClickListener{
 
         bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
         english_skill2.setText(ResumeProfilePart3.english_skill_level);
+        tvJobTitle.setText(ResumeProfilePart1.getJobTitle());
 
         linearLayout_Head2 = (LinearLayout) view.findViewById(R.id.linearLayout_Head_References_4);
 

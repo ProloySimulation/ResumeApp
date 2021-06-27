@@ -74,10 +74,8 @@ public class Template3_pdf extends AppCompatActivity implements View.OnClickList
         button_SendMail = (Button) findViewById(R.id.button_SendMail);
         button_SendMail.setOnClickListener(this);
 
-
         BuildReumePDF();
         init();
-        editDataInputted();
 
     }
 
@@ -1179,6 +1177,7 @@ public class Template3_pdf extends AppCompatActivity implements View.OnClickList
 
     }
 
+/*
     public void editDataInputted(){
         FirebaseFirestore db = FirebaseFirestore.getInstance();
         final DocumentReference documentReference = db.collection("resume_count").document("template3");
@@ -1221,4 +1220,5 @@ public class Template3_pdf extends AppCompatActivity implements View.OnClickList
                 });
 
     }
+*/
 }

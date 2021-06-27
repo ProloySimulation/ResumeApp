@@ -27,4 +27,6 @@
     <color name="colorWhite">#FFFF</color>
     <color name="colorGrey">#ECECEC</color>
     <color name="colorDeepGrey">#675E5E</color>
+    <color name="anchor">#41424C</color>
+    <color name="cream">#F9E5BC</color>
 </resources>

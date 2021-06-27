@@ -6,29 +6,16 @@ import androidx.cardview.widget.CardView;
 
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.RelativeLayout;
-import android.widget.TableRow;
-import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
 import com.cvmaster.xosstech.activity.FragmentShowActivity;
-import com.cvmaster.xosstech.model.EducationQualification_Model;
 import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.ResumeTemplate;
-import com.cvmaster.xosstech.model.Skills_Model;
-import com.cvmaster.xosstech.model.WorkExperience_Model;
-import com.cvmaster.xosstech.templete.Template2_pdf;
-
-import java.io.File;
-import java.util.List;
 
 public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnClickListener {
 

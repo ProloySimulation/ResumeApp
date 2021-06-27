@@ -24,9 +24,7 @@
         <activity android:name=".GeneratePdf.PdfActivityTemplate2" />
         <activity android:name=".GeneratePdf.PdfActivityTemplate1" />
         <activity android:name=".activity.FragmentShowActivity" />
-        <activity android:name=".templete.Template4_pdf" />
         <activity android:name=".templete.Template3_pdf" />
-        <activity android:name=".templete.Template2_pdf" />
         <activity android:name=".ChargingActivity" />
         <activity android:name=".edit.EditResumePart2" />
         <activity android:name=".edit.EditResumePart5" />
@@ -41,7 +39,6 @@
         <activity android:name=".UserSignInPart1" />
         <activity android:name=".InputActivities.BuildResumePart7" />
         <activity android:name=".InputActivities.BuildResumePart6" />
-        <activity android:name=".templete.Template1_pdf" />
         <activity android:name=".BuildResumePDF_Part1" />
         <activity android:name=".InputActivities.BuildResumePart5" />
         <activity android:name=".InputActivities.BuildResumePart4" />

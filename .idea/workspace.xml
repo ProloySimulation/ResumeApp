@@ -27,8 +27,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="Template5 Done">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_17_0_0_aar.xml" afterDir="false" />
+    <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="Ready For Update ( Template 4 &amp; 5)">
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template6Fragment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/viewmodel/Template6ViewModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/circle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_email_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_location_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/ic_baseline_phone_4.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/6.5/fileHashes/fileHashes.bin" afterDir="false" />
@@ -43,17 +49,20 @@
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ResumeApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ResumeApp.app.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/BuildResumePDF_Part1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/BuildResumePDF_Part1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate5.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete1Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete1Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete4Fragment.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete4Fragment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template5.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/templete1_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/templete1_fragment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/templete4_fragment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/templete4_fragment.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template1_pdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template2_pdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template3_pdf.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template3_pdf.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template4_new_pdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template4_pdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_template1_pdf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_template2_pdf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_template4_pdf.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,7 +114,7 @@
   </component>
   <component name="GenerateSignedApkSettings">
     <option name="EXPORT_PRIVATE_KEY" value="false" />
-    <option name="KEY_STORE_PATH" value="F:\Company\Projects\Projects\CV Master App\CvMasterKeyStore\demokey.jks" />
+    <option name="KEY_STORE_PATH" value="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CvMasterKeyStore\demokey.jks" />
     <option name="KEY_ALIAS" value="demokey" />
     <option name="REMEMBER_PASSWORDS" value="true" />
   </component>
@@ -125,7 +134,7 @@
     <property name="BundleExportedModule" value="ResumeApp.app" />
     <property name="DeviceAndSnapshotComboBoxAction.selectedDevice" value="Nexus_5X" />
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2021-01-31T16:26:17.695Z" />
-    <property name="ExportApk.ApkPath" value="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app" />
+    <property name="ExportApk.ApkPath" value="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\release" />
     <property name="ExportApk.BuildVariants" value="release" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -140,7 +149,7 @@
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+    <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
@@ -550,7 +559,14 @@
       <option name="project" value="LOCAL" />
       <updated>1624533245769</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Ready For Update ( Template 4 &amp; 5)">
+      <created>1624708649597</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1624708649597</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -566,7 +582,6 @@
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="show resume before payment added" />
     <MESSAGE value="passport size photo restriction added" />
     <MESSAGE value="show templte1 in xml part complete" />
     <MESSAGE value="show template1 in xml part complete" />
@@ -591,7 +606,8 @@
     <MESSAGE value="Template5(Fragment Add)" />
     <MESSAGE value="Template5 pdf done ( without print )" />
     <MESSAGE value="Template5 Done" />
-    <option name="LAST_COMMIT_MESSAGE" value="Template5 Done" />
+    <MESSAGE value="Ready For Update ( Template 4 &amp; 5)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ready For Update ( Template 4 &amp; 5)" />
   </component>
   <component name="WindowStateProjectService">
     <state x="317" y="176" key="#PSD" timestamp="1623061087209">
@@ -608,11 +624,11 @@
     </state>
     <state x="550" y="280" width="435" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1536.824@0.0.1536.824" timestamp="1617960462391" />
     <state x="573" y="292" width="480" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1623735931500" />
-    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623219621128">
+    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1624769952294">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709424213" />
-    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1623219621128" />
+    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1624769952294" />
     <state x="131" y="85" width="1407" height="666" key="AVDManager" timestamp="1623147076958">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -626,11 +642,11 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="338" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1622874184451" />
-    <state x="571" y="174" key="FileChooserDialogImpl" timestamp="1624203977743">
+    <state x="571" y="174" key="FileChooserDialogImpl" timestamp="1624769098130">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620716929776" />
-    <state x="571" y="174" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1624203977743" />
+    <state x="571" y="174" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1624769098130" />
     <state x="669" y="323" key="Github.ShareDialog" timestamp="1624204292860">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
@@ -656,28 +672,28 @@
     </state>
     <state width="1489" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
     <state width="1557" height="32" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1624690327555" />
-    <state x="395" y="39" key="SettingsEditor" timestamp="1624205430859">
+    <state x="395" y="39" key="SettingsEditor" timestamp="1624770311008">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="395" y="39" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1624205430859" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1624533265290">
+    <state x="395" y="39" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1624770311008" />
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1624708664842">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="360" y="144" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1622874197242" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1624533265290" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1624513999234">
+    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1624708664842" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1624787161417">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="583" y="189" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709455191" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1624513999234" />
+    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1624787161417" />
     <state x="382" y="113" key="new project wizard" timestamp="1623777036668">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
     <state x="382" y="113" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1623777036668" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1623063804764">
+    <state x="456" y="195" key="run.anything.popup" timestamp="1624788530255">
       <screen x="0" y="0" width="1600" height="860" />
     </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1623063804764" />
+    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1624788530255" />
     <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1623914776017">
       <screen x="0" y="0" width="1600" height="860" />
     </state>

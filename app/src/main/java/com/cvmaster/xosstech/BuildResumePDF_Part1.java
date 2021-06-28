@@ -28,6 +28,7 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
     private CardView button_Template3;
     private CardView button_Template4;
     private CardView button_Template5;
+    private CardView button_template6;
 
     //Templete 1
   /*
@@ -600,6 +601,9 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
         button_Template5 = findViewById(R.id.button_Template5);
         button_Template5.setOnClickListener(this);
 
+        button_template6 = findViewById(R.id.button_Template6);
+        button_template6.setOnClickListener(this);
+
         button_Data = (Button) findViewById(R.id.button_BuildResumePDF_Part5_Data);
         button_Data.setOnClickListener(this);
 
@@ -1128,6 +1132,11 @@ public class BuildResumePDF_Part1 extends AppCompatActivity implements View.OnCl
            /* viewFlipper.setInAnimation(this,R.anim.slide_in_right);
             viewFlipper.setOutAnimation(this,R.anim.slide_out_left);
             viewFlipper.setDisplayedChild(4);*/
+        }
+
+        if(view == button_template6)
+        {
+            startActivity(new Intent(this,FragmentShowActivity.class).putExtra("t",6));
         }
 
        /* if (view == button_Back){

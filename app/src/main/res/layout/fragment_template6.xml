@@ -10,6 +10,7 @@
         android:id="@+id/rl_main1"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -161,7 +162,7 @@
                             android:id="@+id/tv_skills_msword_template6"
                             android:layout_below="@id/tv_skills_heading"
                             android:layout_width="120dp"
-                            android:layout_height="10dp"
+                            android:layout_height="wrap_content"
                             android:layout_marginLeft="16dp"
                             android:text="Microsoft Word"
                             android:fontFamily="@font/balootammudoregular"

@@ -7,6 +7,7 @@ import android.os.Bundle;
 
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.fragment_template.Template5Fragment;
+import com.cvmaster.xosstech.fragment_template.Template6Fragment;
 import com.cvmaster.xosstech.fragment_template.Templete1Fragment;
 import com.cvmaster.xosstech.fragment_template.Templete2Fragment;
 import com.cvmaster.xosstech.fragment_template.Templete3Fragment;
@@ -40,6 +41,10 @@ public class FragmentShowActivity extends AppCompatActivity {
 
         if (value == 5){
             fragmentManager.beginTransaction().replace(R.id.containerFragemtID, new Template5Fragment()).commit();
+        }
+
+        if (value == 6){
+            fragmentManager.beginTransaction().replace(R.id.containerFragemtID, new Template6Fragment()).commit();
         }
     }
 }

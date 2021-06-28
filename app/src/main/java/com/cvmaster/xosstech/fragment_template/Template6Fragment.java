@@ -332,11 +332,11 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
         tv_boardName_1 = (TextView) view.findViewById(R.id.tv_boardName_1_template6); // Remove
 
         linearlayout_EducationalQualification_2 = (LinearLayout) view.findViewById(R.id.linearlayout_EducationalQualification_2_template6);
-        tv_educationQualification_2 = (TextView) view.findViewById(R.id.tv_educationQualification_2_template5);
-        tv_instituteName_2 = (TextView) view.findViewById(R.id.tv_instituteName_2_template5);
-        tv_passingYear_2 = (TextView) view.findViewById(R.id.tv_passingYear_2_template5);
-        tv_Result_2 = (TextView) view.findViewById(R.id.tv_Result_2_template5); // Remove
-        tv_boardName_2 = (TextView) view.findViewById(R.id.tv_boardName_2_template5); // Remove
+        tv_educationQualification_2 = (TextView) view.findViewById(R.id.tv_educationQualification_2_template6);
+        tv_instituteName_2 = (TextView) view.findViewById(R.id.tv_instituteName_2_template6);
+        tv_passingYear_2 = (TextView) view.findViewById(R.id.tv_passingYear_2_template6);
+        tv_Result_2 = (TextView) view.findViewById(R.id.tv_Result_2_template6); // Remove
+        tv_boardName_2 = (TextView) view.findViewById(R.id.tv_boardName_2_template6); // Remove
 
         linearlayout_EducationalQualification_3 = (LinearLayout) view.findViewById(R.id.linearlayout_EducationalQualification_3_template5);
         tv_educationQualification_3 = (TextView) view.findViewById(R.id.tv_educationQualification_2_template6);

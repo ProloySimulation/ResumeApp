@@ -33,6 +33,7 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
     public CardView ll_BT3;
     public CardView ll_BT4;
     public CardView ll_BT5;
+    public CardView ll_BT6;
 
     DrawerLayout drawerLayout;
     ActionBarDrawerToggle toggle;
@@ -98,6 +99,9 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
 
         ll_BT5 = findViewById(R.id.card_temp5);
         ll_BT5.setOnClickListener(this);
+
+        ll_BT6 = findViewById(R.id.card_temp6);
+        ll_BT6.setOnClickListener(this);
     }
 
     @Override
@@ -131,6 +135,13 @@ public class UserProfileActivity extends AppCompatActivity implements View.OnCli
         }
         if (view == ll_BT5){
             ResumeTemplate.templateName = "template5";
+            finish();
+            Intent intent = new Intent(getApplicationContext(),BuildResumePart1.class);
+            startActivity(intent);
+
+        }
+        if (view == ll_BT6){
+            ResumeTemplate.templateName = "template6";
             finish();
             Intent intent = new Intent(getApplicationContext(),BuildResumePart1.class);
             startActivity(intent);

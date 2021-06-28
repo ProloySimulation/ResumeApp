@@ -19,8 +19,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <!--RL Uper-->
                 <RelativeLayout
+                 android:id="@+id/rl_main_content"
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent">
+
+                    <!--RL Uper-->
+                    <RelativeLayout
                     android:id="@+id/rl_uper"
                     android:background="@color/anchor"
                     android:layout_width="match_parent"
@@ -29,7 +34,7 @@
 
                     <ImageView
                         android:id="@+id/img_location"
-                        android:layout_centerHorizontal="true"
+                        android:layout_marginLeft="200dp"
                         android:layout_marginTop="15dp"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
@@ -52,8 +57,8 @@
                         android:id="@+id/img_phone"
                         android:layout_width="15dp"
                         android:layout_height="15dp"
+                        android:layout_marginLeft="200dp"
                         android:layout_marginTop="16dp"
-                        android:layout_centerHorizontal="true"
                         android:background="@drawable/ic_baseline_phone_4"/>
 
                     <TextView
@@ -96,8 +101,8 @@
 
                 </RelativeLayout>
 
-                <!--RL Left-->
-                <RelativeLayout
+                    <!--RL Left-->
+                    <RelativeLayout
                     android:id="@+id/rl_left"
                     android:background="@color/cream"
                     android:layout_marginLeft="20dp"
@@ -575,8 +580,8 @@
                 </RelativeLayout>
 
 
-                <!--RL Right-->
-                <RelativeLayout
+                    <!--RL Right-->
+                    <RelativeLayout
                     android:id="@+id/rl_right"
                     android:layout_toRightOf="@id/rl_left"
                     android:layout_below="@id/rl_uper"
@@ -977,9 +982,10 @@
                     </RelativeLayout>
 
                 </RelativeLayout>
+                </RelativeLayout>
 
                 <LinearLayout
-                    android:layout_below="@id/rl_left"
+                    android:layout_below="@id/rl_main_content"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal"

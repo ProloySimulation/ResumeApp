@@ -1880,7 +1880,7 @@
 
                             <ImageView
                                 android:id="@+id/cv_image_make_resume6"
-                                android:src="@drawable/template5"
+                                android:src="@drawable/template6"
                                 android:layout_width="145dp"
                                 android:layout_height="150dp"
                                 android:layout_gravity="center"

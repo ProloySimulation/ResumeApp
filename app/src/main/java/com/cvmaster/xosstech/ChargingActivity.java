@@ -17,6 +17,7 @@ import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate1;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate2;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate4;
 import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate5;
+import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate6;
 import com.cvmaster.xosstech.model.ResumeTemplate;
 import com.cvmaster.xosstech.network.ApiClient;
 import com.cvmaster.xosstech.network.ApiInterface;
@@ -70,6 +71,11 @@ public class ChargingActivity extends AppCompatActivity {
             CHARGE = (float) 20.0;
             textView_chargeStatus.setText("You Will Be Charged BDT 20(+VAT) To Complete Your Resume");
         }
+        else if (ResumeTemplate.templateName == "template6"){
+            CHARGE = (float) 20.0;
+            textView_chargeStatus.setText("You Will Be Charged BDT 20(+VAT) To Complete Your Resume");
+        }
+
 
         //CHARGE = (float) 1.0;
 
@@ -81,11 +87,11 @@ public class ChargingActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-               String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-                check_sub(msisdn);
+             /*  String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+                check_sub(msisdn);*/
 
                 //for test
-//                intent_to_next();
+                intent_to_next();
             }
         });
         
@@ -280,6 +286,13 @@ public class ChargingActivity extends AppCompatActivity {
 
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate5.class));
                             cheack("template5");
+
+                        }
+
+                        else if (ResumeTemplate.templateName == "template6"){
+
+                            startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate6.class));
+                            cheack("template6");
 
                         }
                     }

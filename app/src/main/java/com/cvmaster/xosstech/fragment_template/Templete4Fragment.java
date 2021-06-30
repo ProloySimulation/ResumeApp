@@ -200,11 +200,11 @@ public class Templete4Fragment extends Fragment implements View.OnClickListener{
         _skills2 = _skills2 + skills_mode.getSkill();
         skills2.setText(_skills2);
 
-        bangla_skill2 = (TextView) view.findViewById(R.id.tv_language_bangla_pr);
-        english_skill2 = (TextView) view.findViewById(R.id.tv_language_english_pr);
+  /*      bangla_skill2 = (TextView) view.findViewById(R.id.tv_language_bangla_pr);
+        english_skill2 = (TextView) view.findViewById(R.id.tv_language_english_pr);*/
 
-        bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
-        english_skill2.setText(ResumeProfilePart3.english_skill_level);
+/*        bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
+        english_skill2.setText(ResumeProfilePart3.english_skill_level);*/
         tvJobTitle.setText(ResumeProfilePart1.getJobTitle());
 
         linearLayout_Head2 = (LinearLayout) view.findViewById(R.id.linearLayout_Head_References_4);

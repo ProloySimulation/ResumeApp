@@ -110,15 +110,20 @@
                     android:layout_width="170dp"
                     android:layout_height="match_parent">
 
-                    <ImageView
-                        android:id="@+id/image_person_template6"
-                        android:layout_centerHorizontal="true"
-                        android:layout_marginTop="8dp"
-                        android:layout_width="70dp"
-                        android:layout_height="80dp"
-                        android:background="@drawable/circle"/>
+                        <com.mikhaellopez.circularimageview.CircularImageView
+                            android:layout_width="80dp"
+                            android:layout_height="80dp"
+                            android:id="@+id/image_person_template6"
+                            app:civ_border_color="#EEEEEE"
+                            android:layout_marginTop="8dp"
+                            app:civ_border_width="2dp"
+                            android:scaleType="centerCrop"
+                            app:civ_shadow="true"
+                            android:layout_centerHorizontal="true"
+                            app:civ_shadow_radius="10" />
 
-                    <TextView
+
+                        <TextView
                         android:id="@+id/tv_person_name_template6"
                         android:layout_below="@+id/image_person_template6"
                         android:layout_width="match_parent"
@@ -182,6 +187,7 @@
                         android:layout_below="@id/rl_skills"
                         android:layout_marginTop="4dp"
                         android:layout_width="match_parent"
+                        android:visibility="gone"
                         android:layout_height="wrap_content">
 
                         <TextView
@@ -203,6 +209,7 @@
                             android:layout_marginRight="8dp"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
+                            android:visibility="visible"
                             android:layout_height="wrap_content">
 
                             <TextView
@@ -262,6 +269,7 @@
                             android:layout_marginRight="8dp"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
+                            android:visibility="gone"
                             android:layout_height="wrap_content">
 
                             <TextView
@@ -321,6 +329,7 @@
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="8dp"
                             android:orientation="vertical"
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
@@ -381,6 +390,7 @@
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="8dp"
                             android:orientation="vertical"
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
@@ -436,16 +446,17 @@
 
                         <!--Educational Qualification 5-->
                         <LinearLayout
-                            android:id="@+id/linearlayout_EducationalQualification_5"
+                            android:id="@+id/linearlayout_EducationalQualification_5_template6"
                             android:layout_below="@id/linearlayout_EducationalQualification_4_template6"
                             android:layout_marginLeft="16dp"
                             android:layout_marginRight="8dp"
                             android:orientation="vertical"
+                            android:visibility="gone"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content">
 
                             <TextView
-                                android:id="@+id/tv_educationQualification_5"
+                                android:id="@+id/tv_educationQualification_5_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="11dp"
                                 android:layout_marginTop="8dp"
@@ -455,7 +466,7 @@
                                 android:textColor="@color/colorBlack"/>
 
                             <TextView
-                                android:id="@+id/tv_instituteName_5"
+                                android:id="@+id/tv_instituteName_5_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:text="Jahangir Nagar University"
@@ -464,7 +475,7 @@
                                 android:textColor="@color/colorBlack"/>
 
                             <TextView
-                                android:id="@+id/tv_passingYear_5"
+                                android:id="@+id/tv_passingYear_5_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="11dp"
                                 android:text="Passing Year"
@@ -474,7 +485,7 @@
                                 android:textColor="@color/colorBlack"/>
 
                             <TextView
-                                android:id="@+id/tv_Result_5"
+                                android:id="@+id/tv_Result_5_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="11dp"
                                 android:text="Result"
@@ -484,7 +495,7 @@
                                 android:textColor="@color/colorBlack"/>
 
                             <TextView
-                                android:id="@+id/tv_boardName_5"
+                                android:id="@+id/tv_boardName_5_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="11dp"
                                 android:text="Board"
@@ -503,6 +514,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
+                        android:visibility="gone"
                         android:layout_marginRight="8dp">
 
 
@@ -628,7 +640,7 @@
                             android:layout_height="wrap_content"
                             android:layout_marginTop="8dp"
                             android:orientation="vertical"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
                             <TextView
                                 android:id="@+id/work_exp_heading"
@@ -709,7 +721,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
 
                             <RelativeLayout
@@ -781,7 +793,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
 
                             <RelativeLayout
@@ -853,7 +865,7 @@
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
-                            android:visibility="visible">
+                            android:visibility="gone">
 
 
                             <RelativeLayout

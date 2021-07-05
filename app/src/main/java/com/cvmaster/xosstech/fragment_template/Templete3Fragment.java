@@ -151,11 +151,11 @@ public class Templete3Fragment extends Fragment implements View.OnClickListener{
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
         //Template 3
-//        File file3 = new File(ResumeProfilePart1.getImagePath());
+        File file3 = new File(ResumeProfilePart1.getImagePath());
 
         viewFlipper = (ViewFlipper) view.findViewById(R.id.viewFlipper);
         imageView_Template3_image = (ImageView) view.findViewById(R.id.template3_image);
-//        imageView_Template3_image.setImageURI(Uri.fromFile(file3));
+        imageView_Template3_image.setImageURI(Uri.fromFile(file3));
 
         textView_Template3_name = (TextView) view.findViewById(R.id.tv_heading_name3);
         textView_Template3_name.setText(ResumeProfilePart1.getName());

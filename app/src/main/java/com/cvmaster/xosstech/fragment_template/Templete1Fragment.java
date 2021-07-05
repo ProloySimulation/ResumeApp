@@ -268,7 +268,7 @@ public class Templete1Fragment extends Fragment implements View.OnClickListener{
 
             EducationQualification_Model model = educationQualification_models.get(0);
             textView_title1.setText(model.getQualification_name());
-            textView_concentration1.setText(model.getQualification_name());
+            textView_concentration1.setText(model.getGroupsubject_name());
             textView_institute1.setText(model.getInstitute_name());
             textView_board1.setText(model.getBoard_name());
             textView_result1.setText(model.getResult());

@@ -29,7 +29,7 @@
                     android:text="John Denver"
                     android:fontFamily="@font/balootammudsemibold"
                     android:textColor="@color/white"
-                    android:textSize="14sp"
+                    android:textSize="14dp"
                     android:layout_marginLeft="30dp"
                     android:layout_marginTop="30dp"/>
 
@@ -39,7 +39,7 @@
                     android:layout_height="wrap_content"
                     android:text="JOB TITLE"
                     android:layout_marginLeft="30dp"
-                    android:textSize="10sp"
+                    android:textSize="10dp"
                     android:textColor="@color/white"
                     android:fontFamily="@font/balootammudsemibold"
                     android:layout_below="@id/tv_name_heading5"/>
@@ -80,7 +80,7 @@
                         android:text="Profile"
                         android:textAllCaps="true"
                         android:textColor="@color/colorBlack"
-                        android:textSize="12sp" />
+                        android:textSize="12dp" />
 
                     <View
                         android:layout_width="140dp"
@@ -100,7 +100,7 @@
                         android:lineSpacingMultiplier="0.5"
                         android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
                         android:textColor="@color/colorBlack"
-                        android:textSize="8sp" />
+                        android:textSize="8dp" />
 
                     <!-- Work Exp 1 with main heading-->
                     <RelativeLayout
@@ -120,7 +120,7 @@
                             android:text="Work Experience"
                             android:textAllCaps="true"
                             android:textColor="@color/colorBlack"
-                            android:textSize="12sp" />
+                            android:textSize="12dp" />
 
                         <View
                             android:layout_width="90dp"
@@ -142,7 +142,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Company Name"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp1_duration5"
@@ -154,7 +154,7 @@
                                 android:text="Duration"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp1_job_title5"
@@ -177,7 +177,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Location"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp1_description5"
@@ -188,7 +188,7 @@
                                 android:lineSpacingMultiplier="0.5"
                                 android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
 
                         </RelativeLayout>
@@ -217,7 +217,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Company Name"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp2_duration5"
@@ -229,7 +229,7 @@
                                 android:text="Duration"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp2_job_title5"
@@ -240,7 +240,7 @@
                                 android:text="Job Title"
                                 android:textAllCaps="true"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp2_location5"
@@ -263,7 +263,7 @@
                                 android:lineSpacingMultiplier="0.5"
                                 android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
                         </RelativeLayout>
 
                     </RelativeLayout>
@@ -290,7 +290,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Company Name"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp3_duration5"
@@ -302,7 +302,7 @@
                                 android:text="Duration"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp3_job_title5"
@@ -313,7 +313,7 @@
                                 android:text="Job Title"
                                 android:textAllCaps="true"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp3_location5"
@@ -325,7 +325,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Location"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp3_description5"
@@ -336,7 +336,7 @@
                                 android:lineSpacingMultiplier="0.5"
                                 android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
                         </RelativeLayout>
 
                     </RelativeLayout>
@@ -363,7 +363,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Company Name"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp4_duration5"
@@ -375,7 +375,7 @@
                                 android:text="Duration"
                                 android:textAlignment="textEnd"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp4_job_title5"
@@ -386,7 +386,7 @@
                                 android:text="Job Title"
                                 android:textAllCaps="true"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp4_location5"
@@ -398,7 +398,7 @@
                                 android:fontFamily="@font/balootammudoregular"
                                 android:text="Location"
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
 
                             <TextView
                                 android:id="@+id/tv_wrk_exp4_description5"
@@ -409,7 +409,7 @@
                                 android:lineSpacingMultiplier="0.5"
                                 android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
                                 android:textColor="@color/colorBlack"
-                                android:textSize="8sp" />
+                                android:textSize="8dp" />
                         </RelativeLayout>
 
                     </RelativeLayout>
@@ -428,7 +428,7 @@
                             android:text="Skills"
                             android:textAllCaps="true"
                             android:textColor="@color/colorBlack"
-                            android:textSize="12sp" />
+                            android:textSize="12dp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -445,7 +445,7 @@
                             android:layout_height="wrap_content"
                             android:text="Microsoft Word"
                             android:fontFamily="@font/balootammudoregular"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:textColor="@color/colorBlack"/>
 
                         <!-- <TextView
@@ -515,7 +515,7 @@
                             android:text="Language"
                             android:textAllCaps="true"
                             android:textColor="@color/colorBlack"
-                            android:textSize="12sp" />
+                            android:textSize="12dp" />
 
                         <View
                             android:layout_width="match_parent"
@@ -532,7 +532,7 @@
                             android:layout_height="12dp"
                             android:text="Bangla"
                             android:fontFamily="@font/balootammudsemibold"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:textColor="@color/colorBlack"/>
 
                         <TextView
@@ -542,7 +542,7 @@
                             android:layout_height="wrap_content"
                             android:text="Good"
                             android:textStyle="italic"
-                            android:textSize="7sp"
+                            android:textSize="7dp"
                             android:textColor="@color/colorBlack"/>
 
                         <TextView
@@ -552,7 +552,7 @@
                             android:layout_height="12dp"
                             android:text="English"
                             android:fontFamily="@font/balootammudsemibold"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:textColor="@color/colorBlack"/>
 
                         <TextView
@@ -563,7 +563,7 @@
                             android:layout_marginTop="0dp"
                             android:text="Good"
                             android:textColor="@color/colorBlack"
-                            android:textSize="7sp"
+                            android:textSize="7dp"
                             android:textStyle="italic" />
 
                     </RelativeLayout>
@@ -609,7 +609,7 @@
                             android:layout_marginLeft="8dp"
                             android:text="H77 R9 Block C Niketon Housing Society Dhaka"
                             android:fontFamily="@font/balootammudoregular"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:lineSpacingMultiplier="0.6"
                             android:textColor="@color/colorBlack"/>
 
@@ -630,7 +630,7 @@
                             android:layout_marginLeft="8dp"
                             android:text="01747775645"
                             android:fontFamily="@font/balootammudoregular"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:lineSpacingMultiplier="0.6"
                             android:textColor="@color/colorBlack"/>
 
@@ -651,7 +651,7 @@
                             android:layout_marginLeft="8dp"
                             android:text="something@something.com"
                             android:fontFamily="@font/balootammudoregular"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:lineSpacingMultiplier="0.6"
                             android:textColor="@color/colorBlack"/>
 
@@ -672,7 +672,7 @@
                             android:layout_marginLeft="8dp"
                             android:text="something@something.com"
                             android:fontFamily="@font/balootammudoregular"
-                            android:textSize="8sp"
+                            android:textSize="8dp"
                             android:lineSpacingMultiplier="0.6"
                             android:textColor="@color/colorBlack"/>
 
@@ -713,7 +713,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Education"
                                     android:textAllCaps="true"
-                                    android:textSize="12sp"
+                                    android:textSize="12dp"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textColor="@color/colorBlack"/>
 
@@ -732,7 +732,7 @@
                                     android:layout_width="match_parent"
                                     android:layout_height="11dp"
                                     android:text="SSC"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:fontFamily="@font/balootammudsemibold"
                                     android:textColor="@color/colorBlack"/>
 
@@ -742,7 +742,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Mohammadpur Govt. Boys High School"
                                     android:fontFamily="@font/balootammudoregular"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -752,7 +752,7 @@
                                     android:text="Passing Year"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -762,7 +762,7 @@
                                     android:text="Result"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -772,7 +772,7 @@
                                     android:text="Board"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
                             </LinearLayout>
 
@@ -791,7 +791,7 @@
                                     android:layout_marginTop="8dp"
                                     android:text="HSC"
                                     android:fontFamily="@font/balootammudsemibold"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -800,7 +800,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Dhaka City College"
                                     android:fontFamily="@font/balootammudoregular"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -810,7 +810,7 @@
                                     android:text="Passing Year"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -820,7 +820,7 @@
                                     android:text="Result"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -830,7 +830,7 @@
                                     android:text="Board"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
                             </LinearLayout>
 
@@ -849,7 +849,7 @@
                                     android:layout_marginTop="8dp"
                                     android:text="HONORS"
                                     android:fontFamily="@font/balootammudsemibold"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -858,7 +858,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Titumir College Dhaka"
                                     android:fontFamily="@font/balootammudoregular"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -868,7 +868,7 @@
                                     android:text="Passing Year"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -878,7 +878,7 @@
                                     android:text="Result"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -907,7 +907,7 @@
                                     android:layout_marginTop="8dp"
                                     android:text="BSC"
                                     android:fontFamily="@font/balootammudsemibold"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -916,7 +916,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="American International University"
                                     android:fontFamily="@font/balootammudoregular"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -926,7 +926,7 @@
                                     android:text="Passing Year"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -936,7 +936,7 @@
                                     android:text="Result"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -946,7 +946,7 @@
                                     android:text="Board"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
                             </LinearLayout>
 
@@ -965,7 +965,7 @@
                                     android:layout_marginTop="8dp"
                                     android:text="Masters"
                                     android:fontFamily="@font/balootammudsemibold"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -974,7 +974,7 @@
                                     android:layout_height="wrap_content"
                                     android:text="Jahangir Nagar University"
                                     android:fontFamily="@font/balootammudoregular"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -984,7 +984,7 @@
                                     android:text="Passing Year"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -994,7 +994,7 @@
                                     android:text="Result"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
 
                                 <TextView
@@ -1004,7 +1004,7 @@
                                     android:text="Board"
                                     android:fontFamily="@font/balootammudoregular"
                                     android:textStyle="italic"
-                                    android:textSize="8sp"
+                                    android:textSize="8dp"
                                     android:textColor="@color/colorBlack"/>
                             </LinearLayout>
                         </LinearLayout>

@@ -15,6 +15,7 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart1;
@@ -43,6 +44,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private LinearLayout linearLayout_Grade_1;
     private EditText editText_Grade_1;
     private Button button_AddField_EducationalQualification_1;
+    private LinearLayout layoutOtherSubject1 ;
+    private EditText etOtherSubject1;
 
 
     private LinearLayout linearLayout_EducationalQualification_2;
@@ -63,6 +66,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private EditText editText_Grade_2;
     private Button button_AddField_EducationalQualification_2;
     private Button button_DeleteField_EducationalQualification_2;
+    private LinearLayout layoutOtherSubject2 ;
+    private EditText etOtherSubject2;
 
     private LinearLayout linearLayout_EducationalQualification_3;
     private TextView textView_QualificationName_3;
@@ -82,6 +87,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private EditText editText_Grade_3;
     private Button button_AddField_EducationalQualification_3;
     private Button button_DeleteField_EducationalQualification_3;
+    private LinearLayout layoutOtherSubject3 ;
+    private EditText etOtherSubject3;
 
     private LinearLayout linearLayout_EducationalQualification_4;
     private TextView textView_QualificationName_4;
@@ -101,6 +108,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private EditText editText_Grade_4;
     private Button button_AddField_EducationalQualification_4;
     private Button button_DeleteField_EducationalQualification_4;
+    private LinearLayout layoutOtherSubject4 ;
+    private EditText etOtherSubject4;
 
 
     private LinearLayout linearLayout_EducationalQualification_5;
@@ -165,6 +174,21 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_1.setAdapter(arrayAdapterSubjectGroupName1);
         subjectGroup_Name_1.setOnItemSelectedListener(this);
+        subjectGroup_Name_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if(text.compareTo("Others") == 0){
+                    layoutOtherSubject1.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         textView_PassingYear_1 = (TextView) findViewById(R.id.textView_BuildResumePart2_PassingYear_1);
 
@@ -220,6 +244,9 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        layoutOtherSubject1 = findViewById(R.id.linearLayout_Others_Subject_1);
+        etOtherSubject1 = findViewById(R.id.etOthersSub1);
+
         editText_Grade_1 = (EditText) findViewById(R.id.editText_BuildResumePart2_Grade_1);
 
         linearLayout_EducationalQualification_2 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2);
@@ -255,6 +282,21 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_2.setAdapter(arrayAdapterSubjectGroupName2);
         subjectGroup_Name_2.setOnItemSelectedListener(this);
+        subjectGroup_Name_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if(text.compareTo("Others") == 0){
+                    layoutOtherSubject2.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         textView_PassingYear_2 = (TextView) findViewById(R.id.textView_BuildResumePart2_PassingYear_2);
 
@@ -311,6 +353,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         });
 
         editText_Grade_2 = (EditText) findViewById(R.id.editText_BuildResumePart2_Grade_2);
+        layoutOtherSubject2 = findViewById(R.id.linearLayout_Others_Subject_2);
+        etOtherSubject2 = findViewById(R.id.etOthersSub2);
 
         linearLayout_EducationalQualification_3 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_3);
         button_AddField_EducationalQualification_3 = (Button) findViewById(R.id.button_AddField_EducationalQualification_3);
@@ -345,6 +389,21 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_3.setAdapter(arrayAdapterSubjectGroupName3);
         subjectGroup_Name_3.setOnItemSelectedListener(this);
+        subjectGroup_Name_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if(text.compareTo("Others") == 0){
+                    layoutOtherSubject3.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         textView_PassingYear_3 = (TextView) findViewById(R.id.textView_BuildResumePart2_PassingYear_3);
 
@@ -401,6 +460,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         });
 
         editText_Grade_3 = (EditText) findViewById(R.id.editText_BuildResumePart2_Grade_3);
+        layoutOtherSubject3 = findViewById(R.id.linearLayout_Others_Subject_3);
+        etOtherSubject3 = findViewById(R.id.etOthersSub3);
 
         linearLayout_EducationalQualification_4 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_4);
         button_AddField_EducationalQualification_4 = (Button) findViewById(R.id.button_AddField_EducationalQualification_4);
@@ -435,6 +496,21 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_4.setAdapter(arrayAdapterSubjectGroupName4);
         subjectGroup_Name_4.setOnItemSelectedListener(this);
+        subjectGroup_Name_4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if(text.compareTo("Others") == 0){
+                    layoutOtherSubject4.setVisibility(View.VISIBLE);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         textView_PassingYear_4 = (TextView) findViewById(R.id.textView_BuildResumePart2_PassingYear_4);
 
@@ -491,6 +567,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         });
 
         editText_Grade_4 = (EditText) findViewById(R.id.editText_BuildResumePart2_Grade_4);
+        layoutOtherSubject4 = findViewById(R.id.linearLayout_Others_Subject_4);
+        etOtherSubject4 = findViewById(R.id.etOthersSub4);
 
         linearLayout_EducationalQualification_5 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_5);
         button_DeleteField_EducationalQualification_5 = (Button) findViewById(R.id.button_DeleteField_EducationalQualification_5);
@@ -744,6 +822,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         gradedivision = spinner_GradeDivision_2.getSelectedItem().toString().trim();
         result_grade = editText_Grade_2.getText().toString().trim();
         result_division = spinner_Division_2.getSelectedItem().toString().trim();
+
+        if(subjectgroup_name.equals("Others"))
+        {
+
+        }
 
         if (qualification_name.compareTo("Select") == 0){
             textView_QualificationName_2.setError("SELECT EDUCATIONAL QUALIFICATION!");
@@ -1011,6 +1094,13 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             educationQualification.setGroupsubject_name(subjectgroup_name);
             educationQualification.setPassing_year(passing_year);
             educationQualification.setGradediorvision(gradedivision);
+
+            if(subjectgroup_name.compareTo("Others") == 0 )
+            {
+                subjectgroup_name = etOtherSubject1.getText().toString();
+                educationQualification.setGroupsubject_name(subjectgroup_name);
+            }
+
             if (gradedivision.compareTo("Grade") == 0){
                 educationQualification.setResult(result_grade);
             }
@@ -1046,6 +1136,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             educationQualification.setGroupsubject_name(subjectgroup_name);
             educationQualification.setPassing_year(passing_year);
             educationQualification.setGradediorvision(gradedivision);
+            if(subjectgroup_name.compareTo("Others") == 0 )
+            {
+                subjectgroup_name = etOtherSubject2.getText().toString();
+                educationQualification.setGroupsubject_name(subjectgroup_name);
+            }
             if (gradedivision.compareTo("Grade") == 0){
                 educationQualification.setResult(result_grade);
             }
@@ -1082,6 +1177,12 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             educationQualification.setGroupsubject_name(subjectgroup_name);
             educationQualification.setPassing_year(passing_year);
             educationQualification.setGradediorvision(gradedivision);
+            if(subjectgroup_name.compareTo("Others") == 0 )
+            {
+                subjectgroup_name = etOtherSubject3.getText().toString();
+                educationQualification.setGroupsubject_name(subjectgroup_name);
+            }
+
             if (gradedivision.compareTo("Grade") == 0){
                 educationQualification.setResult(result_grade);
             }
@@ -1117,6 +1218,12 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             educationQualification.setGroupsubject_name(subjectgroup_name);
             educationQualification.setPassing_year(passing_year);
             educationQualification.setGradediorvision(gradedivision);
+            if(subjectgroup_name.compareTo("Others") == 0 )
+            {
+                subjectgroup_name = etOtherSubject4.getText().toString();
+                educationQualification.setGroupsubject_name(subjectgroup_name);
+            }
+
             if (gradedivision.compareTo("Grade") == 0){
                 educationQualification.setResult(result_grade);
             }

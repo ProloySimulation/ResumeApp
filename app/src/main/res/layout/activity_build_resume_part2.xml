@@ -225,17 +225,45 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_1"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
+
                             </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Others_Subject_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Others Subject:"/>
+
+                        <EditText
+                            android:id="@+id/etOthersSub1"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="bottom"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"/>
+
+                    </LinearLayout>
+
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -313,13 +341,16 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:id="@+id/spinner_BuildResumePart3_GradeDivision_1"
                                     android:layout_width="90dp"
                                     android:layout_height="wrap_content"/>
+
                             </RelativeLayout>
                         </LinearLayout>
 
@@ -330,6 +361,7 @@ creativity, sincerity for the better achievement of the organization."
                             android:orientation="horizontal"
                             android:layout_gravity="center"
                             android:visibility="gone">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
@@ -345,6 +377,7 @@ creativity, sincerity for the better achievement of the organization."
                                 android:maxLength="4"
                                 android:singleLine="true"
                                 android:imeOptions="actionDone"/>
+
                         </LinearLayout>
 
                         <LinearLayout
@@ -437,14 +470,17 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart2_QualificationName_2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
+
                             </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -500,14 +536,17 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart2_BoardName_2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
+
                             </RelativeLayout>
                         </LinearLayout>
                     </LinearLayout>
@@ -543,16 +582,43 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart3_GroupSubjectName_2"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"/>
+
                             </RelativeLayout>
                         </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Others_Subject_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Grade:"/>
+
+                        <EditText
+                            android:id="@+id/etOthersSub2"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="bottom"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"/>
+
                     </LinearLayout>
 
                     <TextView
@@ -893,6 +959,30 @@ creativity, sincerity for the better achievement of the organization."
                         </LinearLayout>
                     </LinearLayout>
 
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Others_Subject_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Grade:"/>
+
+                        <EditText
+                            android:id="@+id/etOthersSub3"
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:layout_gravity="bottom"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"/>
+
+                    </LinearLayout>
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -1113,9 +1203,11 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart2_QualificationName_4"
@@ -1176,9 +1268,11 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart2_BoardName_4"
@@ -1229,6 +1323,30 @@ creativity, sincerity for the better achievement of the organization."
                                     android:layout_height="wrap_content"/>
                             </RelativeLayout>
                         </LinearLayout>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/linearLayout_Others_Subject_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_gravity="center"
+                        android:visibility="gone">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="Others Subject:"/>
+
+                        <EditText
+                            android:id="@+id/etOthersSub4"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_gravity="bottom"
+                            android:singleLine="true"
+                            android:imeOptions="actionDone"/>
+
                     </LinearLayout>
 
                     <TextView

@@ -90,6 +90,18 @@ public class Templete2Fragment extends Fragment implements View.OnClickListener 
     private TextView tv_pr_exp2_company_address;
     private TextView tv_pr_exp2_service_time;
 
+    private LinearLayout ll_prexp3;
+    private TextView tv_pr_exp3_position;
+    private TextView tv_pr_exp3_company;
+    private TextView tv_pr_exp3_company_address;
+    private TextView tv_pr_exp3_service_time;
+
+    private LinearLayout ll_prexp4;
+    private TextView tv_pr_exp4_position;
+    private TextView tv_pr_exp4_company;
+    private TextView tv_pr_exp4_company_address;
+    private TextView tv_pr_exp4_service_time;
+
     private LinearLayout linearlayout_EducationalQualification_1;
     private TextView tv_educationQualification_1;
     private TextView tv_instituteName_1;
@@ -250,6 +262,18 @@ public class Templete2Fragment extends Fragment implements View.OnClickListener 
         tv_pr_exp2_company_address = (TextView) view.findViewById(R.id.tv_pr_exp2_company_address);
         tv_pr_exp2_service_time = (TextView) view.findViewById(R.id.tv_pr_exp2_service_time);
 
+        ll_prexp3 = (LinearLayout) view.findViewById(R.id.ll_prexp3);
+        tv_pr_exp3_position = (TextView) view.findViewById(R.id.tv_pr_exp3_position);
+        tv_pr_exp3_company = (TextView) view.findViewById(R.id.tv_pr_exp3_company);
+        tv_pr_exp3_company_address = (TextView) view.findViewById(R.id.tv_pr_exp3_company_address);
+        tv_pr_exp3_service_time = (TextView) view.findViewById(R.id.tv_pr_exp3_service_time);
+
+        ll_prexp4 = (LinearLayout) view.findViewById(R.id.ll_prexp4);
+        tv_pr_exp4_position = (TextView) view.findViewById(R.id.tv_pr_exp4_position);
+        tv_pr_exp4_company = (TextView) view.findViewById(R.id.tv_pr_exp4_company);
+        tv_pr_exp4_company_address = (TextView) view.findViewById(R.id.tv_pr_exp4_company_address);
+        tv_pr_exp4_service_time = (TextView) view.findViewById(R.id.tv_pr_exp4_service_time);
+
 
         List<WorkExperience_Model> workExperience_model = ResumeProfilePart6.workExperience;
         if (ResumeProfilePart6.workExperience.size() > 0) {
@@ -274,6 +298,30 @@ public class Templete2Fragment extends Fragment implements View.OnClickListener 
             tv_pr_exp2_company.setText(workExperience_mod.getOrganizationName());
             tv_pr_exp2_company_address.setText(workExperience_mod.getOgganizationAddress());
             tv_pr_exp2_service_time.setText(workExperience_mod.getDurationTime());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 2) {
+
+            ll_prexp3.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp3_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp3_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp3_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp3_service_time.setText(workExperience_mod.getDurationTime());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3) {
+
+            ll_prexp4.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp4_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp4_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp4_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp4_service_time.setText(workExperience_mod.getDurationTime());
 
         }
 
@@ -320,8 +368,8 @@ public class Templete2Fragment extends Fragment implements View.OnClickListener 
             tv_educationQualification_1.setText(model.getQualification_name());
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
-            tv_Result_5.setText(model.getResult());
-            tv_boardName_5.setText(model.getBoard_name());
+            tv_Result_1.setText(model.getResult());
+            tv_boardName_1.setText(model.getBoard_name());
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 1) {

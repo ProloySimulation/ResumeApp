@@ -100,6 +100,20 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
     private TextView tv_pr_exp2_service_time;
     private TextView tv_pr_exp2_service_detail;
 
+    private LinearLayout ll_prexp3;
+    private TextView tv_pr_exp3_position;
+    private TextView tv_pr_exp3_company;
+    private TextView tv_pr_exp3_company_address;
+    private TextView tv_pr_exp3_service_time;
+    private TextView tv_pr_exp3_service_detail;
+
+    private LinearLayout ll_prexp4;
+    private TextView tv_pr_exp4_position;
+    private TextView tv_pr_exp4_company;
+    private TextView tv_pr_exp4_company_address;
+    private TextView tv_pr_exp4_service_time;
+    private TextView tv_pr_exp4_service_detail;
+
     private LinearLayout linearlayout_EducationalQualification_1;
     private TextView tv_educationQualification_1;
     private TextView tv_instituteName_1;
@@ -191,8 +205,8 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
         _skills2 = _skills2 + skills_mode.getSkill();
         skills2.setText(_skills2);
 
-        bangla_skill2 = findViewById(R.id.tv_language_bangla_pr);
-        english_skill2 = findViewById(R.id.tv_language_english_pr);
+  /*      bangla_skill2 = findViewById(R.id.tv_language_bangla_pr);
+        english_skill2 = findViewById(R.id.tv_language_english_pr);*/
 
  /*       bangla_skill2.setText(ResumeProfilePart3.bangla_skill_level);
         english_skill2.setText(ResumeProfilePart3.english_skill_level);*/
@@ -257,6 +271,20 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
         tv_pr_exp2_service_time = findViewById(R.id.tv_wrk_exp2_duration);
         tv_pr_exp2_service_detail = findViewById(R.id.tv_wrk_exp2_description);
 
+        ll_prexp3 = findViewById(R.id.ll_work_exp3);
+        tv_pr_exp3_position = findViewById(R.id.tv_wrk_exp3_job_title);
+        tv_pr_exp3_company = findViewById(R.id.tv_wrk_exp3_cname);
+        tv_pr_exp3_company_address = findViewById(R.id.tv_wrk_exp3_location);
+        tv_pr_exp3_service_time = findViewById(R.id.tv_wrk_exp3_duration);
+        tv_pr_exp3_service_detail = findViewById(R.id.tv_wrk_exp3_description);
+
+        ll_prexp4 = findViewById(R.id.ll_work_exp4);
+        tv_pr_exp4_position = findViewById(R.id.tv_wrk_exp4_job_title);
+        tv_pr_exp4_company = findViewById(R.id.tv_wrk_exp4_cname);
+        tv_pr_exp4_company_address = findViewById(R.id.tv_wrk_exp4_location);
+        tv_pr_exp4_service_time = findViewById(R.id.tv_wrk_exp4_duration);
+        tv_pr_exp4_service_detail = findViewById(R.id.tv_wrk_exp4_description);
+
 
         List<WorkExperience_Model> workExperience_model = ResumeProfilePart6.workExperience;
         if (ResumeProfilePart6.workExperience.size() > 0) {
@@ -286,47 +314,73 @@ public class PdfActivityTemplate4 extends AppCompatActivity implements View.OnCl
 
         }
 
+        if (ResumeProfilePart6.workExperience.size() > 2) {
+
+            ll_prexp3.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp3_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp3_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp3_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp3_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp3_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3) {
+
+            ll_prexp4.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp4_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp4_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp4_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp4_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp4_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
         linearlayout_EducationalQualification_1 = findViewById(R.id.llEducation1_template4);
         tv_educationQualification_1 = findViewById(R.id.tv_edu_versity_course);
         tv_instituteName_1 = findViewById(R.id.tv_edu_versity_name);
         tv_passingYear_1 = findViewById(R.id.tv_edu_versity_year);
-        tv_Result_1 = findViewById(R.id.tv_Result_1); // Remove
-        tv_boardName_1 = findViewById(R.id.tv_boardName_1); // Remove
+//        tv_Result_1 = findViewById(R.id.tv_Result_1); // Remove
+//        tv_boardName_1 = findViewById(R.id.tv_boardName_1); // Remove
 
         linearlayout_EducationalQualification_2 = findViewById(R.id.ll_educational_qualification2_template4);
         tv_educationQualification_2 = findViewById(R.id.tv_edu_college_course);
         tv_instituteName_2 = findViewById(R.id.tv_edu_college_name);
         tv_passingYear_2 = findViewById(R.id.tv_edu_college_year);
-        tv_Result_2 = findViewById(R.id.tv_Result_2); // Remove
-        tv_boardName_2 = findViewById(R.id.tv_boardName_2); // Remove
+//        tv_Result_2 = findViewById(R.id.tv_Result_2); // Remove
+//        tv_boardName_2 = findViewById(R.id.tv_boardName_2); // Remove
 
         linearlayout_EducationalQualification_3 = findViewById(R.id.ll_educational_qualification3_template4);
         tv_educationQualification_3 = findViewById(R.id.tv_edu_school_course);
         tv_instituteName_3 = findViewById(R.id.tv_edu_school_name);
         tv_passingYear_3 = findViewById(R.id.tv_edu_school_year);
-        tv_Result_3 = findViewById(R.id.tv_Result_3); // Remove
-        tv_boardName_3 = findViewById(R.id.tv_boardName_3); // Remove
+//        tv_Result_3 = findViewById(R.id.tv_Result_3); // Remove
+//        tv_boardName_3 = findViewById(R.id.tv_boardName_3); // Remove
 
         linearlayout_EducationalQualification_4 = findViewById(R.id.linearlayout_EducationalQualification_4);
         tv_educationQualification_4 = findViewById(R.id.tv_educationQualification_4);
         tv_instituteName_4 = findViewById(R.id.tv_instituteName_4);
         tv_passingYear_4 = findViewById(R.id.tv_passingYear_4);
-        tv_Result_4 = findViewById(R.id.tv_Result_4);
-        tv_boardName_4 = findViewById(R.id.tv_boardName_4);
+//        tv_Result_4 = findViewById(R.id.tv_Result_4);
+//        tv_boardName_4 = findViewById(R.id.tv_boardName_4);
 
         linearlayout_EducationalQualification_5 = findViewById(R.id.linearlayout_EducationalQualification_5);
         tv_educationQualification_5 = findViewById(R.id.tv_educationQualification_5);
         tv_instituteName_5 = findViewById(R.id.tv_instituteName_5);
         tv_passingYear_5 = findViewById(R.id.tv_passingYear_5);
-        tv_Result_5 = findViewById(R.id.tv_Result_5);
-        tv_boardName_5 = findViewById(R.id.tv_boardName_5);
+//        tv_Result_5 = findViewById(R.id.tv_Result_5);
+//        tv_boardName_5 = findViewById(R.id.tv_boardName_5);
 
 
         if (ResumeProfilePart2.educationQualification.size() > 0) {
             linearlayout_EducationalQualification_1.setVisibility(View.VISIBLE);
 
             EducationQualification_Model model = educationQualification_models.get(0);
-//            tv_educationQualification_1.setText(model.getQualification_name());
+            tv_educationQualification_1.setText(model.getQualification_name());
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
    /*         tv_Result_5.setText(model.getResult());

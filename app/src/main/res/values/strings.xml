@@ -20,6 +20,7 @@
         <item>Select</item>
         <item>Science</item>
         <item>Commerce</item>
+        <item>Business Studies</item>
         <item>Humanities</item>
         <item>Business Administration</item>
         <item>Computer Science and Engineering</item>
@@ -29,6 +30,7 @@
         <item>Pharmacy</item>
         <item>Civil Engineering</item>
         <item>Mathematical and Physical Sciences</item>
+        <item>Others</item>
     </string-array>
 
     <string-array name="board_Names">

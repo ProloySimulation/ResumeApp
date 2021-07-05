@@ -38,6 +38,7 @@ import com.cvmaster.xosstech.model.Skills_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
 import com.cvmaster.xosstech.viewmodel.Template6ViewModel;
 import com.cvmaster.xosstech.viewmodel.Templete4ViewModel;
+import com.itextpdf.text.pdf.parser.Line;
 import com.mikhaellopez.circularimageview.CircularImageView;
 
 import java.io.File;
@@ -102,14 +103,14 @@ public class PdfActivityTemplate6 extends AppCompatActivity implements View.OnCl
     private TextView tv_pr_exp2_service_time;
     private TextView tv_pr_exp2_service_detail;
 
-    private RelativeLayout ll_prexp3;
+    private LinearLayout ll_prexp3;
     private TextView tv_pr_exp3_position;
     private TextView tv_pr_exp3_company;
     private TextView tv_pr_exp3_company_address;
     private TextView tv_pr_exp3_service_time;
     private TextView tv_pr_exp3_service_detail;
 
-    private RelativeLayout ll_prexp4;
+    private LinearLayout ll_prexp4;
     private TextView tv_pr_exp4_position;
     private TextView tv_pr_exp4_company;
     private TextView tv_pr_exp4_company_address;
@@ -270,19 +271,19 @@ public class PdfActivityTemplate6 extends AppCompatActivity implements View.OnCl
         tv_pr_exp2_service_time = findViewById(R.id.tv_wrk_exp2_duration_template6);
         tv_pr_exp2_service_detail = findViewById(R.id.tv_wrk_exp2_description_template6);
 
-   /*     ll_prexp3 = findViewById(R.id.rl_work_exp3_template5);
-        tv_pr_exp3_position = findViewById(R.id.tv_wrk_exp2_job_title5);
-        tv_pr_exp3_company = findViewById(R.id.tv_wrk_exp3_cname5);
-        tv_pr_exp3_company_address = findViewById(R.id.tv_wrk_exp3_location5);
-        tv_pr_exp3_service_time = findViewById(R.id.tv_wrk_exp3_duration5);
-        tv_pr_exp3_service_detail = findViewById(R.id.tv_wrk_exp3_description5);
+        ll_prexp3 = findViewById(R.id.ll_work_exp3_template6);
+        tv_pr_exp3_position =  findViewById(R.id.tv_wrk_exp3_job_title_template6);
+        tv_pr_exp3_company = findViewById(R.id.tv_wrk_exp3_cname_template6);
+        tv_pr_exp3_company_address = findViewById(R.id.tv_wrk_exp3_location_template6);
+        tv_pr_exp3_service_time = findViewById(R.id.tv_wrk_exp3_duration_template6);
+        tv_pr_exp3_service_detail = findViewById(R.id.tv_wrk_exp3_description_template6);
 
-        ll_prexp4 = findViewById(R.id.rl_work_exp4_template5);
-        tv_pr_exp4_position = findViewById(R.id.tv_wrk_exp3_job_title_template6);
-        tv_pr_exp4_company = findViewById(R.id.tv_wrk_exp3_cname_template6);
-        tv_pr_exp4_company_address = findViewById(R.id.tv_wrk_exp3_location_template6);
-        tv_pr_exp4_service_time = findViewById(R.id.tv_wrk_exp3_duration_template6);
-        tv_pr_exp4_service_detail = findViewById(R.id.tv_wrk_exp3_description_template6);*/
+        ll_prexp4 = findViewById(R.id.ll_work_exp4);
+        tv_pr_exp4_position = findViewById(R.id.tv_wrk_exp4_job_title);
+        tv_pr_exp4_company = findViewById(R.id.tv_wrk_exp4_cname);
+        tv_pr_exp4_company_address = findViewById(R.id.tv_wrk_exp4_location);
+        tv_pr_exp4_service_time = findViewById(R.id.tv_wrk_exp4_duration);
+        tv_pr_exp4_service_detail = findViewById(R.id.tv_wrk_exp4_description);
 
 
         List<WorkExperience_Model> workExperience_model = ResumeProfilePart6.workExperience;
@@ -310,6 +311,32 @@ public class PdfActivityTemplate6 extends AppCompatActivity implements View.OnCl
             tv_pr_exp2_company_address.setText(workExperience_mod.getOgganizationAddress());
             tv_pr_exp2_service_time.setText(workExperience_mod.getDurationTime());
             tv_pr_exp2_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 2) {
+
+            ll_prexp3.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp3_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp3_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp3_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp3_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp3_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3) {
+
+            ll_prexp4.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp4_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp4_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp4_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp4_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp4_service_detail.setText(workExperience_mod.getworkDetail());
 
         }
 
@@ -452,7 +479,7 @@ public class PdfActivityTemplate6 extends AppCompatActivity implements View.OnCl
         bitmap = Bitmap.createScaledBitmap(bitmap, 595, 842, true);
 
         paint.setColor(Color.BLUE);
-        canvas.drawBitmap(bitmap, 0, 0 , null);
+        canvas.drawBitmap(bitmap, 2, 0 , null);
         document.finishPage(page);
 
         // write the document content

@@ -934,6 +934,55 @@
                                     android:textColor="@color/colorPrimary1"/>
                             </LinearLayout>
 
+                            <!--exp4-->
+                            <LinearLayout
+                                android:id="@+id/ll_prexp4"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:orientation="vertical"
+                                android:visibility="gone">
+
+                                <TextView
+                                    android:id="@+id/tv_pr_exp4_position"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="Position 3"
+                                    android:textSize="12sp"
+                                    android:textColor="@color/colorPrimary1"
+                                    android:textStyle="bold"/>
+
+                                <TextView
+                                    android:id="@+id/tv_pr_exp4_company"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="Company Name"
+                                    android:textSize="10sp"
+                                    android:textColor="@color/colorBlack"/>
+
+                                <TextView
+                                    android:id="@+id/tv_pr_exp4_company_address"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="Address"
+                                    android:textStyle="italic"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorPrimary1"/>
+
+                                <TextView
+                                    android:id="@+id/tv_pr_exp4_service_time"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginLeft="8dp"
+                                    android:text="Service Year"
+                                    android:textStyle="italic"
+                                    android:textSize="8sp"
+                                    android:textColor="@color/colorPrimary1"/>
+                            </LinearLayout>
+
                         </LinearLayout>
 
                     </LinearLayout>

@@ -86,6 +86,7 @@ public class PdfActivityTemplate2 extends AppCompatActivity implements View.OnCl
     private TextView tv_ref2_email;
     private TextView tv_ref2_contactnumber;
 
+
     private LinearLayout linearLayout_ProfessionalExp_Head;
 
     private LinearLayout ll_prexp1;
@@ -99,6 +100,18 @@ public class PdfActivityTemplate2 extends AppCompatActivity implements View.OnCl
     private TextView tv_pr_exp2_company;
     private TextView tv_pr_exp2_company_address;
     private TextView tv_pr_exp2_service_time;
+
+    private LinearLayout ll_prexp3;
+    private TextView tv_pr_exp3_position;
+    private TextView tv_pr_exp3_company;
+    private TextView tv_pr_exp3_company_address;
+    private TextView tv_pr_exp3_service_time;
+
+    private LinearLayout ll_prexp4;
+    private TextView tv_pr_exp4_position;
+    private TextView tv_pr_exp4_company;
+    private TextView tv_pr_exp4_company_address;
+    private TextView tv_pr_exp4_service_time;
 
     private LinearLayout linearlayout_EducationalQualification_1;
     private TextView tv_educationQualification_1;
@@ -244,6 +257,18 @@ public class PdfActivityTemplate2 extends AppCompatActivity implements View.OnCl
         tv_pr_exp2_company_address = findViewById(R.id.tv_pr_exp2_company_address);
         tv_pr_exp2_service_time = findViewById(R.id.tv_pr_exp2_service_time);
 
+        ll_prexp3 = findViewById(R.id.ll_prexp3);
+        tv_pr_exp3_position = findViewById(R.id.tv_pr_exp3_position);
+        tv_pr_exp3_company = findViewById(R.id.tv_pr_exp3_company);
+        tv_pr_exp3_company_address = findViewById(R.id.tv_pr_exp3_company_address);
+        tv_pr_exp3_service_time = findViewById(R.id.tv_pr_exp3_service_time);
+
+        ll_prexp4 = findViewById(R.id.ll_prexp4);
+        tv_pr_exp4_position = findViewById(R.id.tv_pr_exp4_position);
+        tv_pr_exp4_company = findViewById(R.id.tv_pr_exp4_company);
+        tv_pr_exp4_company_address = findViewById(R.id.tv_pr_exp4_company_address);
+        tv_pr_exp4_service_time = findViewById(R.id.tv_pr_exp4_service_time);
+
 
         List<WorkExperience_Model> workExperience_model = ResumeProfilePart6.workExperience;
         if (ResumeProfilePart6.workExperience.size() > 0) {
@@ -268,6 +293,30 @@ public class PdfActivityTemplate2 extends AppCompatActivity implements View.OnCl
             tv_pr_exp2_company.setText(workExperience_mod.getOrganizationName());
             tv_pr_exp2_company_address.setText(workExperience_mod.getOgganizationAddress());
             tv_pr_exp2_service_time.setText(workExperience_mod.getDurationTime());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 2) {
+
+            ll_prexp3.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp3_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp3_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp3_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp3_service_time.setText(workExperience_mod.getDurationTime());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3) {
+
+            ll_prexp4.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp4_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp4_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp4_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp4_service_time.setText(workExperience_mod.getDurationTime());
 
         }
 

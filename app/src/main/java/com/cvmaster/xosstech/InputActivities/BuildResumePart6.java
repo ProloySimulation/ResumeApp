@@ -39,7 +39,26 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     private EditText editText_Organization_2;
     private EditText editText_OrganizationAddress_2;
     private EditText etWorkDetail_2;
+    private Button button_AddField_2;
     private Button button_DeleteField_2;
+
+    private LinearLayout linearLayout_AddWorkExperience_3;
+    private EditText editText_Designation_3;
+    private EditText editText_Duration_3;
+    private EditText editText_Organization_3;
+    private EditText editText_OrganizationAddress_3;
+    private EditText etWorkDetail_3;
+    private Button button_AddField_3;
+    private Button button_DeleteField_3;
+
+    private LinearLayout linearLayout_AddWorkExperience_4;
+    private EditText editText_Designation_4;
+    private EditText editText_Duration_4;
+    private EditText editText_Organization_4;
+    private EditText editText_OrganizationAddress_4;
+    private EditText etWorkDetail_4;
+    private Button button_AddField_4;
+    private Button button_DeleteField_4;
 
     private Button button_Skip;
     private Button button_Next;
@@ -74,8 +93,34 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         editText_OrganizationAddress_2 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience2_OrganizationAddress);
         etWorkDetail_2 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_2);
 
+        button_AddField_2 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_2);
+        button_AddField_2.setOnClickListener(this);
         button_DeleteField_2 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_2);
         button_DeleteField_2.setOnClickListener(this);
+
+        linearLayout_AddWorkExperience_3 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_3);
+        editText_Designation_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_Designation);
+        editText_Duration_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_Duration);
+        editText_Organization_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_OrganizationName);
+        editText_OrganizationAddress_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_OrganizationAddress);
+        etWorkDetail_3 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_3);
+
+        button_AddField_3 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_3);
+        button_AddField_3.setOnClickListener(this);
+        button_DeleteField_3 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_3);
+        button_DeleteField_3.setOnClickListener(this);
+
+        linearLayout_AddWorkExperience_4 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_4);
+        editText_Designation_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_Designation);
+        editText_Duration_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_Duration);
+        editText_Organization_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_OrganizationName);
+        editText_OrganizationAddress_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_OrganizationAddress);
+        etWorkDetail_4 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_4);
+
+        button_AddField_4 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_4);
+        button_AddField_4.setOnClickListener(this);
+        button_DeleteField_4 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_4);
+        button_DeleteField_4.setOnClickListener(this);
 
         button_Skip = (Button) findViewById(R.id.button_BuildResumePart6_Skip);
         button_Skip.setOnClickListener(this);
@@ -172,6 +217,92 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         return true;
     }
 
+    public boolean CheckValidity_WorkExperience_3(){
+        String designation;
+        String duration;
+        String organization;
+        String organization_address;
+        String workDetail;
+
+        designation = editText_Designation_3.getText().toString().trim();
+        duration = editText_Duration_3.getText().toString().trim();
+        organization = editText_Organization_3.getText().toString().trim();
+        organization_address = editText_OrganizationAddress_3.getText().toString().trim();
+        workDetail = etWorkDetail_3.getText().toString().trim();
+
+        if (designation.isEmpty()){
+            editText_Designation_3.setError("ENTER DESIGNATION!");
+            editText_Designation_3.requestFocus();
+            return false;
+        }
+        if (duration.isEmpty()){
+            editText_Duration_3.setError("ENTER DURATION!");
+            editText_Duration_3.requestFocus();
+            return false;
+        }
+        if (organization.isEmpty()){
+            editText_Organization_3.setError("ENTER ORGANIZATION NAME!");
+            editText_Organization_3.requestFocus();
+            return false;
+        }
+        if (organization_address.isEmpty()){
+            editText_OrganizationAddress_3.setError("ENTER ORGANIZATION NAME!");
+            editText_OrganizationAddress_3.requestFocus();
+            return false;
+        }
+
+        if (workDetail.isEmpty()){
+            etWorkDetail_3.setError("ENTER WORK DETAIL!");
+            etWorkDetail_3.requestFocus();
+            return false;
+        }
+
+        return true;
+    }
+
+    public boolean CheckValidity_WorkExperience_4(){
+        String designation;
+        String duration;
+        String organization;
+        String organization_address;
+        String workDetail;
+
+        designation = editText_Designation_4.getText().toString().trim();
+        duration = editText_Duration_4.getText().toString().trim();
+        organization = editText_Organization_4.getText().toString().trim();
+        organization_address = editText_OrganizationAddress_4.getText().toString().trim();
+        workDetail = etWorkDetail_4.getText().toString().trim();
+
+        if (designation.isEmpty()){
+            editText_Designation_4.setError("ENTER DESIGNATION!");
+            editText_Designation_4.requestFocus();
+            return false;
+        }
+        if (duration.isEmpty()){
+            editText_Duration_4.setError("ENTER DURATION!");
+            editText_Duration_4.requestFocus();
+            return false;
+        }
+        if (organization.isEmpty()){
+            editText_Organization_4.setError("ENTER ORGANIZATION NAME!");
+            editText_Organization_4.requestFocus();
+            return false;
+        }
+        if (organization_address.isEmpty()){
+            editText_OrganizationAddress_4.setError("ENTER ORGANIZATION NAME!");
+            editText_OrganizationAddress_4.requestFocus();
+            return false;
+        }
+
+        if (workDetail.isEmpty()){
+            etWorkDetail_4.setError("ENTER WORK DETAIL!");
+            etWorkDetail_4.requestFocus();
+            return false;
+        }
+
+        return true;
+    }
+
     public void SaveData(){
         if (linearLayout_AddWorkExperience_1.getVisibility() == View.VISIBLE){
             String designation;
@@ -217,6 +348,52 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
             ResumeProfilePart6.workExperience.add(workExperience_model);
         }
+
+        if (linearLayout_AddWorkExperience_3.getVisibility() == View.VISIBLE){
+            String designation;
+            String duration;
+            String organization;
+            String organization_address;
+            String workDetail;
+
+            designation = editText_Designation_3.getText().toString().trim();
+            duration = editText_Duration_3.getText().toString().trim();
+            organization = editText_Organization_3.getText().toString().trim();
+            organization_address = editText_OrganizationAddress_3.getText().toString().trim();
+            workDetail = etWorkDetail_3.getText().toString();
+
+            WorkExperience_Model workExperience_model = new WorkExperience_Model();
+            workExperience_model.setDesignationName(designation);
+            workExperience_model.setDurationTime(duration);
+            workExperience_model.setOrganizationName(organization);
+            workExperience_model.setOgganizationAddress(organization_address);
+            workExperience_model.setworkDetail(workDetail);
+
+            ResumeProfilePart6.workExperience.add(workExperience_model);
+        }
+
+        if (linearLayout_AddWorkExperience_4.getVisibility() == View.VISIBLE){
+            String designation;
+            String duration;
+            String organization;
+            String organization_address;
+            String workDetail;
+
+            designation = editText_Designation_4.getText().toString().trim();
+            duration = editText_Duration_4.getText().toString().trim();
+            organization = editText_Organization_4.getText().toString().trim();
+            organization_address = editText_OrganizationAddress_4.getText().toString().trim();
+            workDetail = etWorkDetail_4.getText().toString();
+
+            WorkExperience_Model workExperience_model = new WorkExperience_Model();
+            workExperience_model.setDesignationName(designation);
+            workExperience_model.setDurationTime(duration);
+            workExperience_model.setOrganizationName(organization);
+            workExperience_model.setOgganizationAddress(organization_address);
+            workExperience_model.setworkDetail(workDetail);
+
+            ResumeProfilePart6.workExperience.add(workExperience_model);
+        }
     }
 
     private void GoToNextIntent(){
@@ -247,10 +424,40 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
                 linearLayout_AddWorkExperience_2.setVisibility(View.VISIBLE);
             }
         }
+        if (view == button_AddField_2){
+            if (CheckValidity_WorkExperience_2()){
+                button_AddField_2.setVisibility(View.GONE);
+                button_DeleteField_2.setVisibility(View.GONE);
+                linearLayout_AddWorkExperience_3.setVisibility(View.VISIBLE);
+            }
+        }
         if (view == button_DeleteField_2){
             linearLayout_AddWorkExperience_2.setVisibility(View.GONE);
             button_AddField_1.setVisibility(View.VISIBLE);
             button_DeleteField_1.setVisibility(View.GONE);
+        }
+        if (view == button_AddField_3){
+            if (CheckValidity_WorkExperience_3()){
+                button_AddField_3.setVisibility(View.GONE);
+                button_DeleteField_3.setVisibility(View.GONE);
+                linearLayout_AddWorkExperience_4.setVisibility(View.VISIBLE);
+            }
+        }
+        if (view == button_DeleteField_3){
+            linearLayout_AddWorkExperience_3.setVisibility(View.GONE);
+            button_AddField_2.setVisibility(View.VISIBLE);
+            button_DeleteField_2.setVisibility(View.GONE);
+        }
+        if (view == button_AddField_4){
+            if (CheckValidity_WorkExperience_4()){
+                button_AddField_4.setVisibility(View.GONE);
+                button_DeleteField_4.setVisibility(View.GONE);
+            }
+        }
+        if (view == button_DeleteField_4){
+            linearLayout_AddWorkExperience_4.setVisibility(View.GONE);
+            button_AddField_3.setVisibility(View.VISIBLE);
+            button_DeleteField_3.setVisibility(View.GONE);
         }
     }
 

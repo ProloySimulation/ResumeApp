@@ -150,18 +150,39 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         linearLayout_Grade_1 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_1);
 
         textView_QualificationName_1 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_1);
+        spinner_Board_1 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_1);
+        spinner_Board_1.setEnabled(false);
 
         qualification_Names_1 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_QualificationName_1);
         ArrayAdapter<CharSequence> arrayAdapterQualificationName1 = ArrayAdapter.createFromResource(this,R.array.qualification_Names,android.R.layout.simple_spinner_item);
         arrayAdapterQualificationName1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         qualification_Names_1.setAdapter(arrayAdapterQualificationName1);
         qualification_Names_1.setOnItemSelectedListener(this);
+        qualification_Names_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if((text.compareTo("PSC/5 Pass") == 0) || (text.compareTo("JSC/JDC/8 Pass") == 0) || (text.compareTo("SSC") == 0)
+                        || (text.compareTo("HSC") == 0)){
+
+                    spinner_Board_1.setEnabled(true);
+                }
+                else {
+                    spinner_Board_1.setEnabled(false);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
 
         editText_InstituteName_1 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_1);
 
         textView_BoardName_1 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_1);
 
-        spinner_Board_1 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_1);
         ArrayAdapter<CharSequence> arrayAdapterBoardName1 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_Board_1.setAdapter(arrayAdapterBoardName1);
@@ -174,6 +195,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_1.setAdapter(arrayAdapterSubjectGroupName1);
         subjectGroup_Name_1.setOnItemSelectedListener(this);
+
         subjectGroup_Name_1.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -258,6 +280,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         linearLayout_Grade_2 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_2);
 
         textView_QualificationName_2 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_2);
+        spinner_Board_2 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_2);
+        spinner_Board_2.setEnabled(false);
 
         qualification_Names_2 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_QualificationName_2);
         ArrayAdapter<CharSequence> arrayAdapterQualificationName2 = ArrayAdapter.createFromResource(this,R.array.qualification_Names,android.R.layout.simple_spinner_item);
@@ -265,11 +289,31 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         qualification_Names_2.setAdapter(arrayAdapterQualificationName2);
         qualification_Names_2.setOnItemSelectedListener(this);
 
+        qualification_Names_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if((text.compareTo("PSC/5 Pass") == 0) || (text.compareTo("JSC/JDC/8 Pass") == 0) || (text.compareTo("SSC") == 0)
+                        || (text.compareTo("HSC") == 0)){
+
+                    spinner_Board_2.setEnabled(true);
+                }
+                else {
+                    spinner_Board_2.setEnabled(false);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         editText_InstituteName_2 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_2);
 
         textView_BoardName_2 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_2);
 
-        spinner_Board_2 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_2);
         ArrayAdapter<CharSequence> arrayAdapterBoardName2 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_Board_2.setAdapter(arrayAdapterBoardName2);
@@ -282,6 +326,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         arrayAdapterSubjectGroupName2.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         subjectGroup_Name_2.setAdapter(arrayAdapterSubjectGroupName2);
         subjectGroup_Name_2.setOnItemSelectedListener(this);
+
         subjectGroup_Name_2.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
@@ -365,6 +410,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         linearLayout_Grade_3 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_3);
 
         textView_QualificationName_3 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_3);
+        spinner_Board_3 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_3);
+        spinner_Board_3.setEnabled(false);
 
         qualification_Names_3 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_QualificationName_3);
         ArrayAdapter<CharSequence> arrayAdapterQualificationName3 = ArrayAdapter.createFromResource(this,R.array.qualification_Names,android.R.layout.simple_spinner_item);
@@ -372,11 +419,31 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         qualification_Names_3.setAdapter(arrayAdapterQualificationName3);
         qualification_Names_3.setOnItemSelectedListener(this);
 
+        qualification_Names_3.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if((text.compareTo("PSC/5 Pass") == 0) || (text.compareTo("JSC/JDC/8 Pass") == 0) || (text.compareTo("SSC") == 0)
+                        || (text.compareTo("HSC") == 0)){
+
+                    spinner_Board_3.setEnabled(true);
+                }
+                else {
+                    spinner_Board_3.setEnabled(false);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         editText_InstituteName_3 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_3);
 
         textView_BoardName_3 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_3);
 
-        spinner_Board_3 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_3);
         ArrayAdapter<CharSequence> arrayAdapterBoardName3 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName3.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_Board_3.setAdapter(arrayAdapterBoardName3);
@@ -472,6 +539,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         linearLayout_Grade_4 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_4);
 
         textView_QualificationName_4 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_4);
+        spinner_Board_4 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_4);
+        spinner_Board_4.setEnabled(false);
 
         qualification_Names_4 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_QualificationName_4);
         ArrayAdapter<CharSequence> arrayAdapterQualificationName4 = ArrayAdapter.createFromResource(this,R.array.qualification_Names,android.R.layout.simple_spinner_item);
@@ -479,11 +548,31 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         qualification_Names_4.setAdapter(arrayAdapterQualificationName4);
         qualification_Names_4.setOnItemSelectedListener(this);
 
+        qualification_Names_4.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if((text.compareTo("PSC/5 Pass") == 0) || (text.compareTo("JSC/JDC/8 Pass") == 0) || (text.compareTo("SSC") == 0)
+                        || (text.compareTo("HSC") == 0)){
+
+                    spinner_Board_4.setEnabled(true);
+                }
+                else {
+                    spinner_Board_4.setEnabled(false);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         editText_InstituteName_4 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_4);
 
         textView_BoardName_4 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_4);
 
-        spinner_Board_4 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_4);
         ArrayAdapter<CharSequence> arrayAdapterBoardName4 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName4.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_Board_4.setAdapter(arrayAdapterBoardName4);
@@ -577,6 +666,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         linearLayout_Grade_5 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_5);
 
         textView_QualificationName_5 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_5);
+        spinner_Board_5 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_5);
+        spinner_Board_5.setEnabled(false);
 
         qualification_Names_5 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_QualificationName_5);
         ArrayAdapter<CharSequence> arrayAdapterQualificationName5 = ArrayAdapter.createFromResource(this,R.array.qualification_Names,android.R.layout.simple_spinner_item);
@@ -584,11 +675,31 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         qualification_Names_5.setAdapter(arrayAdapterQualificationName5);
         qualification_Names_5.setOnItemSelectedListener(this);
 
+        qualification_Names_5.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
+
+                String text = adapterView.getItemAtPosition(i).toString();
+
+                if((text.compareTo("PSC/5 Pass") == 0) || (text.compareTo("JSC/JDC/8 Pass") == 0) || (text.compareTo("SSC") == 0)
+                        || (text.compareTo("HSC") == 0)){
+
+                    spinner_Board_5.setEnabled(true);
+                }
+                else {
+                    spinner_Board_5.setEnabled(false);
+                }
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> adapterView) {
+
+            }
+        });
+
         editText_InstituteName_5 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_5);
 
         textView_BoardName_5 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_5);
 
-        spinner_Board_5 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_5);
         ArrayAdapter<CharSequence> arrayAdapterBoardName5 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName5.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinner_Board_5.setAdapter(arrayAdapterBoardName5);
@@ -770,11 +881,9 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_1.requestFocus();
             return false;
         }
-        if (board_name.compareTo("Select") == 0){
-            textView_BoardName_1.setError("SELECT BOARD NAME!");
-            textView_BoardName_1.requestFocus();
-            return false;
-        }
+        /*if (board_name.compareTo("Select") == 0){
+            board_name = null;
+        }*/
         if (subjectgroup_name.compareTo("Select") == 0){
             textView_SubjectGroupName_1.setError("SELECT SUBJECT OR GROUP!");
             textView_SubjectGroupName_1.requestFocus();
@@ -838,11 +947,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_2.requestFocus();
             return false;
         }
-        if (board_name.compareTo("Select") == 0){
+       /* if (board_name.compareTo("Select") == 0){
             textView_BoardName_2.setError("SELECT BOARD NAME!");
             textView_BoardName_2.requestFocus();
             return false;
-        }
+        }*/
         if (subjectgroup_name.compareTo("Select") == 0){
             textView_SubjectGroupName_2.setError("SELECT SUBJECT OR GROUP!");
             textView_SubjectGroupName_2.requestFocus();
@@ -901,11 +1010,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_3.requestFocus();
             return false;
         }
-        if (board_name.compareTo("Select") == 0){
+        /*if (board_name.compareTo("Select") == 0){
             textView_BoardName_3.setError("SELECT BOARD NAME!");
             textView_BoardName_3.requestFocus();
             return false;
-        }
+        }*/
         if (subjectgroup_name.compareTo("Select") == 0){
             textView_SubjectGroupName_3.setError("SELECT SUBJECT OR GROUP!");
             textView_SubjectGroupName_3.requestFocus();
@@ -964,11 +1073,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_4.requestFocus();
             return false;
         }
-        if (board_name.compareTo("Select") == 0){
+        /*if (board_name.compareTo("Select") == 0){
             textView_BoardName_4.setError("SELECT BOARD NAME!");
             textView_BoardName_4.requestFocus();
             return false;
-        }
+        }*/
         if (subjectgroup_name.compareTo("Select") == 0){
             textView_SubjectGroupName_4.setError("SELECT SUBJECT OR GROUP!");
             textView_SubjectGroupName_4.requestFocus();
@@ -1027,11 +1136,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_5.requestFocus();
             return false;
         }
-        if (board_name.compareTo("Select") == 0){
+        /*if (board_name.compareTo("Select") == 0){
             textView_BoardName_5.setError("SELECT BOARD NAME!");
             textView_BoardName_5.requestFocus();
             return false;
-        }
+        }*/
         if (subjectgroup_name.compareTo("Select") == 0){
             textView_SubjectGroupName_5.setError("SELECT SUBJECT OR GROUP!");
             textView_SubjectGroupName_5.requestFocus();

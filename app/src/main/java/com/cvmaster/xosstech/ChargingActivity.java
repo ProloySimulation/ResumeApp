@@ -87,11 +87,11 @@ public class ChargingActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view) {
-             /*  String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-                check_sub(msisdn);*/
+               String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+                check_sub(msisdn);
 
                 //for test
-                intent_to_next();
+//                intent_to_next();
             }
         });
         

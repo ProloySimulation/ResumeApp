@@ -236,7 +236,13 @@ public class PdfActivityTemplate1 extends AppCompatActivity implements View.OnCl
             textView_title1.setText(model.getQualification_name());
             textView_concentration1.setText(model.getGroupsubject_name());
             textView_institute1.setText(model.getInstitute_name());
-            textView_board1.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                textView_board1.setText("N/A");
+            }
+            else {
+                textView_board1.setText(model.getBoard_name());
+            }
             textView_result1.setText(model.getResult());
             textView_year1.setText(model.getPassing_year());
         }
@@ -247,7 +253,13 @@ public class PdfActivityTemplate1 extends AppCompatActivity implements View.OnCl
             textView_title2.setText(model.getQualification_name());
             textView_concentration2.setText(model.getQualification_name());
             textView_institute2.setText(model.getInstitute_name());
-            textView_board2.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                textView_board2.setText("N/A");
+            }
+            else {
+                textView_board2.setText(model.getBoard_name());
+            }
             textView_result2.setText(model.getResult());
             textView_year2.setText(model.getPassing_year());
         }
@@ -258,7 +270,13 @@ public class PdfActivityTemplate1 extends AppCompatActivity implements View.OnCl
             textView_title3.setText(model.getQualification_name());
             textView_concentration3.setText(model.getQualification_name());
             textView_institute3.setText(model.getInstitute_name());
-            textView_board3.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                textView_board3.setText("N/A");
+            }
+            else {
+                textView_board3.setText(model.getBoard_name());
+            }
             textView_result3.setText(model.getResult());
             textView_year3.setText(model.getPassing_year());
         }
@@ -269,7 +287,13 @@ public class PdfActivityTemplate1 extends AppCompatActivity implements View.OnCl
             textView_title4.setText(model.getQualification_name());
             textView_concentration4.setText(model.getQualification_name());
             textView_institute4.setText(model.getInstitute_name());
-            textView_board4.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                textView_board4.setText("N/A");
+            }
+            else {
+                textView_board4.setText(model.getBoard_name());
+            }
             textView_result4.setText(model.getResult());
             textView_year4.setText(model.getPassing_year());
         }
@@ -279,7 +303,13 @@ public class PdfActivityTemplate1 extends AppCompatActivity implements View.OnCl
             textView_title5.setText(model.getQualification_name());
             textView_concentration5.setText(model.getQualification_name());
             textView_institute5.setText(model.getInstitute_name());
-            textView_board5.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                textView_board5.setText("N/A");
+            }
+            else {
+                textView_board5.setText(model.getBoard_name());
+            }
             textView_result5.setText(model.getResult());
             textView_year5.setText(model.getPassing_year());
         }

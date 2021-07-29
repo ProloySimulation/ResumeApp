@@ -317,6 +317,32 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
 
         }
 
+        if (ResumeProfilePart6.workExperience.size() > 2) {
+
+            ll_prexp3.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp3_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp3_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp3_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp3_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp3_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3) {
+
+            ll_prexp4.setVisibility(View.VISIBLE);
+
+            WorkExperience_Model workExperience_mod = workExperience_model.get(1);
+            tv_pr_exp4_position.setText(workExperience_mod.getDesignationName());
+            tv_pr_exp4_company.setText(workExperience_mod.getOrganizationName());
+            tv_pr_exp4_company_address.setText(workExperience_mod.getOgganizationAddress());
+            tv_pr_exp4_service_time.setText(workExperience_mod.getDurationTime());
+            tv_pr_exp4_service_detail.setText(workExperience_mod.getworkDetail());
+
+        }
+
         linearlayout_EducationalQualification_1 = findViewById(R.id.rl_education);
         tv_educationQualification_1 = findViewById(R.id.tv_educationQualification_1_template5);
         tv_instituteName_1 = findViewById(R.id.tv_instituteName_1_template5);
@@ -361,7 +387,13 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
             tv_Result_1.setText(model.getResult());
-            tv_boardName_1.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_1.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_1.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 1) {
@@ -372,7 +404,13 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
             tv_instituteName_2.setText(model.getInstitute_name());
             tv_passingYear_2.setText(model.getPassing_year());
             tv_Result_2.setText(model.getResult());
-            tv_boardName_2.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_2.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_2.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 2) {
@@ -383,7 +421,13 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
             tv_instituteName_3.setText(model.getInstitute_name());
             tv_passingYear_3.setText(model.getPassing_year());
             tv_Result_3.setText(model.getResult());
-            tv_boardName_3.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_3.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_3.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 3) {
@@ -394,7 +438,13 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
             tv_instituteName_4.setText(model.getInstitute_name());
             tv_passingYear_4.setText(model.getPassing_year());
             tv_Result_4.setText(model.getResult());
-            tv_boardName_4.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_4.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_4.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 4) {
@@ -405,7 +455,13 @@ public class PdfActivityTemplate5 extends AppCompatActivity implements View.OnCl
             tv_instituteName_5.setText(model.getInstitute_name());
             tv_passingYear_5.setText(model.getPassing_year());
             tv_Result_5.setText(model.getResult());
-            tv_boardName_5.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_5.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_5.setText(model.getBoard_name());
+            }
         }
     }
 

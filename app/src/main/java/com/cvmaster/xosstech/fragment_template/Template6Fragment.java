@@ -395,7 +395,13 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
             tv_Result_1.setText(model.getResult());
-            tv_boardName_1.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_1.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_1.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 1) {
@@ -406,7 +412,13 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
             tv_instituteName_2.setText(model.getInstitute_name());
             tv_passingYear_2.setText(model.getPassing_year());
             tv_Result_2.setText(model.getResult());
-            tv_boardName_2.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_2.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_2.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 2) {
@@ -417,7 +429,13 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
             tv_instituteName_3.setText(model.getInstitute_name());
             tv_passingYear_3.setText(model.getPassing_year());
             tv_Result_3.setText(model.getResult());
-            tv_boardName_3.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_3.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_3.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 3) {
@@ -428,7 +446,13 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
             tv_instituteName_4.setText(model.getInstitute_name());
             tv_passingYear_4.setText(model.getPassing_year());
             tv_Result_4.setText(model.getResult());
-            tv_boardName_4.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_4.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_4.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 4) {
@@ -439,7 +463,13 @@ public class Template6Fragment extends Fragment implements View.OnClickListener 
             tv_instituteName_5.setText(model.getInstitute_name());
             tv_passingYear_5.setText(model.getPassing_year());
             tv_Result_5.setText(model.getResult());
-            tv_boardName_5.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_5.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_5.setText(model.getBoard_name());
+            }
         }
 
 

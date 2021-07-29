@@ -34,6 +34,7 @@ import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.ResumeTemplate;
 import com.cvmaster.xosstech.model.Skills_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
+import com.cvmaster.xosstech.viewmodel.Template5ViewModel;
 import com.cvmaster.xosstech.viewmodel.Templete4ViewModel;
 
 import java.io.File;
@@ -145,7 +146,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
     private TextView tvFacebook;
     private TextView tvLinkedin;
 
-    private Templete4ViewModel mViewModel;
+    private Template5ViewModel mViewModel;
 
     public static Templete4Fragment newInstance() {
         return new Templete4Fragment();
@@ -160,7 +161,7 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        mViewModel = new ViewModelProvider(this).get(Templete4ViewModel.class);
+        mViewModel = new ViewModelProvider(this).get(Template5ViewModel.class);
         // TODO: Use the ViewModel
     }
 
@@ -367,7 +368,13 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_instituteName_1.setText(model.getInstitute_name());
             tv_passingYear_1.setText(model.getPassing_year());
             tv_Result_1.setText(model.getResult());
-            tv_boardName_1.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_1.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_1.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 1) {
@@ -378,7 +385,13 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_instituteName_2.setText(model.getInstitute_name());
             tv_passingYear_2.setText(model.getPassing_year());
             tv_Result_2.setText(model.getResult());
-            tv_boardName_2.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_2.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_2  .setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 2) {
@@ -389,7 +402,13 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_instituteName_3.setText(model.getInstitute_name());
             tv_passingYear_3.setText(model.getPassing_year());
             tv_Result_3.setText(model.getResult());
-            tv_boardName_3.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_3.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_3.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 3) {
@@ -400,7 +419,13 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_instituteName_4.setText(model.getInstitute_name());
             tv_passingYear_4.setText(model.getPassing_year());
             tv_Result_4.setText(model.getResult());
-            tv_boardName_4.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_4.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_4.setText(model.getBoard_name());
+            }
         }
 
         if (ResumeProfilePart2.educationQualification.size() > 4) {
@@ -411,7 +436,13 @@ public class Template5Fragment extends Fragment implements View.OnClickListener{
             tv_instituteName_5.setText(model.getInstitute_name());
             tv_passingYear_5.setText(model.getPassing_year());
             tv_Result_5.setText(model.getResult());
-            tv_boardName_5.setText(model.getBoard_name());
+            if(model.getBoard_name().equals("Select"))
+            {
+                tv_boardName_5.setVisibility(View.GONE);
+            }
+            else {
+                tv_boardName_5.setText(model.getBoard_name());
+            }
         }
 
 

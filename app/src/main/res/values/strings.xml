@@ -44,6 +44,8 @@
         <item>Rajshahi</item>
         <item>Sylhet</item>
         <item>Dinajpur</item>
+        <item>Bangladesh Technical Education Board</item>
+        <item>Bangladesh Madrasah Education Board</item>
     </string-array>
 
     <string-array name="passing_Years">

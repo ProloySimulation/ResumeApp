@@ -365,6 +365,7 @@ creativity, sincerity for the better achievement of the organization."
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/tvGradeEducation1"
                                 android:layout_gravity="center"
                                 android:text="Grade:"/>
 
@@ -652,9 +653,11 @@ creativity, sincerity for the better achievement of the organization."
                             android:layout_height="wrap_content"
                             android:layout_gravity="center"
                             android:orientation="horizontal">
+
                             <RelativeLayout
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content">
+
                                 <Spinner
                                     android:layout_alignParentRight="true"
                                     android:id="@+id/spinner_BuildResumePart3_PassingYear_2"
@@ -715,9 +718,11 @@ creativity, sincerity for the better achievement of the organization."
                             android:orientation="horizontal"
                             android:layout_gravity="center"
                             android:visibility="gone">
+
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/tvGradeEducation2"
                                 android:layout_gravity="center"
                                 android:text="Grade:"/>
 
@@ -970,6 +975,7 @@ creativity, sincerity for the better achievement of the organization."
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:id="@+id/tvGradeEducation3"
                             android:layout_gravity="center"
                             android:text="Grade:"/>
 
@@ -1080,6 +1086,7 @@ creativity, sincerity for the better achievement of the organization."
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
+                                android:id="@+id/tvGradeEducation4"
                                 android:layout_gravity="center"
                                 android:text="Grade:"/>
 
@@ -1783,6 +1790,7 @@ creativity, sincerity for the better achievement of the organization."
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center"
+                                android:id="@+id/tvGradeEducation5"
                                 android:text="Grade:"/>
 
                             <EditText

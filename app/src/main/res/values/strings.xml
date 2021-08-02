@@ -36,10 +36,10 @@
     <string-array name="board_Names">
         <item>Select</item>
         <item>Barisal</item>
-        <item>Chittagong</item>
-        <item>Comilla</item>
+        <item>Chattogram</item>
+        <item>Cumilla</item>
         <item>Dhaka</item>
-        <item>Jessore</item>
+        <item>Jashore</item>
         <item>Mymensingh</item>
         <item>Rajshahi</item>
         <item>Sylhet</item>
@@ -100,6 +100,7 @@
         <item>2018</item>
         <item>2019</item>
         <item>2020</item>
+        <item>2021</item>
     </string-array>
 
     <string-array name="marital_Status_Names">

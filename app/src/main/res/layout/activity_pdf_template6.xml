@@ -863,7 +863,7 @@
 
                             <!-- Work Exp 4-->
                             <LinearLayout
-                                android:id="@+id/ll_work_exp4"
+                                android:id="@+id/ll_work_exp4_template6"
                                 android:layout_below="@id/ll_work_exp3_template6"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
@@ -876,7 +876,7 @@
                                     android:layout_height="wrap_content">
 
                                     <TextView
-                                        android:id="@+id/tv_wrk_exp4_cname"
+                                        android:id="@+id/tv_wrk_exp4_cname_template6"
                                         android:layout_width="wrap_content"
                                         android:layout_height="12dp"
                                         android:fontFamily="@font/balootammudsemibold"
@@ -885,11 +885,11 @@
                                         android:textSize="8sp" />
 
                                     <TextView
-                                        android:id="@+id/tv_wrk_exp4_duration"
+                                        android:id="@+id/tv_wrk_exp4_duration_template6"
                                         android:layout_width="wrap_content"
                                         android:layout_height="12dp"
                                         android:layout_alignParentRight="true"
-                                        android:layout_toRightOf="@id/tv_wrk_exp4_cname"
+                                        android:layout_toRightOf="@id/tv_wrk_exp4_cname_template6"
                                         android:fontFamily="@font/balootammudoregular"
                                         android:text="Duration"
                                         android:textAlignment="textEnd"
@@ -897,10 +897,10 @@
                                         android:textSize="8sp" />
 
                                     <TextView
-                                        android:id="@+id/tv_wrk_exp4_job_title"
+                                        android:id="@+id/tv_wrk_exp4_job_title_template6"
                                         android:layout_width="wrap_content"
                                         android:layout_height="13dp"
-                                        android:layout_below="@id/tv_wrk_exp4_cname"
+                                        android:layout_below="@id/tv_wrk_exp4_cname_template6"
                                         android:fontFamily="@font/balootammudoregular"
                                         android:text="Job Title"
                                         android:textAllCaps="true"
@@ -908,22 +908,22 @@
                                         android:textSize="8sp" />
 
                                     <TextView
-                                        android:id="@+id/tv_wrk_exp4_location"
+                                        android:id="@+id/tv_wrk_exp4_location_template6"
                                         android:layout_width="wrap_content"
                                         android:layout_height="13dp"
-                                        android:layout_below="@id/tv_wrk_exp4_cname"
+                                        android:layout_below="@id/tv_wrk_exp4_cname_template6"
                                         android:layout_marginLeft="8dp"
-                                        android:layout_toRightOf="@id/tv_wrk_exp4_job_title"
+                                        android:layout_toRightOf="@id/tv_wrk_exp4_job_title_template6"
                                         android:fontFamily="@font/balootammudoregular"
                                         android:text="Location"
                                         android:textColor="@color/colorBlack"
                                         android:textSize="8sp" />
 
                                     <TextView
-                                        android:id="@+id/tv_wrk_exp4_description"
+                                        android:id="@+id/tv_wrk_exp4_description_template6"
                                         android:layout_width="match_parent"
                                         android:layout_height="wrap_content"
-                                        android:layout_below="@id/tv_wrk_exp4_job_title"
+                                        android:layout_below="@id/tv_wrk_exp4_job_title_template6"
                                         android:fontFamily="@font/balootammudoregular"
                                         android:lineSpacingMultiplier="0.5"
                                         android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."

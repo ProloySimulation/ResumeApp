@@ -278,12 +278,12 @@ public class PdfActivityTemplate6 extends AppCompatActivity implements View.OnCl
         tv_pr_exp3_service_time = findViewById(R.id.tv_wrk_exp3_duration_template6);
         tv_pr_exp3_service_detail = findViewById(R.id.tv_wrk_exp3_description_template6);
 
-        ll_prexp4 = findViewById(R.id.ll_work_exp4);
-        tv_pr_exp4_position = findViewById(R.id.tv_wrk_exp4_job_title);
-        tv_pr_exp4_company = findViewById(R.id.tv_wrk_exp4_cname);
-        tv_pr_exp4_company_address = findViewById(R.id.tv_wrk_exp4_location);
-        tv_pr_exp4_service_time = findViewById(R.id.tv_wrk_exp4_duration);
-        tv_pr_exp4_service_detail = findViewById(R.id.tv_wrk_exp4_description);
+        ll_prexp4 = findViewById(R.id.ll_work_exp4_template6);
+        tv_pr_exp4_position = findViewById(R.id.tv_wrk_exp4_job_title_template6);
+        tv_pr_exp4_company = findViewById(R.id.tv_wrk_exp4_cname_template6);
+        tv_pr_exp4_company_address = findViewById(R.id.tv_wrk_exp4_location_template6);
+        tv_pr_exp4_service_time = findViewById(R.id.tv_wrk_exp4_duration_template6);
+        tv_pr_exp4_service_detail = findViewById(R.id.tv_wrk_exp4_description_template6);
 
 
         List<WorkExperience_Model> workExperience_model = ResumeProfilePart6.workExperience;

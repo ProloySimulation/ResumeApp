@@ -46,6 +46,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private Button button_AddField_EducationalQualification_1;
     private LinearLayout layoutOtherSubject1 ;
     private EditText etOtherSubject1;
+    private TextView tvGradeEducation1 ;
 
 
     private LinearLayout linearLayout_EducationalQualification_2;
@@ -68,6 +69,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private Button button_DeleteField_EducationalQualification_2;
     private LinearLayout layoutOtherSubject2 ;
     private EditText etOtherSubject2;
+    private TextView tvGradeEducation2 ;
 
     private LinearLayout linearLayout_EducationalQualification_3;
     private TextView textView_QualificationName_3;
@@ -89,6 +91,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private Button button_DeleteField_EducationalQualification_3;
     private LinearLayout layoutOtherSubject3 ;
     private EditText etOtherSubject3;
+    private TextView tvGradeEducation3 ;
 
     private LinearLayout linearLayout_EducationalQualification_4;
     private TextView textView_QualificationName_4;
@@ -110,6 +113,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private Button button_DeleteField_EducationalQualification_4;
     private LinearLayout layoutOtherSubject4 ;
     private EditText etOtherSubject4;
+    private TextView tvGradeEducation4 ;
 
 
     private LinearLayout linearLayout_EducationalQualification_5;
@@ -129,6 +133,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private LinearLayout linearLayout_Grade_5;
     private EditText editText_Grade_5;
     private Button button_DeleteField_EducationalQualification_5;
+    private TextView tvGradeEducation5 ;
 
     private Button button_Next;
     private Button button_Data;
@@ -142,6 +147,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         clearResumeProfilePart2Memory();
 
         editText_CareerObjective = (EditText) findViewById(R.id.editText_BuildResumePart2_CareerObjective);
+        tvGradeEducation1 = findViewById(R.id.tvGradeEducation1);
 
         linearLayout_EducationalQualification_1 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_1);
         button_AddField_EducationalQualification_1 = (Button) findViewById(R.id.button_AddField_EducationalQualification_1);
@@ -168,9 +174,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                         || (text.compareTo("HSC") == 0)){
 
                     spinner_Board_1.setEnabled(true);
+                    tvGradeEducation1.setText("GPA: ");
                 }
                 else {
                     spinner_Board_1.setEnabled(false);
+                    tvGradeEducation1.setText("CGPA: ");
                 }
             }
             @Override
@@ -278,6 +286,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         button_DeleteField_EducationalQualification_2.setOnClickListener(this);
         linearLayout_Division_2 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Division_2);
         linearLayout_Grade_2 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_2_Grade_2);
+        tvGradeEducation2 = findViewById(R.id.tvGradeEducation2);
 
         textView_QualificationName_2 = (TextView) findViewById(R.id.textView_BuildResumePart2_QualificationName_2);
         spinner_Board_2 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_2);
@@ -299,9 +308,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                         || (text.compareTo("HSC") == 0)){
 
                     spinner_Board_2.setEnabled(true);
+                    tvGradeEducation2.setText("GPA: ");
                 }
                 else {
                     spinner_Board_2.setEnabled(false);
+                    tvGradeEducation2.setText("CGPA: ");
                 }
             }
             @Override
@@ -401,6 +412,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         layoutOtherSubject2 = findViewById(R.id.linearLayout_Others_Subject_2);
         etOtherSubject2 = findViewById(R.id.etOthersSub2);
 
+        tvGradeEducation3 = findViewById(R.id.tvGradeEducation3);
         linearLayout_EducationalQualification_3 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_3);
         button_AddField_EducationalQualification_3 = (Button) findViewById(R.id.button_AddField_EducationalQualification_3);
         button_AddField_EducationalQualification_3.setOnClickListener(this);
@@ -429,9 +441,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                         || (text.compareTo("HSC") == 0)){
 
                     spinner_Board_3.setEnabled(true);
+                    tvGradeEducation3.setText("GPA: ");
                 }
                 else {
                     spinner_Board_3.setEnabled(false);
+                    tvGradeEducation3.setText("CGPA: ");
                 }
             }
             @Override
@@ -530,6 +544,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         layoutOtherSubject3 = findViewById(R.id.linearLayout_Others_Subject_3);
         etOtherSubject3 = findViewById(R.id.etOthersSub3);
 
+        tvGradeEducation4 = findViewById(R.id.tvGradeEducation4);
         linearLayout_EducationalQualification_4 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_4);
         button_AddField_EducationalQualification_4 = (Button) findViewById(R.id.button_AddField_EducationalQualification_4);
         button_AddField_EducationalQualification_4.setOnClickListener(this);
@@ -558,9 +573,12 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                         || (text.compareTo("HSC") == 0)){
 
                     spinner_Board_4.setEnabled(true);
+                    tvGradeEducation4.setText("GPA: ");
+
                 }
                 else {
                     spinner_Board_4.setEnabled(false);
+                    tvGradeEducation4.setText("CGPA: ");
                 }
             }
             @Override
@@ -659,6 +677,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         layoutOtherSubject4 = findViewById(R.id.linearLayout_Others_Subject_4);
         etOtherSubject4 = findViewById(R.id.etOthersSub4);
 
+        tvGradeEducation5 = findViewById(R.id.tvGradeEducation5);
         linearLayout_EducationalQualification_5 = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_5);
         button_DeleteField_EducationalQualification_5 = (Button) findViewById(R.id.button_DeleteField_EducationalQualification_5);
         button_DeleteField_EducationalQualification_5.setOnClickListener(this);
@@ -685,9 +704,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                         || (text.compareTo("HSC") == 0)){
 
                     spinner_Board_5.setEnabled(true);
+                    tvGradeEducation5.setText("GPA: ");
                 }
                 else {
                     spinner_Board_5.setEnabled(false);
+                    tvGradeEducation5.setText("CGPA: ");
                 }
             }
             @Override

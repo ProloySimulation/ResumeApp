@@ -6,12 +6,7 @@ import androidx.fragment.app.FragmentManager;
 import android.os.Bundle;
 
 import com.cvmaster.xosstech.R;
-import com.cvmaster.xosstech.fragment_template.Template5Fragment;
-import com.cvmaster.xosstech.fragment_template.Template6Fragment;
-import com.cvmaster.xosstech.fragment_template.Templete1Fragment;
-import com.cvmaster.xosstech.fragment_template.Templete2Fragment;
-import com.cvmaster.xosstech.fragment_template.Templete3Fragment;
-import com.cvmaster.xosstech.fragment_template.Templete4Fragment;
+
 
 public class FragmentShowActivity extends AppCompatActivity {
 
@@ -22,7 +17,7 @@ public class FragmentShowActivity extends AppCompatActivity {
         FragmentManager fragmentManager = getSupportFragmentManager();
         int value = getIntent().getIntExtra("t", 1);
 
-        if (value == 1) {
+        /*if (value == 1) {
             fragmentManager.beginTransaction().replace(R.id.containerFragemtID, new Templete1Fragment()).commit();
 
         }
@@ -45,6 +40,6 @@ public class FragmentShowActivity extends AppCompatActivity {
 
         if (value == 6){
             fragmentManager.beginTransaction().replace(R.id.containerFragemtID, new Template6Fragment()).commit();
-        }
+        }*/
     }
 }

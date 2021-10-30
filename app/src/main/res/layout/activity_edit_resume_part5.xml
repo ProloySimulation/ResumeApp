@@ -346,21 +346,6 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimary1"/>
 
-                <Button
-                    android:id="@+id/button_EditResumePart5_Update"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/outline_btn_blue"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:text="Update"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary1"
-                    android:layout_gravity="center"/>
             </LinearLayout>
 
             <LinearLayout

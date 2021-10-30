@@ -111,30 +111,30 @@
                     android:layout_height="match_parent">
 
                         <com.mikhaellopez.circularimageview.CircularImageView
+                            android:id="@+id/image_person_template6"
                             android:layout_width="80dp"
                             android:layout_height="80dp"
-                            android:id="@+id/image_person_template6"
-                            app:civ_border_color="#EEEEEE"
-                            android:layout_marginTop="8dp"
-                            app:civ_border_width="2dp"
-                            android:scaleType="centerCrop"
-                            app:civ_shadow="true"
                             android:layout_centerHorizontal="true"
+                            android:layout_marginTop="8dp"
+                            android:scaleType="centerCrop"
+                            app:civ_border_color="#EEEEEE"
+                            app:civ_border_width="2dp"
+                            app:civ_shadow="true"
                             app:civ_shadow_radius="10" />
 
 
                         <TextView
-                        android:id="@+id/tv_person_name_template6"
-                        android:layout_below="@+id/image_person_template6"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAllCaps="true"
-                        android:lineSpacingMultiplier="0.5"
-                        android:text="John Robbins"
-                        android:textSize="14sp"
-                        android:textAlignment="center"
-                        android:fontFamily="@font/balootammudsemibold"
-                        android:textColor="@color/colorBlack"/>
+                            android:id="@+id/tv_person_name_template6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@+id/image_person_template6"
+                            android:fontFamily="@font/balootammudsemibold"
+                            android:lineSpacingMultiplier="0.5"
+                            android:text="John Robbins"
+                            android:textAlignment="center"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="14sp" />
 
                     <TextView
                         android:id="@+id/job_title_main_template6"
@@ -604,27 +604,27 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/tv_profile_heading"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:fontFamily="@font/balootammudsemibold"
-                        android:text="Profile"
-                        android:textAllCaps="true"
-                        android:textColor="@color/colorBlack"
-                        android:textSize="10sp" />
+                        <TextView
+                            android:id="@+id/tv_profile_heading"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:fontFamily="@font/balootammudsemibold"
+                            android:text="Profile"
+                            android:textAllCaps="true"
+                            android:textColor="@color/colorBlack"
+                            android:textSize="10sp" />
 
-                    <TextView
-                        android:id="@+id/tv_profile_description_template6"
-                        android:layout_below="@id/tv_profile_heading"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:fontFamily="@font/balootammudoregular"
-                        android:lineSpacingMultiplier="0.5"
-                        android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
-                        android:textColor="@color/colorBlack"
-                        android:textSize="8sp" />
+                        <TextView
+                            android:id="@+id/tv_profile_description_template6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/tv_profile_heading"
+                            android:fontFamily="@font/balootammudoregular"
+                            android:lineSpacingMultiplier="0.5"
+                            android:text="To obtain a position with opportunities to utilize my experience, skill, talent, creativity, sincerity for the better achievement of the organization."
+                            android:textColor="@color/colorBlack"
+                            android:textSize="8sp" />
 
                     <!--Rl Work Experience-->
                     <RelativeLayout

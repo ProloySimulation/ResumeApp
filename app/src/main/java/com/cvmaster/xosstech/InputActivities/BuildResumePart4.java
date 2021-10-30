@@ -1,14 +1,26 @@
 package com.cvmaster.xosstech.InputActivities;
 
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
+import android.Manifest;
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.database.Cursor;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
+import android.provider.Settings;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -16,22 +28,43 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.cvmaster.xosstech.PermissionsUtil;
 import com.cvmaster.xosstech.R;
+import com.cvmaster.xosstech.ResumeProfilePart1;
 import com.cvmaster.xosstech.ResumeProfilePart3;
 import com.cvmaster.xosstech.ResumeProfilePart4;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserProfileActivity;
+import com.cvmaster.xosstech.UserSignInPart2;
 import com.cvmaster.xosstech.model.Skills_Model;
+import com.itextpdf.text.BadElementException;
+import com.itextpdf.text.Image;
 
+import org.json.JSONObject;
+
+import java.io.ByteArrayOutputStream;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BuildResumePart4 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private EditText editText_FullName;
-    private EditText editText_FatherName;
-    private EditText editText_MotherName;
+    private EditText editText_FullName,editText_MotherName,editText_FatherName,etMobile,etEmail;
 
     private TextView textView_Gender;
     private Spinner spinner_Gender;
@@ -52,10 +85,34 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
     private EditText editText_PresentAddress;
     private EditText editText_PermanentAddress;
 
-
+    private EditText etMotherName, etFatherName ;
 
     private Button button_Next;
-    private Button button_Data;
+    private Button button_Data,btn_gallery;
+
+    private String infoUrl = "http://xosstech.com/cvm/api/public/api/info";
+
+    private String fullname = null;
+    private String fathername = null;
+    private String mothername = null;
+    private String email = null;
+    private String mobile = null;
+    private String gender = null;
+    private String birthdate = null;
+    private String maritalstatus = null;
+    private String fatherName = null;
+    private String motherName = null;
+    private String nationality = null;
+    private String religion = null;
+    private String presentaddress = null;
+    private String permanentaddress = null;
+    private String encodeImageString = null;
+    private String currentPhotoPath,token;
+    private ImageView imvProfile ;
+    private Bitmap bitmap;
+
+    private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE = 101;
+    private final int GALLERY_REQUEST_CODE = 102;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,9 +124,16 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         button_Data = (Button) findViewById(R.id.button_BuildResumePart4_Data);
         button_Data.setOnClickListener(this);
 
+        btn_gallery = findViewById(R.id.button_BuildResumePart4_SelectFromGallery);
+        btn_gallery.setOnClickListener(this);
+
         editText_FullName = (EditText) findViewById(R.id.editText_BuildResumePart4_FullName);
         editText_FatherName = (EditText) findViewById(R.id.editText_BuildResumePart4_FatherName);
         editText_MotherName = (EditText) findViewById(R.id.editText_BuildResumePart4_MotherName);
+        etMobile = findViewById(R.id.editText_BuildResumePart4_mobile);
+        etEmail = findViewById(R.id.editText_BuildResumePart4_email);
+        imvProfile = findViewById(R.id.imageView_BuildResumePart1_Image);
+        button_Data = findViewById(R.id.button_BuildResumePart1_SelectFromGallery);
 
         textView_Gender = (TextView) findViewById(R.id.textView_BuildResumePart4_Gender);
         spinner_Gender = (Spinner) findViewById(R.id.spinner_BuildResumePart4_Gender);
@@ -154,16 +218,6 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
     }
 
     private void CheckValidity(){
-        String fullname = null;
-        String fathername = null;
-        String mothername = null;
-        String gender = null;
-        String birthdate = null;
-        String maritalstatus = null;
-        String nationality = null;
-        String religion = null;
-        String presentaddress = null;
-        String permanentaddress = null;
 
         fullname = editText_FullName.getText().toString().trim();
         fathername = editText_FatherName.getText().toString().trim();
@@ -175,6 +229,12 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         religion = spinner_Religion.getSelectedItem().toString().trim();
         presentaddress = editText_PresentAddress.getText().toString().trim();
         permanentaddress = editText_PermanentAddress.getText().toString().trim();
+        email = etEmail.getText().toString().trim();
+        mobile = etMobile.getText().toString().trim();
+        motherName = editText_MotherName.getText().toString().trim();
+        fatherName = editText_FatherName.getText().toString().trim();
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+        Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
 
 
         if (fullname.isEmpty()){
@@ -230,8 +290,8 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         }
 
         SaveData(fullname,fathername,mothername,gender,birthdate,maritalstatus,nationality,religion,presentaddress,permanentaddress);
-
-        GoToNextIntent();
+        infoStore();
+//        GoToNextIntent();
 
     }
 
@@ -262,6 +322,9 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         if (view == button_Data){
             ShowData();
         }
+        if (view == btn_gallery){
+            openGallery();
+        }
     }
 
     private void ShowData(){
@@ -287,28 +350,179 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         ResumeProfilePart4.setPermanent_address("");
     }
 
-    @Override
-    public void onBackPressed() {
 
+    public void infoStore()
+    {
+        StringRequest request = new StringRequest(Request.Method.POST, infoUrl,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
+
+                            if (status.equals("true"))
+                            {
+                                Toast.makeText(BuildResumePart4.this,"Data Input Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart4.this,"Error" + e.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart4.this,"Register Error" + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String , String> params = new HashMap<>();
+                params.put("name",fullname);
+                params.put("image",encodeImageString);
+                params.put("mobile",mobile);
+                params.put("email",email);
+                params.put("present_address",presentaddress);
+                params.put("permanent_address",permanentaddress);
+                params.put("job_title","Software");
+                params.put("marital_status",maritalstatus);
+                params.put("religion",religion);
+                params.put("nationality",nationality);
+                params.put("gender",gender);
+                params.put("dob",birthdate);
+                params.put("father_name",fatherName);
+                params.put("mother_name",motherName);
+                params.put("profile_summary","Hello");
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
+    private void openGallery() {
+
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
+            if (ActivityCompat.shouldShowRequestPermissionRationale(this, Manifest.permission.READ_EXTERNAL_STORAGE)) {
+                showPermissionExplanation();
+            } else if (!PermissionsUtil.getInstance(this).checkReadExternalStoragePermissionPreference()) {
+                PermissionsUtil.getInstance(this).updateReadExternalStoragePermissionPreference();
+                ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_READ_EXTERNAL_STORAGE);
+            } else {
+                Toast.makeText(this, "Please Allow Read External Storage Permission", Toast.LENGTH_LONG).show();
+                Intent intent = new Intent();
+                intent.setAction(Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                Uri uri = Uri.fromParts("package", this.getPackageName(), null);
+                intent.setData(uri);
+                this.startActivity(intent);
+            }
+        } else {
+            takeImageFromGallery();
+        }
+
+    }
+
+    private void takeImageFromGallery() {
+        Intent gallery = new Intent(Intent.ACTION_PICK, MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        startActivityForResult(gallery, GALLERY_REQUEST_CODE);
+    }
+
+    private void showPermissionExplanation() {
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("EXIT!");
-        builder.setMessage("Do You Want To Exit From Make Resume?");
-        builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+        builder.setTitle("Read External Storage Permission Needed");
+        builder.setMessage("CV Master needs to access your Gallery to pick a photo of yours. So please give permission to Read External Storage.");
+        builder.setPositiveButton("Allow", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                ActivityCompat.requestPermissions(BuildResumePart4.this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, REQUEST_CODE_READ_EXTERNAL_STORAGE);
+            }
+        });
+        builder.setNegativeButton("Cancel", new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialogInterface, int i) {
                 dialogInterface.dismiss();
             }
         });
-        builder.setNegativeButton("YES", new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                goToHomeIntent();
-            }
-        });
-
         AlertDialog alertDialog = builder.create();
         alertDialog.show();
+    }
 
+    private void encodeBitmapImage(Bitmap bitmap) {
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+        bitmap.compress(Bitmap.CompressFormat.JPEG, 100, byteArrayOutputStream);
+        byte[] bytesofimage = byteArrayOutputStream.toByteArray();
+        encodeImageString = android.util.Base64.encodeToString(bytesofimage, Base64.DEFAULT);
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == GALLERY_REQUEST_CODE) {
+            if (resultCode == RESULT_OK) {
+                Uri uri = data.getData();
+                String[] filePath = {MediaStore.Images.Media.DATA};
+                Cursor cursor = getContentResolver().query(uri, filePath, null, null, null);
+                cursor.moveToFirst();
+
+                int columnIndex = cursor.getColumnIndex(filePath[0]);
+                String myPath = cursor.getString(columnIndex);
+                cursor.close();
+
+
+                String path = ResumeProfilePart1.getImagePath();
+                //added part start
+
+                float abs_width = 0.0f;
+                float abs_height = 0.0f;
+                try {
+
+                    Image image = Image.getInstance(myPath);
+                    abs_width = image.getPlainWidth();
+                    abs_height = image.getPlainHeight();
+                    //Toast.makeText(this,"Height: "+abs_height+" Width: "+abs_width,Toast.LENGTH_LONG).show();
+
+                } catch (BadElementException e) {
+                    e.printStackTrace();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                //Toast.makeText(this,"Height: "+abs_height+" Width: "+abs_width,Toast.LENGTH_LONG).show();
+                //abs_height > 600 || abs_width > 500
+                if (abs_height > 6000 || abs_width > 5000) {
+                    Toast.makeText(this, "Please choose Passport Size Photo!", Toast.LENGTH_LONG).show();
+                    return;
+                }
+
+                //added part end
+
+                ResumeProfilePart1.setUri(uri);
+                currentPhotoPath = myPath;
+                File file = new File(currentPhotoPath);
+                imvProfile.setImageURI(Uri.fromFile(file));
+
+                try {
+                    InputStream inputStream = getContentResolver().openInputStream(uri);
+                    bitmap = BitmapFactory.decodeStream(inputStream);
+                    encodeBitmapImage(bitmap);
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        }
     }
 
     private void goToHomeIntent(){

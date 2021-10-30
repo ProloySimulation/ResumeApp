@@ -56,7 +56,7 @@ public class CustonWorkExperienceAdapter extends BaseAdapter {
 
 
         designation.setText(workExperience_model.getDesignationName());
-        duration.setText(workExperience_model.getDurationTime());
+//        duration.setText(workExperience_model.getDurationTime());
         organizationname.setText(workExperience_model.getOrganizationName());
         organizationaddress.setText(workExperience_model.getOgganizationAddress());
 

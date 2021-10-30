@@ -37,12 +37,6 @@ import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.adapter.CustomEducationAdapter;
 import com.cvmaster.xosstech.adapter.CustomReferenceAdapter;
 import com.cvmaster.xosstech.adapter.CustonWorkExperienceAdapter;
-import com.cvmaster.xosstech.edit.EditResumePart1;
-import com.cvmaster.xosstech.edit.EditResumePart2;
-import com.cvmaster.xosstech.edit.EditResumePart3;
-import com.cvmaster.xosstech.edit.EditResumePart4;
-import com.cvmaster.xosstech.edit.EditResumePart5;
-import com.cvmaster.xosstech.edit.EditResumePart6;
 import com.cvmaster.xosstech.model.EducationQualification_Model;
 import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.Skills_Model;
@@ -497,40 +491,7 @@ public class BuildResumePart7 extends AppCompatActivity implements View.OnClickL
             editDataInputted();
             CheckReadOrWriteStoragePermission();
         }
-        if (view == button_Update1){
-            finish();
-            Intent intent = new Intent(this, EditResumePart1.class);
-            startActivity(intent);
-        }
 
-        if (view == button_Update2){
-            finish();
-            Intent intent = new Intent(this, EditResumePart2.class);
-            startActivity(intent);
-        }
-
-        if (view == button_Update3){
-            finish();
-            Intent intent = new Intent(this, EditResumePart3.class);
-            startActivity(intent);
-
-        }
-        if (view == button_Update4){
-            finish();
-            Intent intent = new Intent(this, EditResumePart4.class);
-            startActivity(intent);
-        }
-
-        if (view == button_Update5){
-            finish();
-            Intent intent = new Intent(this, EditResumePart6.class);
-            startActivity(intent);
-        }
-        if (view == button_Update6){
-            finish();
-            Intent intent = new Intent(this, EditResumePart5.class);
-            startActivity(intent);
-        }
     }
 
     @Override

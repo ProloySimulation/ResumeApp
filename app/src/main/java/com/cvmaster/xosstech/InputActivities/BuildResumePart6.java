@@ -11,13 +11,33 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.cvmaster.xosstech.InputActivities.BuildResumePart5;
 import com.cvmaster.xosstech.R;
+import com.cvmaster.xosstech.ResumeProfilePart2;
 import com.cvmaster.xosstech.ResumeProfilePart4;
+import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfilePart6;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserProfileActivity;
+import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class BuildResumePart6 extends AppCompatActivity implements View.OnClickListener {
 
@@ -25,8 +45,9 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
     private LinearLayout linearLayout_AddWorkExperience_1;
     private EditText editText_Designation_1;
-    private EditText editText_Duration_1;
     private EditText editText_Organization_1;
+    private EditText editText_startDate_1;
+    private EditText editText_endDate_1;
     private EditText etWorkDetail_1;
 
     private EditText editText_OrganizationAddress_1;
@@ -35,7 +56,8 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
     private LinearLayout linearLayout_AddWorkExperience_2;
     private EditText editText_Designation_2;
-    private EditText editText_Duration_2;
+    private EditText editText_startDate_2;
+    private EditText editText_endDate_2;
     private EditText editText_Organization_2;
     private EditText editText_OrganizationAddress_2;
     private EditText etWorkDetail_2;
@@ -44,7 +66,8 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
     private LinearLayout linearLayout_AddWorkExperience_3;
     private EditText editText_Designation_3;
-    private EditText editText_Duration_3;
+    private EditText editText_startDate_3;
+    private EditText editText_endDate_3;
     private EditText editText_Organization_3;
     private EditText editText_OrganizationAddress_3;
     private EditText etWorkDetail_3;
@@ -53,15 +76,23 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
     private LinearLayout linearLayout_AddWorkExperience_4;
     private EditText editText_Designation_4;
-    private EditText editText_Duration_4;
+    private EditText editText_startDate_4;
+    private EditText editText_endDate_4;
     private EditText editText_Organization_4;
     private EditText editText_OrganizationAddress_4;
     private EditText etWorkDetail_4;
     private Button button_AddField_4;
     private Button button_DeleteField_4;
 
-    private Button button_Skip;
-    private Button button_Next;
+    private String token = null;
+    private String updateId1 = null;
+    private String updateId2 = null;
+    private String updateId3 = null;
+    private String updateId4 = null;
+    private TextView tvWorkDataSave ;
+
+    private String uploadUrl = "http://xosstech.com/cvm/api/public/api/experience";
+    private String updateUrl = "http://xosstech.com/cvm/api/public/api/experience/update/";
 
 
     @Override
@@ -69,50 +100,60 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_part6);
 
-        clearResumeProfilePart6Memory();
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+
+        tvWorkDataSave = findViewById(R.id.tvExpDataSave);
+        tvWorkDataSave.setOnClickListener(this);
 
         button_AddWorkExperience = (Button) findViewById(R.id.button_BuildResumePart6_AddWorkExperiece);
         button_AddWorkExperience.setOnClickListener(this);
 
         linearLayout_AddWorkExperience_1 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_1);
         editText_Designation_1 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience1_Designation);
-        editText_Duration_1 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience1_Duration);
         editText_Organization_1 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience1_OrganizationName);
+        editText_startDate_1 = findViewById(R.id.editText_BuildResumePart6_WorkExperience1_start);
+        editText_endDate_1 = findViewById(R.id.editText_BuildResumePart6_WorkExperience1_end);
         editText_OrganizationAddress_1 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience1_OrganizationAddress);
         etWorkDetail_1 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_1);
 
         button_AddField_1 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_1);
         button_AddField_1.setOnClickListener(this);
+
         button_DeleteField_1 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_1);
         button_DeleteField_1.setOnClickListener(this);
 
         linearLayout_AddWorkExperience_2 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_2);
         editText_Designation_2 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience2_Designation);
-        editText_Duration_2 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience2_Duration);
+        editText_startDate_2 = findViewById(R.id.editText_BuildResumePart6_WorkExperience2_start);
+        editText_endDate_2 = findViewById(R.id.editText_BuildResumePart6_WorkExperience2_end);
         editText_Organization_2 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience2_OrganizationName);
         editText_OrganizationAddress_2 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience2_OrganizationAddress);
         etWorkDetail_2 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_2);
 
         button_AddField_2 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_2);
         button_AddField_2.setOnClickListener(this);
+
         button_DeleteField_2 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_2);
         button_DeleteField_2.setOnClickListener(this);
 
         linearLayout_AddWorkExperience_3 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_3);
         editText_Designation_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_Designation);
-        editText_Duration_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_Duration);
+        editText_startDate_3 = findViewById(R.id.editText_BuildResumePart6_WorkExperience3_start);
+        editText_endDate_3 = findViewById(R.id.editText_BuildResumePart6_WorkExperience3_end);
         editText_Organization_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_OrganizationName);
         editText_OrganizationAddress_3 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience3_OrganizationAddress);
         etWorkDetail_3 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_3);
 
         button_AddField_3 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_3);
         button_AddField_3.setOnClickListener(this);
+
         button_DeleteField_3 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_3);
         button_DeleteField_3.setOnClickListener(this);
 
         linearLayout_AddWorkExperience_4 = (LinearLayout) findViewById(R.id.linearlayout_BuildResumePart6_WorkExperience_4);
         editText_Designation_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_Designation);
-        editText_Duration_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_Duration);
+        editText_startDate_4 = findViewById(R.id.editText_BuildResumePart6_WorkExperience4_start);
+        editText_endDate_4 = findViewById(R.id.editText_BuildResumePart6_WorkExperience4_end);
         editText_Organization_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_OrganizationName);
         editText_OrganizationAddress_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_OrganizationAddress);
         etWorkDetail_4 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_4);
@@ -122,26 +163,61 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         button_DeleteField_4 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_4);
         button_DeleteField_4.setOnClickListener(this);
 
-        button_Skip = (Button) findViewById(R.id.button_BuildResumePart6_Skip);
-        button_Skip.setOnClickListener(this);
+        List<WorkExperience_Model> exp_model = ResumeProfilePart6.workExperience;
 
-        button_Next = (Button) findViewById(R.id.button_BuildResumePart6_Next);
-        button_Next.setOnClickListener(this);
+        if (ResumeProfilePart6.workExperience.size() > 0){
 
+            WorkExperience_Model experience_mod = exp_model.get(0);
+            editText_Organization_1.setText(experience_mod.getOrganizationName());
+            editText_Designation_1.setText(experience_mod.getDesignationName());
+            editText_OrganizationAddress_1.setText(experience_mod.getOgganizationAddress());
+            editText_startDate_1.setText(experience_mod.getStartDate());
+            editText_endDate_1.setText(experience_mod.getEndDate());
+            updateId1 = experience_mod.getId();
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 1){
+            linearLayout_AddWorkExperience_2.setVisibility(View.VISIBLE);
+            WorkExperience_Model experience_mod = exp_model.get(1);
+            editText_Organization_2.setText(experience_mod.getOrganizationName());
+            editText_Designation_2.setText(experience_mod.getDesignationName());
+            editText_OrganizationAddress_2.setText(experience_mod.getOgganizationAddress());
+            editText_startDate_2.setText(experience_mod.getStartDate());
+            editText_endDate_2.setText(experience_mod.getEndDate());
+            updateId2 = experience_mod.getId();
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 2){
+            linearLayout_AddWorkExperience_3.setVisibility(View.VISIBLE);
+            WorkExperience_Model experience_mod = exp_model.get(2);
+            editText_Organization_3.setText(experience_mod.getOrganizationName());
+            editText_Designation_3.setText(experience_mod.getDesignationName());
+            editText_OrganizationAddress_3.setText(experience_mod.getOgganizationAddress());
+            editText_startDate_3.setText(experience_mod.getStartDate());
+            editText_endDate_3.setText(experience_mod.getEndDate());
+            updateId3 = experience_mod.getId();
+        }
+
+        if (ResumeProfilePart6.workExperience.size() > 3){
+            linearLayout_AddWorkExperience_4.setVisibility(View.VISIBLE);
+            WorkExperience_Model experience_mod = exp_model.get(3);
+            editText_Organization_4.setText(experience_mod.getOrganizationName());
+            editText_Designation_4.setText(experience_mod.getDesignationName());
+            editText_OrganizationAddress_4.setText(experience_mod.getOgganizationAddress());
+            editText_startDate_4.setText(experience_mod.getStartDate());
+            editText_endDate_4.setText(experience_mod.getEndDate());
+            updateId4 = experience_mod.getId();
+        }
     }
 
     public boolean CheckValidity_WorkExperience_1(){
-        String designation;
-        String duration;
-        String organization;
-        String organization_address;
-        String work_Detail ;
 
-        designation = editText_Designation_1.getText().toString().trim();
-        duration = editText_Duration_1.getText().toString().trim();
-        organization = editText_Organization_1.getText().toString().trim();
-        organization_address = editText_OrganizationAddress_1.getText().toString().trim();
-        work_Detail = etWorkDetail_1.getText().toString().trim();
+        String designation = editText_Designation_1.getText().toString().trim();
+        String startDate = editText_startDate_1.getText().toString().trim();
+        String endDate = editText_endDate_1.getText().toString().trim();
+        String organization = editText_Organization_1.getText().toString().trim();
+        String organization_address = editText_OrganizationAddress_1.getText().toString().trim();
+        String workDetail = etWorkDetail_1.getText().toString().trim();
 
 
         if (designation.isEmpty()){
@@ -149,9 +225,14 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             editText_Designation_1.requestFocus();
             return false;
         }
-        if (duration.isEmpty()){
-            editText_Duration_1.setError("ENTER DURATION!");
-            editText_Duration_1.requestFocus();
+        if (startDate.isEmpty()){
+            editText_startDate_1.setError("ENTER START DATE!");
+            editText_startDate_1.requestFocus();
+            return false;
+        }
+        if (endDate.isEmpty()){
+            editText_endDate_1.setError("ENTER DURATION!");
+            editText_endDate_1.requestFocus();
             return false;
         }
         if (organization.isEmpty()){
@@ -165,7 +246,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             return false;
         }
 
-        if (work_Detail.isEmpty()){
+        if (workDetail.isEmpty()){
             etWorkDetail_1.setError("ENTER WORK DETAIL!");
             etWorkDetail_1.requestFocus();
             return false;
@@ -175,26 +256,27 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     }
 
     public boolean CheckValidity_WorkExperience_2(){
-        String designation;
-        String duration;
-        String organization;
-        String organization_address;
-        String workDetail;
 
-        designation = editText_Designation_2.getText().toString().trim();
-        duration = editText_Duration_2.getText().toString().trim();
-        organization = editText_Organization_2.getText().toString().trim();
-        organization_address = editText_OrganizationAddress_2.getText().toString().trim();
-        workDetail = etWorkDetail_2.getText().toString().trim();
+        String designation = editText_Designation_2.getText().toString().trim();
+        String startDate = editText_startDate_2.getText().toString().trim();
+        String endDate = editText_endDate_2.getText().toString().trim();
+        String organization = editText_Organization_2.getText().toString().trim();
+        String organization_address = editText_OrganizationAddress_2.getText().toString().trim();
+        String workDetail = etWorkDetail_2.getText().toString().trim();
 
         if (designation.isEmpty()){
             editText_Designation_2.setError("ENTER DESIGNATION!");
             editText_Designation_2.requestFocus();
             return false;
         }
-        if (duration.isEmpty()){
-            editText_Duration_2.setError("ENTER DURATION!");
-            editText_Duration_2.requestFocus();
+        if (startDate.isEmpty()){
+            editText_startDate_2.setError("ENTER START DATE!");
+            editText_startDate_2.requestFocus();
+            return false;
+        }
+        if (endDate.isEmpty()){
+            editText_endDate_2.setError("ENTER END DATE!");
+            editText_endDate_2.requestFocus();
             return false;
         }
         if (organization.isEmpty()){
@@ -218,26 +300,27 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     }
 
     public boolean CheckValidity_WorkExperience_3(){
-        String designation;
-        String duration;
-        String organization;
-        String organization_address;
-        String workDetail;
 
-        designation = editText_Designation_3.getText().toString().trim();
-        duration = editText_Duration_3.getText().toString().trim();
-        organization = editText_Organization_3.getText().toString().trim();
-        organization_address = editText_OrganizationAddress_3.getText().toString().trim();
-        workDetail = etWorkDetail_3.getText().toString().trim();
+        String designation = editText_Designation_3.getText().toString().trim();
+        String startDate = editText_startDate_3.getText().toString().trim();
+        String endDate = editText_endDate_3.getText().toString().trim();
+        String organization = editText_Organization_3.getText().toString().trim();
+        String organization_address = editText_OrganizationAddress_3.getText().toString().trim();
+        String workDetail = etWorkDetail_3.getText().toString().trim();
 
         if (designation.isEmpty()){
             editText_Designation_3.setError("ENTER DESIGNATION!");
             editText_Designation_3.requestFocus();
             return false;
         }
-        if (duration.isEmpty()){
-            editText_Duration_3.setError("ENTER DURATION!");
-            editText_Duration_3.requestFocus();
+        if (startDate.isEmpty()){
+            editText_startDate_3.setError("ENTER START DATE!");
+            editText_startDate_3.requestFocus();
+            return false;
+        }
+        if (endDate.isEmpty()){
+            editText_endDate_3.setError("ENTER END DATE!");
+            editText_endDate_3.requestFocus();
             return false;
         }
         if (organization.isEmpty()){
@@ -261,26 +344,27 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     }
 
     public boolean CheckValidity_WorkExperience_4(){
-        String designation;
-        String duration;
-        String organization;
-        String organization_address;
-        String workDetail;
 
-        designation = editText_Designation_4.getText().toString().trim();
-        duration = editText_Duration_4.getText().toString().trim();
-        organization = editText_Organization_4.getText().toString().trim();
-        organization_address = editText_OrganizationAddress_4.getText().toString().trim();
-        workDetail = etWorkDetail_4.getText().toString().trim();
+        String designation = editText_Designation_4.getText().toString().trim();
+        String startDate = editText_startDate_4.getText().toString().trim();
+        String endDate = editText_endDate_4.getText().toString().trim();
+        String organization = editText_Organization_4.getText().toString().trim();
+        String organization_address = editText_OrganizationAddress_4.getText().toString().trim();
+        String workDetail = etWorkDetail_4.getText().toString().trim();
 
         if (designation.isEmpty()){
             editText_Designation_4.setError("ENTER DESIGNATION!");
             editText_Designation_4.requestFocus();
             return false;
         }
-        if (duration.isEmpty()){
-            editText_Duration_4.setError("ENTER DURATION!");
-            editText_Duration_4.requestFocus();
+        if (startDate.isEmpty()){
+            editText_startDate_4.setError("ENTER START DATE!");
+            editText_startDate_4.requestFocus();
+            return false;
+        }
+        if (endDate.isEmpty()){
+            editText_endDate_4.setError("ENTER END DATE!");
+            editText_endDate_4.requestFocus();
             return false;
         }
         if (organization.isEmpty()){
@@ -304,95 +388,86 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     }
 
     public void SaveData(){
+
         if (linearLayout_AddWorkExperience_1.getVisibility() == View.VISIBLE){
-            String designation;
-            String duration;
-            String organization;
-            String organization_address;
-            String workDetail;
 
-            designation = editText_Designation_1.getText().toString().trim();
-            duration = editText_Duration_1.getText().toString().trim();
-            organization = editText_Organization_1.getText().toString().trim();
-            organization_address = editText_OrganizationAddress_1.getText().toString().trim();
-            workDetail = etWorkDetail_1.getText().toString().trim();
+            String designation = editText_Designation_1.getText().toString().trim();
+            String startDate = editText_startDate_1.getText().toString().trim();
+            String endDate = editText_endDate_1.getText().toString().trim();
+            String organization = editText_Organization_1.getText().toString().trim();
+            String organization_address = editText_OrganizationAddress_1.getText().toString().trim();
+            String workDetail = etWorkDetail_1.getText().toString().trim();
 
-            WorkExperience_Model workExperience_model = new WorkExperience_Model();
-            workExperience_model.setDesignationName(designation);
-            workExperience_model.setDurationTime(duration);
-            workExperience_model.setOrganizationName(organization);
-            workExperience_model.setOgganizationAddress(organization_address);
-            workExperience_model.setworkDetail(workDetail);
+            if (updateId1!=null)
+            {
+                updateInformation(organization,designation,startDate,endDate,workDetail,organization_address,updateId1);
+            }
 
-            ResumeProfilePart6.workExperience.add(workExperience_model);
+            else
+            {
+                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+            }
         }
         if (linearLayout_AddWorkExperience_2.getVisibility() == View.VISIBLE){
-            String designation;
-            String duration;
-            String organization;
-            String organization_address;
-            String workDetail;
 
-            designation = editText_Designation_2.getText().toString().trim();
-            duration = editText_Duration_2.getText().toString().trim();
-            organization = editText_Organization_2.getText().toString().trim();
-            organization_address = editText_OrganizationAddress_2.getText().toString().trim();
-            workDetail = etWorkDetail_2.getText().toString();
+            String designation = editText_Designation_2.getText().toString().trim();
+            String startDate = editText_startDate_2.getText().toString().trim();
+            String endDate = editText_endDate_2.getText().toString().trim();
+            String organization = editText_Organization_2.getText().toString().trim();
+            String organization_address = editText_OrganizationAddress_2.getText().toString().trim();
+            String workDetail = etWorkDetail_2.getText().toString();
 
-            WorkExperience_Model workExperience_model = new WorkExperience_Model();
-            workExperience_model.setDesignationName(designation);
-            workExperience_model.setDurationTime(duration);
-            workExperience_model.setOrganizationName(organization);
-            workExperience_model.setOgganizationAddress(organization_address);
-            workExperience_model.setworkDetail(workDetail);
 
-            ResumeProfilePart6.workExperience.add(workExperience_model);
+            if (updateId2 != null)
+            {
+                updateInformation(organization,designation,startDate,endDate,workDetail,organization_address,updateId2);
+            }
+
+            else
+            {
+                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+            }
         }
 
         if (linearLayout_AddWorkExperience_3.getVisibility() == View.VISIBLE){
-            String designation;
-            String duration;
-            String organization;
-            String organization_address;
-            String workDetail;
 
-            designation = editText_Designation_3.getText().toString().trim();
-            duration = editText_Duration_3.getText().toString().trim();
-            organization = editText_Organization_3.getText().toString().trim();
-            organization_address = editText_OrganizationAddress_3.getText().toString().trim();
-            workDetail = etWorkDetail_3.getText().toString();
+            String designation = editText_Designation_3.getText().toString().trim();
+            String startDate = editText_startDate_3.getText().toString().trim();
+            String endDate = editText_endDate_3.getText().toString().trim();
+            String organization = editText_Organization_3.getText().toString().trim();
+            String organization_address = editText_OrganizationAddress_3.getText().toString().trim();
+            String workDetail = etWorkDetail_3.getText().toString();
 
-            WorkExperience_Model workExperience_model = new WorkExperience_Model();
-            workExperience_model.setDesignationName(designation);
-            workExperience_model.setDurationTime(duration);
-            workExperience_model.setOrganizationName(organization);
-            workExperience_model.setOgganizationAddress(organization_address);
-            workExperience_model.setworkDetail(workDetail);
+            if (updateId3 != null)
+            {
+                updateInformation(organization,designation,startDate,endDate,workDetail,organization_address,updateId3);
+            }
 
-            ResumeProfilePart6.workExperience.add(workExperience_model);
+            else
+            {
+                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+            }
+
         }
 
         if (linearLayout_AddWorkExperience_4.getVisibility() == View.VISIBLE){
-            String designation;
-            String duration;
-            String organization;
-            String organization_address;
-            String workDetail;
 
-            designation = editText_Designation_4.getText().toString().trim();
-            duration = editText_Duration_4.getText().toString().trim();
-            organization = editText_Organization_4.getText().toString().trim();
-            organization_address = editText_OrganizationAddress_4.getText().toString().trim();
-            workDetail = etWorkDetail_4.getText().toString();
+            String designation = editText_Designation_4.getText().toString().trim();
+            String startDate = editText_startDate_4.getText().toString().trim();
+            String endDate = editText_endDate_4.getText().toString().trim();
+            String organization = editText_Organization_4.getText().toString().trim();
+            String organization_address = editText_OrganizationAddress_4.getText().toString().trim();
+            String workDetail = etWorkDetail_4.getText().toString();
 
-            WorkExperience_Model workExperience_model = new WorkExperience_Model();
-            workExperience_model.setDesignationName(designation);
-            workExperience_model.setDurationTime(duration);
-            workExperience_model.setOrganizationName(organization);
-            workExperience_model.setOgganizationAddress(organization_address);
-            workExperience_model.setworkDetail(workDetail);
+            if (updateId4 != null)
+            {
+                updateInformation(organization,designation,startDate,endDate,workDetail,organization_address,updateId4);
+            }
 
-            ResumeProfilePart6.workExperience.add(workExperience_model);
+            else
+            {
+                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+            }
         }
     }
 
@@ -403,12 +478,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     }
     @Override
     public void onClick(View view) {
-        if (view == button_Skip){
-            GoToNextIntent();
-        }
-        if (view == button_Next){
-            CheckValidity_Final();
-        }
+
         if (view == button_AddWorkExperience){
             button_AddWorkExperience.setVisibility(View.GONE);
             linearLayout_AddWorkExperience_1.setVisibility(View.VISIBLE);
@@ -459,6 +529,11 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             button_AddField_3.setVisibility(View.VISIBLE);
             button_DeleteField_3.setVisibility(View.GONE);
         }
+
+        if(view == tvWorkDataSave)
+        {
+            CheckValidity_Final();
+        }
     }
 
     private boolean CheckValidity_Final(){
@@ -469,64 +544,119 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         if (linearLayout_AddWorkExperience_1.getVisibility() == View.VISIBLE && linearLayout_AddWorkExperience_2.getVisibility() == View.GONE){
             if (CheckValidity_WorkExperience_1()){
                 SaveData();
-                GoToNextIntent();
+//                GoToNextIntent();
                 return true;
             }
         }
         if (linearLayout_AddWorkExperience_1.getVisibility() == View.VISIBLE && linearLayout_AddWorkExperience_2.getVisibility() == View.VISIBLE){
             if (CheckValidity_WorkExperience_1() && CheckValidity_WorkExperience_2()){
                 SaveData();
-                GoToNextIntent();
+//                GoToNextIntent();
                 return true;
             }
         }
         return false;
     }
 
-    private void clearResumeProfilePart6Memory(){
-        ResumeProfilePart6.workExperience.clear();
-    }
+    private void UploadInformation(String organization,String designation,String startDate,String endDate,String workAddress,String workDetail) {
+        Toast.makeText(getApplicationContext(), organization, Toast.LENGTH_SHORT).show();
+        StringRequest request = new StringRequest(Request.Method.POST, uploadUrl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
 
-    @Override
-    public void onBackPressed() {
-
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("EXIT!");
-        builder.setMessage("Do You Want To Exit From Make Resume?");
-        builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                            if (status.equals("true")) {
+                                Toast.makeText(BuildResumePart6.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart6.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart6.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
             }
-        });
-        builder.setNegativeButton("YES", new DialogInterface.OnClickListener() {
+        }) {
+
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                goToHomeIntent();
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                return params;
             }
-        });
 
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("company_name", organization);
+                params.put("position", designation);
+                params.put("start",startDate);
+                params.put("end", endDate);
+                params.put("end", workAddress);
+                params.put("work_summary", workDetail);
 
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(request);
     }
 
-    private void goToHomeIntent(){
-        finish();
-        Intent intent = new Intent(this, UserProfileActivity.class);
-        startActivity(intent);
-    }
+    private void updateInformation(String organization,String designation,String startDate,String endDate,String workDetail,String wrokAddress,String updateId) {
 
-    private void ShowData(){
-        Log.d("BuildResumePart4_Data", ResumeProfilePart4.getName());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getFather_name());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getMother_name());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getGender());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getBirth_date());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getMarital_status());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getNationality());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getReligion());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getPresent_address());
-        Log.d("BuildResumePart4_Data",ResumeProfilePart4.getPermanent_address());
+        StringRequest request = new StringRequest(Request.Method.POST, updateUrl+updateId,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
+
+                            if (status.equals("true")) {
+                                Toast.makeText(BuildResumePart6.this, "Update Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart6.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart6.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("company_name", organization);
+                params.put("position", designation);
+                params.put("start",startDate);
+                params.put("end", endDate);
+                params.put("location", wrokAddress);
+                params.put("work_summary", workDetail);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(request);
     }
 }

@@ -15,6 +15,12 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.cvmaster.xosstech.network.ApiClient;
 import com.cvmaster.xosstech.network.ApiInterface;
 import com.cvmaster.xosstech.network.model.ModelResponses;
@@ -26,6 +32,11 @@ import com.google.firebase.auth.FirebaseAuthInvalidCredentialsException;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.PhoneAuthCredential;
 import com.google.firebase.auth.PhoneAuthProvider;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -39,8 +50,11 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
     private Button button_VerifyOTP;
     private Button button_ResendCode;
 
-    private String userMobileNumber;
+    private String userMobileNumber,username;
     private String sentOTPVarificationId;
+    private String password = "123456";
+    private String id,token;
+    private String regUrl = "http://xosstech.com/cvm/api/public/api/register";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,6 +77,7 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
         Intent intent = getIntent();
         sentOTPVarificationId = intent.getStringExtra("OTP_CODE_VARIFICATION_ID");
         userMobileNumber = intent.getStringExtra("MOBILE_NUMBER");
+        username = intent.getStringExtra("USERNAME");
     }
 
     private TextWatcher editText_OtpCode_Watcher = new TextWatcher() {
@@ -96,10 +111,11 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(getApplicationContext(),"SUCCESS!",Toast.LENGTH_LONG).show();
-                            SharedPreferenceManager.getInstance(getApplicationContext()).UserLoggedInfo(userMobileNumber);
+                            registration();
+//                            SharedPreferenceManager.getInstance(getApplicationContext()).UserLoggedInfo(userMobileNumber); changed
 //                            check_sub(SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber());
                             //SharedPreferenceManager.getInstance(getApplicationContext()).UserLoggedInfo("01679636311");
-                            check_sub(SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber());
+                            check_sub(userMobileNumber);
 
                             FirebaseUser user = task.getResult().getUser();
                             // ...
@@ -154,7 +170,7 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                         UnRegisteredDialog(msisdn);
                     }else{
                         finish();
-                        Intent intent = new Intent(getApplicationContext(), UserProfileActivity.class);
+                        Intent intent = new Intent(getApplicationContext(), HomePage.class);
                         startActivity(intent);
                         finish();
                     }
@@ -192,7 +208,7 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                         finish();
-                        startActivity(new Intent(UserSignInPart2.this, UserProfileActivity.class));
+                        startActivity(new Intent(UserSignInPart2.this, HomePage.class));
                     }
                 });
 
@@ -224,7 +240,7 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                                     public void onClick(DialogInterface dialog, int id) {
                                         dialog.cancel();
                                         finish();
-                                        startActivity(new Intent(UserSignInPart2.this, UserProfileActivity.class));
+                                        startActivity(new Intent(UserSignInPart2.this, HomePage.class));
                                     }
                                 });
 
@@ -248,5 +264,53 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
         });
 
 
+    }
+
+    public void registration()
+    {
+        StringRequest request = new StringRequest(Request.Method.POST, regUrl,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject object = jsonObject.getJSONObject("user");
+                            String status = jsonObject.getString("success");
+                            token = jsonObject.getString("token");
+
+                            if (status.equals("true"))
+                            {
+                                Toast.makeText(UserSignInPart2.this,"Register Scucessfully",Toast.LENGTH_SHORT).show();
+                                id = object.getString("id");
+                                SharedPreferenceManager.getInstance(UserSignInPart2.this).UserLoggedInfo(userMobileNumber,id,token);
+                                Toast.makeText(UserSignInPart2.this, id, Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(UserSignInPart2.this,"Error" + e.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(UserSignInPart2.this,"Register Error" + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String , String> params = new HashMap<>();
+                params.put("name",username);
+                params.put("mobile",userMobileNumber);
+                params.put("password",password);
+                params.put("password_confirmation",password);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
     }
 }

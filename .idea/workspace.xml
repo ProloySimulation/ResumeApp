@@ -3,6 +3,8 @@
   <component name="AndroidLayouts">
     <shared>
       <config>
+        <device id="pixel" />
+        <device id="Nexus 5X" />
         <device id="pixel_xl" />
         <device id="pixel_3" />
       </config>
@@ -27,23 +29,109 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="15f144ea-262b-4463-bd1d-93bd4f661095" name="Default Changelist" comment="Boards Updated">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_android_volley_volley_1_1_1_aar.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_picasso_picasso_2_5_2.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/HomePage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumeAddition.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumeProjects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/Profile/DashBoardActivity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ResumeProfileProjects.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ShowPdf.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/Template7.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/adapter/CvAdapter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/Additional_Infos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/Cv_Model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/Projects_model.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/button_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/card_gradient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/edittext_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_edu.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_exp.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_reference.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/icon_skill.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_card_below.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/login_card_design.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/profile_section.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/profiledemo.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/rectangular_background.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/toolbar_gradient.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/drawable/user.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_addition.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_projects.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_dash_board.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_home_page.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_show_pdf.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_template7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template7.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/item_cv.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/src/main/res/layout/user_sign_in_part.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_2_8_2_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_android_pdf_viewer_2_8_2_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_7_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_barteksc_pdfium_android_1_7_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_joielechong_countrycodepicker_2_4_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_github_joielechong_countrycodepicker_2_4_1_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_17_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_17_0_0_aar.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules/app/ResumeApp.app.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/app/ResumeApp.app.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ResumeApp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ResumeApp.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/app/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate6.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/ChargingActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/GeneratePdf/PdfActivityTemplate6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart1.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart4.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart4.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart5.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart5.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart6.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart6.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart7.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart7.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/SharedPreferenceManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/SharedPreferenceManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserSignInPart1.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserSignInPart1.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserSignInPart2.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/UserSignInPart2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/activity/FragmentShowActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/activity/FragmentShowActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/adapter/CustonWorkExperienceAdapter.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/adapter/CustonWorkExperienceAdapter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart1.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart3.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart4.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart5.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/edit/EditResumePart6.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template6Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete1Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete2Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete3Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Templete4Fragment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/EducationQualification_Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/EducationQualification_Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/Reference_Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/Reference_Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/WorkExperience_Model.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/model/WorkExperience_Model.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/templete/Template3_pdf.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part4.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part4.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_pdf_template6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_build_resume_part6.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_resume_part5.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_edit_resume_part5.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_sign_in_part1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/activity_user_sign_in_part1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template6.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/layout/fragment_template6.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\Proloy\.android\avd\Pixel_3a_API_30_x86.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -70,6 +158,11 @@
                 <item name="ResumeApp" type="f1a62948:ProjectNode" />
                 <item name="Run Configurations" type="7b0102dc:RunConfigurationsNode" />
               </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="ResumeApp" type="f1a62948:ProjectNode" />
+                <item name="app" type="2d1252cf:ModuleNode" />
+              </path>
             </expand>
             <select />
           </tree_state>
@@ -95,6 +188,14 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
   <component name="ProjectId" id="1afSTx4aUj3P3zDtvEKMPn0a9De" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -117,18 +218,19 @@
     <property name="android-custom-viewC:/Users/User/AppData/Local/Android/Sdk/sources/android-29/android/widget/ViewAnimator.java_SELECTED" value="ViewAnimator" />
     <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
     <property name="dart.analysis.tool.window.visible" value="false" />
-    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/main/res/drawable" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../CvMasterKeyStore/demokey.jks" />
+    <property name="last_directory_selection" value="$PROJECT_DIR$/app/src/androidTest/java" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/app/src/main/res/drawable" />
     <property name="multi-representation-previewC:/Users/User/AppData/Local/Android/Sdk/sources/android-29/android/widget/ViewAnimator.java_selected" value="Custom views" />
     <property name="project.structure.last.edited" value="SDK Location" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
     <property name="show.migrate.to.gradle.popup" value="false" />
   </component>
   <component name="RecentsManager">
-    <key name="android.template.-1561557263">
-      <recent name="com.cvmaster.xosstech.activity" />
+    <key name="android.template.packageName">
+      <recent name="com.cvmaster.xosstech" />
+      <recent name="com.example.resumeapp" />
     </key>
     <key name="android.template.-411397726">
       <recent name="com.cvmaster.xosstech.fragment_template" />
@@ -136,41 +238,59 @@
     <key name="android.template.-561440485">
       <recent name="com.cvmaster.xosstech.activity" />
     </key>
-    <key name="android.template.packageName">
-      <recent name="com.cvmaster.xosstech" />
-      <recent name="com.example.resumeapp" />
+    <key name="android.template.-104350678">
+      <recent name="com.cvmaster.xosstech.templete_pdf" />
     </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    <key name="android.template.-1561557263">
+      <recent name="com.cvmaster.xosstech.activity" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.cvmaster.xosstech" />
       <recent name="com.example.resumeapp" />
     </key>
-    <key name="android.template.-854286610">
-      <recent name="com.cvmaster.xosstech.GeneratePdf" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
-      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\font" />
-      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\java\com\cvmaster\xosstech\push_noti_serviceclass" />
-      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
-      <recent name="C:\Users\Drovo\AndroidStudioProjects\CV-MASTER\app\src\main\res\drawable" />
-    </key>
-    <key name="android.template.2013917060">
-      <recent name="com.cvmaster.xosstech.GeneratePdf" />
-    </key>
     <key name="android.template.-1728949341">
       <recent name="com.cvmaster.xosstech.templete" />
-    </key>
-    <key name="android.template.-12213567">
-      <recent name="com.cvmaster.xosstech.GeneratePdf" />
     </key>
     <key name="android.template.-941777169">
       <recent name="com.cvmaster.xosstech.GeneratePdf" />
     </key>
-    <key name="android.template.-104350678">
-      <recent name="com.cvmaster.xosstech.templete_pdf" />
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cvmaster.xosstech.fragment_template" />
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="android.template.-854286610">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="android.template.-1619422466">
+      <recent name="com.cvmaster.xosstech.Profile" />
+    </key>
+    <key name="android.template.-12213567">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="android.template.-1135909397">
+      <recent name="com.cvmaster.xosstech.InputActivities" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Lenovo\AndroidStudioProjects\ResumeApp\app\src\main\res\drawable" />
+      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
+      <recent name="C:\Users\Proloy\AndroidStudioProjects\CV Master App\CV-MASTER\app\src\main\res\font" />
+      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\java\com\cvmaster\xosstech\push_noti_serviceclass" />
+      <recent name="F:\Company\Projects\Projects\CV Master App\CV-MASTER\app\src\main\res\drawable" />
+    </key>
+    <key name="android.template.-225596919">
+      <recent name="com.cvmaster.xosstech" />
+    </key>
+    <key name="android.template.1516975077">
+      <recent name="com.cvmaster.xosstech.InputActivities" />
+    </key>
+    <key name="android.template.2013917060">
+      <recent name="com.cvmaster.xosstech.GeneratePdf" />
+    </key>
+    <key name="android.template.871521069">
+      <recent name="com.cvmaster.xosstech" />
+    </key>
+    <key name="android.template.950894991">
+      <recent name="com.cvmaster.xosstech" />
     </key>
   </component>
   <component name="RunManager" selected="Android App.app">
@@ -255,7 +375,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="CV-MASTER:app [androidDependencies]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -274,7 +396,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="CV-MASTER:app [signingReport]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -293,7 +417,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <configuration name="CV-MASTER:app [sourceSets]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
@@ -312,7 +438,9 @@
         </option>
         <option name="vmOptions" />
       </ExternalSystemSettings>
-      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
     <recent_temporary>
@@ -603,97 +731,6 @@
     <MESSAGE value="Boards Updated" />
     <option name="LAST_COMMIT_MESSAGE" value="Boards Updated" />
   </component>
-  <component name="WindowStateProjectService">
-    <state x="317" y="176" key="#PSD" timestamp="1623061087209">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="317" y="176" key="#PSD/0.0.1600.860@0.0.1600.860" timestamp="1623061087209" />
-    <state x="597" y="123" key="#com.intellij.ide.util.MemberChooser" timestamp="1623647649796">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="597" y="123" key="#com.intellij.ide.util.MemberChooser/0.0.1600.860@0.0.1600.860" timestamp="1623647649796" />
-    <state x="573" y="292" width="480" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes" timestamp="1625032890662">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="573" y="292" width="480" height="269" key="#com.intellij.refactoring.move.moveClassesOrPackages.MoveClassesOrPackagesDialog.classes/0.0.1600.860@0.0.1600.860" timestamp="1625032890662" />
-    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1623219621128">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="498" y="158" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709424213" />
-    <state x="519" y="165" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1600.860@0.0.1600.860" timestamp="1623219621128" />
-    <state x="131" y="85" width="1407" height="666" key="AVDManager" timestamp="1623147076958">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="93" y="93" width="1350" height="638" key="AVDManager/0.0.1536.824@0.0.1536.824" timestamp="1619949703857" />
-    <state x="131" y="85" width="1407" height="666" key="AVDManager/0.0.1600.860@0.0.1600.860" timestamp="1623147076958" />
-    <state x="380" y="184" key="AndroidCreateResourceFileDialog" timestamp="1625027327195">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="380" y="184" key="AndroidCreateResourceFileDialog/0.0.1600.860@0.0.1600.860" timestamp="1625027327195" />
-    <state x="338" y="0" key="CommitChangelistDialog2" timestamp="1622874184451">
-      <screen x="0" y="0" width="1536" height="824" />
-    </state>
-    <state x="338" y="0" key="CommitChangelistDialog2/0.0.1536.824@0.0.1536.824" timestamp="1622874184451" />
-    <state x="571" y="174" key="FileChooserDialogImpl" timestamp="1625465017528">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="548" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1620716929776" />
-    <state x="571" y="174" key="FileChooserDialogImpl/0.0.1600.860@0.0.1600.860" timestamp="1625465017528" />
-    <state x="669" y="323" key="Github.ShareDialog" timestamp="1624204292860">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="669" y="323" key="Github.ShareDialog/0.0.1600.860@0.0.1600.860" timestamp="1624204292860" />
-    <state width="1557" height="142" key="GridCell.Tab.0.bottom" timestamp="1625556419507">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1489" height="209" key="GridCell.Tab.0.bottom/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
-    <state width="1557" height="142" key="GridCell.Tab.0.bottom/0.0.1600.860@0.0.1600.860" timestamp="1625556419507" />
-    <state width="1557" height="142" key="GridCell.Tab.0.center" timestamp="1625556419507">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1489" height="209" key="GridCell.Tab.0.center/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
-    <state width="1557" height="142" key="GridCell.Tab.0.center/0.0.1600.860@0.0.1600.860" timestamp="1625556419507" />
-    <state width="1557" height="142" key="GridCell.Tab.0.left" timestamp="1625556419507">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1489" height="209" key="GridCell.Tab.0.left/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
-    <state width="1557" height="142" key="GridCell.Tab.0.left/0.0.1600.860@0.0.1600.860" timestamp="1625556419507" />
-    <state width="1557" height="142" key="GridCell.Tab.0.right" timestamp="1625556419507">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state width="1489" height="209" key="GridCell.Tab.0.right/0.0.1536.824@0.0.1536.824" timestamp="1620710590369" />
-    <state width="1557" height="142" key="GridCell.Tab.0.right/0.0.1600.860@0.0.1600.860" timestamp="1625556419507" />
-    <state x="395" y="39" key="SettingsEditor" timestamp="1625898704712">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="395" y="39" key="SettingsEditor/0.0.1600.860@0.0.1600.860" timestamp="1625898704712" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2" timestamp="1627533655896">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="360" y="144" key="Vcs.Push.Dialog.v2/0.0.1536.824@0.0.1536.824" timestamp="1622874197242" />
-    <state x="375" y="150" key="Vcs.Push.Dialog.v2/0.0.1600.860@0.0.1600.860" timestamp="1627533655896" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog" timestamp="1624513999234">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="583" y="189" key="chooseDestDirectoryDialog/0.0.1536.824@0.0.1536.824" timestamp="1620709455191" />
-    <state x="607" y="197" key="chooseDestDirectoryDialog/0.0.1600.860@0.0.1600.860" timestamp="1624513999234" />
-    <state x="617" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1624862447379">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="617" y="343" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1600.860@0.0.1600.860" timestamp="1624862447379" />
-    <state x="382" y="113" key="new project wizard" timestamp="1625720598938">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="382" y="113" key="new project wizard/0.0.1600.860@0.0.1600.860" timestamp="1625720598938" />
-    <state x="456" y="195" key="run.anything.popup" timestamp="1623063804764">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="456" y="195" key="run.anything.popup/0.0.1600.860@0.0.1600.860" timestamp="1623063804764" />
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup" timestamp="1623914776017">
-      <screen x="0" y="0" width="1600" height="860" />
-    </state>
-    <state x="463" y="180" width="672" height="678" key="search.everywhere.popup/0.0.1600.860@0.0.1600.860" timestamp="1623914776017" />
-  </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
@@ -701,6 +738,11 @@
           <url>file://$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/fragment_template/Template5Fragment.java</url>
           <line>43</line>
           <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/cvmaster/xosstech/InputActivities/BuildResumePart1.java</url>
+          <line>336</line>
+          <option name="timeStamp" value="2" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

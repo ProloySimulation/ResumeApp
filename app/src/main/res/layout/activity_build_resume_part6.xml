@@ -16,6 +16,37 @@
             android:paddingBottom="64dp"
             android:orientation="vertical">
 
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolBarBlog"
+                android:background="#ffffff">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textSize="18dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:text="Work Experience"/>
+
+                    <TextView
+                        android:id="@+id/tvExpDataSave"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="20dp"
+                        android:text="Save" />
+
+                </RelativeLayout>
+
+            </androidx.appcompat.widget.Toolbar>
+
             <LinearLayout
                 android:id="@+id/linearLayout_EducationalQualification_6_AddReference"
                 android:layout_width="match_parent"
@@ -31,23 +62,13 @@
 
             </LinearLayout>
 
+
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_marginTop="8dp">
 
-                <TextView
-                    android:id="@+id/textView2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:text="Work Experience"
-                    android:textStyle="bold"
-                    android:textColor="@color/colorPrimary1"
-                    android:textSize="18sp"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -113,13 +134,34 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duration"
+                        android:text="Start Date"
                         android:textColor="@color/headingBlack"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="16dp"/>
 
                     <EditText
-                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_Duration"
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience1_end"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="16dp"
@@ -265,13 +307,34 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duration"
+                        android:text="Start Date"
                         android:textColor="@color/headingBlack"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="16dp"/>
 
                     <EditText
-                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_Duration"
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience2_end"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="16dp"
@@ -428,13 +491,34 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duration"
+                        android:text="Start Date"
                         android:textColor="@color/headingBlack"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="16dp"/>
 
                     <EditText
-                        android:id="@+id/editText_BuildResumePart6_WorkExperience3_Duration"
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience3_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience3_end"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="16dp"
@@ -487,6 +571,7 @@
                         android:textSize="14sp"
                         android:paddingLeft="16dp"
                         android:singleLine="true"/>
+
 
                     <Button
                         android:id="@+id/button_BuildResumePart6_AddField_3"
@@ -591,13 +676,34 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Duration"
+                        android:text="Start Date"
                         android:textColor="@color/headingBlack"
                         android:layout_marginLeft="30dp"
                         android:layout_marginTop="16dp"/>
 
                     <EditText
-                        android:id="@+id/editText_BuildResumePart6_WorkExperience4_Duration"
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience4_start"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Duration Year/Month"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="End Date"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/editText_BuildResumePart6_WorkExperience4_end"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
                         android:layout_marginStart="16dp"
@@ -651,6 +757,7 @@
                         android:paddingLeft="16dp"
                         android:singleLine="true"/>
 
+
                     <Button
                         android:id="@+id/button_BuildResumePart6_AddField_4"
                         android:layout_width="150dp"
@@ -668,6 +775,7 @@
                         android:textStyle="bold"
                         android:textAllCaps="false"
                         android:textColor="@color/btn_green"/>
+
 
                     <Button
                         android:id="@+id/button_BuildResumePart6_DeleteField_4"
@@ -689,25 +797,6 @@
 
                 </LinearLayout>
 
-
-                <Button
-                    android:id="@+id/button_BuildResumePart6_Skip"
-                    android:layout_width="150dp"
-                    android:layout_height="40dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:layout_marginBottom="8dp"
-                    android:background="@drawable/btn_skip"
-                    android:drawableLeft="@drawable/ic_skip_next"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:paddingLeft="30dp"
-                    android:paddingRight="50dp"
-                    android:text="Skip"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textColor="@color/colorPrimary1"/>
-
                 <LinearLayout
                     android:layout_width="200dp"
                     android:layout_height="wrap_content"
@@ -724,25 +813,10 @@
                     android:textColor="@color/grey"/>
 
 
-                <Button
-                    android:id="@+id/button_BuildResumePart6_Next"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="16dp"
-                    android:layout_marginRight="16dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/btn_shape"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:text="Next"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFF"
-                    android:layout_gravity="center"/>
-
-
             </LinearLayout>
+
         </LinearLayout>
+
     </ScrollView>
 
 

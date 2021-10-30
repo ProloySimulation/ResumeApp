@@ -1,6 +1,7 @@
 package com.cvmaster.xosstech.model;
 
 public class Reference_Model {
+    private String id;
     private String name;
     private String organization_name;
     private String designation;
@@ -13,6 +14,14 @@ public class Reference_Model {
 
     public void setOrganization_name(String organization_name) {
         this.organization_name = organization_name;
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
     }
 
     public void setDesignation(String designation) {

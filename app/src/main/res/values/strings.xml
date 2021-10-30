@@ -4,6 +4,9 @@
     <string name="open">Open</string>
     <string name="close">Close</string>
 
+    <string name="about">
+I am flexible, reliable and possess excellent time keeping skills. I am an enthusiastic, self-motivated, reliable, responsible and hard working person.</string>
+
     <string-array name="qualification_Names">
         <item>Select</item>
         <item>PSC/5 Pass</item>
@@ -34,7 +37,7 @@
     </string-array>
 
     <string-array name="board_Names">
-        <item>Select</item>
+
         <item>Barisal</item>
         <item>Chattogram</item>
         <item>Cumilla</item>

@@ -10,6 +10,7 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -63,7 +64,7 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
+                android:orientation="vertical"
                 android:gravity="center">
 
                 <ImageView
@@ -83,6 +84,7 @@
                     android:maxLength="11"
                     style="@style/EditText.Login"
                     android:theme="@style/EditText.Login"/>
+
             </LinearLayout>
 
             <TextView

@@ -13,16 +13,10 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate1;
-import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate2;
-import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate4;
-import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate5;
-import com.cvmaster.xosstech.GeneratePdf.PdfActivityTemplate6;
 import com.cvmaster.xosstech.model.ResumeTemplate;
 import com.cvmaster.xosstech.network.ApiClient;
 import com.cvmaster.xosstech.network.ApiInterface;
 import com.cvmaster.xosstech.network.model.ModelResponses;
-import com.cvmaster.xosstech.templete.Template3_pdf;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -260,7 +254,7 @@ public class ChargingActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                         finish();
-                        if (ResumeTemplate.templateName == "template1"){
+                        /*if (ResumeTemplate.templateName == "template1"){
 
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate1.class));
                             cheack("template1");
@@ -294,7 +288,7 @@ public class ChargingActivity extends AppCompatActivity {
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate6.class));
                             cheack("template6");
 
-                        }
+                        }*/
                     }
                 });
 

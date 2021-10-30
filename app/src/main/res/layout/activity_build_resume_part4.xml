@@ -39,6 +39,65 @@
                     android:layout_height="wrap_content"
                     android:padding="20dp"
                     android:layout_marginTop="8dp"
+                    android:text="Upload Photo"
+                    android:textStyle="bold"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_file_upload"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="Upload Your Photo"
+                    android:textColor="@color/headingBlack"
+                    android:layout_marginTop="8dp"/>
+
+                <ImageView
+                    android:id="@+id/imageView_BuildResumePart1_Image"
+                    android:layout_width="30mm"
+                    android:layout_height="35mm"
+                    android:scaleType="fitXY"
+                    android:layout_gravity="center"
+                    android:background="@drawable/inputfinal"
+                    android:layout_marginTop="8dp"
+                    app:srcCompat="@drawable/unnamed" />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="*** Passport Size Photographs (45mm X 55mm) ***"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:textColor="@color/yellow"
+                    android:textSize="12sp"/>
+
+                <Button
+                    android:id="@+id/button_BuildResumePart4_SelectFromGallery"
+                    android:layout_width="160dp"
+                    android:layout_height="40dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/outline_btn_blue"
+                    android:drawableLeft="@drawable/ic_image_photo"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="15dp"
+                    android:paddingRight="15dp"
+                    android:text="Upload Photo"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/colorPrimary1"/>
+
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
                     android:text="Personal Details"
                     android:textStyle="bold"
                     android:background="@color/clr_bck"
@@ -63,6 +122,48 @@
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/inputfinal"
                     android:hint="Enter Full Name"
+                    android:textSize="14sp"
+                    android:paddingLeft="16dp"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mobile no."
+                    android:textColor="@color/headingBlack"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="8dp"/>
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart4_mobile"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/inputfinal"
+                    android:hint="Enter Mobile Number"
+                    android:textSize="14sp"
+                    android:paddingLeft="16dp"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Email Address"
+                    android:textColor="@color/headingBlack"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="8dp"/>
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart4_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/inputfinal"
+                    android:hint="Enter Email Address"
                     android:textSize="14sp"
                     android:paddingLeft="16dp"
                     android:singleLine="true"/>

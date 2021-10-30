@@ -14,13 +14,30 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
+import com.android.volley.DefaultRetryPolicy;
+import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
+import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfilePart6;
 import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
+
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class BuildResumePart5 extends AppCompatActivity implements View.OnClickListener {
 
@@ -44,13 +61,14 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
     private EditText editText_MobileNumber_2;
     private Button button_DeleteField_2;
 
-    private Button button_Skip;
-    private Button button_Next;
-
     private Button button_Data;
+    private String updateId1 = null;
+    private String updateId2 = null;
 
+    private TextView tvRefSave ;
 
-    private static final int STOREGE_CODE = 1000;
+    private String uploadUrl = "http://xosstech.com/cvm/api/public/api/reference";
+    private String updateUrl = "http://xosstech.com/cvm/api/public/api/reference/update/";
 
 
     @Override
@@ -58,7 +76,10 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_part5);
 
-        clearResumeProfilePart5Memory();
+//        clearResumeProfilePart5Memory();
+
+        tvRefSave = findViewById(R.id.tvRefDataSave);
+        tvRefSave.setOnClickListener(this);
 
         linearLayout_AddReference = (LinearLayout) findViewById(R.id.linearLayout_EducationalQualification_5_AddReference);
         button_AddReference = (Button) findViewById(R.id.button_BuildResumePart5_AddReference);
@@ -84,14 +105,31 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
         button_DeleteField_2 = (Button) findViewById(R.id.button_BuildResumePart5_DeleteField_2);
         button_DeleteField_2.setOnClickListener(this);
 
-        button_Skip = (Button) findViewById(R.id.button_BuildResumePart5_Skip);
-        button_Skip.setOnClickListener(this);
-
-        button_Next = (Button) findViewById(R.id.button_BuildResumePart5_Next);
-        button_Next.setOnClickListener(this);
-
         button_Data = (Button) findViewById(R.id.button_BuildResumePart5_Data);
         button_Data.setOnClickListener(this);
+
+        List<Reference_Model> reference_model = ResumeProfilePart5.reference;
+
+        if (ResumeProfilePart5.reference.size() > 0){
+            Reference_Model reference_mod = reference_model.get(0);
+            editText_Name_1.setText(reference_mod.getName());
+            editText_Designation_1.setText(reference_mod.getDesignation());
+            editText_OrganizationName_1.setText(reference_mod.getOrganization_name());
+            editText_Email_1.setText(reference_mod.getEmail());
+            editText_MobileNumber_1.setText(reference_mod.getMobile_number());
+            updateId1 = reference_mod.getId();
+        }
+
+        if (ResumeProfilePart5.reference.size() > 1){
+            linearLayout_Reference_2.setVisibility(View.VISIBLE);
+            Reference_Model reference_mod = reference_model.get(1);
+            editText_Name_2.setText(reference_mod.getName());
+            editText_Designation_2.setText(reference_mod.getDesignation());
+            editText_OrganizationName_2.setText(reference_mod.getOrganization_name());
+            editText_Email_2.setText(reference_mod.getEmail());
+            editText_MobileNumber_2.setText(reference_mod.getMobile_number());
+            updateId2 = reference_mod.getId();
+        }
 
     }
 
@@ -117,35 +155,13 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
             button_AddField_1.setVisibility(View.VISIBLE);
             button_DeleteField_1.setVisibility(View.GONE);
         }
-        if (view == button_Skip){
-            GoToNextIntent();
-        }
-        if (view == button_Next){
-            CheckValidity_Final();
 
-
-        }
         if (view == button_Data){
-            ShowData();
         }
-    }
 
-    private void CheckReadOrWriteStoragePermission(){
-        if(Build.VERSION.SDK_INT > Build.VERSION_CODES.M){
-            if(checkCallingOrSelfPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE)== PackageManager.PERMISSION_DENIED){
-                String[] permissions = {Manifest.permission.WRITE_EXTERNAL_STORAGE};
-                requestPermissions(permissions,STOREGE_CODE);
-            }
-            else {
-                //permission already granted...write pdf method
-                CheckValidity_Final();
-
-            }
-        }
-        else {
-            //permission already granted...write pdf method
+        if (view == tvRefSave)
+        {
             CheckValidity_Final();
-
         }
     }
 
@@ -246,13 +262,15 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
             mobile_number = editText_MobileNumber_1.getText().toString().trim();
             email = editText_Email_1.getText().toString().trim();
 
-            Reference_Model reference_model = new Reference_Model();
-            reference_model.setName(name);
-            reference_model.setOrganization_name(organization_name);
-            reference_model.setDesignation(designation);
-            reference_model.setMobile_number(mobile_number);
-            reference_model.setEmail(email);
-            ResumeProfilePart5.reference.add(reference_model);
+            if (updateId1!=null)
+            {
+                updateInformation(name,designation,organization_name,email,mobile_number,updateId1);
+            }
+
+            else  {
+                UploadInformation(name,designation,organization_name,email,mobile_number);
+            }
+
         }
         if (linearLayout_Reference_2.getVisibility() == View.VISIBLE){
             String name;
@@ -267,87 +285,149 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
             mobile_number = editText_MobileNumber_2.getText().toString().trim();
             email = editText_Email_2.getText().toString().trim();
 
-            Reference_Model reference_model = new Reference_Model();
-            reference_model.setName(name);
-            reference_model.setOrganization_name(organization_name);
-            reference_model.setDesignation(designation);
-            reference_model.setMobile_number(mobile_number);
-            reference_model.setEmail(email);
-            ResumeProfilePart5.reference.add(reference_model);
-        }
-    }
+            if (updateId2 != null)
+            {
+                updateInformation(name,designation,organization_name,email,mobile_number,updateId2);
+            }
 
-    private void GoToNextIntent(){
-        finish();
-        Intent intent = new Intent(getApplicationContext(), BuildResumePart7.class);
-        startActivity(intent);
-    }
-
-    private void ShowData(){
-        WorkExperience_Model workExperience_model;
-        for (int i = 0; i< ResumeProfilePart6.workExperience.size(); i++){
-            workExperience_model = ResumeProfilePart6.workExperience.get(i);
-            Log.d("BuildResumePart6_Data: ",workExperience_model.getDesignationName());
-            Log.d("BuildResumePart6_Data: ",workExperience_model.getDurationTime());
-            Log.d("BuildResumePart6_Data: ",workExperience_model.getOrganizationName());
-            Log.d("BuildResumePart6_Data: ",workExperience_model.getOgganizationAddress());
+            else  {
+                UploadInformation(name,designation,organization_name,email,mobile_number);
+            }
         }
     }
 
     private boolean CheckValidity_Final(){
         if (linearLayout_Reference_1.getVisibility() == View.GONE && linearLayout_Reference_2.getVisibility() == View.GONE){
-            GoToNextIntent();
+//            GoToNextIntent();
             return true;
         }
         if (linearLayout_Reference_1.getVisibility() == View.VISIBLE && linearLayout_Reference_2.getVisibility() == View.GONE){
             if (CheckValidity_Reference_1()){
                 SaveData();
-                GoToNextIntent();
+//                GoToNextIntent();
                 return true;
             }
         }
         if (linearLayout_Reference_2.getVisibility() == View.VISIBLE && linearLayout_Reference_2.getVisibility() == View.VISIBLE){
             if (CheckValidity_Reference_1() && CheckValidity_Reference_2()){
                 SaveData();
-                GoToNextIntent();
+//                GoToNextIntent();
                 return true;
             }
         }
         return false;
     }
 
-    private void clearResumeProfilePart5Memory(){
-        ResumeProfilePart5.reference.clear();
+    private void UploadInformation(String name,String designation,String organization,String email,String mobile) {
+
+        StringRequest request = new StringRequest(Request.Method.POST, uploadUrl,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
+
+                            if (status.equals("true")) {
+                                Toast.makeText(BuildResumePart5.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart5.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart5.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+
+         /*   @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }*/
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("name", name);
+                params.put("designation", designation);
+                params.put("organization",organization);
+                params.put("email", email);
+                params.put("mobile", mobile);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(request);
     }
 
-    @Override
-    public void onBackPressed() {
+    private void updateInformation(String name,String designation,String organization,String email,String mobile,String updateId)
+    {
+        StringRequest request = new StringRequest(Request.Method.POST, updateUrl+updateId,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
 
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("EXIT!");
-        builder.setMessage("Do You Want To Exit From Make Resume?");
-        builder.setPositiveButton("NO", new DialogInterface.OnClickListener() {
+                            if (status.equals("true")) {
+                                Toast.makeText(BuildResumePart5.this, "Update Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                startActivity(intent);
+                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart5.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                dialogInterface.dismiss();
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart5.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
             }
-        });
-        builder.setNegativeButton("YES", new DialogInterface.OnClickListener() {
+        }) {
+
+         /*   @Override
+            public String getBodyContentType() {
+                return "application/json; charset=utf-8";
+            }*/
+
             @Override
-            public void onClick(DialogInterface dialogInterface, int i) {
-                goToHomeIntent();
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                return params;
             }
-        });
 
-        AlertDialog alertDialog = builder.create();
-        alertDialog.show();
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params = new HashMap<>();
+                params.put("name", name);
+                params.put("designation", designation);
+                params.put("organization",organization);
+                params.put("email", email);
+                params.put("mobile", mobile);
 
-    }
+                return params;
+            }
+        };
 
-    private void goToHomeIntent(){
-        finish();
-        Intent intent = new Intent(this, UserProfileActivity.class);
-        startActivity(intent);
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(request);
     }
 
 }

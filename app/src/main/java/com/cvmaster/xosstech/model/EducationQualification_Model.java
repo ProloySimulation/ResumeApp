@@ -1,6 +1,7 @@
 package com.cvmaster.xosstech.model;
 
 public class EducationQualification_Model {
+    private String id;
     private String qualification_name;
     private String institute_name;
     private String board_name;
@@ -8,6 +9,14 @@ public class EducationQualification_Model {
     private String passing_year;
     private String gradediorvision;
     private String result;
+
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
 
     public void setQualification_name(String qualification_name) {
         this.qualification_name = qualification_name;

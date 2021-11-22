@@ -50,11 +50,12 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
     private Button button_VerifyOTP;
     private Button button_ResendCode;
 
-    private String userMobileNumber,username;
+    private String userMobileNumber,username,type;
     private String sentOTPVarificationId;
     private String password = "123456";
     private String id,token;
     private String regUrl = "http://xosstech.com/cvm/api/public/api/register";
+    private String loginUrl = "http://xosstech.com/cvm/api/public/api/login";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,7 +69,6 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
         button_VerifyOTP.setOnClickListener(this);
         button_VerifyOTP.setEnabled(false);
 
-
         button_ResendCode = (Button) findViewById(R.id.resendCode_Button_UserRegistrationPart2);
         button_ResendCode.setOnClickListener(this);
 
@@ -78,6 +78,7 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
         sentOTPVarificationId = intent.getStringExtra("OTP_CODE_VARIFICATION_ID");
         userMobileNumber = intent.getStringExtra("MOBILE_NUMBER");
         username = intent.getStringExtra("USERNAME");
+        type = intent.getStringExtra("TYPE");
     }
 
     private TextWatcher editText_OtpCode_Watcher = new TextWatcher() {
@@ -111,12 +112,15 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
                             Toast.makeText(getApplicationContext(),"SUCCESS!",Toast.LENGTH_LONG).show();
-                            registration();
-//                            SharedPreferenceManager.getInstance(getApplicationContext()).UserLoggedInfo(userMobileNumber); changed
-//                            check_sub(SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber());
-                            //SharedPreferenceManager.getInstance(getApplicationContext()).UserLoggedInfo("01679636311");
-                            check_sub(userMobileNumber);
+                            if(type.equals("registration"))
+                            {
+                                registration();
+                            }
+                            else {
+                                login();
+                            }
 
+//                            check_sub(userMobileNumber);
                             FirebaseUser user = task.getResult().getUser();
                             // ...
                         } else {
@@ -284,6 +288,9 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                                 id = object.getString("id");
                                 SharedPreferenceManager.getInstance(UserSignInPart2.this).UserLoggedInfo(userMobileNumber,id,token);
                                 Toast.makeText(UserSignInPart2.this, id, Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                                startActivity(intent);
                             }
                         }
                         catch (Exception e){
@@ -306,6 +313,54 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
                 params.put("password",password);
                 params.put("password_confirmation",password);
 
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
+    public void login()
+    {
+        StringRequest request = new StringRequest(Request.Method.POST, loginUrl,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject object = jsonObject.getJSONObject("user");
+                            String status = jsonObject.getString("success");
+                            token = jsonObject.getString("token");
+
+                            if (status.equals("true"))
+                            {
+                                Toast.makeText(UserSignInPart2.this,"Login Scucessfully",Toast.LENGTH_SHORT).show();
+                                id = object.getString("id");
+                                SharedPreferenceManager.getInstance(UserSignInPart2.this).UserLoggedInfo(userMobileNumber,id,token);
+                                Toast.makeText(UserSignInPart2.this, id, Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                                startActivity(intent);
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(UserSignInPart2.this,"Error" + e.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(UserSignInPart2.this,"Register Error" + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String , String> params = new HashMap<>();
+                params.put("mobile",userMobileNumber);
+                params.put("password",password);
                 return params;
             }
         };

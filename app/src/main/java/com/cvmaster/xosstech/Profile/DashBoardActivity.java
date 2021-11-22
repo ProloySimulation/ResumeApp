@@ -22,16 +22,21 @@ import com.cvmaster.xosstech.InputActivities.BuildResumePart4;
 import com.cvmaster.xosstech.InputActivities.BuildResumePart5;
 import com.cvmaster.xosstech.InputActivities.BuildResumePart6;
 import com.cvmaster.xosstech.InputActivities.BuildResumeProjects;
+import com.cvmaster.xosstech.InputActivities.BuildResumeTrainings;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart2;
+import com.cvmaster.xosstech.ResumeProfilePart4;
 import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfilePart6;
 import com.cvmaster.xosstech.ResumeProfileProjects;
+import com.cvmaster.xosstech.ResumeProfileTrainings;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.ShowPdf;
 import com.cvmaster.xosstech.model.Additional_Infos;
 import com.cvmaster.xosstech.model.EducationQualification_Model;
 import com.cvmaster.xosstech.model.Projects_model;
 import com.cvmaster.xosstech.model.Reference_Model;
+import com.cvmaster.xosstech.model.Training;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -43,9 +48,10 @@ import java.util.Map;
 
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView cvPersonal,cvExp,cvEdu,cvReference,cvAddition,cvProjects;
+    private CardView cvPersonal,cvExp,cvEdu,cvReference,cvAddition,cvProjects,cvTraining;
     private FloatingActionButton fabCvMake ;
 
+    private String token = null;
     private String profileUrl = "http://xosstech.com/cvm/api/public/api/profile";
 
     @Override
@@ -64,6 +70,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cvReference = findViewById(R.id.cvRef);
         cvAddition = findViewById(R.id.cvAdditon);
         cvProjects = findViewById(R.id.cvProjects);
+        cvTraining = findViewById(R.id.cvTraining);
         fabCvMake = findViewById(R.id.fabCvMake);
 
         cvPersonal.setOnClickListener(this);
@@ -72,7 +79,11 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cvReference.setOnClickListener(this);
         cvAddition.setOnClickListener(this);
         cvProjects.setOnClickListener(this);
+        cvTraining.setOnClickListener(this);
         fabCvMake.setOnClickListener(this);
+
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+        Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
 
         UploadInformation();
     }
@@ -110,6 +121,11 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             Intent intent = new Intent(getApplicationContext(), BuildResumeProjects.class);
             startActivity(intent);
         }
+        if (view == cvTraining)
+        {
+            Intent intent = new Intent(getApplicationContext(), BuildResumeTrainings.class);
+            startActivity(intent);
+        }
         if(view == fabCvMake)
         {
             Intent intent = new Intent(getApplicationContext(), ShowPdf.class);
@@ -136,6 +152,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                                 JSONObject personalObject = jsonObject.getJSONObject("personal_infos data");
                                 JSONObject projectsObject = jsonObject.getJSONObject("projects data");
                                 JSONObject referenceObject = jsonObject.getJSONObject("references data");
+                                JSONObject trainingObject = jsonObject.getJSONObject("trainings data");
 
                                 String referenceCount = referenceObject.getString("count");
 
@@ -224,28 +241,45 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                                     }
                                 }
 
+                                if(trainingObject!=null)
+                                {
+                                    JSONArray infoArray = trainingObject.getJSONArray("trainings");
+                                    for(int j=0;j<infoArray.length();j++){
+
+                                        JSONObject infoObject = infoArray.getJSONObject(j);
+                                        String id = infoObject.getString("id");
+                                        String projectName = infoObject.getString("training_name");
+                                        String endDate = infoObject.getString("end");
+                                        String summary = infoObject.getString("training_summary");
+
+                                        saveTrainingData( id, projectName, endDate, summary);
+                                    }
+                                }
+
                                 if(personalObject!=null)
                                 {
                                     JSONArray infoArray = personalObject.getJSONArray("personal_infos");
                                     for(int j=0;j<infoArray.length();j++){
 
                                         JSONObject infoObject = infoArray.getJSONObject(j);
-                                        String name = infoObject.getString("id");
-                                        String image = infoObject.getString("project_name");
-                                        String mobile = infoObject.getString("start");
-                                        String presentAddress = infoObject.getString("end");
-                                        String permanentAddress = infoObject.getString("project_summary");
-                                        String jobTitle = infoObject.getString("project_summary");
-                                        String maritalStatus = infoObject.getString("project_summary");
-                                        String religion = infoObject.getString("project_summary");
-                                        String nationality = infoObject.getString("project_summary");
-                                        String gender = infoObject.getString("project_summary");
-                                        String dob = infoObject.getString("project_summary");
-                                        String profileSummary = infoObject.getString("project_summary");
-                                        String fatherName = infoObject.getString("project_summary");
-                                        String motherName = infoObject.getString("project_summary");
+                                        String id = infoObject.getString("id");
+                                        String name = infoObject.getString("name");
+                                        String image = infoObject.getString("image");
+                                        String mobile = infoObject.getString("mobile");
+                                        String email = infoObject.getString("email");
+                                        String presentAddress = infoObject.getString("present_address");
+                                        String permanentAddress = infoObject.getString("permanent_address");
+                                        String jobTitle = infoObject.getString("job_title");
+                                        String maritalStatus = infoObject.getString("marital_status");
+                                        String religion = infoObject.getString("religion");
+                                        String nationality = infoObject.getString("nationality");
+                                        String gender = infoObject.getString("gender");
+                                        String dob = infoObject.getString("dob");
+                                        String profileSummary = infoObject.getString("profile_summary");
+                                        String fatherName = infoObject.getString("father_name");
+                                        String motherName = infoObject.getString("mother_name");
 
-                                        savePersonalInfo(name,image,mobile,presentAddress,permanentAddress,jobTitle,maritalStatus,religion,nationality,gender,dob,profileSummary,fatherName,motherName);
+                                        savePersonalInfo(id,name,image,mobile,email,presentAddress,permanentAddress,jobTitle,maritalStatus,religion,nationality,gender,dob,profileSummary,fatherName,motherName);
                                     }
                                 }
                             }
@@ -265,7 +299,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
         };
@@ -336,10 +370,35 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         ResumeProfileProjects.projectsList.add(projects_model);
     }
 
-    private void savePersonalInfo(String name,String image,String mobile,String presentAddress,String permanentAddress,String jobTitle,String maritalStatus,
+    private void saveTrainingData(String id,String projectName,String endDate,String summary)
+    {
+        Training training = new Training();
+        training.setId(id);
+        training.setTrainingName(projectName);
+        training.setEndDate(endDate);
+        training.setTrainingSummary(summary);
+        ResumeProfileTrainings.trainingList.add(training);
+    }
+
+    private void savePersonalInfo(String id,String name,String image,String mobile,String email,String presentAddress,String permanentAddress,String jobTitle,String maritalStatus,
                                   String religion,String nationality,String gender,String dob,String profileSummary,String fatherName,String motherName)
     {
-
+        ResumeProfilePart4.setId(id);
+        ResumeProfilePart4.setName(name);
+        ResumeProfilePart4.setImage(image);
+        ResumeProfilePart4.setMobile(mobile);
+        ResumeProfilePart4.setEmail(email);
+        ResumeProfilePart4.setPresent_address(presentAddress);
+        ResumeProfilePart4.setPermanent_address(permanentAddress);
+        ResumeProfilePart4.setJobTitle(jobTitle);
+        ResumeProfilePart4.setMarital_status(maritalStatus);
+        ResumeProfilePart4.setReligion(religion);
+        ResumeProfilePart4.setNationality(nationality);
+        ResumeProfilePart4.setGender(gender);
+        ResumeProfilePart4.setBirth_date(dob);
+        ResumeProfilePart4.setProfileSummary(profileSummary);
+        ResumeProfilePart4.setFather_name(fatherName);
+        ResumeProfilePart4.setMother_name(motherName);
     }
 
     private void clearResumeProfilePart2Memory(){

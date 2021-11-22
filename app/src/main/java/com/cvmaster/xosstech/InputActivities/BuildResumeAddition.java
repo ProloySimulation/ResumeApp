@@ -60,26 +60,28 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
         etTwitter = findViewById(R.id.editText_BuildResumeSkills_Twitter);
         btnSubmit = findViewById(R.id.btn_Submit);
 
-        if(Additional_Infos.getSkills().isEmpty())
+        if(Additional_Infos.getSkills()!=null)
         {
             update = 100;
         }
 
-        etSkills.setText(Additional_Infos.getSkills());
-        etHobbies.setText(Additional_Infos.getHobbies());
-        etLanguages.setText(Additional_Infos.getLanguages());
-        etGithub.setText(Additional_Infos.getGithub());
-        etLinkedin.setText(Additional_Infos.getLinkedin());
-        etTwitter.setText(Additional_Infos.getTwitter());
-        etBehance.setText(Additional_Infos.getBehance());
-        id = Additional_Infos.getId();
-        Toast.makeText(getApplicationContext(), Additional_Infos.getSkills(), Toast.LENGTH_SHORT).show();
+        if(Additional_Infos.getSkills()!=null)
+        {
+            etSkills.setText(Additional_Infos.getSkills());
+            etHobbies.setText(Additional_Infos.getHobbies());
+            etLanguages.setText(Additional_Infos.getLanguages());
+            etGithub.setText(Additional_Infos.getGithub());
+            etLinkedin.setText(Additional_Infos.getLinkedin());
+            etTwitter.setText(Additional_Infos.getTwitter());
+            etBehance.setText(Additional_Infos.getBehance());
+            id = Additional_Infos.getId();
+        }
 
         btnSubmit.setOnClickListener(this);
 
     }
 
-    private void CheckValidity(){
+    private boolean CheckValidity(){
 
         skills = etSkills.getText().toString().trim();
         hobbies = etHobbies.getText().toString().trim();
@@ -93,35 +95,23 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
         if (skills.isEmpty()){
             etSkills.setError("ENTER SKILLS");
             etSkills.requestFocus();
-            return;
+            return false;
         }
         if (hobbies.isEmpty()){
             etHobbies.setError("ENTER HOBBIES");
             etHobbies.requestFocus();
-            return;
+            return false;
         }
         if (languages.isEmpty()){
             etLanguages.setError("ENTER LANGUAGE");
             etLanguages.requestFocus();
-            return;
+            return false;
         }
 
         else {
-            checkUpdateOrUpload();
+            return true;
         }
 
-    }
-
-    private void checkUpdateOrUpload()
-    {
-        if(update == 100)
-        {
-            UploadInformation();
-        }
-
-        else {
-            UpdateInformation();
-        }
     }
 
     private void UploadInformation() {
@@ -153,7 +143,7 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"74|wJmvBNnBScsOoD3uKXiNHn2ad9lSlyLLyOAdxaP6");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -208,7 +198,7 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"74|wJmvBNnBScsOoD3uKXiNHn2ad9lSlyLLyOAdxaP6");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -236,7 +226,16 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
     public void onClick(View view) {
         if (view == btnSubmit)
         {
-            CheckValidity();
+            if(CheckValidity())
+            {
+                if(Additional_Infos.getSkills()!=null)
+                {
+                    UpdateInformation();
+                }
+                else {
+                    UploadInformation();
+                }
+            };
         }
     }
 }

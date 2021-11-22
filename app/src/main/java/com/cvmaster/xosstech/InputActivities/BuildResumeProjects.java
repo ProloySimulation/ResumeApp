@@ -21,6 +21,7 @@ import com.android.volley.toolbox.Volley;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfileProjects;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.model.Projects_model;
 import com.cvmaster.xosstech.model.Reference_Model;
 
@@ -47,12 +48,14 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
     private String id1 = null;
     private String id2 = null;
     private String id3 = null;
+    private String token = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_projects);
 
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
         tvProjectsSave = findViewById(R.id.tvProjectsSave);
         tvProjectsSave.setOnClickListener(this);
 
@@ -386,7 +389,7 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -440,7 +443,7 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 

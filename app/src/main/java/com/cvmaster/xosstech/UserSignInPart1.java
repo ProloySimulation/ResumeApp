@@ -59,7 +59,7 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
         }
 
         textView_MobileNumber = (TextView) findViewById(R.id.mobileNumber_EditText_UserRegistrationPart1);
-        textView_MobileNumber.addTextChangedListener(textView_MobileNumber_Watcher);
+//        textView_MobileNumber.addTextChangedListener(textView_MobileNumber_Watcher);
 
         button_SendOTP = (Button) findViewById(R.id.sendOTP_Button_UserRegistrationPart1);
         button_SendOTP.setOnClickListener(this);
@@ -70,7 +70,7 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
 
     }
 
-    private TextWatcher textView_MobileNumber_Watcher = new TextWatcher() {
+    /*private TextWatcher textView_MobileNumber_Watcher = new TextWatcher() {
         @Override
         public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -93,7 +93,7 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
         public void afterTextChanged(Editable editable) {
 
         }
-    };
+    };*/
 
     private void goToNextIntendWithOTP(String sentOTPVerificationId){
         finish();
@@ -102,6 +102,7 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
         Intent intent = new Intent(this,UserSignInPart2.class);
         intent.putExtra("OTP_CODE_VARIFICATION_ID",sentOTPVerificationId);
         intent.putExtra("MOBILE_NUMBER",mobileNumber);
+        intent.putExtra("TYPE","registration");
         intent.putExtra("USERNAME",username);
         startActivity(intent);
     }

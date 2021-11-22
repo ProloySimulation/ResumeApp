@@ -35,6 +35,7 @@ import com.android.volley.toolbox.Volley;
 import com.cvmaster.xosstech.PermissionsUtil;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart1;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.UserSignInPart1;
 import com.itextpdf.text.BadElementException;
@@ -74,6 +75,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
     private String facebook_id = null;
     private String linkedin_id = null;
     private String jobTitle = null;
+    private String token = null;
     private String encodeImageString;
     private Bitmap bitmap;
 
@@ -88,8 +90,8 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_part1);
 
-        clearResumeProfilePart1Memory();
 
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
         imageView_Image = (ImageView) findViewById(R.id.imageView_BuildResumePart1_Image);
         currentPhotoPath = "";
 
@@ -384,7 +386,7 @@ public class BuildResumePart1 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer 57|1Bw0LSfy3Emf09aqjyfqRYBQr4prHalY6zSLYTaB");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 

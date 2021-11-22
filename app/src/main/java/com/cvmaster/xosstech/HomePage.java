@@ -35,8 +35,7 @@ import java.util.Map;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
 
-    private CardView cvDashboard;
-    private RecyclerView rvProfessional ;
+    private CardView cvDashboard,cvUpcomingJobs;
     private LinearLayoutManager linearLayoutManager;
     private DividerItemDecoration dividerItemDecoration;
     private List<Cv_Model> cvLists;
@@ -49,26 +48,14 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
 
-        rvProfessional = findViewById(R.id.rvProfessional);
         cvDashboard = findViewById(R.id.cvProfileSection);
         cvDashboard.setOnClickListener(this);
 
+        cvUpcomingJobs = findViewById(R.id.upcomingJobs);
+        cvUpcomingJobs.setOnClickListener(this);
+
         cvLists = new ArrayList<>();
         adapter = new CvAdapter(getApplicationContext(),cvLists);
-
-        linearLayoutManager = new LinearLayoutManager(getApplicationContext());
-        linearLayoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
-        dividerItemDecoration = new DividerItemDecoration(rvProfessional.getContext(), linearLayoutManager.getOrientation());
-
-        rvProfessional.setLayoutManager(new LinearLayoutManager(getApplicationContext(),LinearLayoutManager.HORIZONTAL,false));
-
-        rvProfessional.setHasFixedSize(true);
-        rvProfessional.setLayoutManager(linearLayoutManager);
-        rvProfessional.addItemDecoration(dividerItemDecoration);
-        rvProfessional.setAdapter(adapter);
-
-
-        showCv();
     }
 
     @Override
@@ -78,66 +65,12 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
             Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
             startActivity(intent);
         }
-    }
 
-    private void showCv() {
-
-        StringRequest request = new StringRequest(Request.Method.GET, cvUrl,
-                new Response.Listener<String>() {
-                    @Override
-                    public void onResponse(String response) {
-                        try {
-                            JSONObject jsonObject = new JSONObject(response);
-                            String status = jsonObject.getString("success");
-
-                            if (status.equals("true")) {
-                                Toast.makeText(HomePage.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
-                                JSONArray cvArray = jsonObject.getJSONArray("cv");
-
-                                for(int j=0;j<cvArray.length();j++)
-                                {
-                                    JSONObject commentobj = cvArray.getJSONObject(j);
-                                    id = commentobj.getString("id");
-                                    category = commentobj.getString("category");
-                                    image = commentobj.getString("image");
-                                    download = commentobj.getString("download");
-                                    price = commentobj.getString("price");
-
-                                    Cv_Model cv_model = new Cv_Model(id,category,image,download,price);
-                                    cvLists.add(cv_model);
-
-                                }
-
-                            }
-                        } catch (Exception e) {
-                            e.printStackTrace();
-                            Toast.makeText(HomePage.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
-                        }
-                        adapter.notifyDataSetChanged();
-                    }
-                }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Toast.makeText(HomePage.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
-            }
-        }) {
-
-         /*   @Override
-            public String getBodyContentType() {
-                return "application/json; charset=utf-8";
-            }*/
-
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
-                return params;
-            }
-        };
-
-        RequestQueue requestQueue = Volley.newRequestQueue(this);
-        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
-        requestQueue.add(request);
+        if (view == cvUpcomingJobs)
+        {
+            Intent intent = new Intent(getApplicationContext(), JobsActivity.class);
+            startActivity(intent);
+        }
     }
 
 }

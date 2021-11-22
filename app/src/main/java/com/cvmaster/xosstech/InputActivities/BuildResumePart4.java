@@ -48,8 +48,10 @@ import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.UserSignInPart2;
 import com.cvmaster.xosstech.model.Skills_Model;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Image;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONObject;
 
@@ -65,6 +67,7 @@ import java.util.Map;
 public class BuildResumePart4 extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
     private EditText editText_FullName,editText_MotherName,editText_FatherName,etMobile,etEmail;
+    private SpinKitView progrssBar ;
 
     private TextView textView_Gender;
     private Spinner spinner_Gender;
@@ -77,6 +80,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
     private Spinner spinner_MaritalStatus;
 
     private TextView textView_Nationality;
+    private TextView tvDataSave ;
     private Spinner spinner_Nationality;
 
     private TextView textView_Religion;
@@ -85,12 +89,11 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
     private EditText editText_PresentAddress;
     private EditText editText_PermanentAddress;
 
-    private EditText etMotherName, etFatherName ;
-
     private Button button_Next;
-    private Button button_Data,btn_gallery;
+    private Button btn_gallery;
 
     private String infoUrl = "http://xosstech.com/cvm/api/public/api/info";
+    private String updateInfoUrl = "http://xosstech.com/cvm/api/public/api/info/update/";
 
     private String fullname = null;
     private String fathername = null;
@@ -107,6 +110,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
     private String presentaddress = null;
     private String permanentaddress = null;
     private String encodeImageString = null;
+    private String id = null;
     private String currentPhotoPath,token;
     private ImageView imvProfile ;
     private Bitmap bitmap;
@@ -119,11 +123,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_part4);
 
-        clearResumeProfilePart4Memory();
-
-        button_Data = (Button) findViewById(R.id.button_BuildResumePart4_Data);
-        button_Data.setOnClickListener(this);
-
+        progrssBar = findViewById(R.id.spin_kit);
         btn_gallery = findViewById(R.id.button_BuildResumePart4_SelectFromGallery);
         btn_gallery.setOnClickListener(this);
 
@@ -133,8 +133,8 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         etMobile = findViewById(R.id.editText_BuildResumePart4_mobile);
         etEmail = findViewById(R.id.editText_BuildResumePart4_email);
         imvProfile = findViewById(R.id.imageView_BuildResumePart1_Image);
-        button_Data = findViewById(R.id.button_BuildResumePart1_SelectFromGallery);
 
+        tvDataSave = findViewById(R.id.tvPersonalDataSave);
         textView_Gender = (TextView) findViewById(R.id.textView_BuildResumePart4_Gender);
         spinner_Gender = (Spinner) findViewById(R.id.spinner_BuildResumePart4_Gender);
         ArrayAdapter<CharSequence> arrayAdapterGender = ArrayAdapter.createFromResource(this,R.array.gender_Names,android.R.layout.simple_spinner_item);
@@ -200,20 +200,21 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         button_Next = (Button) findViewById(R.id.button_BuildResumePart4_Next);
         button_Next.setOnClickListener(this);
 
-        //Polulate Data
-        /*
-        editText_FullName.setText("Mah Dian Drovo");
-        editText_FatherName.setText("Father Name");
-        editText_MotherName.setText("Mother Name");
-        spinner_Gender.setSelection(1);
-        textView_BirthDate.setText("31.12.1996");
-        spinner_MaritalStatus.setSelection(2);
-        spinner_Religion.setSelection(1);
-        editText_PresentAddress.setText("My Present Address");
-        editText_PermanentAddress.setText("My Permanment Address");
-        */
-
-
+        if(ResumeProfilePart4.getName()!=null)
+        {
+            id = ResumeProfilePart4.getId();
+            editText_FullName.setText(ResumeProfilePart4.getName());
+            editText_FatherName.setText(ResumeProfilePart4.getFather_name());
+            editText_MotherName.setText(ResumeProfilePart4.getMother_name());
+            etMobile.setText(ResumeProfilePart4.getMobile());
+            etEmail.setText(ResumeProfilePart4.getEmail());
+            textView_MaritalStatus.setText(ResumeProfilePart4.getMarital_status());
+            textView_Religion.setText(ResumeProfilePart4.getReligion());
+            textView_Gender.setText(ResumeProfilePart4.getGender());
+            editText_PermanentAddress.setText(ResumeProfilePart4.getPermanent_address());
+            editText_PresentAddress.setText(ResumeProfilePart4.getPresent_address());
+            Picasso.with(getApplicationContext()).load(ResumeProfilePart4.getImage()).into(imvProfile);
+        }
 
     }
 
@@ -243,7 +244,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
             return;
         }
         if (fathername.isEmpty()){
-            editText_FatherName.setError("ENTER FATHER NAMDE");
+            editText_FatherName.setError("ENTER FATHER NAME");
             editText_FatherName.requestFocus();
             return;
         }
@@ -253,7 +254,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
             return;
         }
         if (gender.compareTo("Select") == 0){
-            textView_Gender.setError("SELECR A GENDER!");
+            textView_Gender.setError("SELECT A GENDER!");
             textView_Gender.requestFocus();
             return;
         }
@@ -289,10 +290,14 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
             return;
         }
 
-        SaveData(fullname,fathername,mothername,gender,birthdate,maritalstatus,nationality,religion,presentaddress,permanentaddress);
-        infoStore();
+        if(id != null)
+        {
+            updateInfoStore();
+        }
+        else {
+            infoStore();
+        }
 //        GoToNextIntent();
-
     }
 
     private void SaveData(String name, String father_name, String mother_name, String gender, String birth_date, String marital_status, String nationality, String religion, String present_address, String permanent_address){
@@ -308,33 +313,18 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
         ResumeProfilePart4.setPermanent_address(permanent_address);
     }
 
-    private void GoToNextIntent(){
-        finish();
-        Intent intent = new Intent(getApplicationContext(), BuildResumePart6.class);
-        startActivity(intent);
-    }
-
     @Override
     public void onClick(View view) {
         if (view == button_Next){
             CheckValidity();
         }
-        if (view == button_Data){
-            ShowData();
-        }
         if (view == btn_gallery){
             openGallery();
         }
-    }
-
-    private void ShowData(){
-        for (int i = 0; i< ResumeProfilePart3.skills.size(); i++){
-            Skills_Model skills_model;
-            skills_model = ResumeProfilePart3.skills.get(i);
-            Log.d("BuildResumePart3_Data",skills_model.getSkill());
+        if(view == tvDataSave)
+        {
+            CheckValidity();
         }
-        Log.d("BuildResumePart3_Data",ResumeProfilePart3.bangla_skill_level);
-        Log.d("BuildResumePart3_Data",ResumeProfilePart3.english_skill_level);
     }
 
     private void clearResumeProfilePart4Memory(){
@@ -353,6 +343,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
 
     public void infoStore()
     {
+        progrssBar.setVisibility(View.VISIBLE);
         StringRequest request = new StringRequest(Request.Method.POST, infoUrl,
                 new com.android.volley.Response.Listener<String>() {
                     @Override
@@ -363,6 +354,7 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
 
                             if (status.equals("true"))
                             {
+                                progrssBar.setVisibility(View.GONE);
                                 Toast.makeText(BuildResumePart4.this,"Data Input Successfully",Toast.LENGTH_SHORT).show();
                             }
                         }
@@ -381,7 +373,70 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
+                return params;
+            }
+
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String , String> params = new HashMap<>();
+                params.put("name",fullname);
+                params.put("image",encodeImageString);
+                params.put("mobile",mobile);
+                params.put("email",email);
+                params.put("present_address",presentaddress);
+                params.put("permanent_address",permanentaddress);
+                params.put("job_title","Software");
+                params.put("marital_status",maritalstatus);
+                params.put("religion",religion);
+                params.put("nationality",nationality);
+                params.put("gender",gender);
+                params.put("dob",birthdate);
+                params.put("father_name",fatherName);
+                params.put("mother_name",motherName);
+                params.put("profile_summary","Hello");
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
+    public void updateInfoStore()
+    {
+        progrssBar.setVisibility(View.VISIBLE);
+        StringRequest request = new StringRequest(Request.Method.POST, updateInfoUrl+id,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
+
+                            if (status.equals("true"))
+                            {
+                                progrssBar.setVisibility(View.GONE);
+                                Toast.makeText(BuildResumePart4.this,"Data Update Successfully",Toast.LENGTH_SHORT).show();
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart4.this,"Error" + e.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart4.this,"Register Error" + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -523,12 +578,6 @@ public class BuildResumePart4 extends AppCompatActivity implements View.OnClickL
 
             }
         }
-    }
-
-    private void goToHomeIntent(){
-        finish();
-        Intent intent = new Intent(this, UserProfileActivity.class);
-        startActivity(intent);
     }
 
     @Override

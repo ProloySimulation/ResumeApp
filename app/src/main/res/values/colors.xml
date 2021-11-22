@@ -29,4 +29,6 @@
     <color name="colorDeepGrey">#675E5E</color>
     <color name="anchor">#41424C</color>
     <color name="cream">#F9E5BC</color>
+    <color name="inactive">#C4C4C4</color>
+    <color name="active">#50C2C9</color>
 </resources>

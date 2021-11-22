@@ -116,7 +116,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
     private Button button_Next;
     private Button button_Data;
-    private String token ;
+    private String token = null;
 
     private String uploadUrl = "http://xosstech.com/cvm/api/public/api/education";
     private String updateUrl = "http://xosstech.com/cvm/api/public/api/education/update/";
@@ -326,6 +326,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             textView_QualificationName_1.setText(edu_mod.getQualification_name());
             editText_InstituteName_1.setText(edu_mod.getInstitute_name());
             spinner_Board_1.setPrompt(edu_mod.getBoard_name());
+            textView_PassingYear_1.setText(edu_mod.getPassing_year());
+            textView_BoardName_1.setText(edu_mod.getBoard_name());
             spinner_PassingYear_1.setPrompt(edu_mod.getPassing_year());
             textView_SubjectGroupName_1.setText(edu_mod.getGroupsubject_name());
             editText_Result_1.setText(edu_mod.getResult());
@@ -339,6 +341,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_2.setText(edu_mod.getInstitute_name());
             textView_QualificationName_2.setText(edu_mod.getQualification_name());
             spinner_Board_2.setPrompt(edu_mod.getBoard_name());
+            textView_BoardName_2.setText(edu_mod.getBoard_name());
+            textView_PassingYear_2.setText(edu_mod.getPassing_year());
             textView_SubjectGroupName_2.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_2.setPrompt(edu_mod.getPassing_year());
             textView_Result_2.setText(edu_mod.getResult());
@@ -352,6 +356,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_3.setText(edu_mod.getInstitute_name());
             textView_QualificationName_3.setText(edu_mod.getQualification_name());
             spinner_Board_3.setPrompt(edu_mod.getBoard_name());
+            textView_PassingYear_3.setText(edu_mod.getPassing_year());
+            textView_BoardName_3.setText(edu_mod.getBoard_name());
             textView_SubjectGroupName_3.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_3.setPrompt(edu_mod.getPassing_year());
             textView_Result_3.setText(edu_mod.getResult());
@@ -365,6 +371,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_4.setText(edu_mod.getInstitute_name());
             textView_QualificationName_4.setText(edu_mod.getQualification_name());
             spinner_Board_4.setPrompt(edu_mod.getBoard_name());
+            textView_PassingYear_4.setText(edu_mod.getPassing_year());
+            textView_BoardName_4.setText(edu_mod.getBoard_name());
             textView_SubjectGroupName_4.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_4.setPrompt(edu_mod.getPassing_year());
             textView_Result_4.setText(edu_mod.getResult());
@@ -378,6 +386,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             editText_InstituteName_5.setText(edu_mod.getInstitute_name());
             textView_QualificationName_5.setText(edu_mod.getQualification_name());
             spinner_Board_5.setPrompt(edu_mod.getBoard_name());
+            textView_PassingYear_5.setText(edu_mod.getPassing_year());
+            textView_BoardName_5.setText(edu_mod.getBoard_name());
             textView_SubjectGroupName_5.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_4.setPrompt(edu_mod.getPassing_year());
             textView_Result_5.setText(edu_mod.getResult());
@@ -911,7 +921,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 

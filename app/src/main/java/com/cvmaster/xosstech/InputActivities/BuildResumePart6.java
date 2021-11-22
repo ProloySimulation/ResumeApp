@@ -171,6 +171,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             editText_Organization_1.setText(experience_mod.getOrganizationName());
             editText_Designation_1.setText(experience_mod.getDesignationName());
             editText_OrganizationAddress_1.setText(experience_mod.getOgganizationAddress());
+            etWorkDetail_1.setText(experience_mod.getworkDetail());
             editText_startDate_1.setText(experience_mod.getStartDate());
             editText_endDate_1.setText(experience_mod.getEndDate());
             updateId1 = experience_mod.getId();
@@ -181,6 +182,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             WorkExperience_Model experience_mod = exp_model.get(1);
             editText_Organization_2.setText(experience_mod.getOrganizationName());
             editText_Designation_2.setText(experience_mod.getDesignationName());
+            etWorkDetail_2.setText(experience_mod.getworkDetail());
             editText_OrganizationAddress_2.setText(experience_mod.getOgganizationAddress());
             editText_startDate_2.setText(experience_mod.getStartDate());
             editText_endDate_2.setText(experience_mod.getEndDate());
@@ -191,6 +193,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             linearLayout_AddWorkExperience_3.setVisibility(View.VISIBLE);
             WorkExperience_Model experience_mod = exp_model.get(2);
             editText_Organization_3.setText(experience_mod.getOrganizationName());
+            etWorkDetail_3.setText(experience_mod.getworkDetail());
             editText_Designation_3.setText(experience_mod.getDesignationName());
             editText_OrganizationAddress_3.setText(experience_mod.getOgganizationAddress());
             editText_startDate_3.setText(experience_mod.getStartDate());
@@ -203,6 +206,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             WorkExperience_Model experience_mod = exp_model.get(3);
             editText_Organization_4.setText(experience_mod.getOrganizationName());
             editText_Designation_4.setText(experience_mod.getDesignationName());
+            etWorkDetail_4.setText(experience_mod.getworkDetail());
             editText_OrganizationAddress_4.setText(experience_mod.getOgganizationAddress());
             editText_startDate_4.setText(experience_mod.getStartDate());
             editText_endDate_4.setText(experience_mod.getEndDate());
@@ -405,7 +409,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
             else
             {
-                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+                UploadInformation(organization,designation,startDate,endDate,organization_address,workDetail);
             }
         }
         if (linearLayout_AddWorkExperience_2.getVisibility() == View.VISIBLE){
@@ -425,7 +429,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
             else
             {
-                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+                UploadInformation(organization,designation,startDate,endDate,organization_address,workDetail);
             }
         }
 
@@ -445,7 +449,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
             else
             {
-                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+                UploadInformation(organization,designation,startDate,endDate,organization_address,workDetail);
             }
 
         }
@@ -466,7 +470,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
             else
             {
-                UploadInformation(organization,startDate,designation,endDate,organization_address,workDetail);
+                UploadInformation(organization,designation,startDate,endDate,organization_address,workDetail);
             }
         }
     }
@@ -586,7 +590,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -597,7 +601,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
                 params.put("position", designation);
                 params.put("start",startDate);
                 params.put("end", endDate);
-                params.put("end", workAddress);
+                params.put("address", workAddress);
                 params.put("work_summary", workDetail);
 
                 return params;
@@ -637,7 +641,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 

@@ -94,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="We Will Send An OTP Soon"
+            android:text="Already have an account?"
             android:textColor="@color/blue"
             android:textSize="20dp"
             android:textStyle="bold" />
@@ -103,7 +103,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Sign in and make your resume"
+            android:text="Sign In NOow !!!"
             android:textColor="@color/colorBlack" />
 
     </LinearLayout>

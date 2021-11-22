@@ -54,6 +54,4 @@ public class CvAdapter extends RecyclerView.Adapter <CvAdapter.ViewHolder>{
 
         }
     }
-
-
 }

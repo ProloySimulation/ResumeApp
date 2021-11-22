@@ -29,6 +29,7 @@ import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfilePart6;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
@@ -67,6 +68,7 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
 
     private TextView tvRefSave ;
 
+    private String token = null;
     private String uploadUrl = "http://xosstech.com/cvm/api/public/api/reference";
     private String updateUrl = "http://xosstech.com/cvm/api/public/api/reference/update/";
 
@@ -77,6 +79,7 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_build_resume_part5);
 
 //        clearResumeProfilePart5Memory();
+        token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
 
         tvRefSave = findViewById(R.id.tvRefDataSave);
         tvRefSave.setOnClickListener(this);
@@ -351,7 +354,7 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -408,7 +411,7 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 

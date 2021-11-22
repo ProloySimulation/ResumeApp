@@ -14,9 +14,32 @@
         android:label="@string/app_name"
         android:requestLegacyExternalStorage="true"
         android:roundIcon="@mipmap/cv_master_launcher_logo"
+        android:hardwareAccelerated="false"
+        android:largeHeap="true"
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
+        <activity
+            android:name=".InputActivities.BuildResumeTrainings"
+            android:exported="true" />
+        <activity
+            android:name=".CoverLatterActivity"
+            android:exported="true" />
+        <activity
+            android:name=".Storyboard.StoryBoard"
+            android:exported="true" />
+        <activity
+            android:name=".SingleJob"
+            android:exported="true" />
+        <activity
+            android:name=".Ads.Interstetial"
+            android:exported="true" />
+        <activity
+            android:name=".JobsActivity"
+            android:exported="true" />
+        <activity
+            android:name=".LoginActivity"
+            android:exported="true" />
         <activity
             android:name=".ShowPdf"
             android:exported="true" />
@@ -29,15 +52,13 @@
         <activity
             android:name=".HomePage"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".Profile.DashBoardActivity"
-            android:exported="true"></activity>
+            android:exported="true">
+
+        </activity>
         <activity
             android:name=".Template7"
             android:exported="true" />
@@ -47,7 +68,13 @@
         <activity android:name=".BuildResumePDF_Part2" />
         <activity android:name=".showallpdf.ShowMyPDF" />
         <activity android:name=".UserSignInPart2" />
-        <activity android:name=".UserSignInPart1" />
+        <activity android:name=".UserSignInPart1">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity android:name=".InputActivities.BuildResumePart7" />
         <activity android:name=".InputActivities.BuildResumePart6" />
         <activity android:name=".BuildResumePDF_Part1" />
@@ -82,6 +109,10 @@
                 android:name="android.support.FILE_PROVIDER_PATHS"
                 android:resource="@xml/file_paths" />
         </provider>
+
+        <meta-data
+            android:name="com.google.android.gms.ads.APPLICATION_ID"
+            android:value="ca-app-pub-3940256099942544~3347511713" />
     </application>
 
 </manifest>

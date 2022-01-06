@@ -10,15 +10,12 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.SingleJob;
-import com.cvmaster.xosstech.model.Cv_Model;
 import com.cvmaster.xosstech.model.Jobs;
-import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -43,19 +40,27 @@ public class JobsAdapter extends RecyclerView.Adapter <JobsAdapter.ViewHolder>{
     public void onBindViewHolder(JobsAdapter.ViewHolder holder, int position) {
 
         Jobs jobs = jobsList.get(position);
-        holder.tvJobTittle.setText(jobs.getJobTitle());
-        holder.jobOfficeName.setText(jobs.getOfficeName());
-        holder.jobEndDate.setText(jobs.getEndDate());
+
+        String tittle = jobs.getJobTitle();
+        String office = jobs.getOfficeName();
+        String endDate = jobs.getEndDate();
+        String applyLink = jobs.getApplyLink();
+        String circularPath = jobs.getFile();
+
+        holder.tvJobTittle.setText(tittle);
+        holder.jobOfficeName.setText(office);
+        holder.jobEndDate.setText(endDate);
+
         holder.parentLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Jobs.setFile(jobs.getFile());
-                Jobs.setEndDate(jobs.getEndDate());
-                Jobs.setApplyLink(jobs.getApplyLink());
-                Jobs.setJobTitle(jobs.getJobTitle());
-                Jobs.setOfficeName(jobs.getOfficeName());
 
                 Intent myactivity = new Intent(context.getApplicationContext(), SingleJob.class);
+                myactivity.putExtra("jobtittle",tittle);
+                myactivity.putExtra("joboffice",office);
+                myactivity.putExtra("jobenddate",endDate);
+                myactivity.putExtra("applylink",applyLink);
+                myactivity.putExtra("circualrpath",circularPath);
                 myactivity.addFlags(FLAG_ACTIVITY_NEW_TASK);
                 context.getApplicationContext().startActivity(myactivity);
 

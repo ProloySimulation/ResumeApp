@@ -27,8 +27,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:text="Home"
                     android:textColor="@color/white"
-                    android:text="Dashboard"
                     android:textSize="18dp" />
 
             </RelativeLayout>
@@ -73,7 +73,7 @@
                             android:layout_below="@id/imvProfileSection"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="10dp"
-                            android:text="Resume Make"
+                            android:text="Cv Make"
                             android:textColor="@color/headingBlack"
                             android:textSize="18dp"
                             android:textStyle="bold" />
@@ -106,9 +106,9 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
                             android:layout_below="@id/imvJobSection"
-                            android:text="Upcoming Jobs"
+                            android:layout_centerInParent="true"
+                            android:text="Latest Jobs"
                             android:textColor="@color/colorBlack"
                             android:textSize="18dp"
                             android:textStyle="bold" />
@@ -152,7 +152,7 @@
                             android:layout_below="@id/imvCoverLatter"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="10dp"
-                            android:text="Cover Latter"
+                            android:text="Cover Letter"
                             android:textColor="@color/headingBlack"
                             android:textSize="18dp"
                             android:textStyle="bold" />
@@ -198,6 +198,19 @@
 
             </LinearLayout>
 
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="All Resume"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/colorBlack"
+                android:textSize="20dp"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:id="@+id/rvAllCv"/>
 
         </LinearLayout>
 

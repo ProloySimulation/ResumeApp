@@ -10,6 +10,20 @@ public class EducationQualification_Model {
     private String gradediorvision;
     private String result;
 
+    public EducationQualification_Model() {
+    }
+
+    public EducationQualification_Model(String id, String qualification_name, String institute_name, String board_name, String groupsubject_name, String passing_year, String gradediorvision, String result) {
+        this.id = id;
+        this.qualification_name = qualification_name;
+        this.institute_name = institute_name;
+        this.board_name = board_name;
+        this.groupsubject_name = groupsubject_name;
+        this.passing_year = passing_year;
+        this.gradediorvision = gradediorvision;
+        this.result = result;
+    }
+
     public String getId() {
         return id;
     }

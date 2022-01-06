@@ -38,6 +38,7 @@ I am flexible, reliable and possess excellent time keeping skills. I am an enthu
 
     <string-array name="board_Names">
 
+        <item>Select</item>
         <item>Barisal</item>
         <item>Chattogram</item>
         <item>Cumilla</item>
@@ -151,7 +152,8 @@ I am flexible, reliable and possess excellent time keeping skills. I am an enthu
     </string-array>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="onbard1">অ্যাাপের মাধ্যমে সিভি বানান খুব সহজে </string>
-    <string name="onboard2">বিকাশ বা নগদের মাধ্যমে খুব কম খরচে ডাউনলোড করে নিন আপনার সিভিটি</string>
-    <string name="onboard3">রবি এবং এয়ারটেল গ্রাহকরা মোবাইলে রিচার্জের মাধ্যমে পে করতে পারবেন</string>
+    <string name="summary">A self-starter and quick learner. Versatile skill set with experience in customer service, sales, and written and oral communication.</string>
+    <string name="onbard1">নিজেই নিজের সিভি তৈরি করুন খুব সহজেই</string>
+    <string name="onboard2">বিনামূল্যে সিভি বানান এবং ইন্টারভিউ টিপস পান প্রতিদিন</string>
+    <string name="onboard3">প্রিমিয়াম সিভি সমূহ নগদ ও বিকাশের মাধ্যেম এবং রবি ও এয়ারটেল গ্রাহকরা মোবাইলে রিচার্জের মাধ্যমে পেমেন্ট করে ডাউনলোড করতে পারবেন</string>
 </resources>

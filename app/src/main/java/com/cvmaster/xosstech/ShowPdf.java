@@ -6,12 +6,18 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.app.Activity;
+import android.app.Fragment;
+import android.app.FragmentManager;
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Build;
@@ -21,11 +27,14 @@ import android.print.PdfPrint;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -73,13 +82,21 @@ public class ShowPdf extends AppCompatActivity {
 
     private WebView mWebView;
     private RewardedAd mRewardedAd;
+    private SpinKitView progrssBar ;
 
     private String mUrl = "";
+    private String userMobile = null;
+    private String cvPrice = null;
     private int PERMISSION_REQUEST = 0;
     private boolean allowSave = true;
-    private Button btnPrint,btnAdShow,btnPaySim;
+    private Button btnPrint,btnAdShow;
+    private CardView cardPaySim,cardPaybkash,cardPayNagad ;
     private String urlMatch = null;
     private WebSettings webSetting;
+    private SharedPreferences sharedPreferences;
+
+    private LinearLayout layoutPayment ;
+    private String paymentSystem = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -88,13 +105,29 @@ public class ShowPdf extends AppCompatActivity {
         mWebView = findViewById(R.id.web_view);
         btnPrint = findViewById(R.id.btnSavePdf);
         btnAdShow = findViewById(R.id.btnShowAd);
-        btnPaySim = findViewById(R.id.btnPaySim);
+
+        cardPaybkash = findViewById(R.id.cardViewPayBkash);
+        cardPayNagad = findViewById(R.id.cardPayNagad);
+        cardPaySim = findViewById(R.id.cardViewPaySim);
+        progrssBar = findViewById(R.id.webview_spin_kit);
+        layoutPayment = findViewById(R.id.linearLayoutPayment);
+
+//        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
 
         btnPrint.setVisibility(View.GONE);
         btnAdShow.setVisibility(View.GONE);
 
+
+        if (Build.VERSION.SDK_INT >= 19) {
+            mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
+        } else {
+            mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
+        }
+
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.getSettings().setDomStorageEnabled(true);
+
         mWebView.setInitialScale(1);
 
         webSetting = mWebView.getSettings();
@@ -117,14 +150,63 @@ public class ShowPdf extends AppCompatActivity {
             }
         });
 
-        btnPaySim.setOnClickListener(new View.OnClickListener() {
+        cardPaySim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                check_sub("+8801688496756");
+//                check_sub("01866942451");
+                alertDialogDemo();
+            }
+        });
+
+        cardPaybkash.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paymentSystem = "bkash";
+                Fragment fragment = null;
+                fragment = new FragmentPlayment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
+            }
+        });
+
+        cardPayNagad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                paymentSystem = "nagad";
+                Fragment fragment = null;
+                fragment = new FragmentPlayment();
+                FragmentManager fragmentManager = getFragmentManager();
+                fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
             }
         });
     }
+
+    public String getPaymentSystem() {
+        return paymentSystem;
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        String paymentCheck = "0";
+
+        sharedPreferences = getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE);
+        paymentCheck = sharedPreferences.getString("payment",null);
+
+        if(paymentCheck.equals("1"))
+        {
+            btnPrint.setVisibility(View.VISIBLE);
+        }
+
+        if (getFragmentManager().getBackStackEntryCount() == 0) {
+            this.finish();
+        } else {
+            getFragmentManager().popBackStack();
+        }
+    }
+
     protected void renderWebPage(String urlToRender){
+
         mWebView.setWebViewClient(new WebViewClient(){
             /*
                 public void onPageStarted (WebView view, String url, Bitmap favicon)
@@ -155,8 +237,7 @@ public class ShowPdf extends AppCompatActivity {
                         the URL for the current page
                 */
                 // Only url is available in this stage
-                mUrl = view.getUrl();
-
+                progrssBar.setVisibility(View.VISIBLE);
                 // Update the action bar
             }
 
@@ -173,27 +254,23 @@ public class ShowPdf extends AppCompatActivity {
             */
             @Override
             public void onPageFinished(WebView view, String url){
-                // Do something when page loading finished
-                Toast.makeText(getApplicationContext(),"Page loaded",Toast.LENGTH_SHORT).show();
 
-                // Both url and title is available in this stage
+                progrssBar.setVisibility(View.GONE);
                 mUrl = view.getUrl();
+                cvPrice = view.getTitle();
 
                 if(mUrl.contains("https://xosstech.com/cvm/api/public/resume"))
                 {
-                    btnAdShow.setVisibility(View.VISIBLE);
+                    if(cvPrice.equals("Free"))
+                    {
+                        btnAdShow.setVisibility(View.VISIBLE);
+                    }
+
+                    else {
+                        layoutPayment.setVisibility(View.VISIBLE);
+                    }
                 }
 
-                /*
-                    public String getTitle ()
-                        Gets the title for the current page. This is the title of the current page
-                        until WebViewClient.onReceivedTitle is called.
-
-                    Returns
-                        the title for the current page
-                */
-
-                // Update the action bar
             }
 
         });
@@ -204,6 +281,7 @@ public class ShowPdf extends AppCompatActivity {
         mWebView.loadUrl(urlToRender);
     }
 
+
     @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     private void savePdf() {
         if (!allowSave)
@@ -211,15 +289,15 @@ public class ShowPdf extends AppCompatActivity {
         allowSave = false;
         if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                 == PERMISSION_GRANTED) {
-            Toast.makeText(getApplicationContext(), "hey", Toast.LENGTH_SHORT).show();
             String fileName = String.format("%s.pdf", new SimpleDateFormat("dd_MM_yyyyHH_mm_ss", Locale.US).format(new Date()));
             final PrintDocumentAdapter printAdapter = mWebView.createPrintDocumentAdapter(fileName);
             PrintAttributes printAttributes = new PrintAttributes.Builder()
                     .setMediaSize(PrintAttributes.MediaSize.ISO_A4)
-                    .setResolution(new PrintAttributes.Resolution("pdf", "pdf", 600, 600))
+                    .setResolution(new PrintAttributes.Resolution("pdf", "pdf", 300, 72))
                     .setMinMargins(PrintAttributes.Margins.NO_MARGINS)
                     .build();
-            final File file = Environment.getExternalStorageDirectory();
+            String PATH = Environment.getExternalStorageDirectory() + "/download/";
+            final File file = new File(PATH);
             new PdfPrint(printAttributes).print(
                     printAdapter,
                     file,
@@ -229,7 +307,7 @@ public class ShowPdf extends AppCompatActivity {
                         public void onSuccess(String path) {
                             allowSave = true;
                             Toast.makeText(getApplicationContext(),
-                                    String.format("Your file is saved in %s", path),
+                                    String.format("Your file is saved in Download Folder", path),
                                     Toast.LENGTH_LONG).show();
                         }
 
@@ -262,7 +340,7 @@ public class ShowPdf extends AppCompatActivity {
     {
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, "ca-app-pub-3940256099942544/5224354917",
+        RewardedAd.load(this, "ca-app-pub-7854798461578735/4913309588",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
@@ -302,6 +380,45 @@ public class ShowPdf extends AppCompatActivity {
 
     // BDAPPS Payment  ////////////////////////////////
 
+
+    void alertDialogDemo() {
+        // get alert_dialog.xml view
+        LayoutInflater li = LayoutInflater.from(getApplicationContext());
+        View promptsView = li.inflate(R.layout.alert_bd_apps, null);
+
+        AlertDialog.Builder alertDialogBuilder = new AlertDialog.Builder(
+                ShowPdf.this);
+
+        // set alert_dialog.xml to alertdialog builder
+        alertDialogBuilder.setView(promptsView);
+
+        final EditText userInput = (EditText) promptsView.findViewById(R.id.etBdAppsNumber);
+
+        // set dialog message
+        alertDialogBuilder
+                .setCancelable(false)
+                .setPositiveButton("OK", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        // get user input and set it to result
+                        // edit text
+                        userMobile = userInput.getText().toString();
+                        check_sub(userMobile);
+                    }
+                })
+                .setNegativeButton("Cancel",
+                        new DialogInterface.OnClickListener() {
+                            public void onClick(DialogInterface dialog, int id) {
+                                dialog.cancel();
+                            }
+                        });
+
+        // create alert dialog
+        AlertDialog alertDialog = alertDialogBuilder.create();
+
+        // show it
+        alertDialog.show();
+    }
+
     public void check_sub(final String msisdn){
 
         final ProgressDialog progressDialog = new ProgressDialog(ShowPdf.this);
@@ -319,7 +436,7 @@ public class ShowPdf extends AppCompatActivity {
                     ModelResponses responses = response.body();
 //                    Toast.makeText(ChargingActivity.this, responses.getResponse().toString(), Toast.LENGTH_SHORT).show();
 //                    Log.d("yo",responses.getResponse().toString());
-                    if (responses.getResponse().equals("UNREGISTERED") || responses.getResponse().equals("null") ) {
+                    if (responses.getResponse().equals("null") || responses.getResponse().equals("UNREGISTERED")) {
                         UnRegisteredDialog(msisdn);
                     }else{
                         charging(msisdn);
@@ -425,7 +542,7 @@ public class ShowPdf extends AppCompatActivity {
         progressDialog.show();
         ApiClient apiClient = new ApiClient();
         ApiInterface service = apiClient.createService(ApiInterface.class);
-        Call<ModelResponses> call = service.charging(msisdn,String.valueOf(1.0));
+        Call<ModelResponses> call = service.charging(msisdn,"2.0");
         call.enqueue(new Callback<ModelResponses>() {
             @Override
             public void onResponse(Call<ModelResponses> call, Response<ModelResponses> response) {
@@ -438,7 +555,9 @@ public class ShowPdf extends AppCompatActivity {
                         if(responses.getResponse().equals("charged_successfull")){
                             btnPrint.setVisibility(View.VISIBLE);
                             btnAdShow.setVisibility(View.GONE);
-                            btnPaySim.setVisibility(View.GONE);
+                            Toast.makeText(ShowPdf.this, "Charged Successfully", Toast.LENGTH_SHORT).show();
+
+
                         }else if(responses.getResponse().equals("charged_unsuccessfull")){
                             Toast.makeText(ShowPdf.this, "Please check your balance", Toast.LENGTH_SHORT).show();
                         }

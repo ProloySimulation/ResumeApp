@@ -125,7 +125,8 @@ public class BuildResumeAddition extends AppCompatActivity implements View.OnCli
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumeAddition.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                startActivity(intent);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();

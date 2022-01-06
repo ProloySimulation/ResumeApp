@@ -2,6 +2,7 @@ package com.cvmaster.xosstech.InputActivities;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -18,6 +19,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfileProjects;
@@ -40,7 +42,7 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
 
     private LinearLayout layout1 , layout2 , layout3 ;
 
-    private Button btnAddField1,btnAddField2;
+    private Button btnAddField1,btnAddField2,btnDeleteField2,btnDeleteField3;
     private TextView tvProjectsSave ;
 
     private String uploadUrl = "http://xosstech.com/cvm/api/public/api/project";
@@ -78,6 +80,12 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
 
         btnAddField1 = findViewById(R.id.button_BuildResumeProject_AddField_1);
         btnAddField2 = findViewById(R.id.button_BuildResumeProject_AddField_2);
+
+        btnDeleteField2 = findViewById(R.id.button_BuildResumeProjects_DeleteField_2);
+        btnDeleteField3 = findViewById(R.id.button_BuildResumeProjects_DeleteField_3);
+
+        btnDeleteField2.setOnClickListener(this);
+        btnDeleteField3.setOnClickListener(this);
 
         btnAddField1.setOnClickListener(this);
         btnAddField2.setOnClickListener(this);
@@ -142,6 +150,18 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
         if(view == tvProjectsSave)
         {
             CheckValidity_Final();
+        }
+
+        if(view == btnDeleteField2)
+        {
+            layout2.setVisibility(View.GONE);
+            btnAddField1.setVisibility(View.VISIBLE);
+        }
+
+        if(view == btnDeleteField3)
+        {
+            layout3.setVisibility(View.GONE);
+            btnAddField2.setVisibility(View.VISIBLE);
         }
     }
 
@@ -367,7 +387,9 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumeProjects.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -421,8 +443,9 @@ public class BuildResumeProjects extends AppCompatActivity implements View.OnCli
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumeProjects.this, "Data Update Successfully", Toast.LENGTH_SHORT).show();
-                            }
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);                            }
                         } catch (Exception e) {
                             e.printStackTrace();
                             Toast.makeText(BuildResumeProjects.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();

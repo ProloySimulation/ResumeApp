@@ -79,6 +79,14 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
         userMobileNumber = intent.getStringExtra("MOBILE_NUMBER");
         username = intent.getStringExtra("USERNAME");
         type = intent.getStringExtra("TYPE");
+
+        // Google Play Demo Account
+
+        if(userMobileNumber.equals("01987982903"))
+        {
+            Intent intent1 = new Intent(getApplicationContext(),HomePage.class);
+            startActivity(intent1);
+        }
     }
 
     private TextWatcher editText_OtpCode_Watcher = new TextWatcher() {

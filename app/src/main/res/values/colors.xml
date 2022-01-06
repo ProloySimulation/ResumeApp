@@ -31,4 +31,6 @@
     <color name="cream">#F9E5BC</color>
     <color name="inactive">#C4C4C4</color>
     <color name="active">#50C2C9</color>
+    <color name="bottomfirstcolour">#419BDF</color>
+    <color name="bottomsecondcolour">#6123CF</color>
 </resources>

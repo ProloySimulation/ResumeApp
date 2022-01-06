@@ -1,15 +1,9 @@
 package com.cvmaster.xosstech.InputActivities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.Manifest;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.pm.PackageManager;
-import android.os.Build;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -28,11 +22,8 @@ import com.android.volley.toolbox.Volley;
 import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart5;
-import com.cvmaster.xosstech.ResumeProfilePart6;
 import com.cvmaster.xosstech.SharedPreferenceManager;
-import com.cvmaster.xosstech.UserProfileActivity;
 import com.cvmaster.xosstech.model.Reference_Model;
-import com.cvmaster.xosstech.model.WorkExperience_Model;
 
 import org.json.JSONObject;
 
@@ -332,7 +323,9 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumePart5.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -389,6 +382,7 @@ public class BuildResumePart5 extends AppCompatActivity implements View.OnClickL
                             if (status.equals("true")) {
                                 Toast.makeText(BuildResumePart5.this, "Update Successfully", Toast.LENGTH_SHORT).show();
                                 Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                                 startActivity(intent);
                             }
                         } catch (Exception e) {

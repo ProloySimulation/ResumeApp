@@ -9,19 +9,23 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.Html;
 import android.view.View;
+import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.cvmaster.xosstech.HomePage;
 import com.cvmaster.xosstech.LoginActivity;
 import com.cvmaster.xosstech.R;
+import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.UserSignInPart1;
 
-public class StoryBoard extends AppCompatActivity {
+public class StoryBoard extends AppCompatActivity implements View.OnClickListener {
 
     ViewPager viewPager;
     ViewPagerAdapter viewPagerAdapter;
     private TextView[] dots;
     private LinearLayout dotLayout;
+    private Button btnSignUp ;
 
     @RequiresApi(api = Build.VERSION_CODES.M)
     @Override
@@ -29,8 +33,16 @@ public class StoryBoard extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash);
 
+        if (SharedPreferenceManager.getInstance(this).IsUserLoggedIn()){
+            finish();
+            Intent intent = new Intent(this, HomePage.class);
+            startActivity(intent);
+        }
+
         dotLayout = findViewById(R.id.inDicatiorLayout);
         viewPager = findViewById(R.id.viewPagerSplash);
+        btnSignUp = findViewById(R.id.btnMakeCv);
+        btnSignUp.setOnClickListener(this);
         viewPagerAdapter = new ViewPagerAdapter(this);
 
         viewPager.setAdapter(viewPagerAdapter);
@@ -74,13 +86,11 @@ public class StoryBoard extends AppCompatActivity {
 
             if (position > 1){
 
-//                backbtn.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getApplicationContext(), UserSignInPart1.class);
-                startActivity(intent);
+                btnSignUp.setVisibility(View.VISIBLE);
 
             }else {
 
-//                backbtn.setVisibility(View.INVISIBLE);
+                btnSignUp.setVisibility(View.GONE);
             }
 
         }
@@ -90,4 +100,13 @@ public class StoryBoard extends AppCompatActivity {
 
         }
     };
+
+    @Override
+    public void onClick(View view) {
+        if(view == btnSignUp)
+        {
+            Intent intent = new Intent(getApplicationContext(), UserSignInPart1.class);
+            startActivity(intent);
+        }
+    }
 }

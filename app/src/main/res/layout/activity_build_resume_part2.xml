@@ -44,10 +44,12 @@
 
                         <TextView
                             android:id="@+id/tvEduDataSave"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerVertical="true"
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:textStyle="bold"
+                            android:gravity="center"
                             android:layout_alignParentRight="true"
+                            android:layout_centerVertical="true"
                             android:layout_marginRight="20dp"
                             android:text="Save" />
 
@@ -291,7 +293,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
-                        android:text="Result: Grade/Division"
+                        android:text="Result: GPA/CGPA"
                         android:textColor="@color/headingBlack" />
 
                     <LinearLayout
@@ -312,7 +314,7 @@
                             android:layout_marginLeft="8dp"
                             android:background="@null"
                             android:hint="5.00"
-                            android:textColor="@color/grey"
+                            android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -574,7 +576,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
-                        android:text="Result: Grade/Division"
+                        android:text="Result: GPA/CGPA"
                         android:textColor="@color/headingBlack"/>
 
                     <LinearLayout
@@ -595,7 +597,7 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
                             android:hint="5.00"
-                            android:textColor="@color/grey"
+                            android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -872,7 +874,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
-                        android:text="Result: Grade/Division"
+                        android:text="Result: GPA/CGPA"
                         android:textColor="@color/headingBlack"/>
 
                     <LinearLayout
@@ -887,12 +889,13 @@
 
                         <EditText
                             android:id="@+id/textView_BuildResumePart2_Result_3"
-                            android:layout_width="wrap_content"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:background="@null"
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
-                            android:text="5.00"
-                            android:textColor="@color/grey"
+                            android:hint="5.00"
+                            android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
                     </LinearLayout>
@@ -974,9 +977,10 @@
 
                         <EditText
                             android:id="@+id/textView_BuildResumePart2_QualificationName_4"
-                            android:layout_width="200dp"
+                            android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left"
+                            android:background="@null"
                             android:hint="SSC/HSC/Hnrs"
                             android:textColorHint="@color/grey"
                             android:textColor="@color/colorBlack"
@@ -998,8 +1002,8 @@
                         android:layout_height="40dp"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        android:layout_marginEnd="16dp"
                         android:background="@drawable/inputfinal"
+                        android:layout_marginEnd="16dp"
                         android:hint="Enter Institute Name"
                         android:padding="9dp"
                         android:textSize="14sp" />
@@ -1167,7 +1171,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
-                        android:text="Result: Grade/Division"
+                        android:text="Result: GPA/CGPA"
                         android:textColor="@color/headingBlack"/>
 
                     <LinearLayout
@@ -1187,8 +1191,8 @@
                             android:background="@null"
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
-                            android:hint="SSC/HSC/BSC"
-                            android:textColor="@color/grey"/>
+                            android:hint="5.00"
+                            android:textColor="@color/colorBlack"/>
 
                     </LinearLayout>
 
@@ -1439,7 +1443,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="24dp"
                         android:layout_marginTop="16dp"
-                        android:text="Result: Grade/Division"
+                        android:text="Result: GPA/CGPA"
                         android:textColor="@color/headingBlack"/>
 
                     <LinearLayout
@@ -1460,14 +1464,14 @@
                             android:layout_gravity="center"
                             android:layout_marginLeft="8dp"
                             android:hint="5.00"
-                            android:textColor="@color/grey"
+                            android:textColor="@color/colorBlack"
                             android:textSize="14sp" />
 
                     </LinearLayout>
 
                     <Button
                         android:id="@+id/button_DeleteField_EducationalQualification_5"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="160dp"
                         android:layout_height="40dp"
                         style="?android:attr/borderlessButtonStyle"
@@ -1484,24 +1488,6 @@
                         android:textAllCaps="false"
                         android:textColor="@color/red"/>
 
-                    <Button
-                        android:id="@+id/button_AddField_EducationalQualification_5"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/outline_btn_green"
-                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:text="Add Field"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/btn_green"/>
-
                 </LinearLayout>
 
                 <!--Divider-->
@@ -1512,13 +1498,13 @@
                     android:layout_marginTop="8dp"
                     android:background="@drawable/divider_drawble_body"/>
 
-                <TextView
+<!--                <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="Please Go To The Next Step"
                     android:textSize="10sp"
-                    android:textColor="@color/grey"/>
+                    android:textColor="@color/grey"/>-->
 
                 <Button
                     android:id="@+id/button_BuildResumePart2_Next"
@@ -1526,6 +1512,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="16dp"
                     android:layout_marginRight="16dp"
+                    android:visibility="gone"
                     style="?android:attr/borderlessButtonStyle"
                     android:layout_gravity="center"
                     android:layout_marginTop="8dp"

@@ -1,3 +1,4 @@
+/*
 package com.cvmaster.xosstech;
 
 import androidx.annotation.NonNull;
@@ -82,7 +83,7 @@ public class ChargingActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                String msisdn = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-                check_sub(msisdn);
+                check_sub("01874463976");
 
                 //for test
 //                intent_to_next();
@@ -99,7 +100,7 @@ public class ChargingActivity extends AppCompatActivity {
         progressDialog.show();
         ApiClient apiClient = new ApiClient();
         ApiInterface service = apiClient.createService(ApiInterface.class);
-        Call<ModelResponses> call = service.check_subscription(msisdn);
+        Call<ModelResponses> call = service.check_subscription("01874463976");
         call.enqueue(new Callback<ModelResponses>() {
             @Override
             public void onResponse(Call<ModelResponses> call, Response<ModelResponses> response) {
@@ -129,7 +130,7 @@ public class ChargingActivity extends AppCompatActivity {
 
     }
 
-    public  void UnRegisteredDialog(final String msisdn){
+    public void UnRegisteredDialog(final String msisdn){
         AlertDialog.Builder builder1 = new AlertDialog.Builder(ChargingActivity.this);
         builder1.setMessage("Your are not subscribed yet. Do you want to subscribe ?");
         builder1.setCancelable(true);
@@ -177,9 +178,11 @@ public class ChargingActivity extends AppCompatActivity {
                                 "OK",
                                 new DialogInterface.OnClickListener() {
                                     public void onClick(DialogInterface dialog, int id) {
-                                        /*ModelResponses responses = response.body();
+                                        */
+/*ModelResponses responses = response.body();
                                         Toast.makeText(ChargingActivity.this, responses.getResponse().toString(), Toast.LENGTH_SHORT).show();
-                                        Log.d("response", responses.getResponse().toString());*/
+                                        Log.d("response", responses.getResponse().toString());*//*
+
                                         dialog.cancel();
                                     }
                                 });
@@ -254,7 +257,8 @@ public class ChargingActivity extends AppCompatActivity {
                     public void onClick(DialogInterface dialog, int id) {
                         dialog.cancel();
                         finish();
-                        /*if (ResumeTemplate.templateName == "template1"){
+                        */
+/*if (ResumeTemplate.templateName == "template1"){
 
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate1.class));
                             cheack("template1");
@@ -288,7 +292,8 @@ public class ChargingActivity extends AppCompatActivity {
                             startActivity(new Intent(ChargingActivity.this, PdfActivityTemplate6.class));
                             cheack("template6");
 
-                        }*/
+                        }*//*
+
                     }
                 });
 
@@ -348,3 +353,4 @@ public class ChargingActivity extends AppCompatActivity {
     }
 
 }
+*/

@@ -1,12 +1,9 @@
 package com.cvmaster.xosstech.InputActivities;
 
-import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,15 +19,10 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.cvmaster.xosstech.InputActivities.BuildResumePart5;
+import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
-import com.cvmaster.xosstech.ResumeProfilePart2;
-import com.cvmaster.xosstech.ResumeProfilePart4;
-import com.cvmaster.xosstech.ResumeProfilePart5;
 import com.cvmaster.xosstech.ResumeProfilePart6;
 import com.cvmaster.xosstech.SharedPreferenceManager;
-import com.cvmaster.xosstech.UserProfileActivity;
-import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
 
 import org.json.JSONObject;
@@ -81,7 +73,6 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
     private EditText editText_Organization_4;
     private EditText editText_OrganizationAddress_4;
     private EditText etWorkDetail_4;
-    private Button button_AddField_4;
     private Button button_DeleteField_4;
 
     private String token = null;
@@ -93,6 +84,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
 
     private String uploadUrl = "http://xosstech.com/cvm/api/public/api/experience";
     private String updateUrl = "http://xosstech.com/cvm/api/public/api/experience/update/";
+    private String deleteUrl = "http://xosstech.com/cvm/api/public/api/experience/delete/";
 
 
     @Override
@@ -158,8 +150,6 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         editText_OrganizationAddress_4 = (EditText) findViewById(R.id.editText_BuildResumePart6_WorkExperience4_OrganizationAddress);
         etWorkDetail_4 = findViewById(R.id.editText_BuildResumePart6_WorkExperience_Description_4);
 
-        button_AddField_4 = (Button) findViewById(R.id.button_BuildResumePart6_AddField_4);
-        button_AddField_4.setOnClickListener(this);
         button_DeleteField_4 = (Button) findViewById(R.id.button_BuildResumePart6_DeleteField_4);
         button_DeleteField_4.setOnClickListener(this);
 
@@ -212,6 +202,7 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
             editText_endDate_4.setText(experience_mod.getEndDate());
             updateId4 = experience_mod.getId();
         }
+
     }
 
     public boolean CheckValidity_WorkExperience_1(){
@@ -520,18 +511,13 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         if (view == button_DeleteField_3){
             linearLayout_AddWorkExperience_3.setVisibility(View.GONE);
             button_AddField_2.setVisibility(View.VISIBLE);
-            button_DeleteField_2.setVisibility(View.GONE);
+            button_DeleteField_2.setVisibility(View.VISIBLE);
         }
-        if (view == button_AddField_4){
-            if (CheckValidity_WorkExperience_4()){
-                button_AddField_4.setVisibility(View.GONE);
-                button_DeleteField_4.setVisibility(View.GONE);
-            }
-        }
+
         if (view == button_DeleteField_4){
             linearLayout_AddWorkExperience_4.setVisibility(View.GONE);
             button_AddField_3.setVisibility(View.VISIBLE);
-            button_DeleteField_3.setVisibility(View.GONE);
+            button_DeleteField_3.setVisibility(View.VISIBLE);
         }
 
         if(view == tvWorkDataSave)
@@ -573,7 +559,9 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumePart6.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -624,8 +612,9 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumePart6.this, "Update Successfully", Toast.LENGTH_SHORT).show();
-                            }
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);                            }
                         } catch (Exception e) {
                             e.printStackTrace();
                             Toast.makeText(BuildResumePart6.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
@@ -663,4 +652,43 @@ public class BuildResumePart6 extends AppCompatActivity implements View.OnClickL
         request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         requestQueue.add(request);
     }
+
+    private void deleteInformation(String id) {
+
+        StringRequest request = new StringRequest(Request.Method.POST, deleteUrl+id,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            String status = jsonObject.getString("success");
+
+                            if (status.equals("true")) {
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                startActivity(intent);                            }
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                            Toast.makeText(BuildResumePart6.this, "Error" + e.toString(), Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(BuildResumePart6.this, "Register Error" + error.toString(), Toast.LENGTH_SHORT).show();
+            }
+        }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                Map<String, String> params = new HashMap<String, String>();
+                params.put("Authorization", "Bearer "+token);
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        request.setRetryPolicy(new DefaultRetryPolicy(10000, 0, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        requestQueue.add(request);
+    }
+
 }

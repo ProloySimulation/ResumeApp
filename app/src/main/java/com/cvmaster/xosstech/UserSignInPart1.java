@@ -35,11 +35,16 @@ import java.util.regex.Pattern;
 public class UserSignInPart1 extends AppCompatActivity implements View.OnClickListener {
 
     private TextView textView_MobileNumber;
+    private LinearLayout layoutSignIn;
     private EditText etUserName;
     private Button button_SendOTP;
 //    private LinearLayout linearLayout_SendingOTP;
     private static final Pattern BD_MOBILE_NUMBER = Pattern.compile("0?1[68][0-9]{8}\\b");
-    private String mobileNumber,username ;
+    private String mobileNumber,username,id,token ;
+    private String password = "123456";
+
+    private String regUrl = "http://xosstech.com/cvm/api/public/api/register";
+    private String loginUrl = "http://xosstech.com/cvm/api/public/api/login";
 
 
     @Override
@@ -48,6 +53,8 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
         setContentView(R.layout.user_sign_in_part);
 
         etUserName = findViewById(R.id.userName_EditText_UserRegistrationPart1);
+        layoutSignIn = findViewById(R.id.layout_sign_in);
+        layoutSignIn.setOnClickListener(this);
 
         //comment the line
         //SharedPreferenceManager.getInstance(this).UserLoggedInfo("01676946820");
@@ -64,7 +71,6 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
         button_SendOTP = (Button) findViewById(R.id.sendOTP_Button_UserRegistrationPart1);
         button_SendOTP.setOnClickListener(this);
         button_SendOTP.setEnabled(true);
-        button_SendOTP.setBackground(getResources().getDrawable(R.drawable.divider_shape_body));
 
 //        linearLayout_SendingOTP = (LinearLayout) findViewById(R.id.sendingOTP_LinearLayout_UserRegistrationPart1);
 
@@ -139,8 +145,7 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
             Toast.makeText(getApplicationContext(),"Verify Autometically!", Toast.LENGTH_LONG).show();
             String mobileNumber = textView_MobileNumber.getText().toString().trim();
             finish();
-            Intent intent = new Intent(getApplicationContext(), HomePage.class);
-            startActivity(intent);
+            registration();
         }
 
         @Override
@@ -158,5 +163,65 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
             mobileNumber = textView_MobileNumber.getText().toString().trim();
             requestOTP(mobileNumber);
         }
+
+        if(view == layoutSignIn)
+        {
+            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+            startActivity(intent);
+        }
     }
+
+
+
+    public void registration()
+    {
+        StringRequest request = new StringRequest(Request.Method.POST, regUrl,
+                new com.android.volley.Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try {
+                            JSONObject jsonObject = new JSONObject(response);
+                            JSONObject object = jsonObject.getJSONObject("user");
+                            String status = jsonObject.getString("success");
+                            token = jsonObject.getString("token");
+
+                            if (status.equals("true"))
+                            {
+                                Toast.makeText(UserSignInPart1.this,"Register Scucessfully",Toast.LENGTH_SHORT).show();
+                                id = object.getString("id");
+                                SharedPreferenceManager.getInstance(UserSignInPart1.this).UserLoggedInfo(mobileNumber,id,token);
+
+
+                                Intent intent = new Intent(getApplicationContext(), HomePage.class);
+                                startActivity(intent);
+                            }
+                        }
+                        catch (Exception e){
+                            e.printStackTrace();
+                            Toast.makeText(UserSignInPart1.this,"Error" + e.toString(),Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(UserSignInPart1.this,"Register Error" + error.toString(),Toast.LENGTH_SHORT).show();
+            }
+        })
+        {
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String , String> params = new HashMap<>();
+                params.put("name",username);
+                params.put("mobile",mobileNumber);
+                params.put("password",password);
+                params.put("password_confirmation",password);
+
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(request);
+    }
+
 }

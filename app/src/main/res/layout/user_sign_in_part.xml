@@ -26,7 +26,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Sign in and make your resume"
+            android:text="Sign Up and make your resume"
             android:textColor="@color/colorBlack" />
 
     </LinearLayout>
@@ -82,10 +82,11 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/layout_sign_in"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/login_card_below"
         android:layout_alignParentBottom="true"
+        android:background="@drawable/login_card_below"
         android:gravity="center"
         android:orientation="vertical"
         android:padding="15dp">
@@ -103,7 +104,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
-            android:text="Sign In NOow !!!"
+            android:text="Sign In Now !!!"
             android:textColor="@color/colorBlack" />
 
     </LinearLayout>

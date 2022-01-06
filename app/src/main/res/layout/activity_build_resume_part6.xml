@@ -36,10 +36,12 @@
 
                     <TextView
                         android:id="@+id/tvExpDataSave"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:textStyle="bold"
+                        android:gravity="center"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
                         android:text="Save" />
 
@@ -759,25 +761,6 @@
 
 
                     <Button
-                        android:id="@+id/button_BuildResumePart6_AddField_4"
-                        android:layout_width="150dp"
-                        android:layout_height="40dp"
-                        style="?android:attr/borderlessButtonStyle"
-                        android:layout_gravity="center"
-                        android:layout_marginTop="10dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="@drawable/outline_btn_green"
-                        android:drawableLeft="@drawable/ic_add_circle_black_24dp"
-                        android:foreground="?android:attr/selectableItemBackground"
-                        android:paddingLeft="20dp"
-                        android:paddingRight="20dp"
-                        android:text="Add Field"
-                        android:textStyle="bold"
-                        android:textAllCaps="false"
-                        android:textColor="@color/btn_green"/>
-
-
-                    <Button
                         android:id="@+id/button_BuildResumePart6_DeleteField_4"
                         android:layout_width="160dp"
                         android:layout_height="40dp"
@@ -802,7 +785,7 @@
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:background="@drawable/divider_drawble_body"/>
-
+<!--
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -810,7 +793,7 @@
                     android:layout_gravity="center"
                     android:text="Please Go To The Next Step"
                     android:textSize="10sp"
-                    android:textColor="@color/grey"/>
+                    android:textColor="@color/grey"/>-->
 
 
             </LinearLayout>

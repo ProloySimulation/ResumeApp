@@ -2,7 +2,10 @@ package com.cvmaster.xosstech.model;
 
 public class Jobs {
 
-    private static String id,jobTitle,officeName,location,applyLink,endDate,file;
+    private String id,jobTitle,officeName,location,applyLink,endDate,file;
+
+    public Jobs() {
+    }
 
     public Jobs(String id, String jobTitle, String officeName, String endDate, String applyLink, String file) {
         this.id = id;
@@ -13,59 +16,59 @@ public class Jobs {
         this.file = file;
     }
 
-    public static String getId() {
+    public String getId() {
         return id;
     }
 
-    public static void setId(String id) {
-        Jobs.id = id;
+    public void setId(String id) {
+        this.id = id;
     }
 
-    public static String getLocation() {
-        return location;
-    }
-
-    public static void setLocation(String location) {
-        Jobs.location = location;
-    }
-
-    public static String getJobTitle() {
+    public String getJobTitle() {
         return jobTitle;
     }
 
-    public static void setJobTitle(String jobTitle) {
-        Jobs.jobTitle = jobTitle;
+    public void setJobTitle(String jobTitle) {
+        this.jobTitle = jobTitle;
     }
 
-    public static String getOfficeName() {
+    public String getOfficeName() {
         return officeName;
     }
 
-    public static void setOfficeName(String officeName) {
-        Jobs.officeName = officeName;
+    public void setOfficeName(String officeName) {
+        this.officeName = officeName;
     }
 
-    public static String getEndDate() {
-        return endDate;
+    public String getLocation() {
+        return location;
     }
 
-    public static void setEndDate(String endDate) {
-        Jobs.endDate = endDate;
+    public void setLocation(String location) {
+        this.location = location;
     }
 
-    public static String getApplyLink() {
+    public String getApplyLink() {
         return applyLink;
     }
 
-    public static void setApplyLink(String applyLink) {
-        Jobs.applyLink = applyLink;
+    public void setApplyLink(String applyLink) {
+        this.applyLink = applyLink;
     }
 
-    public static String getFile() {
+    public String getEndDate() {
+        return endDate;
+    }
+
+    public void setEndDate(String endDate) {
+        this.endDate = endDate;
+    }
+
+    public String getFile() {
         return file;
     }
 
-    public static void setFile(String file) {
-        Jobs.file = file;
+    public void setFile(String file) {
+        this.file = file;
     }
 }

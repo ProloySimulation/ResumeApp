@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
@@ -38,6 +39,7 @@ import com.cvmaster.xosstech.model.Projects_model;
 import com.cvmaster.xosstech.model.Reference_Model;
 import com.cvmaster.xosstech.model.Training;
 import com.cvmaster.xosstech.model.WorkExperience_Model;
+import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
@@ -49,9 +51,13 @@ import java.util.Map;
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private CardView cvPersonal,cvExp,cvEdu,cvReference,cvAddition,cvProjects,cvTraining;
+    private LinearLayout layoutProfile ;
     private FloatingActionButton fabCvMake ;
+    private SpinKitView progressBar ;
 
     private String token = null;
+    private String mobile = "01";
+
     private String profileUrl = "http://xosstech.com/cvm/api/public/api/profile";
 
     @Override
@@ -72,6 +78,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cvProjects = findViewById(R.id.cvProjects);
         cvTraining = findViewById(R.id.cvTraining);
         fabCvMake = findViewById(R.id.fabCvMake);
+        layoutProfile = findViewById(R.id.bottomLinear);
+        progressBar = findViewById(R.id.dashboard_spin_kit);
 
         cvPersonal.setOnClickListener(this);
         cvExp.setOnClickListener(this);
@@ -81,11 +89,24 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cvProjects.setOnClickListener(this);
         cvTraining.setOnClickListener(this);
         fabCvMake.setOnClickListener(this);
+        layoutProfile.setOnClickListener(this);
 
         token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
-        Toast.makeText(getApplicationContext(), token, Toast.LENGTH_SHORT).show();
 
-        UploadInformation();
+        //For Demo Account
+/*
+        Intent intent = getIntent();
+        mobile = intent.getStringExtra("MOBILE_NUMBER");*/
+
+        if(mobile.equals("01987982903"))
+        {
+            Toast.makeText(getApplicationContext(), "This is a testing account", Toast.LENGTH_LONG).show();
+        }
+
+        else {
+            UploadInformation();
+        }
+
     }
 
     @Override
@@ -131,10 +152,16 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             Intent intent = new Intent(getApplicationContext(), ShowPdf.class);
             startActivity(intent);
         }
+        if(view == layoutProfile)
+        {
+            Intent intent = new Intent(getApplicationContext(), UserProfile.class);
+            startActivity(intent);
+        }
     }
 
     private void UploadInformation() {
 
+        progressBar.setVisibility(View.VISIBLE);
         StringRequest request = new StringRequest(Request.Method.POST, profileUrl,
                 new Response.Listener<String>() {
                     @Override
@@ -144,8 +171,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(DashBoardActivity.this, "Data Retrieve Successfully", Toast.LENGTH_SHORT).show();
 
+                                progressBar.setVisibility(View.GONE);
                                 JSONObject additionalObject = jsonObject.getJSONObject("additonalInfos data");
                                 JSONObject educationalObject = jsonObject.getJSONObject("education data");
                                 JSONObject experienceObject = jsonObject.getJSONObject("experiences data");
@@ -184,8 +211,8 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
                                         String degree = infoObject.getString("degree");
                                         String passYear = infoObject.getString("pass_year");
                                         String result = infoObject.getString("result");
-                                        Toast.makeText(getApplicationContext(), passYear, Toast.LENGTH_SHORT).show();
-                                        saveEducationData(id,institution,degree,department,passYear,result);
+                                        String board = infoObject.getString("board");
+                                        saveEducationData(id,institution,degree,department,passYear,board,result);
                                     }
                                 }
 
@@ -322,7 +349,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         ResumeProfilePart5.reference.add(reference_model);
     }
 
-    private void saveEducationData(String id,String institution,String degree,String department,String passYear,String result)
+    private void saveEducationData(String id,String institution,String degree,String department,String passYear,String board,String result)
     {
         EducationQualification_Model education_model = new EducationQualification_Model();
         education_model.setInstitute_name(institution);
@@ -331,6 +358,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         education_model.setGroupsubject_name(department);
         education_model.setPassing_year(passYear);
         education_model.setResult(result);
+        education_model.setBoard_name(board);
         ResumeProfilePart2.educationQualification.add(education_model);
     }
 
@@ -402,7 +430,6 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
     }
 
     private void clearResumeProfilePart2Memory(){
-        ResumeProfilePart2.career_objective = "";
         ResumeProfilePart2.educationQualification.clear();
     }
 

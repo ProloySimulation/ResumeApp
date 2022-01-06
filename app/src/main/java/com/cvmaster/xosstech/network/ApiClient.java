@@ -18,7 +18,7 @@ public class ApiClient {
     public static <S> S createService(Class<S> serviceClass) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("http://3.15.9.143/xossapp/");
+                .baseUrl("https://xosstech.com/cvm/xossapp/");
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .readTimeout(90, TimeUnit.SECONDS)

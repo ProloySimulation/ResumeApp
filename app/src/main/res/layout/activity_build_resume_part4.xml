@@ -35,12 +35,14 @@
 
                     <TextView
                         android:id="@+id/tvPersonalDataSave"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_centerVertical="true"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
                         android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
                         android:layout_marginRight="20dp"
-                        android:text="Save" />
+                        android:gravity="center"
+                        android:text="Save"
+                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -111,12 +113,49 @@
                     android:textAllCaps="false"
                     android:textColor="@color/colorPrimary1"/>
 
-
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:padding="20dp"
                     android:layout_marginTop="8dp"
+                    android:text="Profile Summary"
+                    android:textStyle="bold"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_person_basic"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"/>
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart4_Summary"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:padding="20dp"
+                    android:background="@drawable/inputfinal"
+                    android:text="A self-starter and quick learner. Versatile skill set with experience in customer service, sales, and written and oral communication."
+                    android:textSize="14sp"
+                    android:singleLine="false"/>
+
+                <EditText
+                    android:id="@+id/editText_BuildResumePart4_Tittle"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/inputfinal"
+                    android:hint="Current Job Position"
+                    android:textSize="14sp"
+                    android:paddingLeft="16dp"
+                    android:singleLine="true"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="10dp"
                     android:text="Personal Details"
                     android:textStyle="bold"
                     android:background="@color/clr_bck"
@@ -494,23 +533,6 @@
                     android:text="Please Go To The Next Step"
                     android:textSize="10sp"
                     android:textColor="@color/grey"/>
-
-
-                <Button
-                    android:id="@+id/button_BuildResumePart4_Next"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="16dp"
-                    android:layout_marginLeft="16dp"
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="8dp"
-                    android:background="@drawable/btn_shape"
-                    android:foreground="?android:attr/selectableItemBackground"
-                    android:text="Next"
-                    android:textStyle="bold"
-                    android:textAllCaps="false"
-                    android:textColor="#FFFF"/>
 
 
             </LinearLayout>

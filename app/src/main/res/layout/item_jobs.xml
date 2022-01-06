@@ -2,14 +2,15 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:background="@color/white">
+    android:background="#F5F5F5"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/parentCardJobs"
-        android:background="#ffffff">
+        card_view:cardBackgroundColor="#ffffff"
+        android:layout_marginTop="10dp"
+        android:id="@+id/parentCardJobs">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -23,17 +24,19 @@
                 android:layout_height="wrap_content"
                 android:text="জব টাইটেল"
                 android:id="@+id/tvJobTitle"
-                android:textColor="@color/headingBlack"/>
+                android:textColor="@color/blue"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="মন্ত্রণালয়ের নাম"
+                android:textColor="@color/headingBlack"
                 android:id="@+id/officName"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="@color/grey"
                 android:text="১২ই ডিসেম্বর ২০২১"
                 android:id="@+id/endDate"/>
 

@@ -1,7 +1,9 @@
 package com.cvmaster.xosstech.InputActivities;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
@@ -24,10 +26,18 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
+import com.cvmaster.xosstech.Profile.DashBoardActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ResumeProfilePart2;
 import com.cvmaster.xosstech.SharedPreferenceManager;
+import com.cvmaster.xosstech.SingleJob;
 import com.cvmaster.xosstech.model.EducationQualification_Model;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.LoadAdError;
+import com.google.android.gms.ads.OnUserEarnedRewardListener;
+import com.google.android.gms.ads.rewarded.RewardItem;
+import com.google.android.gms.ads.rewarded.RewardedAd;
+import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import org.json.JSONObject;
 
@@ -50,6 +60,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private LinearLayout layoutOtherSubject1 ;
     private EditText etOtherSubject1;
     private String id1 = null;
+    private String passingYear1 = "Select";
+    private String board1 = "Select";
 
     private TextView tvBoard1,tvPassYear1,tvGroup1,tvResult1;
 
@@ -68,6 +80,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private LinearLayout layoutOtherSubject2 ;
     private EditText etOtherSubject2;
     private String id2 = null;
+    private String passingYear2 = "Select";
+    private String board2 = "Select";
 
     private LinearLayout linearLayout_EducationalQualification_3;
     private EditText textView_QualificationName_3;
@@ -84,6 +98,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private EditText etOtherSubject3;
     private TextView tvGradeEducation3 ;
     private String id3 = null;
+    private String passingYear3 = "Select";
+    private String board3 = "Select";
 
     private LinearLayout linearLayout_EducationalQualification_4;
     private EditText textView_QualificationName_4;
@@ -99,6 +115,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private LinearLayout layoutOtherSubject4 ;
     private EditText etOtherSubject4;
     private String id4 = null;
+    private String passingYear4 = "Select";
+    private String board4 = "Select";
 
     private LinearLayout linearLayout_EducationalQualification_5;
     private EditText textView_QualificationName_5;
@@ -111,6 +129,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private EditText textView_Result_5;
     private Button button_DeleteField_EducationalQualification_5;
     private String id5 = null;
+    private String passingYear5 = "Select";
+    private String board5 = "Select";
 
     private TextView tvSave ;
 
@@ -118,9 +138,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
     private Button button_Data;
     private String token = null;
 
+    private RewardedAd mRewardedAd;
+
     private String uploadUrl = "http://xosstech.com/cvm/api/public/api/education";
     private String updateUrl = "http://xosstech.com/cvm/api/public/api/education/update/";
-    private String board = null;
 
 
     @Override
@@ -129,6 +150,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         setContentView(R.layout.activity_build_resume_part2);
 
         token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+//        adLoad();
 
         tvSave = findViewById(R.id.tvEduDataSave);
         tvSave.setOnClickListener(this);
@@ -149,7 +171,6 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
         ArrayAdapter<CharSequence> arrayAdapterBoardName1 = ArrayAdapter.createFromResource(this,R.array.board_Names,android.R.layout.simple_spinner_item);
         arrayAdapterBoardName1.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner_Board_1.setPrompt("Dhaka");
         spinner_Board_1.setAdapter(arrayAdapterBoardName1);
         spinner_Board_1.setOnItemSelectedListener(this);
 
@@ -182,11 +203,9 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         button_AddField_EducationalQualification_2.setOnClickListener(this);
         button_DeleteField_EducationalQualification_2 = (Button) findViewById(R.id.button_DeleteField_EducationalQualification_2);
         button_DeleteField_EducationalQualification_2.setOnClickListener(this);
-        button_AddField_EducationalQualification_2.setEnabled(false);
 
         textView_QualificationName_2 =  findViewById(R.id.textView_BuildResumePart2_QualificationName_2);
         spinner_Board_2 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_2);
-        spinner_Board_2.setEnabled(false);
 
         editText_InstituteName_2 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_2);
 
@@ -224,7 +243,6 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
         textView_QualificationName_3 = findViewById(R.id.textView_BuildResumePart2_QualificationName_3);
         spinner_Board_3 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_3);
-        spinner_Board_3.setEnabled(false);
 
 
         editText_InstituteName_3 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_3);
@@ -258,7 +276,6 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
         textView_QualificationName_4 = findViewById(R.id.textView_BuildResumePart2_QualificationName_4);
         spinner_Board_4 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_4);
-        spinner_Board_4.setEnabled(false);
 
         editText_InstituteName_4 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_4);
 
@@ -289,7 +306,6 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
         textView_QualificationName_5 = findViewById(R.id.textView_BuildResumePart2_QualificationName_5);
         spinner_Board_5 = (Spinner) findViewById(R.id.spinner_BuildResumePart2_BoardName_5);
-        spinner_Board_5.setEnabled(false);
 
         editText_InstituteName_5 = (EditText) findViewById(R.id.editText_BuildResumePart2_InstituteName_5);
         textView_BoardName_5 = (TextView) findViewById(R.id.textView_BuildResumePart2_BoardName_5);
@@ -331,6 +347,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             spinner_PassingYear_1.setPrompt(edu_mod.getPassing_year());
             textView_SubjectGroupName_1.setText(edu_mod.getGroupsubject_name());
             editText_Result_1.setText(edu_mod.getResult());
+            passingYear1 = edu_mod.getPassing_year();
+            board1 = edu_mod.getBoard_name();
             id1 = edu_mod.getId();
         }
 
@@ -346,6 +364,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             textView_SubjectGroupName_2.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_2.setPrompt(edu_mod.getPassing_year());
             textView_Result_2.setText(edu_mod.getResult());
+            passingYear2 = edu_mod.getPassing_year();
+            board2 = edu_mod.getBoard_name();
             id2 = edu_mod.getId();
         }
 
@@ -361,6 +381,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             textView_SubjectGroupName_3.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_3.setPrompt(edu_mod.getPassing_year());
             textView_Result_3.setText(edu_mod.getResult());
+            passingYear3 = edu_mod.getPassing_year();
+            board3 = edu_mod.getBoard_name();
             id3 = edu_mod.getId();
         }
 
@@ -376,6 +398,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             textView_SubjectGroupName_4.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_4.setPrompt(edu_mod.getPassing_year());
             textView_Result_4.setText(edu_mod.getResult());
+            passingYear4 = edu_mod.getPassing_year();
+            board4 = edu_mod.getBoard_name();
             id4 = edu_mod.getId();
         }
 
@@ -391,8 +415,36 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             textView_SubjectGroupName_5.setText(edu_mod.getGroupsubject_name());
             spinner_PassingYear_4.setPrompt(edu_mod.getPassing_year());
             textView_Result_5.setText(edu_mod.getResult());
+            passingYear5 = edu_mod.getPassing_year();
+            board5 = edu_mod.getBoard_name();
             id5 = edu_mod.getId();
         }
+
+        int passingYear1Position = arrayAdapterPassingYear1.getPosition(passingYear1);
+        spinner_PassingYear_1.setSelection(passingYear1Position);
+        int board1Position = arrayAdapterBoardName1.getPosition(board1);
+        spinner_Board_1.setSelection(board1Position);
+
+        int passingYear2Position = arrayAdapterPassingYear2.getPosition(passingYear2);
+        spinner_PassingYear_2.setSelection(passingYear2Position);
+        int board2Position = arrayAdapterBoardName2.getPosition(board2);
+        spinner_Board_2.setSelection(board2Position);
+
+        int passingYear3Position = arrayAdapterPassingYear3.getPosition(passingYear3);
+        spinner_PassingYear_3.setSelection(passingYear3Position);
+        int board3Position = arrayAdapterBoardName3.getPosition(board3);
+        spinner_Board_3.setSelection(board3Position);
+
+        int passingYear4Position = arrayAdapterPassingYear4.getPosition(passingYear4);
+        spinner_PassingYear_4.setSelection(passingYear4Position);
+        int board4Position = arrayAdapterBoardName4.getPosition(board4);
+        spinner_Board_4.setSelection(board4Position);
+
+        int passingYear5Position = arrayAdapterPassingYear5.getPosition(passingYear5);
+        spinner_PassingYear_5.setSelection(passingYear5Position);
+        int board5Position = arrayAdapterBoardName5.getPosition(board5);
+        spinner_Board_5.setSelection(board5Position);
+
 
         editText_InstituteName_1.addTextChangedListener(textWatcher);
     }
@@ -713,7 +765,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             String gradedivision;
             String result_grade;
 
-            qualification_name = editText_InstituteName_1.getText().toString().trim();
+            qualification_name = textView_QualificationName_1.getText().toString().trim();
             institute_name = editText_InstituteName_1.getText().toString().trim();
             board_name = spinner_Board_1.getSelectedItem().toString().trim();
             subjectgroup_name = textView_SubjectGroupName_1.getText().toString().trim();
@@ -722,10 +774,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
             if(id1!=null)
             {
-                updateInformation(id1,institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                updateInformation(id1,institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
             else {
-                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
 
         }
@@ -748,10 +800,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
             if(id2!=null)
             {
-                updateInformation(id2,institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                updateInformation(id2,institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
             else {
-                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
         }
 
@@ -774,10 +826,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
             if(id3!=null)
             {
-                updateInformation(id1,institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                updateInformation(id1,institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
             else {
-                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
         }
         if (linearLayout_EducationalQualification_4.getVisibility() == View.VISIBLE){
@@ -799,10 +851,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
             if(id4!=null)
             {
-                updateInformation(id4,institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                updateInformation(id4,institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
             else {
-                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
         }
 
@@ -825,10 +877,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
             if(id5!=null)
             {
-                updateInformation(id5,institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                updateInformation(id5,institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
             else {
-                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,result_grade);
+                UploadInformation(institute_name,qualification_name,subjectgroup_name,passing_year,board_name,result_grade);
             }
         }
     }
@@ -888,7 +940,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
 
     }
 
-    private void UploadInformation(String institution,String degree,String department,String endYear,String result) {
+    private void UploadInformation(String institution,String degree,String department,String endYear,String board,String result) {
 
         StringRequest request = new StringRequest(Request.Method.POST, uploadUrl,
                 new Response.Listener<String>() {
@@ -899,7 +951,11 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumePart2.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
+//                                adShow();
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -933,6 +989,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                 params.put("dept",department);
                 params.put("start_year", "2000");
                 params.put("pass_year", endYear);
+                params.put("board", board);
                 params.put("result", result);
 
                 return params;
@@ -944,7 +1001,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         requestQueue.add(request);
     }
 
-    private void updateInformation(String id,String institution,String degree,String department,String endYear,String result) {
+    private void updateInformation(String id,String institution,String degree,String department,String endYear,String board,String result) {
 
         StringRequest request = new StringRequest(Request.Method.POST, updateUrl+id,
                 new Response.Listener<String>() {
@@ -955,7 +1012,10 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                             String status = jsonObject.getString("success");
 
                             if (status.equals("true")) {
-                                Toast.makeText(BuildResumePart2.this, "Data Input Successfully", Toast.LENGTH_SHORT).show();
+//                                adShow();
+                                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                                startActivity(intent);
                             }
                         } catch (Exception e) {
                             e.printStackTrace();
@@ -977,7 +1037,7 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 Map<String, String> params = new HashMap<String, String>();
-                params.put("Authorization", "Bearer "+"73|0zxBcVO1MOhwZO6KNYdy1drjK11aZMfyXT8naLhn");
+                params.put("Authorization", "Bearer "+token);
                 return params;
             }
 
@@ -987,8 +1047,8 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
                 params.put("inst_name", institution);
                 params.put("degree", degree);
                 params.put("dept",department);
-                params.put("start_year", "2000");
                 params.put("pass_year", endYear);
+                params.put("board", board);
                 params.put("result", result);
 
                 return params;
@@ -1000,4 +1060,52 @@ public class BuildResumePart2 extends AppCompatActivity implements View.OnClickL
         requestQueue.add(request);
     }
 
+
+    // Google Admob
+
+    private void adLoad()
+    {
+        AdRequest adRequest = new AdRequest.Builder().build();
+
+        RewardedAd.load(this, "ca-app-pub-7854798461578735/4913309588",
+                adRequest, new RewardedAdLoadCallback() {
+                    @Override
+                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
+                        // Handle the error.
+//                        Log.d(TAG, loadAdError.getMessage());
+                        mRewardedAd = null;
+                    }
+
+                    @Override
+                    public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
+                        mRewardedAd = rewardedAd;
+//                        Log.d(TAG, "Ad was loaded.");
+                    }
+                });
+    }
+
+    private void adShow()
+    {
+        if (mRewardedAd != null) {
+            Activity activityContext = BuildResumePart2.this;
+            mRewardedAd.show(activityContext, new OnUserEarnedRewardListener() {
+                @Override
+                public void onUserEarnedReward(@NonNull RewardItem rewardItem) {
+
+                    int rewardAmount = rewardItem.getAmount();
+                    String rewardType = rewardItem.getType();
+
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
+        } else {
+//            Toast.makeText(getApplicationContext(), "Please wait, your connection is slow", Toast.LENGTH_SHORT).show();
+
+            Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+            startActivity(intent);
+        }
+    }
 }

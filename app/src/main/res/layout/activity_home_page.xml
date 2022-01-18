@@ -73,7 +73,7 @@
                             android:layout_below="@id/imvProfileSection"
                             android:layout_centerInParent="true"
                             android:layout_marginTop="10dp"
-                            android:text="Cv Make"
+                            android:text="CV Make"
                             android:textColor="@color/headingBlack"
                             android:textSize="18dp"
                             android:textStyle="bold" />
@@ -201,7 +201,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="All Resume"
+                android:text="All CV"
                 android:layout_marginTop="20dp"
                 android:textColor="@color/colorBlack"
                 android:textSize="20dp"/>

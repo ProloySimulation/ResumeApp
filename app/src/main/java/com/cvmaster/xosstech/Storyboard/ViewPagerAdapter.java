@@ -1,6 +1,7 @@
 package com.cvmaster.xosstech.Storyboard;
 
 import android.content.Context;
+import android.media.Image;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,9 +58,18 @@ public class ViewPagerAdapter extends PagerAdapter {
 
         ImageView slidetitleimage = (ImageView) view.findViewById(R.id.imvResume);
         TextView slideHeading = (TextView) view.findViewById(R.id.tvOnboard);
+        ImageView imvSideArrow = view.findViewById(R.id.imvSideArrow);
 
         slidetitleimage.setImageResource(images[position]);
         slideHeading.setText(headings[position]);
+
+        if(position==2)
+        {
+            imvSideArrow.setVisibility(View.GONE);
+        }
+        else {
+            imvSideArrow.setVisibility(View.VISIBLE);
+        }
 
         container.addView(view);
 

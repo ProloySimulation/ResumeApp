@@ -35,7 +35,11 @@
         <activity
             android:name=".Storyboard.StoryBoard"
             android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity
             android:name=".SingleJob"
@@ -67,11 +71,6 @@
 
         <activity android:name=".UserSignInPart2" />
         <activity android:name=".UserSignInPart1">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity android:name=".InputActivities.BuildResumePart6" />
         <activity android:name=".InputActivities.BuildResumePart5" />

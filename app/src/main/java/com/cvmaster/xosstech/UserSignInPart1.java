@@ -1,6 +1,7 @@
 package com.cvmaster.xosstech;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -51,6 +52,8 @@ public class UserSignInPart1 extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.user_sign_in_part);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         etUserName = findViewById(R.id.userName_EditText_UserRegistrationPart1);
         layoutSignIn = findViewById(R.id.layout_sign_in);

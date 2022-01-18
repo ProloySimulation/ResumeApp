@@ -6,6 +6,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.FragmentTransaction;
@@ -27,6 +28,7 @@ import android.print.PdfPrint;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.webkit.WebSettings;
@@ -85,7 +87,7 @@ public class ShowPdf extends AppCompatActivity {
     private SpinKitView progrssBar ;
 
     private String mUrl = "";
-    private String userMobile = null;
+    public String userMobile;
     private String cvPrice = null;
     private int PERMISSION_REQUEST = 0;
     private boolean allowSave = true;
@@ -101,6 +103,9 @@ public class ShowPdf extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+
         setContentView(R.layout.activity_show_pdf);
         mWebView = findViewById(R.id.web_view);
         btnPrint = findViewById(R.id.btnSavePdf);
@@ -116,7 +121,6 @@ public class ShowPdf extends AppCompatActivity {
 
         btnPrint.setVisibility(View.GONE);
         btnAdShow.setVisibility(View.GONE);
-
 
         if (Build.VERSION.SDK_INT >= 19) {
             mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
@@ -188,14 +192,18 @@ public class ShowPdf extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        String paymentCheck = "0";
+        String paymentCheck = null;
 
         sharedPreferences = getSharedPreferences("myAppPrefs", Context.MODE_PRIVATE);
         paymentCheck = sharedPreferences.getString("payment",null);
 
-        if(paymentCheck.equals("1"))
+        if(paymentCheck!=null)
         {
-            btnPrint.setVisibility(View.VISIBLE);
+            if(paymentCheck.equals("1"))
+            {
+                btnPrint.setVisibility(View.VISIBLE);
+            }
+
         }
 
         if (getFragmentManager().getBackStackEntryCount() == 0) {
@@ -203,6 +211,19 @@ public class ShowPdf extends AppCompatActivity {
         } else {
             getFragmentManager().popBackStack();
         }
+    }
+
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        if (keyCode == KeyEvent.KEYCODE_BACK)
+        {
+            if (mWebView.canGoBack())
+            {
+                mWebView.goBack();
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
     }
 
     protected void renderWebPage(String urlToRender){
@@ -392,7 +413,7 @@ public class ShowPdf extends AppCompatActivity {
         // set alert_dialog.xml to alertdialog builder
         alertDialogBuilder.setView(promptsView);
 
-        final EditText userInput = (EditText) promptsView.findViewById(R.id.etBdAppsNumber);
+        EditText userInput = (EditText) promptsView.findViewById(R.id.etBdAppsNumber);
 
         // set dialog message
         alertDialogBuilder

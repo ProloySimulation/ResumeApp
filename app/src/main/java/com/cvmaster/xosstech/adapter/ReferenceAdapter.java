@@ -119,13 +119,13 @@ public class ReferenceAdapter extends RecyclerView.Adapter <ReferenceAdapter.Vie
         public ViewHolder(View itemView) {
             super(itemView);
 
-            tvRefName = itemView.findViewById(R.id.tvRefName);
+       /*     tvRefName = itemView.findViewById(R.id.tvRefName);
             tvRefCompanyName = itemView.findViewById(R.id.tvRefCompanyName);
             tvRefDesignation = itemView.findViewById(R.id.tvRefDesignation);
             tvRefEmail = itemView.findViewById(R.id.tvRefEmail);
             tvRefMobile = itemView.findViewById(R.id.tvRefPhone);
             btnDeleteRef = itemView.findViewById(R.id.btnRefDelete);
-            btnUpdateRef = itemView.findViewById(R.id.btnRefUpdate);
+            btnUpdateRef = itemView.findViewById(R.id.btnRefUpdate);*/
         }
     }
 

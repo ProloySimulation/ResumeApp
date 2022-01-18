@@ -5,6 +5,7 @@ import static android.content.pm.PackageManager.PERMISSION_GRANTED;
 import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
@@ -58,6 +59,8 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home_page);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         rvAllCv = findViewById(R.id.rvAllCv);
         cvDashboard = findViewById(R.id.cvProfileSection);

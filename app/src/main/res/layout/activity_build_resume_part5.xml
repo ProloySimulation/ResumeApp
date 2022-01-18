@@ -367,14 +367,14 @@
                     android:layout_gravity="center"
                     android:background="@drawable/divider_drawble_body"/>
 
-            <!--    <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:layout_gravity="center"
-                    android:text="Click Next To Finish"
-                    android:textSize="10sp"
-                    android:textColor="@color/grey"/>-->
+                <!--    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_gravity="center"
+                        android:text="Click Next To Finish"
+                        android:textSize="10sp"
+                        android:textColor="@color/grey"/>-->
 
             </LinearLayout>
 

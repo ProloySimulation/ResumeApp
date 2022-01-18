@@ -3,6 +3,7 @@ package com.cvmaster.xosstech;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.app.AppCompatDelegate;
 
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
@@ -61,6 +62,8 @@ public class UserSignInPart2 extends AppCompatActivity implements View.OnClickLi
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_sign_in_part2);
+
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         editText_OtpCode = (EditText) findViewById(R.id.otpCode_EditText_UserRegistrationPart2);
         editText_OtpCode.addTextChangedListener(editText_OtpCode_Watcher);

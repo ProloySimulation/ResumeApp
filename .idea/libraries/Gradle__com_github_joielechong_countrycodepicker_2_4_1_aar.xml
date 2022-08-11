@@ -1,9 +1,12 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.joielechong:countrycodepicker:2.4.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/094f3e4585653121318f5c17a3f5b86e/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/094f3e4585653121318f5c17a3f5b86e/jetified-countrycodepicker-2.4.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/094f3e4585653121318f5c17a3f5b86e/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/res" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

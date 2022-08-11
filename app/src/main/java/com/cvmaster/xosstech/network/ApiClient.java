@@ -1,7 +1,7 @@
 package com.cvmaster.xosstech.network;
 
 
-import androidx.multidex.BuildConfig;
+import com.cvmaster.xosstech.BuildConfig;
 
 import java.util.concurrent.TimeUnit;
 
@@ -18,7 +18,7 @@ public class ApiClient {
     public static <S> S createService(Class<S> serviceClass) {
         Retrofit.Builder builder = new Retrofit.Builder()
                 .addConverterFactory(GsonConverterFactory.create())
-                .baseUrl("https://xosstech.com/cvm/xossapp/");
+                .baseUrl("https://xosstech.com/cvm/");
 
         OkHttpClient.Builder httpClient = new OkHttpClient.Builder()
                 .readTimeout(90, TimeUnit.SECONDS)

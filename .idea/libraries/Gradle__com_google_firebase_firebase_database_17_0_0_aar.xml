@@ -1,9 +1,14 @@
 <component name="libraryTable">
   <library name="Gradle: com.google.firebase:firebase-database:17.0.0@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f59a0b652fefbd70fe1e57d695eb5d5f/jetified-firebase-database-17.0.0/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f59a0b652fefbd70fe1e57d695eb5d5f/jetified-firebase-database-17.0.0/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/f59a0b652fefbd70fe1e57d695eb5d5f/jetified-firebase-database-17.0.0/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6cae9f10c3e3066a0cc8cb872bb61d7b/jetified-firebase-database-17.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6cae9f10c3e3066a0cc8cb872bb61d7b/jetified-firebase-database-17.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/6cae9f10c3e3066a0cc8cb872bb61d7b/jetified-firebase-database-17.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/b339a5eebc2ff0aea9c6556f35be19ed/jetified-firebase-database-17.0.0/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/e209a0fa599bc6f380d7d97399b5d04c/transformed/jetified-firebase-database-17.0.0/res" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/ef575547d203419f39519addab288767/transformed/jetified-firebase-database-17.0.0/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ef575547d203419f39519addab288767/transformed/jetified-firebase-database-17.0.0/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/ef575547d203419f39519addab288767/transformed/jetified-firebase-database-17.0.0/res" />
     </CLASSES>
     <JAVADOC>
       <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.google.firebase/firebase-database/17.0.0/36fb0affecc9fd20596a19216868acf29fbdacce/firebase-database-17.0.0-javadoc.jar!/" />

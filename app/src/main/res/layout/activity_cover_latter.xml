@@ -28,8 +28,8 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
+                    android:text="Cover Letter"
                     android:textColor="@color/white"
-                    android:text="Cover Latter"
                     android:textSize="18dp" />
 
             </RelativeLayout>
@@ -54,6 +54,7 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/inputfinal"
                 android:layout_marginTop="10dp"
+                android:text="@string/coverHeader"
                 android:padding="10dp"
                 android:id="@+id/etCoverLatterHeader"/>
 
@@ -71,6 +72,7 @@
                 android:background="@drawable/inputfinal"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
+                android:text="@string/coverSub"
                 android:id="@+id/etCoverLatterSubject"/>
 
             <TextView
@@ -86,7 +88,8 @@
                 android:layout_height="wrap_content"
                 android:background="@drawable/inputfinal"
                 android:layout_marginTop="10dp"
-                android:padding="20dp"
+                android:padding="30dp"
+                android:text="@string/coverBody"
                 android:id="@+id/etCoverLatterBody"/>
 
             <TextView
@@ -103,6 +106,7 @@
                 android:background="@drawable/inputfinal"
                 android:layout_marginTop="10dp"
                 android:padding="10dp"
+                android:text="@string/coverFooter"
                 android:id="@+id/etCoverLatterFooter"/>
 
         </LinearLayout>
@@ -111,7 +115,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/fabCoverLatterMake"
-            android:src="@drawable/view"
+            android:src="@drawable/download"
             android:tint="@color/white"
             android:layout_gravity="end|bottom"
             android:layout_margin="16dp"

@@ -3,7 +3,7 @@ apply plugin: 'com.google.gms.google-services'
 //apply plugin: 'com.google.gms.google-services'
 
 android {
-    compileSdkVersion 30
+    compileSdkVersion 32
     buildToolsVersion "30.0.3"
 
     signingConfigs {
@@ -17,17 +17,18 @@ android {
 
     defaultConfig {
         applicationId "com.cvmaster.xosstech"
-        minSdkVersion 19
+        minSdk 23
         multiDexEnabled true
-        targetSdkVersion 30
-        versionCode 23
-        versionName "3.2.10"
+        targetSdkVersion 32
+        versionCode 32
+        versionName "3.3.8"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
             minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -58,6 +59,7 @@ dependencies {
 
     //iText Library
     implementation 'com.itextpdf:itextg:5.5.10'
+    implementation 'com.itextpdf:itext7-core:7.1.8'
     //dependencies
     implementation 'com.github.joielechong:countrycodepicker:2.4.1'
     implementation 'com.github.barteksc:android-pdf-viewer:2.8.2'
@@ -76,5 +78,10 @@ dependencies {
     implementation 'com.squareup.okhttp:okhttp:2.7.5'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
     implementation 'com.google.code.gson:gson:2.8.2'
+
+    //LifeCycle
+    implementation "androidx.lifecycle:lifecycle-extensions:2.2.0"
+
+    implementation 'androidx.work:work-runtime:2.7.0-alpha05'
 
 }

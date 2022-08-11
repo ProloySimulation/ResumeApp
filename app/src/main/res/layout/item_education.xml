@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/layout_education"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Qualification Name"
+            android:textColor="@color/headingBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etItemDegreeName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="left"
+                android:hint="SSC/HSC/BSC"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Institution"
+            android:textColor="@color/headingBlack" />
+
+        <EditText
+            android:id="@+id/etItemInstituionName"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:hint="Enter Institute Name"
+            android:padding="9dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Board"
+            android:textColor="@color/headingBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tvItemBoardName"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:text="Board Name"
+                android:textColor="@color/grey"
+                android:textSize="14sp" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:orientation="horizontal">
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <Spinner
+                        android:id="@+id/spinnerItemBoardName"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Test"
+                        android:gravity="right"
+                        android:id="@+id/tvEdu_Quality_Board_1"
+                        android:layout_alignParentRight="true"/>
+
+                </RelativeLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Group Or Subject"
+            android:textColor="@color/headingBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/etItemGroupName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:hint="Group/Subject Name"
+                android:textColorHint="@color/grey"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/linearLayout_Others_Subject_1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:visibility="gone">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="Others Subject:"/>
+
+            <EditText
+                android:id="@+id/etOthersSub1"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_gravity="bottom"
+                android:singleLine="true"
+                android:imeOptions="actionDone"/>
+
+        </LinearLayout>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Passing Year"
+            android:textColor="@color/headingBlack" />
+
+        <EditText
+            android:id="@+id/etItemEducationPassYear"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:hint="Enter Institute Name"
+            android:padding="9dp"
+            android:textSize="14sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24dp"
+            android:layout_marginTop="16dp"
+            android:text="Result: GPA/CGPA"
+            android:textColor="@color/headingBlack" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/inputfinal"
+            android:orientation="horizontal"
+            android:padding="1dp">
+
+            <EditText
+                android:id="@+id/etItemEducationResult"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="8dp"
+                android:background="@null"
+                android:hint="5.00"
+                android:textColor="@color/colorBlack"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/layoutEducationEditDelete"
+            android:layout_gravity="center"
+            android:visibility="visible"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnEditEducation"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_margin="20dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/outline_btn_green"
+                android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Edit"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_green"/>
+
+            <Button
+                android:id="@+id/btnDeleteEducation"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:layout_marginTop="10dp"
+                android:layout_margin="20dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="center"
+                android:background="@drawable/btn_shap_delete"
+                android:drawableLeft="@drawable/ic_delete_field"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Delete Field"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/red"/>
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnEducationUpdate"
+            android:layout_width="150dp"
+            android:layout_height="40dp"
+            android:visibility="gone"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/outline_btn_green"
+            android:drawableLeft="@drawable/ic_save"
+            android:foreground="?android:attr/selectableItemBackground"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
+            android:text="Update"
+            android:textStyle="bold"
+            android:textAllCaps="false"
+            android:textColor="@color/btn_green"/>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputActivities.project.ActivityProject">
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/project_spin_kit"
+        style="@style/SpinKitView.Large.CubeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolBarBlog"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Project"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Projects"
+                    android:textStyle="bold"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_work_exp"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rvProject"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/add_new_project_layout"
+                    android:background="@color/white"
+                    android:padding="10dp"
+                    android:visibility="gone"
+                    android:orientation="vertical"
+                    android:layout_margin="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Project Name"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etProjectName"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Write Project Title"
+                        android:textSize="14sp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Project Summary"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginTop="10dp"/>
+
+                    <EditText
+                        android:id="@+id/etProjectSummary"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:padding="20dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Write Project Title"
+                        android:textSize="14sp"
+                        android:singleLine="true"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginRight="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Start Date"
+                                android:textColor="@color/headingBlack"
+                                android:layout_marginTop="8dp"/>
+
+                            <EditText
+                                android:id="@+id/etProjectStart"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/inputfinal"
+                                android:hint="12.03.2020"
+                                android:textSize="14sp"
+                                android:singleLine="true"/>
+
+                        </LinearLayout>
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:layout_marginLeft="10dp"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="End Date"
+                                android:textColor="@color/headingBlack"
+                                android:layout_marginTop="8dp"/>
+
+                            <EditText
+                                android:id="@+id/etProjectEnd"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="8dp"
+                                android:background="@drawable/inputfinal"
+                                android:hint="10.02.2023"
+                                android:textSize="14sp"
+                                android:singleLine="true"/>
+
+                        </LinearLayout>
+                    </LinearLayout>
+
+                    <Button
+                        android:id="@+id/btn_new_project_submit"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        android:onClick="postProject"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_save"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Post"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_add_project"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/outline_btn_green"
+                    android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Add Field"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/btn_green"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

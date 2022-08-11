@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SingleJob">
+    tools:context=".JobSector.SingleJob">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -106,7 +106,7 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/btnDownloadJobPdf"
                 android:layout_margin="10dp"
-                android:text="Download Circular"
+                android:text="View Ad To Download Circular"
                 android:textColor="@color/white"
                 android:visibility="visible"
                 android:textSize="13dp"

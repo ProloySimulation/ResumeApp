@@ -9,7 +9,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.cardview.widget.CardView;
 import androidx.core.app.ActivityCompat;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.Manifest;
 import android.app.Activity;
@@ -20,14 +19,12 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
-import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.print.PdfPrint;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
-import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -39,14 +36,6 @@ import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.DefaultRetryPolicy;
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-import com.cvmaster.xosstech.InputActivities.BuildResumePart2;
 import com.cvmaster.xosstech.network.ApiClient;
 import com.cvmaster.xosstech.network.ApiInterface;
 import com.cvmaster.xosstech.network.model.ModelResponses;
@@ -59,22 +48,11 @@ import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
-import org.json.JSONObject;
-
-import java.io.BufferedInputStream;
 import java.io.File;
-import java.io.IOException;
-import java.io.InputStream;
-import java.net.HttpURLConnection;
-import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
 import java.util.Locale;
-import java.util.Map;
-
-import javax.net.ssl.HttpsURLConnection;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -95,9 +73,10 @@ public class ShowPdf extends AppCompatActivity {
     private CardView cardPaySim,cardPaybkash,cardPayNagad ;
     private String urlMatch = null;
     private WebSettings webSetting;
+    private PDFView cvView ;
     private SharedPreferences sharedPreferences;
 
-    private LinearLayout layoutPayment ;
+    private LinearLayout layoutPayment,webviewLayout ;
     private String paymentSystem = null;
 
     @Override
@@ -110,6 +89,7 @@ public class ShowPdf extends AppCompatActivity {
         mWebView = findViewById(R.id.web_view);
         btnPrint = findViewById(R.id.btnSavePdf);
         btnAdShow = findViewById(R.id.btnShowAd);
+        cvView = findViewById(R.id.cvPdfView);
 
         cardPaybkash = findViewById(R.id.cardViewPayBkash);
         cardPayNagad = findViewById(R.id.cardPayNagad);
@@ -122,11 +102,15 @@ public class ShowPdf extends AppCompatActivity {
         btnPrint.setVisibility(View.GONE);
         btnAdShow.setVisibility(View.GONE);
 
-        if (Build.VERSION.SDK_INT >= 19) {
+
+        // webview
+
+        /*if (Build.VERSION.SDK_INT >= 19) {
             mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
         } else {
             mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         }
+
 
         mWebView.getSettings().setLoadWithOverviewMode(true);
         mWebView.getSettings().setUseWideViewPort(true);
@@ -135,9 +119,30 @@ public class ShowPdf extends AppCompatActivity {
         mWebView.setInitialScale(1);
 
         webSetting = mWebView.getSettings();
-        webSetting.setBuiltInZoomControls(true);
+        webSetting.setBuiltInZoomControls(true);*/
+
+        WebSettings webSettings = mWebView.getSettings();
+        webSettings.setJavaScriptEnabled(true);
+
+        /*
+         * Below part is for enabling webview settings for using javascript and accessing html files and other assets
+         */
+
+        mWebView.setClickable(true);
+        mWebView.getSettings().setLoadWithOverviewMode(true);
+        mWebView.getSettings().setUseWideViewPort(true);
+        mWebView.setInitialScale(1);
+
+        mWebView.getSettings().setDomStorageEnabled(true);
+        mWebView.getSettings().setAppCacheEnabled(false);
+        mWebView.getSettings().setCacheMode(WebSettings.LOAD_NO_CACHE);
+        mWebView.clearCache(true);
+        mWebView.getSettings().setAllowFileAccessFromFileURLs(true);
+        mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
+
 
         renderWebPage("https://xosstech.com/cvm/api/public/view_cv");
+
         adLoad();
 
         btnPrint.setOnClickListener(new View.OnClickListener() {
@@ -167,8 +172,11 @@ public class ShowPdf extends AppCompatActivity {
             public void onClick(View view) {
                 paymentSystem = "bkash";
                 Fragment fragment = null;
-                fragment = new FragmentPlayment();
+                Bundle bundle = new Bundle();
+                bundle.putString("AMOUNT", cvPrice);
+                fragment = new FragmentPayment();
                 FragmentManager fragmentManager = getFragmentManager();
+                fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
             }
         });
@@ -178,8 +186,11 @@ public class ShowPdf extends AppCompatActivity {
             public void onClick(View view) {
                 paymentSystem = "nagad";
                 Fragment fragment = null;
-                fragment = new FragmentPlayment();
+                Bundle bundle = new Bundle();
+                bundle.putString("AMOUNT", cvPrice);
+                fragment = new FragmentPayment();
                 FragmentManager fragmentManager = getFragmentManager();
+                fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
             }
         });
@@ -201,6 +212,7 @@ public class ShowPdf extends AppCompatActivity {
         {
             if(paymentCheck.equals("1"))
             {
+                Toast.makeText(getApplicationContext(), "Payment Has Done Successfully", Toast.LENGTH_SHORT).show();
                 btnPrint.setVisibility(View.VISIBLE);
             }
 
@@ -229,50 +241,12 @@ public class ShowPdf extends AppCompatActivity {
     protected void renderWebPage(String urlToRender){
 
         mWebView.setWebViewClient(new WebViewClient(){
-            /*
-                public void onPageStarted (WebView view, String url, Bitmap favicon)
-                    Notify the host application that a page has started loading. This method is
-                    called once for each main frame load so a page with iframes or framesets will
-                    call onPageStarted one time for the main frame. This also means that
-                    onPageStarted will not be called when the contents of an embedded frame changes,
-                    i.e. clicking a link whose target is an iframe, it will also not be called for
-                    fragment navigations (navigations to #fragment_id).
 
-                Parameters
-                    view : The WebView that is initiating the callback.
-                    url : The url to be loaded.
-                    favicon : The favicon for this page if it already exists in the database.
-
-            */
             @Override
-            public void onPageStarted(WebView view, String url, Bitmap favicon){
-                // Do something on page loading started
+            public void onPageStarted(WebView view, String url, Bitmap favicon) {
 
-                /*
-                    public String getUrl ()
-                        Gets the URL for the current page. This is not always the same as the URL
-                        passed to WebViewClient.onPageStarted because although the load for that
-                        URL has begun, the current page may not have changed.
-
-                    Returns
-                        the URL for the current page
-                */
-                // Only url is available in this stage
                 progrssBar.setVisibility(View.VISIBLE);
-                // Update the action bar
             }
-
-            /*
-                public void onPageFinished (WebView view, String url)
-                    Notify the host application that a page has finished loading. This method is
-                    called only for main frame. When onPageFinished() is called, the rendering
-                    picture may not be updated yet. To get the notification for the new Picture,
-                    use onNewPicture(WebView, Picture).
-
-                Parameters
-                    view : The WebView that is initiating the callback.
-                    url : The url of the page.
-            */
             @Override
             public void onPageFinished(WebView view, String url){
 
@@ -330,6 +304,7 @@ public class ShowPdf extends AppCompatActivity {
                             Toast.makeText(getApplicationContext(),
                                     String.format("Your file is saved in Download Folder", path),
                                     Toast.LENGTH_LONG).show();
+                            btnPrint.setVisibility(View.GONE);
                         }
 
                         @Override
@@ -359,20 +334,23 @@ public class ShowPdf extends AppCompatActivity {
 
     private void adLoad()
     {
+        progrssBar.setVisibility(View.VISIBLE);
         AdRequest adRequest = new AdRequest.Builder().build();
 
-        RewardedAd.load(this, "ca-app-pub-7854798461578735/4913309588",
+        RewardedAd.load(this, "ca-app-pub-7854798461578735/2249839374",
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
                         // Handle the error.
 //                        Log.d(TAG, loadAdError.getMessage());
+                        progrssBar.setVisibility(View.GONE);
                         mRewardedAd = null;
                     }
 
                     @Override
                     public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                         mRewardedAd = rewardedAd;
+                        progrssBar.setVisibility(View.GONE);
 //                        Log.d(TAG, "Ad was loaded.");
                     }
                 });
@@ -473,7 +451,6 @@ public class ShowPdf extends AppCompatActivity {
             @Override
             public void onFailure(Call<ModelResponses> call, Throwable t) {
                 progressDialog.dismiss();
-                Log.d("proloy",call.toString());
                 Toast.makeText(ShowPdf.this, call.toString(), Toast.LENGTH_SHORT).show();
             }
         });
@@ -563,7 +540,7 @@ public class ShowPdf extends AppCompatActivity {
         progressDialog.show();
         ApiClient apiClient = new ApiClient();
         ApiInterface service = apiClient.createService(ApiInterface.class);
-        Call<ModelResponses> call = service.charging(msisdn,"2.0");
+        Call<ModelResponses> call = service.charging(msisdn,cvPrice);
         call.enqueue(new Callback<ModelResponses>() {
             @Override
             public void onResponse(Call<ModelResponses> call, Response<ModelResponses> response) {
@@ -597,4 +574,5 @@ public class ShowPdf extends AppCompatActivity {
             }
         });
     }
+
 }

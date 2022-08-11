@@ -27,6 +27,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="vertical"
+                android:id="@+id/webViewShowLayout"
                 android:layout_gravity="center"
                 android:layout_margin="20dp">
 
@@ -78,6 +79,36 @@
                     android:layout_height="wrap_content"
                     android:textColor="@color/colorBlack"
                     android:text="Payment With : "/>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/cardViewPayBkash"
+                    android:visibility="visible"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="20dp"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="50dp"
+                            android:layout_height="50dp"
+                            android:src="@drawable/bkash"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginLeft="20dp"
+                            android:textColor="@color/headingBlack"
+                            android:text="Pay With bkash"/>
+
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="match_parent"
@@ -137,38 +168,12 @@
                     </LinearLayout>
                 </androidx.cardview.widget.CardView>
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="match_parent"
-                    android:layout_marginTop="10dp"
-                    android:id="@+id/cardViewPayBkash"
-                    android:visibility="gone"
-                    android:layout_height="wrap_content">
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="20dp"
-                        android:orientation="horizontal">
-
-                        <ImageView
-                            android:layout_width="50dp"
-                            android:layout_height="50dp"
-                            android:src="@drawable/bkash"/>
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_gravity="center"
-                            android:layout_marginLeft="20dp"
-                            android:textColor="@color/headingBlack"
-                            android:text="Pay With bkash"/>
-
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-
             </LinearLayout>
+
+            <com.github.barteksc.pdfviewer.PDFView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/cvPdfView"/>
 
         </LinearLayout>
 

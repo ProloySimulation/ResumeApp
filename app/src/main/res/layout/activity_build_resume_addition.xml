@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context=".InputActivities.BuildResumeAddition">
+    tools:context=".InputActivities.additionalInfo.BuildResumeAddition">
 
     <androidx.appcompat.widget.Toolbar
         android:layout_width="match_parent"
@@ -21,7 +21,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:text="Additional"
+                android:text="Additional Information"
                 android:textSize="18dp" />
 
         </RelativeLayout>
@@ -172,8 +172,20 @@
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/btn_Submit"
+            android:id="@+id/btn_addition_Submit"
+            android:onClick="UploadInformation"
             android:text="Submit"
+            android:textColor="@color/white"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_background"/>
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/btn_addition_update"
+            android:onClick="UpdateInformation"
+            android:visibility="gone"
+            android:text="Update"
             android:textColor="@color/white"
             android:layout_marginTop="20dp"
             android:background="@drawable/button_background"/>

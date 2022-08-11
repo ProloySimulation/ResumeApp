@@ -14,10 +14,9 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.cvmaster.xosstech.HomePage;
-import com.cvmaster.xosstech.LoginActivity;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.SharedPreferenceManager;
-import com.cvmaster.xosstech.UserSignInPart1;
+import com.cvmaster.xosstech.SignUp.UserSignInPart1;
 
 public class StoryBoard extends AppCompatActivity implements View.OnClickListener {
 

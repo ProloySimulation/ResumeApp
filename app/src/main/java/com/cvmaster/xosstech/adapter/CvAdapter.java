@@ -8,16 +8,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
 
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.ShowPdf;
-import com.cvmaster.xosstech.SingleJob;
 import com.cvmaster.xosstech.model.Cv_Model;
-import com.cvmaster.xosstech.model.Jobs;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;

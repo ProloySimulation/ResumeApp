@@ -11,6 +11,7 @@ public class SharedPreferenceManager {
     public static final String KEY_USER_MOBILE_NUMBER = "key_user_mobile_number";
     public static final String KEY_USER_ID = "key_user_id";
     public static final String KEY_USER_Token = "key_user_token";
+    public static final String KEY_IMAGE_ENCODE = "key_image_encode";
 
     private SharedPreferenceManager(Context context){
         mContext = context;
@@ -24,13 +25,14 @@ public class SharedPreferenceManager {
     }
 
 
-    public boolean UserLoggedInfo(String user_mobile_number,String user_id,String user_token){
+    public boolean UserLoggedInfo(String user_mobile_number,String user_id,String user_token,String key_image_token){
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREFERENCE_MANAGER, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = sharedPreferences.edit();
 
         editor.putString(KEY_USER_MOBILE_NUMBER,user_mobile_number);
         editor.putString(KEY_USER_ID,user_id);
         editor.putString(KEY_USER_Token,user_token);
+        editor.putString(KEY_IMAGE_ENCODE,key_image_token);
         editor.apply();
 
         return true;
@@ -46,6 +48,9 @@ public class SharedPreferenceManager {
             return true;
         }
         if(sharedPreferences.getString(KEY_USER_Token,null)!=null){
+            return true;
+        }
+        if(sharedPreferences.getString(KEY_IMAGE_ENCODE,null)!=null){
             return true;
         }
         else {
@@ -74,6 +79,11 @@ public class SharedPreferenceManager {
     public String GetUserToken(){
         SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREFERENCE_MANAGER, Context.MODE_PRIVATE);
         return sharedPreferences.getString(KEY_USER_Token,null);
+    }
+
+    public String GetUserImage(){
+        SharedPreferences sharedPreferences = mContext.getSharedPreferences(SHARED_PREFERENCE_MANAGER, Context.MODE_PRIVATE);
+        return sharedPreferences.getString(KEY_IMAGE_ENCODE,null);
     }
 
 }

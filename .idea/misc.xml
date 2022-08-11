@@ -5,11 +5,14 @@
       <map>
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/background_header.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/btn_send_otp_shape.xml" value="0.271875" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/btn_shap_delete.xml" value="0.13368055555555555" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/btn_shape.xml" value="0.13368055555555555" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/button_background.xml" value="0.3359375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/card_gradient.xml" value="0.3885416666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/divider_shape_body.xml" value="0.20052083333333334" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/edittext_background.xml" value="0.3359375" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/ic_content_objective.xml" value="0.20052083333333334" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/ic_save.xml" value="0.13368055555555555" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/inputfinal.xml" value="0.18489583333333334" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/item_bottom_back.xml" value="0.1232638888888889" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/drawable/login_card_below.xml" value="0.22" />
@@ -20,37 +23,44 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part1.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part2.xml" value="0.1569007263922518" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part3.xml" value="0.13333333333333333" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part4.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part4.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part5.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part6.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part6.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_part7.xml" value="0.14666666666666667" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_pdf__part1.xml" value="0.3567708333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_pdf__part1.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_pdf_part2.xml" value="0.11215277777777778" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_projects.xml" value="0.12" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_trainings.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_projects.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_build_resume_trainings.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_charging_activity.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_cover_latter.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_cover_latter.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_dash_board.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_edit_resume_part1.xml" value="0.11215277777777778" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_edit_resume_part2.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_edit_resume_part5.xml" value="0.3723958333333333" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_education.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_experience.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_fragment_show.xml" value="0.11215277777777778" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_home_page.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_home_page.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_interstetial.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_interview.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_jobs.xml" value="0.1743659420289855" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_login.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_pdf.xml" value="0.1125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_pdf_template2.xml" value="0.11215277777777778" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_personal.xml" value="0.12291666666666666" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_project.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_reference.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_send_mail.xml" value="0.1125" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_show_my_pdf.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_show_pdf.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_single_job.xml" value="0.11428571428571428" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_splash.xml" value="0.14764492753623187" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_test.xml" value="0.4466666666666667" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_training.xml" value="0.11168032786885246" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_user_profile.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_user_profile2.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_user_sign_in_part1.xml" value="0.22" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_user_sign_in_part2.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/activity_user_sign_in_part2.xml" value="0.13333333333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/alert_bd_apps.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/app_bar_main.xml" value="0.14447463768115942" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/fragment_playment.xml" value="0.11215277777777778" />
@@ -59,16 +69,20 @@
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/fragment_template7.xml" value="0.22" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_cv.xml" value="0.3723958333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_edu.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_education.xml" value="0.1" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_experience.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_jobs.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_project.xml" value="0.14666666666666667" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_projects.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_reference.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_training.xml" value="0.22" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_trainings.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/item_work.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/layout_tips.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/slider_layout.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/templete1_fragment.xml" value="0.11215277777777778" />
         <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/templete4_fragment.xml" value="0.4142581888246628" />
-        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/user_sign_in_part.xml" value="0.12" />
+        <entry key="..\:/Users/Lenovo/AndroidStudioProjects/ResumeApp/app/src/main/res/layout/user_sign_in_part.xml" value="0.1" />
         <entry key="..\:/Users/Lenovo/AppData/Local/Android/Sdk/platforms/android-30/data/res/layout/simple_spinner_dropdown_item.xml" value="0.16666666666666666" />
       </map>
     </option>

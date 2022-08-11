@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".InputActivities.BuildResumePart4">
+    tools:context=".InputActivities.personal.ActivityPersonal">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -12,7 +12,7 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <androidx.appcompat.widget.Toolbar
@@ -32,17 +32,6 @@
                         android:layout_centerHorizontal="true"
                         android:layout_centerVertical="true"
                         android:text="Personal Information"/>
-
-                    <TextView
-                        android:id="@+id/tvPersonalDataSave"
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentRight="true"
-                        android:layout_centerVertical="true"
-                        android:layout_marginRight="20dp"
-                        android:gravity="center"
-                        android:text="Save"
-                        android:textStyle="bold" />
 
                 </RelativeLayout>
 
@@ -519,23 +508,48 @@
                     android:paddingLeft="16dp"
                     android:singleLine="true"/>
 
-                <LinearLayout
-                    android:layout_width="200dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="16dp"
-                    android:background="@drawable/divider_drawble_body"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:text="Please Go To The Next Step"
-                    android:textSize="10sp"
-                    android:textColor="@color/grey"/>
-
 
             </LinearLayout>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:id="@+id/personaInfoSave"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="postPersonalInfo"
+                android:background="@drawable/outline_btn_green"
+                android:drawableLeft="@drawable/ic_save"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:text="Save"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_green"/>
+
+            <Button
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:id="@+id/personalInfoUpdate"
+                style="?android:attr/borderlessButtonStyle"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="8dp"
+                android:onClick="updateInfo"
+                android:background="@drawable/outline_btn_green"
+                android:drawableLeft="@drawable/ic_save"
+                android:foreground="?android:attr/selectableItemBackground"
+                android:paddingLeft="20dp"
+                android:paddingRight="20dp"
+                android:visibility="gone"
+                android:text="Update"
+                android:textStyle="bold"
+                android:textAllCaps="false"
+                android:textColor="@color/btn_green"/>
+
         </LinearLayout>
 
     </ScrollView>

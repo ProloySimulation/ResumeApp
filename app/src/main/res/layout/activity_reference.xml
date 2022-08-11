@@ -1,0 +1,240 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".InputActivities.reference.ActivityReference">
+
+    <com.github.ybq.android.spinkit.SpinKitView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:id="@+id/reference_spin_kit"
+        style="@style/SpinKitView.Large.CubeGrid"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        app:SpinKit_Color="@color/colorAccent"
+        tools:ignore="MissingConstraints" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/toolBarBlog"
+            android:background="#ffffff">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textSize="18dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:text="Reference"/>
+
+            </RelativeLayout>
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:padding="20dp"
+                    android:layout_marginTop="8dp"
+                    android:text="Reference"
+                    android:textStyle="bold"
+                    android:background="@color/clr_bck"
+                    android:drawableRight="@drawable/ic_work_exp"
+                    android:textColor="@color/headingBlack"
+                    android:textSize="14sp"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/rvReference"/>
+
+                <LinearLayout
+                    android:id="@+id/add_new_reference_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:visibility="gone"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full Name"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="8dp"/>
+
+                    <EditText
+                        android:id="@+id/etReferenceName"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Full Name"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Designation"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/etReferenceDesignation"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Designation"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Organisation Name"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/etReferenceOrganization"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Organaisation Name"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Email"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/etReferenceEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Email"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Mobile"
+                        android:textColor="@color/headingBlack"
+                        android:layout_marginLeft="30dp"
+                        android:layout_marginTop="16dp"/>
+
+                    <EditText
+                        android:id="@+id/etReferenceMobile"
+                        android:layout_width="match_parent"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="16dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        android:background="@drawable/inputfinal"
+                        android:hint="Enter Mobile Number"
+                        android:textSize="14sp"
+                        android:paddingLeft="16dp"
+                        android:singleLine="true"/>
+
+                    <Button
+                        android:id="@+id/button_BuildResumePart5_AddField_1"
+                        android:layout_width="150dp"
+                        android:layout_height="40dp"
+                        style="?android:attr/borderlessButtonStyle"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:onClick="postReference"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/outline_btn_green"
+                        android:drawableLeft="@drawable/ic_save"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:paddingLeft="20dp"
+                        android:paddingRight="20dp"
+                        android:text="Post"
+                        android:textStyle="bold"
+                        android:textAllCaps="false"
+                        android:textColor="@color/btn_green"/>
+
+                    <Button
+                        android:id="@+id/button_BuildResumePart5_DeleteField_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:visibility="gone"
+                        android:text="Delete Field"/>
+
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btn_add_reference"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    style="?android:attr/borderlessButtonStyle"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/outline_btn_green"
+                    android:drawableLeft="@drawable/ic_add_circle_black_24dp"
+                    android:foreground="?android:attr/selectableItemBackground"
+                    android:paddingLeft="20dp"
+                    android:paddingRight="20dp"
+                    android:text="Add Field"
+                    android:textStyle="bold"
+                    android:textAllCaps="false"
+                    android:textColor="@color/btn_green"/>
+
+            </LinearLayout>
+        </ScrollView>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

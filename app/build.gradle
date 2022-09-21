@@ -20,15 +20,15 @@ android {
         minSdk 23
         multiDexEnabled true
         targetSdkVersion 32
-        versionCode 32
-        versionName "3.3.8"
+        versionCode 35
+        versionName "4.0.1"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
         release {
-            minifyEnabled false
-            shrinkResources false
+            minifyEnabled true
+            shrinkResources true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }

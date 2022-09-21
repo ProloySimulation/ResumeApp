@@ -6,117 +6,130 @@
     android:orientation="vertical"
     android:background="#F1EFEA">
 
-    <com.github.ybq.android.spinkit.SpinKitView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        style="@style/SpinKitView.Large.CubeGrid"
-        android:visibility="gone"
-        android:id="@+id/progressBarSignUp"
-        app:SpinKit_Color="@color/colorAccent"/>
-
-    <LinearLayout
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@drawable/login_card_design"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="15dp">
+        android:layout_height="match_parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Welcome"
-            android:textColor="@color/blue"
-            android:textSize="20dp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Sign Up and make your CV"
-            android:textColor="@color/colorBlack" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:layout_margin="50dp"
-        android:orientation="vertical"
-        android:layout_marginTop="40dp"
-        android:gravity="center">
-
-        <EditText
-            android:id="@+id/userName_EditText_UserRegistrationPart1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:textColor="@color/colorBlack"
-            android:shadowDx="@android:integer/config_longAnimTime"
-            android:padding="15dp"
-            android:maxLines="1"
-            android:background="@drawable/edittext_background"
-            android:hint="Enter Username"
-            android:textColorHint="@color/grey"
-            android:textSize="15dp" />
+            android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/mobileNumber_EditText_UserRegistrationPart1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/colorBlack"
-            android:padding="15dp"
-            android:maxLines="1"
-            android:background="@drawable/edittext_background"
-            android:hint="Enter Mobile Number"
-            android:textColorHint="@color/grey"
-            android:textSize="15dp"
-            android:inputType="phone"
-            android:maxLength="11"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_card_design"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
 
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/sendOTP_Button_UserRegistrationPart1"
-            android:text="Send Otp"
-            android:textColor="@color/white"
-            android:layout_marginTop="20dp"
-            android:background="@drawable/button_background"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Welcome"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
 
-    </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Sign Up and make your CV"
+                    android:textColor="@color/colorBlack" />
 
-    <LinearLayout
-        android:id="@+id/layout_sign_in"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@drawable/login_card_below"
-        android:gravity="center"
-        android:orientation="vertical"
-        android:padding="15dp">
+            </LinearLayout>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Already have an account?"
-            android:textColor="@color/blue"
-            android:textSize="20dp"
-            android:textStyle="bold" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_margin="50dp"
+                android:orientation="vertical"
+                android:layout_marginTop="40dp"
+                android:gravity="center">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Sign In Now !!!"
-            android:textColor="@color/colorBlack" />
+                <EditText
+                    android:id="@+id/userName_EditText_UserRegistrationPart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:textColor="@color/colorBlack"
+                    android:shadowDx="@android:integer/config_longAnimTime"
+                    android:padding="15dp"
+                    android:maxLines="1"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter Username"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15dp" />
 
-    </LinearLayout>
+                <EditText
+                    android:id="@+id/mobileNumber_EditText_UserRegistrationPart1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/colorBlack"
+                    android:padding="15dp"
+                    android:maxLines="1"
+                    android:background="@drawable/edittext_background"
+                    android:hint="Enter Mobile Number"
+                    android:textColorHint="@color/grey"
+                    android:textSize="15dp"
+                    android:inputType="phone"
+                    android:maxLength="11"/>
+
+                <Button
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/sendOTP_Button_UserRegistrationPart1"
+                    android:text="Send Otp"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/button_background"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/layout_sign_in"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/login_card_below"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="15dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Already have an account?"
+                    android:textColor="@color/blue"
+                    android:textSize="20dp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
+                    android:text="Sign In Now !!!"
+                    android:textColor="@color/colorBlack" />
+
+            </LinearLayout>
+
+            <com.github.ybq.android.spinkit.SpinKitView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                style="@style/SpinKitView.Large.CubeGrid"
+                android:visibility="gone"
+                android:id="@+id/progressBarSignUp"
+                app:SpinKit_Color="@color/colorAccent"/>
+
+        </RelativeLayout>
+    </FrameLayout>
+
+
 </RelativeLayout>

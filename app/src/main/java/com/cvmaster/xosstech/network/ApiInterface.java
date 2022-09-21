@@ -7,6 +7,7 @@ import com.cvmaster.xosstech.model.Education;
 import com.cvmaster.xosstech.InputActivities.education.model.EducationList;
 import com.cvmaster.xosstech.model.Experience;
 import com.cvmaster.xosstech.InputActivities.experience.model.ExperienceList;
+import com.cvmaster.xosstech.model.Suggestion;
 import com.cvmaster.xosstech.network.model.ModelResponses;
 import com.cvmaster.xosstech.model.PersonalInformation;
 import com.cvmaster.xosstech.InputActivities.personal.model.PersonalInfoList;
@@ -17,11 +18,14 @@ import com.cvmaster.xosstech.InputActivities.reference.model.ReferenceList;
 import com.cvmaster.xosstech.model.Training;
 import com.cvmaster.xosstech.InputActivities.training.model.TrainingList;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.Body;
 import retrofit2.http.DELETE;
 import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
+import retrofit2.http.GET;
 import retrofit2.http.Header;
 import retrofit2.http.POST;
 import retrofit2.http.Path;
@@ -126,6 +130,11 @@ public interface ApiInterface {
 
     @POST("api/public/api/addition/update/{id}")
     Call<AdditionalList> updateAdditional(@Header ("Authorization")String token, @Path("id")int id, @Body Additional additional);
+
+    // Suggestions
+
+    @GET("api/public/api/suggetion/{key}")
+    Call<List<Suggestion>> getEducationSuggestion(@Path("key")String key);
 
     // Nagad
 

@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -28,10 +31,14 @@ import com.cvmaster.xosstech.model.Project;
 import com.cvmaster.xosstech.InputActivities.project.viewModel.ProjectViewModel;
 import com.github.ybq.android.spinkit.SpinKitView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
-public class ActivityProject extends AppCompatActivity implements ProjectDialog.UpdateStatus {
+public class ActivityProject extends AppCompatActivity implements ProjectDialog.UpdateStatus, DatePickerDialog.OnDateSetListener {
 
     private RecyclerView recyclerView;
     private ProjectViewModel mainViewModel;
@@ -40,8 +47,10 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
     private SpinKitView progressBar ;
     private List<Project> projectList;
     private Button btnNewProject,btnSubmit;
+    private ImageView imvBack;
     private LinearLayout newLayout;
     private String token ;
+    private String state;
 
     private EditText etProjectName,etProjectSummary,etStartDate,etEndDate;
 
@@ -50,10 +59,59 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_project);
 
+        init();
+
+        btnNewProject.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                btnNewProject.setVisibility(View.GONE);
+                newLayout.setVisibility(View.VISIBLE);
+            }
+        });
+
+        etStartDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                {
+                    state = "startDate";
+                    com.cvmaster.xosstech.DatePicker mDatePickerDialogFragment;
+                    mDatePickerDialogFragment = new com.cvmaster.xosstech.DatePicker();
+                    mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+                }
+            }
+        });
+
+        etEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                {
+                    state = "endDate";
+                    com.cvmaster.xosstech.DatePicker mDatePickerDialogFragment;
+                    mDatePickerDialogFragment = new com.cvmaster.xosstech.DatePicker();
+                    mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+                }
+            }
+        });
+
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        getProjectList();
+    }
+
+    private void init()
+    {
         etProjectName = findViewById(R.id.etProjectName);
         etProjectSummary = findViewById(R.id.etProjectSummary);
         etStartDate = findViewById(R.id.etProjectStart);
         etEndDate = findViewById(R.id.etProjectEnd);
+        imvBack = findViewById(R.id.imvProjectBack);
 
         recyclerView = findViewById(R.id.rvProject);
         btnNewProject = findViewById(R.id.btn_add_project);
@@ -64,16 +122,6 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
 
         token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
         projectList = new ArrayList<>();
-
-        btnNewProject.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                btnNewProject.setVisibility(View.GONE);
-                newLayout.setVisibility(View.VISIBLE);
-            }
-        });
-
-        getProjectList();
     }
 
     public void postProject(View view) {
@@ -181,5 +229,30 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
     @Override
     public void updateStatus(Project project,int id) {
         updateProject(project,id);
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar mCalendar = Calendar.getInstance();
+        mCalendar.set(Calendar.YEAR, year);
+        mCalendar.set(Calendar.MONTH, month);
+        mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        String date = formatter.format(Date.parse(selectedDate));
+
+        if(state.equals("startDate"))
+        {
+            etStartDate.setText(date);
+        }
+        else
+        {
+            etEndDate.setText(date);
+        }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

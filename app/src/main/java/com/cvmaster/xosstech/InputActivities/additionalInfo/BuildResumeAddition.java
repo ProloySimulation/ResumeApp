@@ -9,9 +9,14 @@ import androidx.lifecycle.ViewModelProvider;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
+import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
 
 import com.cvmaster.xosstech.Profile.DashBoardActivity;
@@ -19,12 +24,22 @@ import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.model.Additional;
 import com.cvmaster.xosstech.InputActivities.additionalInfo.viewModel.AdditionalViewModel;
+import com.cvmaster.xosstech.model.Suggestion;
+import com.cvmaster.xosstech.network.ApiClient;
+import com.cvmaster.xosstech.network.ApiInterface;
 
+import java.util.ArrayList;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class BuildResumeAddition extends AppCompatActivity {
 
-    private EditText etSkills,etHobbies,etLanguages,etLinkedin,etBehance,etGithub,etTwitter;
+    private EditText etHobbies,etLanguages,etLinkedin,etBehance,etGithub,etTwitter;
+    private ImageView imvBack;
+    private MultiAutoCompleteTextView etSkills;
     private Button btnSubmit,btnUpdate ;
     private String skills = null;
     private String hobbies = null;
@@ -36,12 +51,28 @@ public class BuildResumeAddition extends AppCompatActivity {
     private int id ;
     private String token = null;
     private AdditionalViewModel mainViewModel ;
+    private final ArrayList<String> suggestions = new ArrayList<String>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_addition);
 
+        init();
+
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        getAdditionInfo();
+        getSuggestion();
+
+    }
+
+    private void init() {
         token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
         mainViewModel = new ViewModelProvider(this).get(AdditionalViewModel.class);
 
@@ -54,9 +85,7 @@ public class BuildResumeAddition extends AppCompatActivity {
         etTwitter = findViewById(R.id.editText_BuildResumeSkills_Twitter);
         btnSubmit = findViewById(R.id.btn_addition_Submit);
         btnUpdate = findViewById(R.id.btn_addition_update);
-
-        getAdditionInfo();
-
+        imvBack = findViewById(R.id.imvAdditionalBack);
     }
 
     private boolean CheckValidity(){
@@ -163,5 +192,43 @@ public class BuildResumeAddition extends AppCompatActivity {
                 }
             });
         }
+    }
+
+    private void getSuggestion()
+    {
+        ApiClient apiClient = new ApiClient();
+        ApiInterface service = apiClient.createService(ApiInterface.class);
+        Call<List<Suggestion>> call = service.getEducationSuggestion("skill");
+        call.enqueue(new Callback<List<Suggestion>>() {
+
+            @Override
+            public void onResponse(Call<List<Suggestion>> call, Response<List<Suggestion>> response) {
+
+                List<Suggestion> suggestionList = response.body();
+                if(suggestionList != null)
+                {
+                    for(int i = 0;i<suggestionList.size();i++)
+                    {
+                        String skill = suggestionList.get(i).getSkill();
+                        suggestions.add(skill);
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                            android.R.layout.simple_dropdown_item_1line,suggestions);
+                    etSkills.setAdapter(adapter);
+                    etSkills.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Suggestion>> call, Throwable t) {
+
+                Log.d("ListSize"," - > Error    "+ t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

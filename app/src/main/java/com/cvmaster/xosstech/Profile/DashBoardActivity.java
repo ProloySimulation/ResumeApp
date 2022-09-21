@@ -6,6 +6,7 @@ import androidx.cardview.widget.CardView;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -25,6 +26,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 public class DashBoardActivity extends AppCompatActivity implements View.OnClickListener {
 
     private CardView cvPersonal,cvExp,cvEdu,cvReference,cvAddition,cvProjects,cvTraining;
+    private ImageView imvBack;
     private LinearLayout layoutProfile ;
     private FloatingActionButton fabCvMake ;
     private SpinKitView progressBar ;
@@ -37,6 +39,27 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_dash_board);
 
+        init();
+
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        //For Demo Account
+/*
+        Intent intent = getIntent();
+        mobile = intent.getStringExtra("MOBILE_NUMBER");*/
+
+        if(mobile.equals("01987982903"))
+        {
+            Toast.makeText(getApplicationContext(), "This is a testing account", Toast.LENGTH_LONG).show();
+        }
+    }
+
+    private void init() {
         cvPersonal = findViewById(R.id.cvPersonal);
         cvExp = findViewById(R.id.cvExp);
         cvEdu = findViewById(R.id.cvEdu);
@@ -45,6 +68,7 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         cvProjects = findViewById(R.id.cvProjects);
         cvTraining = findViewById(R.id.cvTraining);
         fabCvMake = findViewById(R.id.fabCvMake);
+        imvBack = findViewById(R.id.imvProfileBack);
         layoutProfile = findViewById(R.id.bottomLinear);
         progressBar = findViewById(R.id.dashboard_spin_kit);
 
@@ -59,16 +83,6 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
         layoutProfile.setOnClickListener(this);
 
         token = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
-
-        //For Demo Account
-/*
-        Intent intent = getIntent();
-        mobile = intent.getStringExtra("MOBILE_NUMBER");*/
-
-        if(mobile.equals("01987982903"))
-        {
-            Toast.makeText(getApplicationContext(), "This is a testing account", Toast.LENGTH_LONG).show();
-        }
     }
 
     @Override
@@ -119,5 +133,10 @@ public class DashBoardActivity extends AppCompatActivity implements View.OnClick
             Intent intent = new Intent(getApplicationContext(), ShowPdf.class);
             startActivity(intent);
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

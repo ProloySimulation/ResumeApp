@@ -36,6 +36,13 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:id="@+id/imvEduBack"
+                    android:src="@drawable/ic_back_arrow"/>
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -118,7 +125,7 @@
                         android:text="Institution"
                         android:textColor="@color/headingBlack" />
 
-                    <EditText
+                    <AutoCompleteTextView
                         android:id="@+id/etInstituionName"
                         android:layout_width="match_parent"
                         android:layout_height="40dp"
@@ -201,7 +208,7 @@
                         android:background="@drawable/inputfinal"
                         android:orientation="horizontal">
 
-                        <EditText
+                        <AutoCompleteTextView
                             android:id="@+id/etGroupName"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"

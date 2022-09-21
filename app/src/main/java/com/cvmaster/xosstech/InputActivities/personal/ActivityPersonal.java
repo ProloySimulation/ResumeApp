@@ -25,9 +25,11 @@ import android.os.Bundle;
 import android.provider.MediaStore;
 import android.provider.Settings;
 import android.util.Base64;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
@@ -42,6 +44,9 @@ import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.model.PersonalInformation;
 import com.cvmaster.xosstech.InputActivities.personal.viewModel.PersonalInfoViewModel;
+import com.cvmaster.xosstech.model.Suggestion;
+import com.cvmaster.xosstech.network.ApiClient;
+import com.cvmaster.xosstech.network.ApiInterface;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.itextpdf.text.BadElementException;
 import com.itextpdf.text.Image;
@@ -52,12 +57,18 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
 public class ActivityPersonal extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemSelectedListener {
 
-    private EditText editText_FullName,editText_MotherName,editText_FatherName,etMobile,etEmail,etSummary,etCurrenJobTittle;
+    private EditText editText_FullName,editText_MotherName,editText_FatherName,etMobile,etEmail,etCurrenJobTittle;
+    private AutoCompleteTextView etSummary;
     private SpinKitView progrssBar ;
 
     private TextView textView_Gender;
@@ -98,9 +109,10 @@ public class ActivityPersonal extends AppCompatActivity implements View.OnClickL
     private String currentJobTittle = null;
     private int id;
     private String currentPhotoPath,token,userMobile,userId;
-    private ImageView imvProfile ;
+    private ImageView imvProfile,imvBack ;
     private Bitmap bitmap;
     private PersonalInfoViewModel mainViewModel;
+    private final ArrayList<String> suggestions = new ArrayList<String>();
 
     private static final int REQUEST_CODE_READ_EXTERNAL_STORAGE = 101;
     private final int GALLERY_REQUEST_CODE = 102;
@@ -110,27 +122,7 @@ public class ActivityPersonal extends AppCompatActivity implements View.OnClickL
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_build_resume_part4);
 
-        token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
-        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-        encodeImageString = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserImage();
-        userId = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserId();
-
-        mainViewModel = new ViewModelProvider(this).get(PersonalInfoViewModel.class);
-
-        progrssBar = findViewById(R.id.spin_kit);
-        btn_gallery = findViewById(R.id.button_BuildResumePart4_SelectFromGallery);
-        btn_gallery.setOnClickListener(this);
-        btnSave = findViewById(R.id.personaInfoSave);
-        btnUpdate = findViewById(R.id.personalInfoUpdate);
-
-        editText_FullName = (EditText) findViewById(R.id.editText_BuildResumePart4_FullName);
-        editText_FatherName = (EditText) findViewById(R.id.editText_BuildResumePart4_FatherName);
-        editText_MotherName = (EditText) findViewById(R.id.editText_BuildResumePart4_MotherName);
-        etMobile = findViewById(R.id.editText_BuildResumePart4_mobile);
-        etEmail = findViewById(R.id.editText_BuildResumePart4_email);
-        imvProfile = findViewById(R.id.imageView_BuildResumePart1_Image);
-        etSummary = findViewById(R.id.editText_BuildResumePart4_Summary);
-        etCurrenJobTittle = findViewById(R.id.editText_BuildResumePart4_Tittle);
+        init();
 
         textView_Gender = (TextView) findViewById(R.id.textView_BuildResumePart4_Gender);
         spinner_Gender = (Spinner) findViewById(R.id.spinner_BuildResumePart4_Gender);
@@ -255,7 +247,40 @@ public class ActivityPersonal extends AppCompatActivity implements View.OnClickL
             }
         });
 
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         getPersonalInfos();
+        getSuggestion();
+    }
+
+    private void init() {
+        token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+        encodeImageString = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserImage();
+        userId = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserId();
+
+        mainViewModel = new ViewModelProvider(this).get(PersonalInfoViewModel.class);
+
+        progrssBar = findViewById(R.id.spin_kit);
+        btn_gallery = findViewById(R.id.button_BuildResumePart4_SelectFromGallery);
+        btn_gallery.setOnClickListener(this);
+        btnSave = findViewById(R.id.personaInfoSave);
+        btnUpdate = findViewById(R.id.personalInfoUpdate);
+        imvBack = findViewById(R.id.imvPersonalBack);
+
+        editText_FullName = (EditText) findViewById(R.id.editText_BuildResumePart4_FullName);
+        editText_FatherName = (EditText) findViewById(R.id.editText_BuildResumePart4_FatherName);
+        editText_MotherName = (EditText) findViewById(R.id.editText_BuildResumePart4_MotherName);
+        etMobile = findViewById(R.id.editText_BuildResumePart4_mobile);
+        etEmail = findViewById(R.id.editText_BuildResumePart4_email);
+        imvProfile = findViewById(R.id.imageView_BuildResumePart1_Image);
+        etSummary = findViewById(R.id.editText_BuildResumePart4_Summary);
+        etCurrenJobTittle = findViewById(R.id.editText_BuildResumePart4_Tittle);
     }
 
     private boolean CheckValidity(){
@@ -554,5 +579,42 @@ public class ActivityPersonal extends AppCompatActivity implements View.OnClickL
             });
         }
 
+    }
+
+    private void getSuggestion()
+    {
+        ApiClient apiClient = new ApiClient();
+        ApiInterface service = apiClient.createService(ApiInterface.class);
+        Call<List<Suggestion>> call = service.getEducationSuggestion("summary");
+        call.enqueue(new Callback<List<Suggestion>>() {
+
+            @Override
+            public void onResponse(Call<List<Suggestion>> call, Response<List<Suggestion>> response) {
+
+                List<Suggestion> suggestionList = response.body();
+                if(suggestionList != null)
+                {
+                    for(int i = 0;i<suggestionList.size();i++)
+                    {
+                        String summary = suggestionList.get(i).getProfileSummary();
+                        suggestions.add(summary);
+                    }
+
+                    ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(),
+                            android.R.layout.simple_dropdown_item_1line,suggestions);
+                    etSummary.setAdapter(adapter);
+                }
+            }
+            @Override
+            public void onFailure(Call<List<Suggestion>> call, Throwable t) {
+
+                Log.d("ListSize"," - > Error    "+ t.getMessage());
+            }
+        });
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

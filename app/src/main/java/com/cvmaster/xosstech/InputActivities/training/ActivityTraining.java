@@ -10,13 +10,16 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.content.res.Configuration;
 import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -28,9 +31,13 @@ import com.cvmaster.xosstech.model.Training;
 import com.cvmaster.xosstech.InputActivities.training.viewModel.TrainingViewModel;
 import com.github.ybq.android.spinkit.SpinKitView;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 
-public class ActivityTraining extends AppCompatActivity implements TrainingDialog.UpdateStatus {
+public class ActivityTraining extends AppCompatActivity implements TrainingDialog.UpdateStatus, DatePickerDialog.OnDateSetListener {
 
     private RecyclerView recyclerView;
     private TrainingViewModel mainViewModel;
@@ -38,6 +45,7 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
 
     private SpinKitView progressBar ;
     private Button btnNewExperience;
+    private ImageView imvBack;
     private LinearLayout newLayout;
     private String token ;
 
@@ -48,18 +56,7 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_training);
 
-        etTrainingName = findViewById(R.id.etTrainingName);
-        etTrainingSummary = findViewById(R.id.etTrainingDetail);
-        etEndDate = findViewById(R.id.etTrainingEndDate);
-
-
-        recyclerView = findViewById(R.id.rvTrainings);
-        btnNewExperience = findViewById(R.id.btn_add_training);
-        newLayout = findViewById(R.id.training_Layout_1);
-        progressBar = findViewById(R.id.training_spin_kit);
-        mainViewModel = new ViewModelProvider(this).get(TrainingViewModel.class);
-
-        token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
+        init();
 
         btnNewExperience.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -68,7 +65,42 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
             }
         });
 
+        etEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+            @Override
+            public void onFocusChange(View v, boolean hasFocus) {
+                if(hasFocus)
+                {
+                    com.cvmaster.xosstech.DatePicker mDatePickerDialogFragment;
+                    mDatePickerDialogFragment = new com.cvmaster.xosstech.DatePicker();
+                    mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
+                }
+            }
+        });
+
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
         getTrainingList();
+    }
+
+    private void init()
+    {
+        etTrainingName = findViewById(R.id.etTrainingName);
+        etTrainingSummary = findViewById(R.id.etTrainingDetail);
+        etEndDate = findViewById(R.id.etTrainingEndDate);
+        imvBack = findViewById(R.id.imvTrainingBack);
+
+        recyclerView = findViewById(R.id.rvTrainings);
+        btnNewExperience = findViewById(R.id.btn_add_training);
+        newLayout = findViewById(R.id.training_Layout_1);
+        progressBar = findViewById(R.id.training_spin_kit);
+        mainViewModel = new ViewModelProvider(this).get(TrainingViewModel.class);
+
+        token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
     }
 
     public void postTraining(View view) {
@@ -176,5 +208,22 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
     @Override
     public void updateStatus(Training training,int id) {
         updateTraining(training,id);
+    }
+
+    @Override
+    public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+        Calendar mCalendar = Calendar.getInstance();
+        mCalendar.set(Calendar.YEAR, year);
+        mCalendar.set(Calendar.MONTH, month);
+        mCalendar.set(Calendar.DAY_OF_MONTH, dayOfMonth);
+        String selectedDate = DateFormat.getDateInstance(DateFormat.FULL).format(mCalendar.getTime());
+        SimpleDateFormat formatter = new SimpleDateFormat("dd-MMM-yyyy");
+        String date = formatter.format(Date.parse(selectedDate));
+        etEndDate.setText(date);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -25,13 +25,19 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
 
+                    <ImageView
+                        android:id="@+id/imvPersonalBack"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:src="@drawable/ic_back_arrow" />
+
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:textSize="18dp"
-                        android:layout_centerHorizontal="true"
-                        android:layout_centerVertical="true"
-                        android:text="Personal Information"/>
+                        android:layout_centerInParent="true"
+                        android:text="Personal Information"
+                        android:textSize="18dp" />
 
                 </RelativeLayout>
 
@@ -114,7 +120,7 @@
                     android:textColor="@color/headingBlack"
                     android:textSize="14sp"/>
 
-                <EditText
+                <AutoCompleteTextView
                     android:id="@+id/editText_BuildResumePart4_Summary"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
@@ -123,7 +129,7 @@
                     android:layout_marginEnd="16dp"
                     android:padding="20dp"
                     android:background="@drawable/inputfinal"
-                    android:text="A self-starter and quick learner. Versatile skill set with experience in customer service, sales, and written and oral communication."
+                    android:text="@string/summary"
                     android:textSize="14sp"
                     android:singleLine="false"/>
 

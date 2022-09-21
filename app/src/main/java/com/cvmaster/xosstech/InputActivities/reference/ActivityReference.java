@@ -17,6 +17,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
@@ -40,6 +41,7 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
     private SpinKitView progressBar ;
     private List<Reference> referenceList;
     private Button btnNewExperience;
+    private ImageView imvBack;
     private LinearLayout newLayout;
     private String token ;
 
@@ -50,12 +52,32 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reference);
 
+        init();
+
+        btnNewExperience.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                newLayout.setVisibility(View.VISIBLE);
+            }
+        });
+
+        imvBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                onBackPressed();
+            }
+        });
+
+        getReferences();
+    }
+
+    private void init() {
         etRefName = findViewById(R.id.etReferenceName);
         etOrganization = findViewById(R.id.etReferenceOrganization);
         etRefDesignation = findViewById(R.id.etReferenceDesignation);
         etRefEmail = findViewById(R.id.etReferenceEmail);
         etRefMobile = findViewById(R.id.etReferenceMobile);
-
+        imvBack = findViewById(R.id.imvReferenceBack);
 
         recyclerView = findViewById(R.id.rvReference);
         btnNewExperience = findViewById(R.id.btn_add_reference);
@@ -65,15 +87,6 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
 
         token = "Bearer "+SharedPreferenceManager.getInstance(getApplicationContext()).GetUserToken();
         referenceList = new ArrayList<>();
-
-        btnNewExperience.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                newLayout.setVisibility(View.VISIBLE);
-            }
-        });
-
-        getReferences();
     }
 
     public void postReference(View view) {
@@ -184,5 +197,10 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
     @Override
     public void updateStatus(Reference reference,int id) {
         updateReference(reference,id);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
     }
 }

@@ -65,7 +65,7 @@ public class ShowPdf extends AppCompatActivity {
     private SpinKitView progrssBar ;
 
     private String mUrl = "";
-    public String userMobile;
+    public String userMobile,loginNumber;
     private String cvPrice = null;
     private int PERMISSION_REQUEST = 0;
     private boolean allowSave = true;
@@ -98,6 +98,7 @@ public class ShowPdf extends AppCompatActivity {
         layoutPayment = findViewById(R.id.linearLayoutPayment);
 
 //        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+        loginNumber = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
 
         btnPrint.setVisibility(View.GONE);
         btnAdShow.setVisibility(View.GONE);
@@ -141,7 +142,7 @@ public class ShowPdf extends AppCompatActivity {
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
 
-        renderWebPage("https://xosstech.com/cvm/api/public/view_cv");
+        renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+loginNumber);
 
         adLoad();
 

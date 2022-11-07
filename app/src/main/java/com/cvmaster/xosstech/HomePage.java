@@ -33,8 +33,11 @@ import com.cvmaster.xosstech.model.Cv_Model;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Date;
 import java.util.List;
 
 public class HomePage extends AppCompatActivity implements View.OnClickListener {
@@ -91,7 +94,6 @@ public class HomePage extends AppCompatActivity implements View.OnClickListener 
         mobile = intent.getStringExtra("MOBILE_NUMBER");*/
 
         checkPermission();
-
         showCv();
 
     }

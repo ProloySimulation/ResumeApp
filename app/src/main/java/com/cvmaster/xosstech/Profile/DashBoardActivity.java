@@ -10,16 +10,16 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.Toast;
 
-import com.cvmaster.xosstech.InputActivities.additionalInfo.BuildResumeAddition;
+import com.cvmaster.xosstech.inputactivities.additionalinfo.BuildResumeAddition;
 import com.cvmaster.xosstech.R;
 import com.cvmaster.xosstech.SharedPreferenceManager;
 import com.cvmaster.xosstech.ShowPdf;
-import com.cvmaster.xosstech.InputActivities.education.ActivityEducation;
-import com.cvmaster.xosstech.InputActivities.experience.ActivityExperience;
-import com.cvmaster.xosstech.InputActivities.personal.ActivityPersonal;
-import com.cvmaster.xosstech.InputActivities.project.ActivityProject;
-import com.cvmaster.xosstech.InputActivities.reference.ActivityReference;
-import com.cvmaster.xosstech.InputActivities.training.ActivityTraining;
+import com.cvmaster.xosstech.inputactivities.education.ActivityEducation;
+import com.cvmaster.xosstech.inputactivities.experience.ActivityExperience;
+import com.cvmaster.xosstech.inputactivities.personal.ActivityPersonal;
+import com.cvmaster.xosstech.inputactivities.project.ActivityProject;
+import com.cvmaster.xosstech.inputactivities.reference.ActivityReference;
+import com.cvmaster.xosstech.inputactivities.training.ActivityTraining;
 import com.github.ybq.android.spinkit.SpinKitView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 

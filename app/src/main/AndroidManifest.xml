@@ -23,24 +23,24 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity
-            android:name=".InputActivities.personal.ActivityPersonal"
+            android:name=".inputactivities.personal.ActivityPersonal"
             android:exported="true">
 
         </activity>
         <activity
-            android:name=".InputActivities.training.ActivityTraining"
+            android:name=".inputactivities.training.ActivityTraining"
             android:exported="true" />
         <activity
-            android:name=".InputActivities.reference.ActivityReference"
+            android:name=".inputactivities.reference.ActivityReference"
             android:exported="true" />
         <activity
-            android:name=".InputActivities.project.ActivityProject"
+            android:name=".inputactivities.project.ActivityProject"
             android:exported="true" />
         <activity
-            android:name=".InputActivities.education.ActivityEducation"
+            android:name=".inputactivities.education.ActivityEducation"
             android:exported="true" />
         <activity
-            android:name=".InputActivities.experience.ActivityExperience"
+            android:name=".inputactivities.experience.ActivityExperience"
             android:exported="true" />
         <activity
             android:name=".InterviewActivity"
@@ -71,7 +71,7 @@
             android:exported="true"
             android:theme="@style/AppFullScreenTheme" />
         <activity
-            android:name=".InputActivities.additionalInfo.BuildResumeAddition"
+            android:name=".inputactivities.additionalinfo.BuildResumeAddition"
             android:exported="true">
         </activity>
         <activity

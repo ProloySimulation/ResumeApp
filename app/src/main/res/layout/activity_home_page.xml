@@ -65,7 +65,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/resumemake" />
+                            android:src="@drawable/ic_cv_make" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -101,13 +101,14 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/job_icon" />
+                            android:src="@drawable/ic_job_search" />
 
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_below="@id/imvJobSection"
                             android:layout_centerInParent="true"
+                            android:layout_marginTop="10dp"
                             android:text="Govt. Jobs"
                             android:textColor="@color/colorBlack"
                             android:textSize="18dp"
@@ -144,7 +145,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/cover_latter"/>
+                            android:src="@drawable/ic_cover_letter" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -180,7 +181,7 @@
                             android:layout_width="50dp"
                             android:layout_height="50dp"
                             android:layout_centerInParent="true"
-                            android:src="@drawable/interview_tips" />
+                            android:src="@drawable/ic_interview" />
 
                         <TextView
                             android:layout_width="wrap_content"
@@ -188,6 +189,7 @@
                             android:layout_below="@id/imvInterViewTips"
                             android:layout_centerInParent="true"
                             android:text="Interview Tips"
+                            android:layout_marginTop="10dp"
                             android:textColor="@color/headingBlack"
                             android:textSize="18dp"
                             android:textStyle="bold" />

@@ -2,21 +2,21 @@ package com.cvmaster.xosstech.network;
 
 
 import com.cvmaster.xosstech.model.Additional;
-import com.cvmaster.xosstech.InputActivities.additionalInfo.model.AdditionalList;
+import com.cvmaster.xosstech.inputactivities.additionalinfo.model.AdditionalList;
 import com.cvmaster.xosstech.model.Education;
-import com.cvmaster.xosstech.InputActivities.education.model.EducationList;
+import com.cvmaster.xosstech.inputactivities.education.model.EducationList;
 import com.cvmaster.xosstech.model.Experience;
-import com.cvmaster.xosstech.InputActivities.experience.model.ExperienceList;
+import com.cvmaster.xosstech.inputactivities.experience.model.ExperienceList;
 import com.cvmaster.xosstech.model.Suggestion;
 import com.cvmaster.xosstech.network.model.ModelResponses;
 import com.cvmaster.xosstech.model.PersonalInformation;
-import com.cvmaster.xosstech.InputActivities.personal.model.PersonalInfoList;
+import com.cvmaster.xosstech.inputactivities.personal.model.PersonalInfoList;
 import com.cvmaster.xosstech.model.Project;
-import com.cvmaster.xosstech.InputActivities.project.data.ProjectList;
+import com.cvmaster.xosstech.inputactivities.project.data.ProjectList;
 import com.cvmaster.xosstech.model.Reference;
-import com.cvmaster.xosstech.InputActivities.reference.model.ReferenceList;
+import com.cvmaster.xosstech.inputactivities.reference.model.ReferenceList;
 import com.cvmaster.xosstech.model.Training;
-import com.cvmaster.xosstech.InputActivities.training.model.TrainingList;
+import com.cvmaster.xosstech.inputactivities.training.model.TrainingList;
 
 import java.util.List;
 

@@ -6,6 +6,10 @@ android {
     compileSdkVersion 32
     buildToolsVersion "30.0.3"
 
+    dexOptions {
+        javaMaxHeapSize "100m"
+    }
+
     signingConfigs {
         release {
             storeFile file('C:/Users/Drovo/Desktop/CvMasterKeyStore/demokey.jks')
@@ -20,15 +24,14 @@ android {
         minSdk 23
         multiDexEnabled true
         targetSdkVersion 32
-        versionCode 35
-        versionName "4.0.1"
-        multiDexEnabled true
-        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        versionCode 38
+        versionName "4.0.2"
+        testInstrumentationRunner "androidx.test.runner. "
     }
     buildTypes {
         release {
-            minifyEnabled true
-            shrinkResources true
+            minifyEnabled false
+            shrinkResources false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -43,15 +46,11 @@ dependencies {
     //implementation 'com.google.firebase:firebase-auth:19.1.0'
 
     implementation 'com.google.firebase:firebase-auth:19.3.1'
-    implementation 'com.google.firebase:firebase-firestore:21.4.3'
-    implementation 'com.google.firebase:firebase-storage:19.1.1'
     implementation 'com.google.firebase:firebase-messaging:21.0.1'
-    implementation 'com.google.firebase:firebase-database:17.0.0'
 
     implementation 'androidx.legacy:legacy-support-v4:1.0.0'
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.1'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.1'
-    implementation 'com.google.firebase:firebase-crashlytics-buildtools:2.8.1'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test:runner:1.2.0'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

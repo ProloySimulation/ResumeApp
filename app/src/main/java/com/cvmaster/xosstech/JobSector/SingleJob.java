@@ -39,6 +39,8 @@ import com.google.android.gms.ads.interstitial.InterstitialAdLoadCallback;
 import com.google.android.gms.ads.rewarded.RewardItem;
 import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
+import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAd;
+import com.google.android.gms.ads.rewardedinterstitial.RewardedInterstitialAdLoadCallback;
 import com.shockwave.pdfium.PdfDocument;
 
 import java.io.BufferedInputStream;
@@ -77,7 +79,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
     private NotificationCompat.Builder mBuilder;
 
     private static final String AD_UNIT_ID = "ca-app-pub-7854798461578735/5532470659";
-    private InterstitialAd interstitialAd;
+    private RewardedInterstitialAd rewardedInterstitialAd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -99,6 +101,8 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
         applyLink = getIntent().getStringExtra("applylink");
         jobEndDate = getIntent().getStringExtra("jobenddate");
         circular = getIntent().getStringExtra("circualrpath");
+        Toast.makeText(this, circular, Toast.LENGTH_SHORT).show();
+        Log.d("hiii",circular);
 
         tvJobTittle.setText(tittle);
         tvJobOfficeName.setText(officeName);
@@ -204,7 +208,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
             if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PERMISSION_GRANTED)
             {
-                showInterstitial();
+                showAd();
             }
 
             else {
@@ -213,61 +217,62 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
         }
     }
 
-    public void loadAd() {
+    private void loadAd() {
 
-        AdRequest adRequest = new AdRequest.Builder().build();
-        InterstitialAd.load(
-                this,
-                AD_UNIT_ID,
-                adRequest,
-                new InterstitialAdLoadCallback() {
+        RewardedInterstitialAd.load(SingleJob.this, "ca-app-pub-3940256099942544/5354046379",
+                new AdRequest.Builder().build(),  new RewardedInterstitialAdLoadCallback() {
                     @Override
-                    public void onAdLoaded(@NonNull InterstitialAd interstitialAd) {
-
-                        SingleJob.this.interstitialAd = interstitialAd;
-                        interstitialAd.setFullScreenContentCallback(
-                                new FullScreenContentCallback() {
-                                    @Override
-                                    public void onAdDismissedFullScreenContent() {
-
-                                        SingleJob.this.interstitialAd = null;
-                                        Log.d("TAG", "The ad was dismissed.");
-                                    }
-
-                                    @Override
-                                    public void onAdFailedToShowFullScreenContent(AdError adError) {
-
-                                        SingleJob.this.interstitialAd = null;
-                                    }
-
-                                    @Override
-                                    public void onAdShowedFullScreenContent() {
-                                    }
-                                });
+                    public void onAdLoaded(RewardedInterstitialAd ad) {
+                        rewardedInterstitialAd = ad;
                     }
-
                     @Override
-                    public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error
-                        Log.i(TAG, loadAdError.getMessage());
-                        interstitialAd = null;
-
-                        String error =
-                                String.format(
-                                        "domain: %s, code: %d, message: %s",
-                                        loadAdError.getDomain(), loadAdError.getCode(), loadAdError.getMessage());
+                    public void onAdFailedToLoad(LoadAdError loadAdError) {
+                        Log.d(TAG, loadAdError.toString());
+                        rewardedInterstitialAd = null;
                     }
                 });
     }
 
-    private void showInterstitial() {
+    private void showAd()
+    {
+        rewardedInterstitialAd.setFullScreenContentCallback(new FullScreenContentCallback() {
+            @Override
+            public void onAdClicked() {
+                downloadPdfContent(circular);
+            }
 
-        if (interstitialAd != null) {
-            interstitialAd.show(this);
-            downloadPdfContent(circular);
-        } else {
-            downloadPdfContent(circular);
-        }
+            @Override
+            public void onAdDismissedFullScreenContent() {
+                // Called when ad is dismissed.
+                // Set the ad reference to null so you don't show the ad a second time.
+                Log.d(TAG, "Ad dismissed fullscreen content.");
+                rewardedInterstitialAd = null;
+                downloadPdfContent(circular);
+            }
+
+            @Override
+            public void onAdFailedToShowFullScreenContent(AdError adError) {
+                // Called when ad fails to show.
+                Log.e(TAG, "Ad failed to show fullscreen content.");
+                rewardedInterstitialAd = null;
+                downloadPdfContent(circular);
+            }
+
+            @Override
+            public void onAdImpression() {
+                // Called when an impression is recorded for an ad.
+                Log.d(TAG, "Ad recorded an impression.");
+                downloadPdfContent(circular);
+            }
+
+            @Override
+            public void onAdShowedFullScreenContent() {
+                // Called when ad is shown.
+                Log.d(TAG, "Ad showed fullscreen content.");
+                downloadPdfContent(circular);
+            }
+        });
+
     }
 
     class RetrivePDFfromUrl extends AsyncTask<String, Void, InputStream> {

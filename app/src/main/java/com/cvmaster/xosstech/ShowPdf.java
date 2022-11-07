@@ -25,6 +25,7 @@ import android.os.Environment;
 import android.print.PdfPrint;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -49,8 +50,10 @@ import com.google.android.gms.ads.rewarded.RewardedAd;
 import com.google.android.gms.ads.rewarded.RewardedAdLoadCallback;
 
 import java.io.File;
+import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Arrays;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Locale;
 
@@ -65,7 +68,8 @@ public class ShowPdf extends AppCompatActivity {
     private SpinKitView progrssBar ;
 
     private String mUrl = "";
-    public String userMobile,loginNumber;
+    public String userMobile,loginNumber,checkPaidOrFree;
+    private int adCount;
     private String cvPrice = null;
     private int PERMISSION_REQUEST = 0;
     private boolean allowSave = true;
@@ -98,36 +102,11 @@ public class ShowPdf extends AppCompatActivity {
         layoutPayment = findViewById(R.id.linearLayoutPayment);
 
 //        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
+        adCount = SharedPreferenceManager.getInstance(getApplicationContext()).GetAdCount();
         loginNumber = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
-
-        btnPrint.setVisibility(View.GONE);
-        btnAdShow.setVisibility(View.GONE);
-
-
-        // webview
-
-        /*if (Build.VERSION.SDK_INT >= 19) {
-            mWebView.setLayerType(View.LAYER_TYPE_HARDWARE, null);
-        } else {
-            mWebView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
-        }
-
-
-        mWebView.getSettings().setLoadWithOverviewMode(true);
-        mWebView.getSettings().setUseWideViewPort(true);
-        mWebView.getSettings().setDomStorageEnabled(true);
-
-        mWebView.setInitialScale(1);
-
-        webSetting = mWebView.getSettings();
-        webSetting.setBuiltInZoomControls(true);*/
 
         WebSettings webSettings = mWebView.getSettings();
         webSettings.setJavaScriptEnabled(true);
-
-        /*
-         * Below part is for enabling webview settings for using javascript and accessing html files and other assets
-         */
 
         mWebView.setClickable(true);
         mWebView.getSettings().setLoadWithOverviewMode(true);
@@ -142,16 +121,7 @@ public class ShowPdf extends AppCompatActivity {
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
 
-        renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+loginNumber);
-
-        adLoad();
-
-        btnPrint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                savePdf();
-            }
-        });
+        renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+"01987982903");
 
         btnAdShow.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -195,6 +165,52 @@ public class ShowPdf extends AppCompatActivity {
                 fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
             }
         });
+
+        btnPrint.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dateCheck();
+            }
+        });
+    }
+
+    private void dateCheck()
+    {
+        Calendar calendar = Calendar.getInstance();
+        int currentDay = calendar.get(Calendar.DAY_OF_MONTH);
+
+        int lastDay = SharedPreferenceManager.getInstance(getApplicationContext()).GetCurrentDate();
+
+        if(checkPaidOrFree.equals("Free"))
+        {
+            if(lastDay!=currentDay)
+            {
+                if(adCount<2)
+                {
+                    btnPrint.setVisibility(View.GONE);
+                    adLoad();
+                    SharedPreferenceManager.getInstance(getApplicationContext()).SetAdCount(adCount++);
+                    Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {
+                    SharedPreferenceManager.getInstance(getApplicationContext()).SetAdCount(0);
+                    Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
+                    SharedPreferenceManager.getInstance(getApplicationContext()).SetCurrentDate(currentDay);
+                    savePdf();
+                }
+            }
+            else
+            {
+                btnPrint.setVisibility(View.VISIBLE);
+                Toast.makeText(getApplicationContext(), "YO", Toast.LENGTH_SHORT).show();
+                savePdf();
+            }
+        }
+        else
+        {
+            savePdf();
+        }
     }
 
     public String getPaymentSystem() {
@@ -214,6 +230,7 @@ public class ShowPdf extends AppCompatActivity {
             if(paymentCheck.equals("1"))
             {
                 Toast.makeText(getApplicationContext(), "Payment Has Done Successfully", Toast.LENGTH_SHORT).show();
+                checkPaidOrFree = "Paid";
                 btnPrint.setVisibility(View.VISIBLE);
             }
 
@@ -259,12 +276,18 @@ public class ShowPdf extends AppCompatActivity {
                 {
                     if(cvPrice.equals("Free"))
                     {
-                        btnAdShow.setVisibility(View.VISIBLE);
+                        btnPrint.setVisibility(View.VISIBLE);
+                        checkPaidOrFree = "Free";
                     }
 
                     else {
+                        btnPrint.setVisibility(View.GONE);
                         layoutPayment.setVisibility(View.VISIBLE);
                     }
+                }
+                else if (mUrl.contains("https://xosstech.com/cvm/api/public/view_cv"))
+                {
+                    layoutPayment.setVisibility(View.GONE);
                 }
 
             }
@@ -345,6 +368,9 @@ public class ShowPdf extends AppCompatActivity {
                         // Handle the error.
 //                        Log.d(TAG, loadAdError.getMessage());
                         progrssBar.setVisibility(View.GONE);
+                        /*btnAdShow.setVisibility(View.GONE);
+                        btnPrint.setVisibility(View.VISIBLE);*/
+                        savePdf();
                         mRewardedAd = null;
                     }
 
@@ -352,7 +378,7 @@ public class ShowPdf extends AppCompatActivity {
                     public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                         mRewardedAd = rewardedAd;
                         progrssBar.setVisibility(View.GONE);
-//                        Log.d(TAG, "Ad was loaded.");
+                        savePdf();
                     }
                 });
     }
@@ -369,6 +395,7 @@ public class ShowPdf extends AppCompatActivity {
                     String rewardType = rewardItem.getType();
                     btnPrint.setVisibility(View.VISIBLE);
                     btnAdShow.setVisibility(View.GONE);
+                    Log.e("rewardcheck",rewardItem.getType().toString());
                 }
             });
         } else {
@@ -553,7 +580,6 @@ public class ShowPdf extends AppCompatActivity {
                     }else{
                         if(responses.getResponse().equals("charged_successfull")){
                             btnPrint.setVisibility(View.VISIBLE);
-                            btnAdShow.setVisibility(View.GONE);
                             Toast.makeText(ShowPdf.this, "Charged Successfully", Toast.LENGTH_SHORT).show();
 
 

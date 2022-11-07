@@ -38,16 +38,17 @@
                     android:id="@+id/web_view"/>
 
                 <Button
+                    android:id="@+id/btnSavePdf"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/button_background"
-                    android:text="Save Pdf"
-                    android:textSize="12dp"
-                    android:textColor="@color/white"
-                    android:gravity="center"
                     android:layout_gravity="center"
-                    android:id="@+id/btnSavePdf"/>
+                    android:layout_marginTop="10dp"
+                    android:visibility="gone"
+                    android:background="@drawable/button_background"
+                    android:gravity="center"
+                    android:text="Save Pdf"
+                    android:textColor="@color/white"
+                    android:textSize="12dp" />
 
 
                 <Button

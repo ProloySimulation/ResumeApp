@@ -123,13 +123,6 @@ public class ShowPdf extends AppCompatActivity {
 
         renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+"01987982903");
 
-        btnAdShow.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                adShow();
-            }
-        });
-
         cardPaySim.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -365,11 +358,7 @@ public class ShowPdf extends AppCompatActivity {
                 adRequest, new RewardedAdLoadCallback() {
                     @Override
                     public void onAdFailedToLoad(@NonNull LoadAdError loadAdError) {
-                        // Handle the error.
-//                        Log.d(TAG, loadAdError.getMessage());
                         progrssBar.setVisibility(View.GONE);
-                        /*btnAdShow.setVisibility(View.GONE);
-                        btnPrint.setVisibility(View.VISIBLE);*/
                         savePdf();
                         mRewardedAd = null;
                     }
@@ -378,7 +367,7 @@ public class ShowPdf extends AppCompatActivity {
                     public void onAdLoaded(@NonNull RewardedAd rewardedAd) {
                         mRewardedAd = rewardedAd;
                         progrssBar.setVisibility(View.GONE);
-                        savePdf();
+                        adShow();
                     }
                 });
     }
@@ -396,9 +385,11 @@ public class ShowPdf extends AppCompatActivity {
                     btnPrint.setVisibility(View.VISIBLE);
                     btnAdShow.setVisibility(View.GONE);
                     Log.e("rewardcheck",rewardItem.getType().toString());
+                    savePdf();
                 }
             });
         } else {
+            savePdf();
             Toast.makeText(getApplicationContext(), "The rewarded ad wasn't ready yet.", Toast.LENGTH_SHORT).show();
         }
     }

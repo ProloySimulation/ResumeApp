@@ -101,6 +101,7 @@ public class ShowPdf extends AppCompatActivity {
         progrssBar = findViewById(R.id.webview_spin_kit);
         layoutPayment = findViewById(R.id.linearLayoutPayment);
 
+
 //        userMobile = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
         adCount = SharedPreferenceManager.getInstance(getApplicationContext()).GetAdCount();
         loginNumber = SharedPreferenceManager.getInstance(getApplicationContext()).GetUserMobileNumber();
@@ -121,7 +122,7 @@ public class ShowPdf extends AppCompatActivity {
         mWebView.getSettings().setAllowUniversalAccessFromFileURLs(true);
 
 
-        renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+"01987982903");
+        renderWebPage("https://xosstech.com/cvm/api/public/view_cv-v2/"+loginNumber);
 
         cardPaySim.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -153,6 +154,7 @@ public class ShowPdf extends AppCompatActivity {
                 Bundle bundle = new Bundle();
                 bundle.putString("AMOUNT", cvPrice);
                 fragment = new FragmentPayment();
+                fragment = new FragmentPayment();
                 FragmentManager fragmentManager = getFragmentManager();
                 fragment.setArguments(bundle);
                 fragmentManager.beginTransaction().replace(R.id.frameContainerPayment, fragment).addToBackStack(null).commit();
@@ -183,12 +185,10 @@ public class ShowPdf extends AppCompatActivity {
                     btnPrint.setVisibility(View.GONE);
                     adLoad();
                     SharedPreferenceManager.getInstance(getApplicationContext()).SetAdCount(adCount++);
-                    Toast.makeText(getApplicationContext(), "OK", Toast.LENGTH_SHORT).show();
                 }
                 else
                 {
                     SharedPreferenceManager.getInstance(getApplicationContext()).SetAdCount(0);
-                    Toast.makeText(getApplicationContext(), "No", Toast.LENGTH_SHORT).show();
                     SharedPreferenceManager.getInstance(getApplicationContext()).SetCurrentDate(currentDay);
                     savePdf();
                 }
@@ -196,7 +196,7 @@ public class ShowPdf extends AppCompatActivity {
             else
             {
                 btnPrint.setVisibility(View.VISIBLE);
-                Toast.makeText(getApplicationContext(), "YO", Toast.LENGTH_SHORT).show();
+                savePdf();
                 savePdf();
             }
         }
@@ -390,7 +390,7 @@ public class ShowPdf extends AppCompatActivity {
             });
         } else {
             savePdf();
-            Toast.makeText(getApplicationContext(), "The rewarded ad wasn't ready yet.", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(getApplicationContext(), "The rewarded ad wasn't ready yet.", Toast.LENGTH_SHORT).show();
         }
     }
 

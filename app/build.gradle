@@ -24,8 +24,8 @@ android {
         minSdk 23
         multiDexEnabled true
         targetSdkVersion 32
-        versionCode 38
-        versionName "4.0.2"
+        versionCode 46
+        versionName "5.0.3"
         testInstrumentationRunner "androidx.test.runner. "
     }
     buildTypes {

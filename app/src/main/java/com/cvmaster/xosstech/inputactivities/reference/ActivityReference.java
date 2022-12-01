@@ -97,20 +97,29 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
         String email = etRefEmail.getText().toString();
         String organization = etOrganization.getText().toString();
 
-        Reference reference = new Reference(name,designation,organization,email,mobile,1);
+        if(mobile.isEmpty() || name.isEmpty() || designation.isEmpty() || email.isEmpty() || organization.isEmpty())
+        {
+            Reference reference = new Reference(name,designation,organization,email,mobile,1);
 
-        mainViewModel.postAllReference(token,reference).observe(this, new Observer<List<Reference>>() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onChanged(@Nullable List<Reference> referenceList) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                newLayout.setVisibility(View.GONE);
-                mainViewModel.getAllReferences(token).removeObserver(this);
-                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+            mainViewModel.postAllReference(token,reference).observe(this, new Observer<List<Reference>>() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onChanged(@Nullable List<Reference> referenceList) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    newLayout.setVisibility(View.GONE);
+                    mainViewModel.getAllReferences(token).removeObserver(this);
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
+        }
+
+        else
+        {
+            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void getReferences() {

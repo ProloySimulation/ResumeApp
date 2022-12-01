@@ -109,20 +109,24 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
         String trainingSummary = etTrainingSummary.getText().toString();
         String trainingEndDate = etEndDate.getText().toString();
 
-        Training training = new Training(trainingName,trainingEndDate,trainingSummary,1);
+        if(trainingName.isEmpty() || trainingSummary.isEmpty() || trainingEndDate.isEmpty())
+        {
+            Training training = new Training(trainingName,trainingEndDate,trainingSummary,1);
 
-        mainViewModel.postAllTraining(token,training).observe(this, new Observer<List<Training>>() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onChanged(@Nullable List<Training> trainingList) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                newLayout.setVisibility(View.GONE);
-                mainViewModel.getAllTrainings(token).removeObserver(this);
-                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+            mainViewModel.postAllTraining(token,training).observe(this, new Observer<List<Training>>() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onChanged(@Nullable List<Training> trainingList) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    newLayout.setVisibility(View.GONE);
+                    mainViewModel.getAllTrainings(token).removeObserver(this);
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
 
     public void getTrainingList() {

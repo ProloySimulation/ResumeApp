@@ -1,15 +1,6 @@
 <component name="libraryTable">
   <library name="Gradle: com.github.joielechong:countrycodepicker:2.4.1@aar">
     <CLASSES>
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/2cb8644585b7272c93b491024ec45cfc/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/68735b2bc7a367988fe909211b370c85/transformed/jetified-countrycodepicker-2.4.1/res" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4f25bab9a9842dea7a0d350ff9f5808b/transformed/jetified-countrycodepicker-2.4.1/res" />
-      <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/4f25bab9a9842dea7a0d350ff9f5808b/transformed/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
-      <root url="file://$USER_HOME$/.gradle/caches/transforms-3/4f25bab9a9842dea7a0d350ff9f5808b/transformed/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />
       <root url="jar://$USER_HOME$/.gradle/caches/transforms-3/0a02afdc5e90b177fcde3b7d8f4f6d87/transformed/jetified-countrycodepicker-2.4.1/jars/classes.jar!/" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a02afdc5e90b177fcde3b7d8f4f6d87/transformed/jetified-countrycodepicker-2.4.1/res" />
       <root url="file://$USER_HOME$/.gradle/caches/transforms-3/0a02afdc5e90b177fcde3b7d8f4f6d87/transformed/jetified-countrycodepicker-2.4.1/AndroidManifest.xml" />

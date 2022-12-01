@@ -131,21 +131,30 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
         String projectStart = etStartDate.getText().toString();
         String projectEndD = etEndDate.getText().toString();
 
-        Project project = new Project(projectName,projectStart,projectEndD,projectSummary,1);
+        if(projectName.isEmpty() || projectSummary.isEmpty() || projectStart.isEmpty() || projectEndD.isEmpty())
+        {
+            Project project = new Project(projectName,projectStart,projectEndD,projectSummary,1);
 
-        mainViewModel.postProject(token,project).observe(this, new Observer<List<Project>>() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onChanged(@Nullable List<Project> projectList) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                newLayout.setVisibility(View.GONE);
-                btnNewProject.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-                mainViewModel.getAllProjects(token).removeObserver(this);
-            }
-        });
+            mainViewModel.postProject(token,project).observe(this, new Observer<List<Project>>() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onChanged(@Nullable List<Project> projectList) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    newLayout.setVisibility(View.GONE);
+                    btnNewProject.setVisibility(View.VISIBLE);
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                    mainViewModel.getAllProjects(token).removeObserver(this);
+                }
+            });
+        }
+
+        else
+        {
+            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
     public void getProjectList() {

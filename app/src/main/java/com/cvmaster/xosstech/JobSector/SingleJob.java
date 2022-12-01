@@ -101,7 +101,6 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
         applyLink = getIntent().getStringExtra("applylink");
         jobEndDate = getIntent().getStringExtra("jobenddate");
         circular = getIntent().getStringExtra("circualrpath");
-        Toast.makeText(this, circular, Toast.LENGTH_SHORT).show();
         Log.d("hiii",circular);
 
         tvJobTittle.setText(tittle);
@@ -116,7 +115,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
 
         progrssBar.setVisibility(View.VISIBLE);
         new RetrivePDFfromUrl().execute(circular);
-        loadAd();
+//        loadAd();
 
     }
 
@@ -166,7 +165,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
             displayFromSdcard();
         } catch (Exception e) {
             e.printStackTrace();
-//            Toast.makeText(getApplicationContext(), e.toString(), Toast.LENGTH_SHORT).show();
+            Toast.makeText(this, e.toString(), Toast.LENGTH_SHORT).show();
         }
     }
 
@@ -208,7 +207,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
             if (ActivityCompat.checkSelfPermission(getApplicationContext(), Manifest.permission.WRITE_EXTERNAL_STORAGE)
                     == PERMISSION_GRANTED)
             {
-                showAd();
+                downloadPdfContent(circular);
             }
 
             else {
@@ -224,6 +223,7 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
                     @Override
                     public void onAdLoaded(RewardedInterstitialAd ad) {
                         rewardedInterstitialAd = ad;
+
                     }
                     @Override
                     public void onAdFailedToLoad(LoadAdError loadAdError) {
@@ -245,30 +245,28 @@ public class SingleJob extends AppCompatActivity implements View.OnClickListener
             public void onAdDismissedFullScreenContent() {
                 // Called when ad is dismissed.
                 // Set the ad reference to null so you don't show the ad a second time.
-                Log.d(TAG, "Ad dismissed fullscreen content.");
-                rewardedInterstitialAd = null;
+                Log.d("GOTEST", "Ad dismissed fullscreen content.");
                 downloadPdfContent(circular);
             }
 
             @Override
             public void onAdFailedToShowFullScreenContent(AdError adError) {
                 // Called when ad fails to show.
-                Log.e(TAG, "Ad failed to show fullscreen content.");
-                rewardedInterstitialAd = null;
+                Log.e("GOTEST", "Ad failed to show fullscreen content.");
                 downloadPdfContent(circular);
             }
 
             @Override
             public void onAdImpression() {
                 // Called when an impression is recorded for an ad.
-                Log.d(TAG, "Ad recorded an impression.");
+                Log.d("GOTEST", "Ad recorded an impression.");
                 downloadPdfContent(circular);
             }
 
             @Override
             public void onAdShowedFullScreenContent() {
                 // Called when ad is shown.
-                Log.d(TAG, "Ad showed fullscreen content.");
+                Log.d("GOTEST", "Ad showed fullscreen content.");
                 downloadPdfContent(circular);
             }
         });

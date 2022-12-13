@@ -82,6 +82,10 @@ public class TrainingAdapter extends RecyclerView.Adapter<TrainingAdapter.MyView
             etTrainingName = (EditText)itemView.findViewById(R.id.editText_BuildResumeTraining_name_1);
             etTrainingSummary = (EditText)itemView.findViewById(R.id.editText_BuildResumeTraining_Summary_1);
             etEndDate = (EditText)itemView.findViewById(R.id.editText_BuildResumeTraining_endDate_1);
+
+            etTrainingName.setEnabled(false);
+            etTrainingSummary.setEnabled(false);
+            etEndDate.setEnabled(false);
         }
     }
 

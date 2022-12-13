@@ -99,6 +99,11 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
 
         if(mobile.isEmpty() || name.isEmpty() || designation.isEmpty() || email.isEmpty() || organization.isEmpty())
         {
+            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
+        }
+
+        else
+        {
             Reference reference = new Reference(name,designation,organization,email,mobile,1);
 
             mainViewModel.postAllReference(token,reference).observe(this, new Observer<List<Reference>>() {
@@ -113,11 +118,6 @@ public class ActivityReference extends AppCompatActivity implements ReferenceDia
                     startActivity(intent);
                 }
             });
-        }
-
-        else
-        {
-            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
         }
 
     }

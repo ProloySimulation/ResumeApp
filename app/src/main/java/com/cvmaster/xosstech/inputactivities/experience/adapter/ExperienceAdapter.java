@@ -87,6 +87,13 @@ public class ExperienceAdapter extends RecyclerView.Adapter<ExperienceAdapter.My
             tvEndDate = (EditText)itemView.findViewById(R.id.editText_BuildResumePart6_WorkExperience1_end);
             tvCompanyName = (EditText)itemView.findViewById(R.id.editText_BuildResumePart6_WorkExperience1_OrganizationName);
             tvCompanyAddress = (EditText)itemView.findViewById(R.id.editText_BuildResumePart6_WorkExperience1_OrganizationAddress1);
+
+            tvDesignation.setEnabled(false);
+            tvWorkDetail.setEnabled(false);
+            tvStartDate.setEnabled(false);
+            tvEndDate.setEnabled(false);
+            tvCompanyName.setEnabled(false);
+            tvCompanyAddress.setEnabled(false);
         }
     }
 

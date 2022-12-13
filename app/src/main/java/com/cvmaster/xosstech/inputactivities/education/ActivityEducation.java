@@ -141,21 +141,28 @@ public class ActivityEducation extends AppCompatActivity implements AdapterView.
         String passYear = etPassYear.getText().toString();
         String dept = etSubjectName.getText().toString();
 
-        Education education = new Education(institution,degree,dept,passYear,result,board,1);
+        if(degree.isEmpty() || result.isEmpty() || institution.isEmpty() || passYear.isEmpty() || dept.isEmpty())
+        {
+            Toast.makeText(this, "Please Fill Up All Fields", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Education education = new Education(institution,degree,dept,passYear,result,board,1);
 
-        mainViewModel.postAllEducation(token,education).observe(this, new Observer<List<Education>>() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onChanged(@Nullable List<Education> educationList) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                newLayout.setVisibility(View.GONE);
-                mainViewModel.getAllEducation(token).removeObserver(this);
-                btnNewEducation.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+            mainViewModel.postAllEducation(token,education).observe(this, new Observer<List<Education>>() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onChanged(@Nullable List<Education> educationList) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    newLayout.setVisibility(View.GONE);
+                    mainViewModel.getAllEducation(token).removeObserver(this);
+                    btnNewEducation.setVisibility(View.VISIBLE);
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
+        }
     }
 
     public void getEducations() {

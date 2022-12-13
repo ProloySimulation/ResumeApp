@@ -87,7 +87,7 @@
                     android:layout_margin="10dp"
                     android:background="@color/white"
                     android:orientation="vertical"
-                    android:visibility="gone">
+                    android:visibility="visible">
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -170,7 +170,7 @@
                         android:foreground="?android:attr/selectableItemBackground"
                         android:paddingLeft="20dp"
                         android:paddingRight="20dp"
-                        android:text="Update"
+                        android:text="Submit"
                         android:textAllCaps="false"
                         android:textColor="@color/btn_green"
                         android:textStyle="bold"

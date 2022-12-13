@@ -38,13 +38,13 @@ public class BuildResumeAddition extends AppCompatActivity {
     private ImageView imvBack;
     private MultiAutoCompleteTextView etSkills;
     private Button btnSubmit,btnUpdate ;
-    private String skills = null;
-    private String hobbies = null;
-    private String languages = null;
-    private String linkedin = null;
-    private String behance = null;
-    private String github = null;
-    private String twitter = null;
+    private String skills = "";
+    private String hobbies = "";
+    private String languages = "";
+    private String linkedin = "";
+    private String behance = "";
+    private String github = "";
+    private String twitter = "";
     private int id ;
     private String token = null;
     private AdditionalViewModel mainViewModel ;
@@ -125,7 +125,7 @@ public class BuildResumeAddition extends AppCompatActivity {
 
                 if(informationList.size()<=0)
                 {
-                    Toast.makeText(getApplicationContext(), "No Data Found", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "No Information Found", Toast.LENGTH_SHORT).show();
                 }
                 else {
 

@@ -111,6 +111,10 @@ public class ActivityTraining extends AppCompatActivity implements TrainingDialo
 
         if(trainingName.isEmpty() || trainingSummary.isEmpty() || trainingEndDate.isEmpty())
         {
+            Toast.makeText(this, "Please Fill Up All Fields", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
             Training training = new Training(trainingName,trainingEndDate,trainingSummary,1);
 
             mainViewModel.postAllTraining(token,training).observe(this, new Observer<List<Training>>() {

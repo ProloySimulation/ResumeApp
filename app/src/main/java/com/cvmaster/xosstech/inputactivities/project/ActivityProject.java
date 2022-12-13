@@ -133,6 +133,11 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
 
         if(projectName.isEmpty() || projectSummary.isEmpty() || projectStart.isEmpty() || projectEndD.isEmpty())
         {
+            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
+        }
+
+        else
+        {
             Project project = new Project(projectName,projectStart,projectEndD,projectSummary,1);
 
             mainViewModel.postProject(token,project).observe(this, new Observer<List<Project>>() {
@@ -148,11 +153,6 @@ public class ActivityProject extends AppCompatActivity implements ProjectDialog.
                     mainViewModel.getAllProjects(token).removeObserver(this);
                 }
             });
-        }
-
-        else
-        {
-            Toast.makeText(this, "Please Fill Up All Information", Toast.LENGTH_SHORT).show();
         }
 
     }

@@ -87,6 +87,12 @@ public class ReferenceAdapter extends RecyclerView.Adapter<ReferenceAdapter.MyVi
             etOrganizationName = (EditText)itemView.findViewById(R.id.editText_BuildResumePart5_Reference1_OrganizationName);
             etEmail = (EditText)itemView.findViewById(R.id.editText_BuildResumePart5_Reference1_Email);
             etMobile = (EditText)itemView.findViewById(R.id.editText_BuildResumePart5_Reference1_MobileNumber);
+
+            etName.setEnabled(false);
+            etDesignation.setEnabled(false);
+            etOrganizationName.setEnabled(false);
+            etEmail.setEnabled(false);
+            etMobile.setEnabled(false);
         }
     }
 

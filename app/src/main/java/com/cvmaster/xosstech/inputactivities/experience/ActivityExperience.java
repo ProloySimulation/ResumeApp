@@ -81,7 +81,7 @@ public class ActivityExperience extends AppCompatActivity implements Dialog.Upda
             }
         });
 
-        etEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
+        /*etEndDate.setOnFocusChangeListener(new View.OnFocusChangeListener() {
             @Override
             public void onFocusChange(View v, boolean hasFocus) {
                 if(hasFocus)
@@ -92,7 +92,7 @@ public class ActivityExperience extends AppCompatActivity implements Dialog.Upda
                     mDatePickerDialogFragment.show(getSupportFragmentManager(), "DATE PICK");
                 }
             }
-        });
+        });*/
 
         imvBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -134,22 +134,30 @@ public class ActivityExperience extends AppCompatActivity implements Dialog.Upda
         String workSummary = etWorkDetail.getText().toString();
         String location = etWorkAddress.getText().toString();
 
-        Experience experience = new Experience(companyName,position,startDate,
-                endDate,workSummary,location,1);
+        if(companyName.isEmpty() || position.isEmpty() || startDate.isEmpty() || endDate.isEmpty() || workSummary.isEmpty() || location.isEmpty())
+        {
+            Toast.makeText(this, "Please Fill Up All Fields", Toast.LENGTH_SHORT).show();
+        }
+        else
+        {
+            Experience experience = new Experience(companyName,position,startDate,
+                    endDate,workSummary,location,1);
 
-        mainViewModel.postAllUsers(token,experience).observe(this, new Observer<List<Experience>>() {
-            @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
-            @Override
-            public void onChanged(@Nullable List<Experience> experienceList) {
-                Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
-                newLayout.setVisibility(View.GONE);
-                mainViewModel.getAllUsers(token).removeObserver(this);
-                btnNewExperience.setVisibility(View.VISIBLE);
-                Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                startActivity(intent);
-            }
-        });
+            mainViewModel.postAllUsers(token,experience).observe(this, new Observer<List<Experience>>() {
+                @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
+                @Override
+                public void onChanged(@Nullable List<Experience> experienceList) {
+                    Toast.makeText(getApplicationContext(), "Success", Toast.LENGTH_SHORT).show();
+                    newLayout.setVisibility(View.GONE);
+                    mainViewModel.getAllUsers(token).removeObserver(this);
+                    btnNewExperience.setVisibility(View.VISIBLE);
+                    Intent intent = new Intent(getApplicationContext(), DashBoardActivity.class);
+                    intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startActivity(intent);
+                }
+            });
+        }
+
     }
 
     public void getExperienceList() {

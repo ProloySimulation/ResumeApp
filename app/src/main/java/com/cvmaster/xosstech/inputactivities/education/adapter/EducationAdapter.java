@@ -90,6 +90,12 @@ public class EducationAdapter extends RecyclerView.Adapter<EducationAdapter.MyVi
             etDept = (EditText)itemView.findViewById(R.id.etItemGroupName);
             etPassYear = (EditText)itemView.findViewById(R.id.etItemEducationPassYear);
             etResult = (EditText)itemView.findViewById(R.id.etItemEducationResult);
+
+            etDegree.setEnabled(false);
+            etDept.setEnabled(false);
+            etPassYear.setEnabled(false);
+            etInstitution.setEnabled(false);
+            etResult.setEnabled(false);
         }
     }
 

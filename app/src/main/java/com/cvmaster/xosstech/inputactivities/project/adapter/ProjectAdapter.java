@@ -85,6 +85,11 @@ public class ProjectAdapter extends RecyclerView.Adapter<ProjectAdapter.MyViewHo
 
             btnDelete = itemView.findViewById(R.id.btnDeleteProject);
             btnEdit = itemView.findViewById(R.id.btnEditProject);
+
+            etProjectName.setEnabled(false);
+            etProjectSummary.setEnabled(false);
+            etStartDate.setEnabled(false);
+            etEndDate.setEnabled(false);
         }
     }
 

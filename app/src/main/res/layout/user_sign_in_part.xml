@@ -83,7 +83,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:id="@+id/sendOTP_Button_UserRegistrationPart1"
-                    android:text="Send Otp"
+                    android:text="Resgister"
                     android:textColor="@color/white"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button_background"/>
